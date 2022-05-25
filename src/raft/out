@@ -1,0 +1,838 @@
+Test (2A): initial election ...
+004052 [S0] becomes {Candidate}
+004056 [S0] currentTerm -> (1)
+004061 [S0] sends RequestVote -> [S1]
+004062 [S0] sends RequestVote -> [S2]
+004079 [S2] becomes {Follower}
+004082 [S0] Got Vote <- [S2]
+004079 [S1] becomes {Follower}
+004087 [S0] becomes {Leader}
+004090 [S0] broadcasts HeartBeats
+004087 [S0] Got Vote <- [S1]
+007749 [S2] becomes {Candidate}
+007755 [S2] currentTerm -> (2)
+007769 [S2] sends RequestVote -> [S0]
+007770 [S2] sends RequestVote -> [S1]
+007790 [S0] becomes {Follower}
+007797 [S2] Got Vote <- [S0]
+007798 [S1] becomes {Follower}
+007804 [S2] Got Vote <- [S1]
+007804 [S2] becomes {Leader}
+007813 [S2] broadcasts HeartBeats
+011060 [S0] becomes {Candidate}
+011065 [S0] currentTerm -> (3)
+011069 [S0] sends RequestVote -> [S2]
+011069 [S0] sends RequestVote -> [S1]
+011077 [S2] becomes {Follower}
+011080 [S0] Got Vote <- [S2]
+011078 [S1] becomes {Follower}
+011085 [S0] Got Vote <- [S1]
+011084 [S0] becomes {Leader}
+011092 [S0] broadcasts HeartBeats
+014464 [S1] becomes {Candidate}
+014469 [S1] currentTerm -> (4)
+014473 [S1] sends RequestVote -> [S0]
+014474 [S1] sends RequestVote -> [S2]
+014483 [S0] becomes {Follower}
+014487 [S1] Got Vote <- [S0]
+014487 [S2] becomes {Follower}
+014493 [S1] becomes {Leader}
+014496 [S1] broadcasts HeartBeats
+014493 [S1] Got Vote <- [S2]
+017871 [S2] becomes {Candidate}
+017875 [S2] currentTerm -> (5)
+017879 [S2] sends RequestVote -> [S1]
+017879 [S2] sends RequestVote -> [S0]
+017887 [S1] becomes {Follower}
+017890 [S2] Got Vote <- [S1]
+017889 [S0] becomes {Follower}
+017895 [S2] Got Vote <- [S0]
+017897 [S2] becomes {Leader}
+017900 [S2] broadcasts HeartBeats
+021005 [S0] becomes {Candidate}
+021008 [S0] currentTerm -> (6)
+021014 [S0] sends RequestVote -> [S2]
+021014 [S0] sends RequestVote -> [S1]
+021023 [S2] becomes {Follower}
+021026 [S0] Got Vote <- [S2]
+021026 [S1] becomes {Follower}
+021032 [S0] becomes {Leader}
+021035 [S0] broadcasts HeartBeats
+021032 [S0] Got Vote <- [S1]
+024731 [S2] becomes {Candidate}
+024735 [S2] currentTerm -> (7)
+024739 [S2] sends RequestVote -> [S1]
+024739 [S2] sends RequestVote -> [S0]
+024747 [S1] becomes {Follower}
+024749 [S0] becomes {Follower}
+024751 [S2] Got Vote <- [S0]
+024749 [S2] Got Vote <- [S1]
+024755 [S2] becomes {Leader}
+024758 [S2] broadcasts HeartBeats
+warning: term changed even though there were no failures028144 [S2] becomes {Candidate}
+028149 [S2] currentTerm -> (8)
+028153 [S2] sends RequestVote -> [S0]
+028154 [S2] sends RequestVote -> [S1]
+028162 [S0] becomes {Follower}
+028166 [S2] Got Vote <- [S0]
+028166 [S1] becomes {Follower}
+028174 [S2] Got Vote <- [S1]
+028180 [S2] becomes {Leader}
+028183 [S2] broadcasts HeartBeats
+  ... Passed --   3.1  3   32    6932    0
+Test (2A): election after network failure ...
+031727 [S2] becomes {Candidate}
+031731 [S2] currentTerm -> (9)
+031735 [S2] sends RequestVote -> [S0]
+031736 [S2] sends RequestVote -> [S1]
+032157 [S1] becomes {Candidate}
+032160 [S1] currentTerm -> (9)
+032165 [S1] sends RequestVote -> [S0]
+032166 [S1] sends RequestVote -> [S2]
+032808 [S0] becomes {Candidate}
+032811 [S0] currentTerm -> (9)
+032815 [S0] sends RequestVote -> [S1]
+032815 [S0] sends RequestVote -> [S2]
+034373 [S2] becomes {Candidate}
+034376 [S2] currentTerm -> (1)
+034380 [S2] sends RequestVote -> [S1]
+034380 [S2] sends RequestVote -> [S0]
+034386 [S1] becomes {Follower}
+034389 [S2] Got Vote <- [S1]
+034389 [S0] becomes {Follower}
+034393 [S2] Got Vote <- [S0]
+034393 [S2] becomes {Leader}
+034397 [S2] broadcasts HeartBeats
+037406 [S2] becomes {Candidate}
+037410 [S2] currentTerm -> (2)
+037414 [S2] sends RequestVote -> [S1]
+037415 [S2] sends RequestVote -> [S0]
+037738 [S1] becomes {Candidate}
+037748 [S1] currentTerm -> (2)
+037754 [S1] sends RequestVote -> [S2]
+037754 [S1] sends RequestVote -> [S0]
+037772 [S0] becomes {Follower}
+037776 [S1] Got Vote <- [S0]
+037783 [S1] becomes {Leader}
+037786 [S1] broadcasts HeartBeats
+040599 [S2] becomes {Candidate}
+040603 [S2] currentTerm -> (3)
+040606 [S2] sends RequestVote -> [S1]
+040607 [S2] sends RequestVote -> [S0]
+041172 [S1] becomes {Candidate}
+041179 [S1] currentTerm -> (3)
+041184 [S1] sends RequestVote -> [S0]
+041185 [S1] sends RequestVote -> [S2]
+041192 [S0] becomes {Follower}
+041195 [S1] Got Vote <- [S0]
+041200 [S1] becomes {Leader}
+041202 [S1] broadcasts HeartBeats
+044364 [S2] becomes {Candidate}
+044368 [S2] currentTerm -> (4)
+044373 [S2] sends RequestVote -> [S0]
+044373 [S2] sends RequestVote -> [S1]
+044381 [S0] becomes {Follower}
+044384 [S2] Got Vote <- [S0]
+044385 [S1] becomes {Follower}
+044391 [S2] Got Vote <- [S1]
+044389 [S2] becomes {Leader}
+044397 [S2] broadcasts HeartBeats
+048237 [S2] becomes {Candidate}
+048240 [S2] currentTerm -> (5)
+048243 [S2] sends RequestVote -> [S1]
+048243 [S2] sends RequestVote -> [S0]
+049229 [S1] becomes {Candidate}
+049235 [S1] currentTerm -> (5)
+049238 [S1] sends RequestVote -> [S0]
+049239 [S1] sends RequestVote -> [S2]
+049330 [S0] becomes {Candidate}
+049338 [S0] currentTerm -> (5)
+049344 [S0] sends RequestVote -> [S1]
+049345 [S0] sends RequestVote -> [S2]
+051460 [S2] becomes {Candidate}
+051464 [S2] currentTerm -> (6)
+051470 [S2] sends RequestVote -> [S0]
+051473 [S2] sends RequestVote -> [S1]
+052712 [S1] becomes {Candidate}
+052715 [S1] currentTerm -> (6)
+052719 [S1] sends RequestVote -> [S0]
+052720 [S1] sends RequestVote -> [S2]
+053243 [S0] becomes {Candidate}
+053247 [S0] currentTerm -> (6)
+053252 [S0] sends RequestVote -> [S2]
+053253 [S0] sends RequestVote -> [S1]
+054623 [S2] becomes {Candidate}
+054629 [S2] currentTerm -> (7)
+054633 [S2] sends RequestVote -> [S0]
+054634 [S2] sends RequestVote -> [S1]
+056696 [S0] becomes {Candidate}
+056701 [S0] currentTerm -> (7)
+056705 [S0] sends RequestVote -> [S1]
+056706 [S0] sends RequestVote -> [S2]
+057645 [S1] becomes {Candidate}
+057650 [S1] currentTerm -> (7)
+057653 [S1] sends RequestVote -> [S0]
+057654 [S1] sends RequestVote -> [S2]
+058736 [S2] becomes {Candidate}
+058739 [S2] currentTerm -> (8)
+058742 [S2] sends RequestVote -> [S0]
+058743 [S2] sends RequestVote -> [S1]
+059809 [S0] becomes {Candidate}
+059812 [S0] currentTerm -> (8)
+059816 [S0] sends RequestVote -> [S2]
+059816 [S0] sends RequestVote -> [S1]
+061609 [S1] becomes {Candidate}
+061612 [S1] currentTerm -> (8)
+061616 [S1] sends RequestVote -> [S0]
+061616 [S1] sends RequestVote -> [S2]
+063380 [S2] becomes {Candidate}
+063384 [S2] currentTerm -> (9)
+063389 [S2] sends RequestVote -> [S0]
+063389 [S2] sends RequestVote -> [S1]
+064582 [S0] becomes {Candidate}
+064586 [S0] currentTerm -> (9)
+064589 [S0] sends RequestVote -> [S2]
+064589 [S0] sends RequestVote -> [S1]
+065813 [S1] becomes {Candidate}
+065817 [S1] currentTerm -> (9)
+065821 [S1] sends RequestVote -> [S0]
+065822 [S1] sends RequestVote -> [S2]
+066843 [S2] becomes {Candidate}
+066846 [S2] currentTerm -> (10)
+066850 [S2] sends RequestVote -> [S0]
+066850 [S2] sends RequestVote -> [S1]
+067596 [S0] becomes {Candidate}
+067605 [S0] currentTerm -> (10)
+067610 [S0] sends RequestVote -> [S1]
+067610 [S0] sends RequestVote -> [S2]
+067621 [S1] becomes {Follower}
+067623 [S0] Got Vote <- [S1]
+067628 [S0] becomes {Leader}
+067630 [S0] broadcasts HeartBeats
+070656 [S2] becomes {Candidate}
+070660 [S2] currentTerm -> (11)
+070664 [S2] sends RequestVote -> [S0]
+070664 [S2] sends RequestVote -> [S1]
+071930 [S0] becomes {Candidate}
+071936 [S0] currentTerm -> (11)
+071940 [S0] sends RequestVote -> [S2]
+071941 [S0] sends RequestVote -> [S1]
+071954 [S1] becomes {Follower}
+071958 [S0] Got Vote <- [S1]
+071966 [S0] becomes {Leader}
+071970 [S0] broadcasts HeartBeats
+075033 [S0] becomes {Candidate}
+075037 [S0] currentTerm -> (12)
+075040 [S0] sends RequestVote -> [S1]
+075041 [S0] sends RequestVote -> [S2]
+075048 [S1] becomes {Follower}
+075049 [S0] Got Vote <- [S1]
+075050 [S2] becomes {Follower}
+075053 [S0] Got Vote <- [S2]
+075054 [S0] becomes {Leader}
+075058 [S0] broadcasts HeartBeats
+  ... Passed --   4.5  3   66    9420    0
+Test (2A): multiple elections ...
+079046 [S0] becomes {Candidate}
+079050 [S0] currentTerm -> (1)
+079055 [S0] sends RequestVote -> [S1]
+079058 [S0] sends RequestVote -> [S4]
+079056 [S0] sends RequestVote -> [S2]
+079065 [S1] becomes {Follower}
+079068 [S0] Got Vote <- [S1]
+079056 [S0] sends RequestVote -> [S3]
+079067 [S0] sends RequestVote -> [S5]
+079078 [S2] becomes {Follower}
+079080 [S0] Got Vote <- [S2]
+079078 [S3] becomes {Follower}
+079086 [S0] Got Vote <- [S3]
+079074 [S4] becomes {Follower}
+079072 [S0] sends RequestVote -> [S6]
+079082 [S5] becomes {Follower}
+079090 [S0] becomes {Leader}
+079098 [S0] broadcasts HeartBeats
+079091 [S0] Got Vote <- [S4]
+079096 [S0] Got Vote <- [S5]
+079097 [S6] becomes {Follower}
+079127 [S0] Got Vote <- [S6]
+079380 [S0] becomes {Candidate}
+079383 [S0] currentTerm -> (13)
+079387 [S0] sends RequestVote -> [S2]
+079387 [S0] sends RequestVote -> [S1]
+079948 [S1] becomes {Candidate}
+079951 [S1] currentTerm -> (13)
+079954 [S1] sends RequestVote -> [S0]
+079955 [S1] sends RequestVote -> [S2]
+080068 [S2] becomes {Candidate}
+080071 [S2] currentTerm -> (13)
+080074 [S2] sends RequestVote -> [S0]
+080075 [S2] sends RequestVote -> [S1]
+082864 [S6] becomes {Candidate}
+082870 [S6] currentTerm -> (2)
+082874 [S2] becomes {Candidate}
+082878 [S2] currentTerm -> (2)
+082874 [S6] sends RequestVote -> [S1]
+082883 [S2] sends RequestVote -> [S3]
+082875 [S6] sends RequestVote -> [S0]
+082875 [S6] sends RequestVote -> [S2]
+082876 [S6] sends RequestVote -> [S3]
+082876 [S6] sends RequestVote -> [S4]
+082876 [S6] sends RequestVote -> [S5]
+082881 [S2] sends RequestVote -> [S0]
+082882 [S2] sends RequestVote -> [S1]
+082883 [S2] sends RequestVote -> [S4]
+082889 [S2] sends RequestVote -> [S5]
+082893 [S2] sends RequestVote -> [S6]
+082895 [S3] becomes {Follower}
+082922 [S2] Got Vote <- [S3]
+082912 [S0] becomes {Follower}
+082920 [S4] becomes {Follower}
+082929 [S2] Got Vote <- [S4]
+082923 [S1] becomes {Follower}
+082933 [S2] Got Vote <- [S1]
+082926 [S2] Got Vote <- [S0]
+082938 [S2] becomes {Leader}
+082940 [S2] broadcasts HeartBeats
+083927 [S5] becomes {Candidate}
+083931 [S5] currentTerm -> (2)
+083936 [S5] sends RequestVote -> [S0]
+083936 [S5] sends RequestVote -> [S1]
+083938 [S5] sends RequestVote -> [S3]
+083946 [S5] sends RequestVote -> [S6]
+083938 [S5] sends RequestVote -> [S2]
+083941 [S5] sends RequestVote -> [S4]
+086148 [S6] becomes {Candidate}
+086153 [S6] currentTerm -> (3)
+086160 [S6] sends RequestVote -> [S0]
+086160 [S6] sends RequestVote -> [S1]
+086160 [S6] sends RequestVote -> [S2]
+086173 [S6] sends RequestVote -> [S5]
+086164 [S6] sends RequestVote -> [S3]
+086171 [S6] sends RequestVote -> [S4]
+086232 [S3] becomes {Candidate}
+086236 [S3] currentTerm -> (3)
+086242 [S3] sends RequestVote -> [S0]
+086242 [S3] sends RequestVote -> [S1]
+086245 [S3] sends RequestVote -> [S2]
+086247 [S3] sends RequestVote -> [S4]
+086249 [S3] sends RequestVote -> [S6]
+086249 [S3] sends RequestVote -> [S5]
+086254 [S1] becomes {Follower}
+086266 [S3] Got Vote <- [S1]
+086257 [S2] becomes {Follower}
+086263 [S4] becomes {Follower}
+086273 [S3] Got Vote <- [S4]
+086271 [S3] Got Vote <- [S2]
+086274 [S5] becomes {Follower}
+086281 [S3] Got Vote <- [S5]
+086281 [S3] becomes {Leader}
+086285 [S3] broadcasts HeartBeats
+086701 [S0] becomes {Candidate}
+086704 [S0] currentTerm -> (3)
+086709 [S0] sends RequestVote -> [S1]
+086712 [S0] sends RequestVote -> [S6]
+086709 [S0] sends RequestVote -> [S2]
+086710 [S0] sends RequestVote -> [S3]
+086711 [S0] sends RequestVote -> [S4]
+086712 [S0] sends RequestVote -> [S5]
+089231 [S6] becomes {Candidate}
+089238 [S6] currentTerm -> (4)
+089242 [S6] sends RequestVote -> [S0]
+089243 [S6] sends RequestVote -> [S1]
+089244 [S6] sends RequestVote -> [S2]
+089244 [S6] sends RequestVote -> [S4]
+089245 [S6] sends RequestVote -> [S5]
+089245 [S6] sends RequestVote -> [S3]
+089329 [S1] becomes {Candidate}
+089339 [S1] currentTerm -> (4)
+089343 [S1] sends RequestVote -> [S0]
+089346 [S1] sends RequestVote -> [S3]
+089345 [S1] sends RequestVote -> [S2]
+089345 [S1] sends RequestVote -> [S4]
+089346 [S1] sends RequestVote -> [S5]
+089347 [S1] sends RequestVote -> [S6]
+089354 [S3] becomes {Follower}
+089367 [S1] Got Vote <- [S3]
+089360 [S2] becomes {Follower}
+089361 [S4] becomes {Follower}
+089371 [S5] becomes {Follower}
+089383 [S1] Got Vote <- [S5]
+089376 [S1] Got Vote <- [S2]
+089380 [S1] Got Vote <- [S4]
+089392 [S1] becomes {Leader}
+089395 [S1] broadcasts HeartBeats
+091314 [S0] becomes {Candidate}
+091317 [S0] currentTerm -> (4)
+091320 [S0] sends RequestVote -> [S1]
+091321 [S0] sends RequestVote -> [S2]
+091327 [S0] sends RequestVote -> [S6]
+091321 [S0] sends RequestVote -> [S3]
+091321 [S0] sends RequestVote -> [S4]
+091322 [S0] sends RequestVote -> [S5]
+092333 [S1] becomes {Candidate}
+092338 [S1] currentTerm -> (5)
+092346 [S1] sends RequestVote -> [S0]
+092346 [S1] sends RequestVote -> [S2]
+092346 [S1] sends RequestVote -> [S4]
+092347 [S1] sends RequestVote -> [S5]
+092347 [S1] sends RequestVote -> [S6]
+092347 [S1] sends RequestVote -> [S3]
+092830 [S2] becomes {Candidate}
+092834 [S2] currentTerm -> (5)
+092837 [S2] sends RequestVote -> [S0]
+092838 [S2] sends RequestVote -> [S1]
+092841 [S2] sends RequestVote -> [S3]
+092842 [S2] sends RequestVote -> [S4]
+092844 [S2] sends RequestVote -> [S5]
+092847 [S2] sends RequestVote -> [S6]
+092857 [S0] becomes {Follower}
+092859 [S2] Got Vote <- [S0]
+092861 [S3] becomes {Follower}
+092865 [S2] Got Vote <- [S3]
+092867 [S5] becomes {Follower}
+092870 [S2] Got Vote <- [S5]
+092874 [S6] becomes {Follower}
+092876 [S2] Got Vote <- [S6]
+092875 [S2] becomes {Leader}
+092881 [S2] broadcasts HeartBeats
+093490 [S4] becomes {Candidate}
+093494 [S4] currentTerm -> (5)
+093499 [S4] sends RequestVote -> [S0]
+093499 [S4] sends RequestVote -> [S1]
+093505 [S4] sends RequestVote -> [S6]
+093500 [S4] sends RequestVote -> [S3]
+093500 [S4] sends RequestVote -> [S5]
+093502 [S4] sends RequestVote -> [S2]
+095378 [S1] becomes {Candidate}
+095381 [S1] currentTerm -> (6)
+095384 [S1] sends RequestVote -> [S0]
+095387 [S1] sends RequestVote -> [S4]
+095386 [S1] sends RequestVote -> [S2]
+095386 [S1] sends RequestVote -> [S3]
+095390 [S1] sends RequestVote -> [S5]
+095394 [S1] sends RequestVote -> [S6]
+095944 [S0] becomes {Candidate}
+095951 [S0] currentTerm -> (6)
+095957 [S0] sends RequestVote -> [S1]
+095957 [S0] sends RequestVote -> [S2]
+095957 [S0] sends RequestVote -> [S3]
+095958 [S0] sends RequestVote -> [S4]
+095960 [S0] sends RequestVote -> [S5]
+095964 [S0] sends RequestVote -> [S6]
+095980 [S2] becomes {Follower}
+095987 [S0] Got Vote <- [S2]
+095999 [S5] becomes {Follower}
+096003 [S0] Got Vote <- [S5]
+095999 [S4] becomes {Follower}
+096010 [S0] Got Vote <- [S4]
+096016 [S0] becomes {Leader}
+096020 [S0] broadcasts HeartBeats
+097185 [S3] becomes {Candidate}
+097189 [S3] currentTerm -> (6)
+097192 [S3] sends RequestVote -> [S0]
+097193 [S3] sends RequestVote -> [S1]
+097193 [S3] sends RequestVote -> [S2]
+097194 [S3] sends RequestVote -> [S4]
+097197 [S3] sends RequestVote -> [S5]
+097200 [S3] sends RequestVote -> [S6]
+097343 [S6] becomes {Candidate}
+097347 [S6] currentTerm -> (6)
+097352 [S6] sends RequestVote -> [S0]
+097353 [S6] sends RequestVote -> [S1]
+097354 [S6] sends RequestVote -> [S2]
+097354 [S6] sends RequestVote -> [S3]
+097355 [S6] sends RequestVote -> [S4]
+097357 [S6] sends RequestVote -> [S5]
+099222 [S5] becomes {Candidate}
+099226 [S5] currentTerm -> (7)
+099230 [S5] sends RequestVote -> [S0]
+099231 [S5] sends RequestVote -> [S1]
+099232 [S5] sends RequestVote -> [S2]
+099234 [S5] sends RequestVote -> [S3]
+099248 [S0] becomes {Follower}
+099252 [S5] Got Vote <- [S0]
+099249 [S5] sends RequestVote -> [S6]
+099250 [S5] sends RequestVote -> [S4]
+099257 [S1] becomes {Follower}
+099266 [S5] Got Vote <- [S1]
+099261 [S2] becomes {Follower}
+099272 [S5] Got Vote <- [S2]
+099268 [S4] becomes {Follower}
+099278 [S5] Got Vote <- [S4]
+099278 [S5] becomes {Leader}
+099286 [S5] broadcasts HeartBeats
+100268 [S3] becomes {Candidate}
+100272 [S3] currentTerm -> (7)
+100277 [S3] sends RequestVote -> [S0]
+100277 [S3] sends RequestVote -> [S2]
+100283 [S3] sends RequestVote -> [S6]
+100277 [S3] sends RequestVote -> [S4]
+100278 [S3] sends RequestVote -> [S1]
+100279 [S3] sends RequestVote -> [S5]
+101625 [S6] becomes {Candidate}
+101629 [S6] currentTerm -> (7)
+101633 [S6] sends RequestVote -> [S0]
+101634 [S6] sends RequestVote -> [S5]
+101634 [S6] sends RequestVote -> [S1]
+101634 [S6] sends RequestVote -> [S2]
+101634 [S6] sends RequestVote -> [S3]
+101634 [S6] sends RequestVote -> [S4]
+102350 [S1] becomes {Candidate}
+102353 [S1] currentTerm -> (8)
+102357 [S1] sends RequestVote -> [S0]
+102360 [S1] sends RequestVote -> [S6]
+102360 [S1] sends RequestVote -> [S5]
+102359 [S1] sends RequestVote -> [S3]
+102359 [S1] sends RequestVote -> [S4]
+102358 [S1] sends RequestVote -> [S2]
+102379 [S6] becomes {Follower}
+102384 [S1] Got Vote <- [S6]
+102386 [S5] becomes {Follower}
+102391 [S1] Got Vote <- [S5]
+102402 [S4] becomes {Follower}
+102404 [S1] Got Vote <- [S4]
+102410 [S1] becomes {Leader}
+102412 [S1] broadcasts HeartBeats
+103334 [S0] becomes {Candidate}
+103339 [S0] currentTerm -> (8)
+103344 [S0] sends RequestVote -> [S1]
+103345 [S0] sends RequestVote -> [S3]
+103345 [S0] sends RequestVote -> [S2]
+103346 [S0] sends RequestVote -> [S4]
+103347 [S0] sends RequestVote -> [S5]
+103347 [S0] sends RequestVote -> [S6]
+103845 [S2] becomes {Candidate}
+103851 [S2] currentTerm -> (8)
+103855 [S2] sends RequestVote -> [S0]
+103859 [S2] sends RequestVote -> [S4]
+103860 [S2] sends RequestVote -> [S5]
+103858 [S2] sends RequestVote -> [S3]
+103857 [S2] sends RequestVote -> [S1]
+103861 [S2] sends RequestVote -> [S6]
+104545 [S3] becomes {Candidate}
+104552 [S3] currentTerm -> (8)
+104558 [S3] sends RequestVote -> [S0]
+104560 [S3] sends RequestVote -> [S1]
+104561 [S3] sends RequestVote -> [S2]
+104563 [S3] sends RequestVote -> [S4]
+104571 [S3] sends RequestVote -> [S6]
+104568 [S3] sends RequestVote -> [S5]
+105513 [S1] becomes {Candidate}
+105520 [S1] currentTerm -> (9)
+105526 [S1] sends RequestVote -> [S0]
+105527 [S1] sends RequestVote -> [S2]
+105534 [S1] sends RequestVote -> [S3]
+105544 [S1] sends RequestVote -> [S4]
+105556 [S1] sends RequestVote -> [S5]
+105560 [S1] sends RequestVote -> [S6]
+105561 [S3] becomes {Follower}
+105565 [S1] Got Vote <- [S3]
+105570 [S5] becomes {Follower}
+105572 [S1] Got Vote <- [S5]
+105575 [S6] becomes {Follower}
+105577 [S1] Got Vote <- [S6]
+105582 [S1] becomes {Leader}
+105584 [S1] broadcasts HeartBeats
+106110 [S4] becomes {Candidate}
+106115 [S4] currentTerm -> (9)
+106118 [S4] sends RequestVote -> [S0]
+106121 [S4] sends RequestVote -> [S3]
+106121 [S4] sends RequestVote -> [S2]
+106122 [S4] sends RequestVote -> [S6]
+106122 [S4] sends RequestVote -> [S5]
+106120 [S4] sends RequestVote -> [S1]
+106356 [S0] becomes {Candidate}
+106360 [S0] currentTerm -> (9)
+106365 [S0] sends RequestVote -> [S1]
+106367 [S0] sends RequestVote -> [S2]
+106367 [S0] sends RequestVote -> [S3]
+106368 [S0] sends RequestVote -> [S4]
+106368 [S0] sends RequestVote -> [S5]
+106377 [S0] sends RequestVote -> [S6]
+107898 [S2] becomes {Candidate}
+107902 [S2] currentTerm -> (9)
+107905 [S2] sends RequestVote -> [S0]
+107909 [S2] sends RequestVote -> [S3]
+107906 [S2] sends RequestVote -> [S1]
+107914 [S2] sends RequestVote -> [S4]
+107922 [S2] sends RequestVote -> [S5]
+107925 [S2] sends RequestVote -> [S6]
+108798 [S6] becomes {Candidate}
+108802 [S6] currentTerm -> (10)
+108807 [S6] sends RequestVote -> [S0]
+108808 [S6] sends RequestVote -> [S1]
+108810 [S6] sends RequestVote -> [S2]
+108814 [S6] sends RequestVote -> [S3]
+108814 [S6] sends RequestVote -> [S4]
+108818 [S6] sends RequestVote -> [S5]
+108820 [S1] becomes {Follower}
+108827 [S6] Got Vote <- [S1]
+108825 [S3] becomes {Follower}
+108833 [S6] Got Vote <- [S3]
+108831 [S5] becomes {Follower}
+108838 [S6] Got Vote <- [S5]
+108845 [S6] becomes {Leader}
+108847 [S6] broadcasts HeartBeats
+110650 [S0] becomes {Candidate}
+110653 [S0] currentTerm -> (10)
+110658 [S0] sends RequestVote -> [S1]
+110658 [S0] sends RequestVote -> [S2]
+110659 [S0] sends RequestVote -> [S3]
+110661 [S0] sends RequestVote -> [S5]
+110661 [S0] sends RequestVote -> [S4]
+110666 [S0] sends RequestVote -> [S6]
+110712 [S4] becomes {Candidate}
+110715 [S4] currentTerm -> (10)
+110718 [S4] sends RequestVote -> [S0]
+110721 [S4] sends RequestVote -> [S5]
+110719 [S4] sends RequestVote -> [S2]
+110719 [S4] sends RequestVote -> [S3]
+110720 [S4] sends RequestVote -> [S1]
+110723 [S4] sends RequestVote -> [S6]
+110747 [S2] becomes {Follower}
+110749 [S4] Got Vote <- [S2]
+112225 [S1] becomes {Candidate}
+112229 [S1] currentTerm -> (11)
+112233 [S1] sends RequestVote -> [S0]
+112234 [S1] sends RequestVote -> [S2]
+112235 [S1] sends RequestVote -> [S3]
+112242 [S1] sends RequestVote -> [S4]
+112243 [S2] becomes {Follower}
+112248 [S1] Got Vote <- [S2]
+112249 [S1] sends RequestVote -> [S5]
+112249 [S4] becomes {Follower}
+112257 [S1] Got Vote <- [S4]
+112255 [S1] sends RequestVote -> [S6]
+112270 [S6] becomes {Follower}
+112273 [S1] Got Vote <- [S6]
+112280 [S1] becomes {Leader}
+112282 [S1] broadcasts HeartBeats
+113017 [S5] becomes {Candidate}
+113020 [S5] currentTerm -> (11)
+113024 [S5] sends RequestVote -> [S0]
+113026 [S5] sends RequestVote -> [S3]
+113026 [S5] sends RequestVote -> [S4]
+113025 [S5] sends RequestVote -> [S2]
+113024 [S5] sends RequestVote -> [S1]
+113027 [S5] sends RequestVote -> [S6]
+113643 [S3] becomes {Candidate}
+113648 [S3] currentTerm -> (11)
+113652 [S3] sends RequestVote -> [S0]
+113652 [S3] sends RequestVote -> [S1]
+113653 [S3] sends RequestVote -> [S4]
+113654 [S3] sends RequestVote -> [S2]
+113656 [S3] sends RequestVote -> [S5]
+113661 [S3] sends RequestVote -> [S6]
+115023 [S0] becomes {Candidate}
+115026 [S0] currentTerm -> (11)
+115031 [S0] sends RequestVote -> [S1]
+115036 [S0] sends RequestVote -> [S2]
+115040 [S0] sends RequestVote -> [S3]
+115046 [S0] sends RequestVote -> [S4]
+115049 [S0] sends RequestVote -> [S5]
+115053 [S0] sends RequestVote -> [S6]
+115442 [S2] becomes {Candidate}
+115445 [S2] currentTerm -> (12)
+115449 [S2] sends RequestVote -> [S0]
+115453 [S2] sends RequestVote -> [S3]
+115455 [S2] sends RequestVote -> [S4]
+115453 [S2] sends RequestVote -> [S1]
+115455 [S2] sends RequestVote -> [S5]
+115456 [S2] sends RequestVote -> [S6]
+115567 [S1] becomes {Candidate}
+115570 [S1] currentTerm -> (12)
+115574 [S1] sends RequestVote -> [S0]
+115577 [S1] sends RequestVote -> [S4]
+115574 [S1] sends RequestVote -> [S2]
+115576 [S1] sends RequestVote -> [S3]
+115586 [S1] sends RequestVote -> [S5]
+115588 [S0] becomes {Follower}
+115594 [S1] Got Vote <- [S0]
+115590 [S1] sends RequestVote -> [S6]
+115595 [S3] becomes {Follower}
+115602 [S1] Got Vote <- [S3]
+115598 [S5] becomes {Follower}
+115607 [S1] Got Vote <- [S5]
+115609 [S6] becomes {Follower}
+115612 [S1] Got Vote <- [S6]
+115612 [S1] becomes {Leader}
+115616 [S1] broadcasts HeartBeats
+116787 [S4] becomes {Candidate}
+116791 [S4] currentTerm -> (12)
+116796 [S4] sends RequestVote -> [S1]
+116797 [S4] sends RequestVote -> [S0]
+116797 [S4] sends RequestVote -> [S3]
+116798 [S4] sends RequestVote -> [S5]
+116798 [S4] sends RequestVote -> [S6]
+116798 [S4] sends RequestVote -> [S2]
+118641 [S3] becomes {Candidate}
+118644 [S3] currentTerm -> (13)
+118647 [S3] sends RequestVote -> [S0]
+118648 [S3] sends RequestVote -> [S1]
+118648 [S3] sends RequestVote -> [S2]
+118655 [S0] becomes {Follower}
+118658 [S3] Got Vote <- [S0]
+118650 [S3] sends RequestVote -> [S4]
+118656 [S1] becomes {Follower}
+118656 [S3] sends RequestVote -> [S5]
+118658 [S3] sends RequestVote -> [S6]
+118668 [S3] Got Vote <- [S1]
+118681 [S6] becomes {Follower}
+118684 [S3] Got Vote <- [S6]
+118683 [S5] becomes {Follower}
+118690 [S3] Got Vote <- [S5]
+118694 [S3] becomes {Leader}
+118697 [S3] broadcasts HeartBeats
+119549 [S2] becomes {Candidate}
+119555 [S2] currentTerm -> (13)
+119562 [S2] sends RequestVote -> [S0]
+119569 [S2] sends RequestVote -> [S6]
+119569 [S2] sends RequestVote -> [S4]
+119570 [S2] sends RequestVote -> [S3]
+119570 [S2] sends RequestVote -> [S5]
+119570 [S2] sends RequestVote -> [S1]
+121120 [S4] becomes {Candidate}
+121123 [S4] currentTerm -> (13)
+121127 [S4] sends RequestVote -> [S1]
+121131 [S4] sends RequestVote -> [S5]
+121134 [S4] sends RequestVote -> [S6]
+121128 [S4] sends RequestVote -> [S0]
+121129 [S4] sends RequestVote -> [S3]
+121130 [S4] sends RequestVote -> [S2]
+121902 [S6] becomes {Candidate}
+121905 [S6] currentTerm -> (14)
+121909 [S6] sends RequestVote -> [S0]
+121911 [S6] sends RequestVote -> [S1]
+121911 [S6] sends RequestVote -> [S2]
+121911 [S6] sends RequestVote -> [S3]
+121913 [S6] sends RequestVote -> [S5]
+121913 [S6] sends RequestVote -> [S4]
+121917 [S0] becomes {Follower}
+121931 [S6] Got Vote <- [S0]
+121926 [S3] becomes {Follower}
+121930 [S5] becomes {Follower}
+121938 [S6] Got Vote <- [S5]
+121936 [S6] Got Vote <- [S3]
+121936 [S4] becomes {Follower}
+121945 [S6] Got Vote <- [S4]
+121949 [S6] becomes {Leader}
+121952 [S6] broadcasts HeartBeats
+123589 [S1] becomes {Candidate}
+123593 [S1] currentTerm -> (14)
+123595 [S1] sends RequestVote -> [S0]
+123596 [S1] sends RequestVote -> [S2]
+123597 [S1] sends RequestVote -> [S3]
+123605 [S1] sends RequestVote -> [S6]
+123597 [S1] sends RequestVote -> [S4]
+123601 [S1] sends RequestVote -> [S5]
+124353 [S2] becomes {Candidate}
+124358 [S2] currentTerm -> (14)
+124363 [S2] sends RequestVote -> [S0]
+124364 [S2] sends RequestVote -> [S1]
+124365 [S2] sends RequestVote -> [S3]
+124365 [S2] sends RequestVote -> [S5]
+124365 [S2] sends RequestVote -> [S4]
+124365 [S2] sends RequestVote -> [S6]
+125210 [S3] becomes {Candidate}
+125213 [S3] currentTerm -> (15)
+125217 [S3] sends RequestVote -> [S0]
+125218 [S3] sends RequestVote -> [S1]
+125219 [S3] sends RequestVote -> [S4]
+125219 [S3] sends RequestVote -> [S5]
+125230 [S1] becomes {Follower}
+125219 [S3] sends RequestVote -> [S6]
+125220 [S3] sends RequestVote -> [S2]
+125227 [S0] becomes {Follower}
+125234 [S4] becomes {Follower}
+125247 [S3] Got Vote <- [S4]
+125235 [S3] Got Vote <- [S1]
+125241 [S5] becomes {Follower}
+125243 [S6] becomes {Follower}
+125244 [S3] Got Vote <- [S0]
+125246 [S2] becomes {Follower}
+125258 [S3] Got Vote <- [S5]
+125260 [S3] Got Vote <- [S6]
+125265 [S3] Got Vote <- [S2]
+125265 [S3] becomes {Leader}
+125277 [S3] broadcasts HeartBeats
+128242 [S3] becomes {Candidate}
+128245 [S3] currentTerm -> (16)
+128249 [S3] sends RequestVote -> [S0]
+128252 [S3] sends RequestVote -> [S4]
+128252 [S3] sends RequestVote -> [S6]
+128251 [S3] sends RequestVote -> [S1]
+128259 [S0] becomes {Follower}
+128263 [S3] Got Vote <- [S0]
+128252 [S3] sends RequestVote -> [S5]
+128264 [S1] becomes {Follower}
+128271 [S3] Got Vote <- [S1]
+128251 [S3] sends RequestVote -> [S2]
+128264 [S6] becomes {Follower}
+128264 [S4] becomes {Follower}
+128278 [S5] becomes {Follower}
+128285 [S3] Got Vote <- [S5]
+128280 [S3] Got Vote <- [S6]
+128282 [S3] Got Vote <- [S4]
+128285 [S2] becomes {Follower}
+128297 [S3] Got Vote <- [S2]
+128290 [S3] becomes {Leader}
+128303 [S3] broadcasts HeartBeats
+  ... Passed --   5.4  7  372   55728    0
+PASS
+131386 [S5] becomes {Candidate}
+131391 [S5] currentTerm -> (17)
+131394 [S5] sends RequestVote -> [S0]
+131397 [S5] sends RequestVote -> [S4]
+131394 [S5] sends RequestVote -> [S1]
+131395 [S5] sends RequestVote -> [S2]
+131395 [S5] sends RequestVote -> [S3]
+131397 [S5] sends RequestVote -> [S6]
+131537 [S1] becomes {Candidate}
+131542 [S1] currentTerm -> (17)
+131547 [S1] sends RequestVote -> [S0]
+131547 [S1] sends RequestVote -> [S2]
+131553 [S6] becomes {Candidate}
+131555 [S6] currentTerm -> (17)
+131548 [S1] sends RequestVote -> [S4]
+131562 [S6] sends RequestVote -> [S1]
+131548 [S1] sends RequestVote -> [S5]
+131548 [S1] sends RequestVote -> [S6]
+131548 [S1] sends RequestVote -> [S3]
+131562 [S6] sends RequestVote -> [S3]
+131563 [S6] sends RequestVote -> [S0]
+131563 [S6] sends RequestVote -> [S2]
+131563 [S6] sends RequestVote -> [S4]
+131563 [S6] sends RequestVote -> [S5]
+131565 [S3] becomes {Candidate}
+131587 [S3] currentTerm -> (17)
+131591 [S3] sends RequestVote -> [S0]
+131591 [S3] sends RequestVote -> [S1]
+131591 [S3] sends RequestVote -> [S2]
+131592 [S3] sends RequestVote -> [S4]
+131592 [S3] sends RequestVote -> [S5]
+131592 [S3] sends RequestVote -> [S6]
+131896 [S0] becomes {Candidate}
+131901 [S0] currentTerm -> (17)
+131904 [S0] sends RequestVote -> [S1]
+131907 [S0] sends RequestVote -> [S5]
+131907 [S0] sends RequestVote -> [S6]
+131905 [S0] sends RequestVote -> [S3]
+131906 [S0] sends RequestVote -> [S4]
+131905 [S0] sends RequestVote -> [S2]
+132655 [S4] becomes {Candidate}
+132660 [S4] currentTerm -> (17)
+132664 [S4] sends RequestVote -> [S0]
+132665 [S4] sends RequestVote -> [S1]
+132665 [S4] sends RequestVote -> [S2]
+132666 [S4] sends RequestVote -> [S5]
+132666 [S4] sends RequestVote -> [S3]
+132666 [S4] sends RequestVote -> [S6]
+132956 [S2] becomes {Candidate}
+132960 [S2] currentTerm -> (17)
+132963 [S2] sends RequestVote -> [S0]
+132966 [S2] sends RequestVote -> [S6]
+132966 [S2] sends RequestVote -> [S5]
+132965 [S2] sends RequestVote -> [S3]
+132965 [S2] sends RequestVote -> [S4]
+132964 [S2] sends RequestVote -> [S1]
+ok  	6.824/raft	14.007s
