@@ -444,6 +444,7 @@ func (cfg *config) nCommitted(index int) (int, interface{}) {
 
 		cfg.mu.Lock()
 		cmd1, ok := cfg.logs[i][index]
+		// cfg.t.Logf("<<TEST>> Command is %v", cmd1)
 		cfg.mu.Unlock()
 
 		if ok {
@@ -519,6 +520,7 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				index1, _, ok := rf.Start(cmd)
 				if ok {
 					index = index1
+					// cfg.t.Fatalf("index is %d", index)
 					break
 				}
 			}
@@ -530,6 +532,7 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 			t1 := time.Now()
 			for time.Since(t1).Seconds() < 2 {
 				nd, cmd1 := cfg.nCommitted(index)
+				// cfg.t.Fatalf("command is %v", cmd1)
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd1 == cmd {

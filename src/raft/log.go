@@ -8,8 +8,6 @@ type LogEntry struct {
 }
 
 func (rf *Raft) newLogEntry(cmd interface{}) LogEntry {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return LogEntry{
 		Term:    rf.currentTerm,
 		Command: cmd,
@@ -17,75 +15,65 @@ func (rf *Raft) newLogEntry(cmd interface{}) LogEntry {
 	}
 }
 
-// return true if 1 is at least as up-to-date as 2
-func checkUpToDate(logIndex1 int, logTerm1 int, logIndex2 int, logTerm2 int) bool {
-	if (logTerm1 > logTerm2) || (logTerm1 == logTerm2 && logIndex1 >= logIndex2) {
+// return true if candidate is at least as up-to-date as rf
+func (rf *Raft) checkUpToDate(candidateIndex int, candidateTerm int) bool {
+	// Debug(dRV, "[Candidate]: Term:%d, LastIndex:%d [S%d]: Term:%v, LastIndex:%v", candidateTerm, candidateIndex, rf.me, rf.GetLastLogEntry().Term, rf.GetLastLogEntry().Index)
+	if (candidateTerm > rf.GetLastLogEntry().Term) || (candidateTerm == rf.GetLastLogEntry().Term && candidateIndex >= rf.GetLastLogEntry().Index) {
+		// Debug(dRV, "[S%d] is update to date\n", rf.me)
 		return true
+	} else {
+		// Debug(dRV, "[S%d] is NOT update to date\n", rf.me)
+		return false
 	}
-	return false
 }
 
 // To avoid situation where length of log < 1
 func (rf *Raft) GetLastLogEntry() LogEntry {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
-	if len(rf.log) > 0 {
-		return rf.log[len(rf.log)-1]
-	} else {
-		return LogEntry{
-			Index: 0,
-			Term:  0,
-		}
-	}
+	return rf.log[len(rf.log)-1]
+	// if len(rf.log) > 0 {
+	// 	return rf.log[len(rf.log)-1]
+	// } else {
+	// 	return LogEntry{
+	// 		Index: 0,
+	// 		Term:  0,
+	// 	}
+	// }
 }
 
 func (rf *Raft) GetFirstLogEntry() LogEntry {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
-	if len(rf.log) > 0 {
-		return rf.log[0]
-	} else {
-		return LogEntry{
-			Index: 0,
-			Term:  0,
-		}
-	}
+	return rf.log[0]
+	// if len(rf.log) > 0 {
+	// 	return rf.log[0]
+	// } else {
+	// 	return LogEntry{
+	// 		Index: 0,
+	// 		Term:  0,
+	// 	}
+	// }
 }
 
 func (rf *Raft) AppendLogEntry(logEntry LogEntry) {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	rf.log = append(rf.log, logEntry)
 }
 
 func (rf *Raft) GetLogLength() int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return len(rf.log)
 }
 
 func (rf *Raft) GetIndex(index int) int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return index - rf.GetFirstLogEntry().Index
 }
 
 func (rf *Raft) GetLogEntry(index int) LogEntry {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	// Debug(dLog, "index is %d\n", index)
 	return rf.log[index]
 }
 
 func (rf *Raft) GetSubarrayEnd(idx int) []LogEntry {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return rf.log[idx:]
 }
 
 func (rf *Raft) GetXIndex(prevLogIndex int, prevLogTerm int) int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	XIndex := prevLogIndex
 	for XIndex-1 >= 0 && rf.GetLogEntry(XIndex-1).Term == prevLogTerm {
 		XIndex--
@@ -95,11 +83,9 @@ func (rf *Raft) GetXIndex(prevLogIndex int, prevLogTerm int) int {
 
 func (rf *Raft) AppendNewEntries(prevLogIndex int, Entries []LogEntry) {
 	// find first logEntry in Entries that (1) out of range (2) conflicts with Term of rf.log[same idx]
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	rf.log = append(rf.log[0:prevLogIndex+1], Entries...)
 	// for idx, logEntry := range Entries {
-	// 	if idx >= len(rf.log) || rf.GetLogEntry(idx).Term != logEntry.Term {
+	// 	if prevLogIndex+1+idx >= len(rf.log) || rf.GetLogEntry(prevLogIndex+1+idx).Term != logEntry.Term {
 	// 		rf.log = append(rf.log[0:prevLogIndex+1+idx], Entries[idx:]...)
 	// 		break
 	// 	}

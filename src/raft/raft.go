@@ -76,11 +76,16 @@ type Raft struct {
 	lastApplied int
 
 	// DIY
-	state         RaftState
-	electionTimer *time.Timer
-	// heartBeatTimer *time.Timer
-	heartBeatCond  *sync.Cond
+	state          RaftState
+	electionTimer  *time.Timer
+	heartBeatTimer *time.Timer
+	// heartBeatCond  *sync.Cond
 	replicatorCond []*sync.Cond
+
+	electionTime time.Time
+
+	applyCh   chan ApplyMsg
+	applyCond *sync.Cond
 
 	// Volatile State for leaders
 	nextIndex  []int
@@ -106,6 +111,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	rf.state = Follower
 	rf.electionTimer = time.NewTimer(GetRandomElectionTime())
+	rf.heartBeatTimer = time.NewTimer(GetHeartBeatTime())
 	rf.replicatorCond = make([]*sync.Cond, len(peers))
 
 	// Volatile States for leader
@@ -122,14 +128,20 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	// start separate goroutines
 	go rf.ticker()
 
+	rf.applyCond = sync.NewCond(&sync.Mutex{})
+	rf.applyCh = applyCh
+	// go rf.applier()
+
+	// rf.electionTime = time.Now()
+
 	// HeartBeatSender
-	rf.heartBeatCond = sync.NewCond(&sync.Mutex{})
-	go rf.HeartBeastSender()
+	// rf.heartBeatCond = sync.NewCond(&sync.Mutex{})
+	// go rf.HeartBeastSender()
 	// LogReplicationSender
-	for peer, _ := range peers {
-		rf.replicatorCond[peer] = sync.NewCond(&sync.Mutex{})
-		go rf.LogReplicationSender(peer)
-	}
+	// for peer, _ := range peers {
+	// 	rf.replicatorCond[peer] = sync.NewCond(&sync.Mutex{})
+	// 	go rf.LogReplicationSender(peer)
+	// }
 
 	return rf
 }
@@ -137,39 +149,35 @@ func Make(peers []*labrpc.ClientEnd, me int,
 // rf.me do not have any writing operation
 
 func (rf *Raft) IsLeader() bool {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return rf.state == Leader
 }
 
+func (rf *Raft) GetCurState() RaftState {
+	return rf.state
+}
+
 func (rf *Raft) GetVoteFor() int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return rf.votedFor
 }
 
-func (rf *Raft) SetCandidate(candidateId int) {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	rf.votedFor = candidateId
+func (rf *Raft) SetVoteFor(candidate int) {
+	rf.votedFor = candidate
 }
 
 func (rf *Raft) GetTerm() int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return rf.currentTerm
 }
 
 func (rf *Raft) GetMajority() int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return len(rf.peers)/2 + 1
 }
 
 func (rf *Raft) ResetElectionTimer() {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	rf.electionTimer.Reset(GetRandomElectionTime())
+}
+
+func (rf *Raft) ResetHeartBeatTimer() {
+	rf.heartBeatTimer.Reset(GetHeartBeatTime())
 }
 
 // return currentTerm and whether this server
@@ -187,8 +195,6 @@ func (rf *Raft) GetState() (int, bool) {
 }
 
 func (rf *Raft) GetTermArray() string {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	terms := []int{}
 	for _, logEntry := range rf.log {
 		terms = append(terms, logEntry.Term)
@@ -196,21 +202,29 @@ func (rf *Raft) GetTermArray() string {
 	return fmt.Sprint(terms)
 }
 
+func (rf *Raft) GetCommandArray() string {
+	cmds := []interface{}{}
+	for _, logEntry := range rf.log {
+		cmds = append(cmds, logEntry.Command)
+	}
+	return fmt.Sprint(cmds)
+}
+
 func (rf *Raft) GetNextIndex(peer int) int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return rf.nextIndex[peer]
 }
 
 func (rf *Raft) GetCommitIndex() int {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return rf.commitIndex
 }
 
-func (rf *Raft) GetMatchIndex(peer int) int {
+func (rf *Raft) GetLastApplied() int {
 	rf.mu.RLock()
 	defer rf.mu.RUnlock()
+	return rf.lastApplied
+}
+
+func (rf *Raft) GetMatchIndex(peer int) int {
 	return rf.matchIndex[peer]
 }
 
@@ -222,21 +236,27 @@ func min(a, b int) int {
 	}
 }
 
+func max(a, b int) int {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
+}
+
 func (rf *Raft) SetCommitIndex(newCommitIndex int) {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	rf.commitIndex = newCommitIndex
 }
 
+func (rf *Raft) SetLastApplied(newLastApplied int) {
+	rf.lastApplied = newLastApplied
+}
+
 func (rf *Raft) SetNextIndex(peer int, newNextIndex int) {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	rf.nextIndex[peer] = newNextIndex
 }
 
 func (rf *Raft) SetMatchIndex(peer int, newMatchIndex int) {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	rf.matchIndex[peer] = newMatchIndex
 }
 
@@ -244,7 +264,7 @@ func (rf *Raft) AdvanceCommitIndexFollower(LeaderCommit int) {
 	if LeaderCommit > rf.GetCommitIndex() {
 		newCommitIndex := min(LeaderCommit, rf.GetLastLogEntry().Index)
 		rf.SetCommitIndex(newCommitIndex)
-		// Debug(dLog, "[S%d](Follower)'s Commmit Index becomes %d", rf.me, newCommitIndex)
+		Debug(dLog, "[S%d](Follower)'s Commmit Index becomes %d", rf.me, newCommitIndex)
 	}
 }
 
@@ -258,11 +278,11 @@ func (rf *Raft) AdvanceCommitIndexLeader() {
 			num := 1
 			for peer := range rf.peers {
 				if peer != rf.me && rf.GetMatchIndex(peer) >= N {
-					// Debug(dLog, "[S%d] tries to increment Commit Index to %d, Checking [S%d]", rf.me, N, peer)
+					Debug(dLog, "[S%d] tries to increment Commit Index to %d, Checking [S%d]", rf.me, N, peer)
 					num++
 					if num == rf.GetMajority() {
 						rf.SetCommitIndex(N)
-						// Debug(dLog, "[S%d](Leader)'s Commmit Index becomes %d", rf.me, N)
+						Debug(dLog, "[S%d](Leader)'s Commmit Index becomes %d", rf.me, N)
 						break
 					}
 				}
@@ -360,13 +380,14 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	// (1) Add a new logEntry to rf.log
 	logEntry := rf.newLogEntry(command)
 	rf.AppendLogEntry(logEntry)
-	Debug(dLog, "[S%d] adds a new logEntry of Term %d\n", rf.me, rf.GetTerm())
+	index, term = logEntry.Index, logEntry.Term
+	Debug(dLog, "[S%d] adds a new logEntry of {Term: %v}, {Command %v}\n", rf.me, rf.GetTerm(), command)
 	Debug(dLog, "[S%d] log becomes: %q", rf.me, rf.GetTermArray())
+	// Debug(dLog, "index is %d", index)
 	// (2) broadcast AppendEntry to each server
 	rf.BroadcastLogReplication()
 
 	// (3) update index, term
-	index, term = logEntry.Index, logEntry.Term
 	return index, term, isLeader
 }
 
@@ -405,4 +426,27 @@ func (rf *Raft) killed() bool {
 
 // func getRandomHeartBeatTime() time.Duration {
 // 	return time.Duration((rand.Intn(100-50+1) + 50)) * time.Millisecond
+// }
+
+// func (rf *Raft) applier() {
+// 	for rf.killed() == false {
+// 		rf.applyCond.L.Lock()
+// 		defer rf.applyCond.L.Unlock()
+// 		// if there is no need to apply entries, just release CPU and wait other goroutine's signal if they commit new entries
+// 		for rf.GetLastApplied() >= rf.GetCommitIndex() {
+// 			rf.applyCond.Wait()
+// 		}
+// 		entries := make([]LogEntry, rf.GetCommitIndex()-rf.GetLastApplied())
+// 		copy(entries, rf.log[rf.GetLastApplied()+1:rf.GetCommitIndex()+1])
+// 		for _, logEntry := range entries {
+// 			rf.applyCh <- ApplyMsg{
+// 				CommandValid: true,
+// 				Command:      logEntry.Command,
+// 				CommandIndex: logEntry.Index,
+// 			}
+// 		}
+// 		Debug(dLog, "[S%d] applies entries %d ~ %d in term %d", rf.me, rf.GetLastApplied(), rf.GetCommitIndex(), rf.GetTerm())
+// 		// DPrintf("{Node %v} applies entries %v-%v in term %v", rf.me, rf.lastApplied, commitIndex, rf.currentTerm)
+// 		rf.SetLastApplied(max(rf.GetLastApplied(), rf.GetCommitIndex()))
+// 	}
 // }

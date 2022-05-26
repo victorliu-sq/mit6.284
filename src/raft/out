@@ -1,1121 +1,2104 @@
+000008 [S0] becomes {Candidate}
+000013 [S0] currentTerm -> (1)
+000015 [S1] becomes {Candidate}
+000017 [S1] currentTerm -> (1)
 Test (2A): initial election ...
-007031 [S0] becomes {Candidate}
-007034 [S0] currentTerm -> (1)
-007038 [S0] sends RequestVote -> [S2]
-007038 [S0] sends RequestVote -> [S1]
-007049 [S2] becomes {Follower}
-007053 [S0] Got Vote <- [S2]
-007051 [S1] becomes {Follower}
-007065 [S0] Got Vote <- [S1]
-007062 [S0] becomes {Leader}
-007082 prevLogIndex: 0, prevLogTerm: 0
-007087 S1 log becomes: "[0]"
-007092 [S1](Follower)'s Commit Index is 0
-007085 prevLogIndex: 0, prevLogTerm: 0
-007105 S2 log becomes: "[0]"
-007097 prevLogIndex: 0, prevLogTerm: 0
-007102 prevLogIndex: 0, prevLogTerm: 0
-007115 S2 log becomes: "[0]"
-007104 [S0] changes matchIndex of [S1] to 0
-007104 prevLogIndex: 0, prevLogTerm: 0
-007109 prevLogIndex: 0, prevLogTerm: 0
-007109 [S2](Follower)'s Commit Index is 0
-007110 prevLogIndex: 0, prevLogTerm: 0
-007112 S1 log becomes: "[0]"
-007114 prevLogIndex: 0, prevLogTerm: 0
-007114 prevLogIndex: 0, prevLogTerm: 0
-007121 prevLogIndex: 0, prevLogTerm: 0
-007121 [S2](Follower)'s Commit Index is 0
-007122 prevLogIndex: 0, prevLogTerm: 0
-007122 prevLogIndex: 0, prevLogTerm: 0
-007124 [S0](Leader)'s Commit Index is 0
-007126 S1 log becomes: "[0]"
-007126 prevLogIndex: 0, prevLogTerm: 0
-007127 prevLogIndex: 0, prevLogTerm: 0
-007127 S2 log becomes: "[0]"
-007133 S1 log becomes: "[0]"
-007134 prevLogIndex: 0, prevLogTerm: 0
-007135 [S1](Follower)'s Commit Index is 0
-007136 [S0] changes matchIndex of [S2] to 0
-007137 S2 log becomes: "[0]"
-007138 prevLogIndex: 0, prevLogTerm: 0
-007139 S2 log becomes: "[0]"
-007141 S2 log becomes: "[0]"
-007142 prevLogIndex: 0, prevLogTerm: 0
-007142 prevLogIndex: 0, prevLogTerm: 0
-007144 prevLogIndex: 0, prevLogTerm: 0
-007146 S1 log becomes: "[0]"
-007147 [S0] changes matchIndex of [S2] to 0
-007148 S1 log becomes: "[0]"
-007149 prevLogIndex: 0, prevLogTerm: 0
-007151 [S1](Follower)'s Commit Index is 0
-007153 S1 log becomes: "[0]"
-007154 prevLogIndex: 0, prevLogTerm: 0
-007154 S2 log becomes: "[0]"
-007155 prevLogIndex: 0, prevLogTerm: 0
-007156 prevLogIndex: 0, prevLogTerm: 0
-007157 [S2](Follower)'s Commit Index is 0
-007158 prevLogIndex: 0, prevLogTerm: 0
-007158 [S1](Follower)'s Commit Index is 0
-007158 prevLogIndex: 0, prevLogTerm: 0
-007161 prevLogIndex: 0, prevLogTerm: 0
-007161 S2 log becomes: "[0]"
-007165 prevLogIndex: 0, prevLogTerm: 0
-007167 [S0](Leader)'s Commit Index is 0
-007167 [S0] changes matchIndex of [S1] to 0
-007173 prevLogIndex: 0, prevLogTerm: 0
-007173 [S2](Follower)'s Commit Index is 0
-007174 prevLogIndex: 0, prevLogTerm: 0
-007175 S1 log becomes: "[0]"
-007176 [S2](Follower)'s Commit Index is 0
-007178 prevLogIndex: 0, prevLogTerm: 0
-007179 S1 log becomes: "[0]"
-007180 prevLogIndex: 0, prevLogTerm: 0
-007182 S2 log becomes: "[0]"
-007182 [S2](Follower)'s Commit Index is 0
-007182 prevLogIndex: 0, prevLogTerm: 0
-007183 S1 log becomes: "[0]"
-007184 prevLogIndex: 0, prevLogTerm: 0
-007184 [S1](Follower)'s Commit Index is 0
-007186 prevLogIndex: 0, prevLogTerm: 0
-007186 [S0](Leader)'s Commit Index is 0
-007187 [S1](Follower)'s Commit Index is 0
-007189 S2 log becomes: "[0]"
-007189 prevLogIndex: 0, prevLogTerm: 0
-007193 prevLogIndex: 0, prevLogTerm: 0
-007194 prevLogIndex: 0, prevLogTerm: 0
-007195 [S0] changes matchIndex of [S1] to 0
-007195 prevLogIndex: 0, prevLogTerm: 0
-007196 [S1](Follower)'s Commit Index is 0
-007196 prevLogIndex: 0, prevLogTerm: 0
-007198 prevLogIndex: 0, prevLogTerm: 0
-007198 S1 log becomes: "[0]"
-007200 [S2](Follower)'s Commit Index is 0
-007202 S2 log becomes: "[0]"
-007206 prevLogIndex: 0, prevLogTerm: 0
-007205 prevLogIndex: 0, prevLogTerm: 0
-007207 S2 log becomes: "[0]"
-007212 prevLogIndex: 0, prevLogTerm: 0
-007212 prevLogIndex: 0, prevLogTerm: 0
-007212 S2 log becomes: "[0]"
-007213 [S0] changes matchIndex of [S2] to 0
-007221 prevLogIndex: 0, prevLogTerm: 0
-007221 prevLogIndex: 0, prevLogTerm: 0
-007223 prevLogIndex: 0, prevLogTerm: 0
-007224 S1 log becomes: "[0]"
-007226 prevLogIndex: 0, prevLogTerm: 0
-007226 [S0] changes matchIndex of [S1] to 0
-007227 S1 log becomes: "[0]"
-007228 prevLogIndex: 0, prevLogTerm: 0
-007229 [S2](Follower)'s Commit Index is 0
-007232 prevLogIndex: 0, prevLogTerm: 0
-007232 S1 log becomes: "[0]"
-007234 prevLogIndex: 0, prevLogTerm: 0
-007236 prevLogIndex: 0, prevLogTerm: 0
-007236 [S0](Leader)'s Commit Index is 0
-007238 S1 log becomes: "[0]"
-007242 prevLogIndex: 0, prevLogTerm: 0
-007242 prevLogIndex: 0, prevLogTerm: 0
-007242 S2 log becomes: "[0]"
-007245 [S1](Follower)'s Commit Index is 0
-007245 [S0] changes matchIndex of [S2] to 0
-007247 prevLogIndex: 0, prevLogTerm: 0
-007249 [S0] changes matchIndex of [S2] to 0
-007251 S2 log becomes: "[0]"
-007253 prevLogIndex: 0, prevLogTerm: 0
-007255 prevLogIndex: 0, prevLogTerm: 0
-007255 [S1](Follower)'s Commit Index is 0
-007255 prevLogIndex: 0, prevLogTerm: 0
-007257 S1 log becomes: "[0]"
-007258 [S2](Follower)'s Commit Index is 0
-007259 prevLogIndex: 0, prevLogTerm: 0
-007262 prevLogIndex: 0, prevLogTerm: 0
-007263 prevLogIndex: 0, prevLogTerm: 0
-007264 prevLogIndex: 0, prevLogTerm: 0
-007265 S2 log becomes: "[0]"
-007266 [S0] changes matchIndex of [S2] to 0
-007267 [S1](Follower)'s Commit Index is 0
-007271 prevLogIndex: 0, prevLogTerm: 0
-007271 S2 log becomes: "[0]"
-007271 prevLogIndex: 0, prevLogTerm: 0
-007273 prevLogIndex: 0, prevLogTerm: 0
-007275 prevLogIndex: 0, prevLogTerm: 0
-007275 S2 log becomes: "[0]"
-007277 [S0] changes matchIndex of [S1] to 0
-007280 prevLogIndex: 0, prevLogTerm: 0
-007283 [S2](Follower)'s Commit Index is 0
-007284 prevLogIndex: 0, prevLogTerm: 0
-007284 prevLogIndex: 0, prevLogTerm: 0
-007285 [S0] changes matchIndex of [S1] to 0
-007287 S1 log becomes: "[0]"
-007288 prevLogIndex: 0, prevLogTerm: 0
-007290 prevLogIndex: 0, prevLogTerm: 0
-007290 S1 log becomes: "[0]"
-007291 prevLogIndex: 0, prevLogTerm: 0
-007292 S1 log becomes: "[0]"
-007294 prevLogIndex: 0, prevLogTerm: 0
-007295 prevLogIndex: 0, prevLogTerm: 0
-007296 [S0](Leader)'s Commit Index is 0
-007297 prevLogIndex: 0, prevLogTerm: 0
-007298 S1 log becomes: "[0]"
-007298 prevLogIndex: 0, prevLogTerm: 0
-007302 S2 log becomes: "[0]"
-007304 [S0] changes matchIndex of [S1] to 0
-007304 S2 log becomes: "[0]"
-007305 prevLogIndex: 0, prevLogTerm: 0
-007306 [S1](Follower)'s Commit Index is 0
-007310 prevLogIndex: 0, prevLogTerm: 0
-007310 [S2](Follower)'s Commit Index is 0
-007314 [S0] changes matchIndex of [S2] to 0
-007314 prevLogIndex: 0, prevLogTerm: 0
-007314 prevLogIndex: 0, prevLogTerm: 0
-007314 S1 log becomes: "[0]"
-007315 prevLogIndex: 0, prevLogTerm: 0
-007316 S2 log becomes: "[0]"
-007317 [S2](Follower)'s Commit Index is 0
-007319 S1 log becomes: "[0]"
-007320 prevLogIndex: 0, prevLogTerm: 0
-007321 S2 log becomes: "[0]"
-007322 prevLogIndex: 0, prevLogTerm: 0
-007322 [S2](Follower)'s Commit Index is 0
-007324 prevLogIndex: 0, prevLogTerm: 0
-007324 [S0](Leader)'s Commit Index is 0
-007326 S1 log becomes: "[0]"
-007326 prevLogIndex: 0, prevLogTerm: 0
-007327 prevLogIndex: 0, prevLogTerm: 0
-007328 S2 log becomes: "[0]"
-007329 S1 log becomes: "[0]"
-007331 prevLogIndex: 0, prevLogTerm: 0
-007332 [S1](Follower)'s Commit Index is 0
-007333 prevLogIndex: 0, prevLogTerm: 0
-007334 S2 log becomes: "[0]"
-007336 [S0](Leader)'s Commit Index is 0
-007337 prevLogIndex: 0, prevLogTerm: 0
-007337 [S1](Follower)'s Commit Index is 0
-007338 prevLogIndex: 0, prevLogTerm: 0
-007339 S2 log becomes: "[0]"
-007345 prevLogIndex: 0, prevLogTerm: 0
-007345 [S0] changes matchIndex of [S2] to 0
-007346 S1 log becomes: "[0]"
-007348 [S1](Follower)'s Commit Index is 0
-007349 prevLogIndex: 0, prevLogTerm: 0
-007350 S1 log becomes: "[0]"
-007351 S2 log becomes: "[0]"
-007355 prevLogIndex: 0, prevLogTerm: 0
-007355 prevLogIndex: 0, prevLogTerm: 0
-007357 prevLogIndex: 0, prevLogTerm: 0
-007357 prevLogIndex: 0, prevLogTerm: 0
-007359 [S1](Follower)'s Commit Index is 0
-007360 prevLogIndex: 0, prevLogTerm: 0
-007361 S2 log becomes: "[0]"
-007362 S1 log becomes: "[0]"
-007362 prevLogIndex: 0, prevLogTerm: 0
-007364 prevLogIndex: 0, prevLogTerm: 0
-007364 [S2](Follower)'s Commit Index is 0
-007367 prevLogIndex: 0, prevLogTerm: 0
-007368 [S0] changes matchIndex of [S1] to 0
-007370 [S0](Leader)'s Commit Index is 0
-007371 prevLogIndex: 0, prevLogTerm: 0
-007373 prevLogIndex: 0, prevLogTerm: 0
-007375 prevLogIndex: 0, prevLogTerm: 0
-007375 S2 log becomes: "[0]"
-007378 [S0](Leader)'s Commit Index is 0
-007378 prevLogIndex: 0, prevLogTerm: 0
-007382 prevLogIndex: 0, prevLogTerm: 0
-007382 [S2](Follower)'s Commit Index is 0
-007385 prevLogIndex: 0, prevLogTerm: 0
-007386 S1 log becomes: "[0]"
-007387 prevLogIndex: 0, prevLogTerm: 0
-007390 prevLogIndex: 0, prevLogTerm: 0
-007390 S2 log becomes: "[0]"
-007391 prevLogIndex: 0, prevLogTerm: 0
-007396 prevLogIndex: 0, prevLogTerm: 0
-007397 [S0] changes matchIndex of [S1] to 0
-007397 S1 log becomes: "[0]"
-007397 prevLogIndex: 0, prevLogTerm: 0
-007400 prevLogIndex: 0, prevLogTerm: 0
-007400 [S1](Follower)'s Commit Index is 0
-007400 prevLogIndex: 0, prevLogTerm: 0
-007401 prevLogIndex: 0, prevLogTerm: 0
-007407 prevLogIndex: 0, prevLogTerm: 0
-007408 prevLogIndex: 0, prevLogTerm: 0
-007409 prevLogIndex: 0, prevLogTerm: 0
-007409 prevLogIndex: 0, prevLogTerm: 0
-007410 S2 log becomes: "[0]"
-007412 [S0] changes matchIndex of [S2] to 0
-007413 S1 log becomes: "[0]"
-007415 S2 log becomes: "[0]"
-007417 S1 log becomes: "[0]"
-007419 prevLogIndex: 0, prevLogTerm: 0
-007419 [S2](Follower)'s Commit Index is 0
-007421 prevLogIndex: 0, prevLogTerm: 0
-007421 [S0](Leader)'s Commit Index is 0
-007425 prevLogIndex: 0, prevLogTerm: 0
-007426 S2 log becomes: "[0]"
-007427 [S0] changes matchIndex of [S1] to 0
-007427 [S2](Follower)'s Commit Index is 0
-007429 S1 log becomes: "[0]"
-007431 S1 log becomes: "[0]"
-007432 prevLogIndex: 0, prevLogTerm: 0
-007432 S2 log becomes: "[0]"
-007434 [S2](Follower)'s Commit Index is 0
-007436 prevLogIndex: 0, prevLogTerm: 0
-007437 prevLogIndex: 0, prevLogTerm: 0
-007437 [S0](Leader)'s Commit Index is 0
-007438 prevLogIndex: 0, prevLogTerm: 0
-007442 prevLogIndex: 0, prevLogTerm: 0
-007442 prevLogIndex: 0, prevLogTerm: 0
-007443 S1 log becomes: "[0]"
-007445 prevLogIndex: 0, prevLogTerm: 0
-007447 prevLogIndex: 0, prevLogTerm: 0
-007447 [S0] changes matchIndex of [S2] to 0
-007449 S2 log becomes: "[0]"
-007450 prevLogIndex: 0, prevLogTerm: 0
-007451 S1 log becomes: "[0]"
-007451 prevLogIndex: 0, prevLogTerm: 0
-007455 prevLogIndex: 0, prevLogTerm: 0
-007455 [S0](Leader)'s Commit Index is 0
-007459 [S1](Follower)'s Commit Index is 0
-007459 prevLogIndex: 0, prevLogTerm: 0
-007460 prevLogIndex: 0, prevLogTerm: 0
-007461 S1 log becomes: "[0]"
-007463 S2 log becomes: "[0]"
-007464 prevLogIndex: 0, prevLogTerm: 0
-007464 prevLogIndex: 0, prevLogTerm: 0
-007465 [S1](Follower)'s Commit Index is 0
-007466 S2 log becomes: "[0]"
-007468 [S1](Follower)'s Commit Index is 0
-007468 prevLogIndex: 0, prevLogTerm: 0
-007470 S2 log becomes: "[0]"
-007471 prevLogIndex: 0, prevLogTerm: 0
-007471 S1 log becomes: "[0]"
-007474 prevLogIndex: 0, prevLogTerm: 0
-007475 prevLogIndex: 0, prevLogTerm: 0
-007476 S2 log becomes: "[0]"
-007477 [S1](Follower)'s Commit Index is 0
-007479 S1 log becomes: "[0]"
-007480 [S2](Follower)'s Commit Index is 0
-007482 prevLogIndex: 0, prevLogTerm: 0
-007483 prevLogIndex: 0, prevLogTerm: 0
-007484 [S2](Follower)'s Commit Index is 0
-007484 [S0](Leader)'s Commit Index is 0
-007485 S2 log becomes: "[0]"
-007486 prevLogIndex: 0, prevLogTerm: 0
-007487 prevLogIndex: 0, prevLogTerm: 0
-007489 [S0] changes matchIndex of [S1] to 0
-007489 S1 log becomes: "[0]"
-007494 prevLogIndex: 0, prevLogTerm: 0
-007497 [S0] changes matchIndex of [S2] to 0
-007498 [S0](Leader)'s Commit Index is 0
-007498 prevLogIndex: 0, prevLogTerm: 0
-007499 prevLogIndex: 0, prevLogTerm: 0
-007499 S1 log becomes: "[0]"
-007501 S2 log becomes: "[0]"
-007504 prevLogIndex: 0, prevLogTerm: 0
-007504 [S1](Follower)'s Commit Index is 0
-007504 prevLogIndex: 0, prevLogTerm: 0
-007506 prevLogIndex: 0, prevLogTerm: 0
-007506 S2 log becomes: "[0]"
-007508 [S2](Follower)'s Commit Index is 0
-007512 prevLogIndex: 0, prevLogTerm: 0
-007513 prevLogIndex: 0, prevLogTerm: 0
-007514 prevLogIndex: 0, prevLogTerm: 0
-007515 [S0] changes matchIndex of [S2] to 0
-007515 [S1](Follower)'s Commit Index is 0
-007518 S1 log becomes: "[0]"
-007522 prevLogIndex: 0, prevLogTerm: 0
-007522 prevLogIndex: 0, prevLogTerm: 0
-007524 prevLogIndex: 0, prevLogTerm: 0
-007524 [S2](Follower)'s Commit Index is 0
-007525 S2 log becomes: "[0]"
-007528 prevLogIndex: 0, prevLogTerm: 0
-007530 prevLogIndex: 0, prevLogTerm: 0
-007530 [S0] changes matchIndex of [S2] to 0
-007531 S1 log becomes: "[0]"
-007535 prevLogIndex: 0, prevLogTerm: 0
-007538 prevLogIndex: 0, prevLogTerm: 0
-007538 [S1](Follower)'s Commit Index is 0
-007542 prevLogIndex: 0, prevLogTerm: 0
-007545 S2 log becomes: "[0]"
-007547 [S2](Follower)'s Commit Index is 0
-007551 S2 log becomes: "[0]"
-007554 prevLogIndex: 0, prevLogTerm: 0
-007556 [S0] changes matchIndex of [S1] to 0
-007559 prevLogIndex: 0, prevLogTerm: 0
-007560 [S2](Follower)'s Commit Index is 0
-007562 prevLogIndex: 0, prevLogTerm: 0
-007570 S2 log becomes: "[0]"
-007572 prevLogIndex: 0, prevLogTerm: 0
-007572 [S0] changes matchIndex of [S1] to 0
-007574 [S2](Follower)'s Commit Index is 0
-007576 S2 log becomes: "[0]"
-007576 prevLogIndex: 0, prevLogTerm: 0
-007578 [S0](Leader)'s Commit Index is 0
-007578 prevLogIndex: 0, prevLogTerm: 0
-007588 [S0] changes matchIndex of [S1] to 0
-007591 prevLogIndex: 0, prevLogTerm: 0
-007592 [S2](Follower)'s Commit Index is 0
-007594 prevLogIndex: 0, prevLogTerm: 0
-007599 prevLogIndex: 0, prevLogTerm: 0
-007599 S2 log becomes: "[0]"
-007602 S2 log becomes: "[0]"
-007604 prevLogIndex: 0, prevLogTerm: 0
-007612 prevLogIndex: 0, prevLogTerm: 0
-007616 [S0] changes matchIndex of [S1] to 0
-007618 [S2](Follower)'s Commit Index is 0
-007621 prevLogIndex: 0, prevLogTerm: 0
-007622 S2 log becomes: "[0]"
-007629 prevLogIndex: 0, prevLogTerm: 0
-007630 [S0] changes matchIndex of [S2] to 0
-007630 prevLogIndex: 0, prevLogTerm: 0
-007631 S2 log becomes: "[0]"
-007632 prevLogIndex: 0, prevLogTerm: 0
-007633 [S0](Leader)'s Commit Index is 0
-007635 prevLogIndex: 0, prevLogTerm: 0
-007638 S2 log becomes: "[0]"
-007642 prevLogIndex: 0, prevLogTerm: 0
-007648 [S2](Follower)'s Commit Index is 0
-007655 S2 log becomes: "[0]"
-007661 prevLogIndex: 0, prevLogTerm: 0
-007695 S2 log becomes: "[0]"
-007697 prevLogIndex: 0, prevLogTerm: 0
-007701 S2 log becomes: "[0]"
-007703 prevLogIndex: 0, prevLogTerm: 0
-007704 [S2](Follower)'s Commit Index is 0
-007705 prevLogIndex: 0, prevLogTerm: 0
-007709 S2 log becomes: "[0]"
-007713 [S0](Leader)'s Commit Index is 0
-007714 prevLogIndex: 0, prevLogTerm: 0
-007714 prevLogIndex: 0, prevLogTerm: 0
-007719 prevLogIndex: 0, prevLogTerm: 0
-007725 S2 log becomes: "[0]"
-007725 [S0] changes matchIndex of [S2] to 0
-007726 S2 log becomes: "[0]"
-007730 prevLogIndex: 0, prevLogTerm: 0
-007730 [S0] changes matchIndex of [S1] to 0
-007730 prevLogIndex: 0, prevLogTerm: 0
-007732 S2 log becomes: "[0]"
-007734 prevLogIndex: 0, prevLogTerm: 0
-007734 prevLogIndex: 0, prevLogTerm: 0
-007735 S2 log becomes: "[0]"
-007737 [S2](Follower)'s Commit Index is 0
-007739 prevLogIndex: 0, prevLogTerm: 0
-007739 [S0](Leader)'s Commit Index is 0
-007743 [S2](Follower)'s Commit Index is 0
-007747 prevLogIndex: 0, prevLogTerm: 0
-007753 S2 log becomes: "[0]"
-007755 prevLogIndex: 0, prevLogTerm: 0
-007757 [S0] changes matchIndex of [S2] to 0
-007758 prevLogIndex: 0, prevLogTerm: 0
-007763 S2 log becomes: "[0]"
-007765 [S2](Follower)'s Commit Index is 0
-007767 [S0](Leader)'s Commit Index is 0
-007768 prevLogIndex: 0, prevLogTerm: 0
-007772 [S0] changes matchIndex of [S2] to 0
-007773 prevLogIndex: 0, prevLogTerm: 0
-007775 prevLogIndex: 0, prevLogTerm: 0
-007778 prevLogIndex: 0, prevLogTerm: 0
-007788 prevLogIndex: 0, prevLogTerm: 0
-007788 [S2](Follower)'s Commit Index is 0
-007794 prevLogIndex: 0, prevLogTerm: 0
-007800 [S0] changes matchIndex of [S2] to 0
-007801 prevLogIndex: 0, prevLogTerm: 0
-007804 prevLogIndex: 0, prevLogTerm: 0
-007806 S2 log becomes: "[0]"
-007815 S2 log becomes: "[0]"
-007819 S2 log becomes: "[0]"
-007820 S2 log becomes: "[0]"
-007822 [S0](Leader)'s Commit Index is 0
-007822 prevLogIndex: 0, prevLogTerm: 0
-007824 [S2](Follower)'s Commit Index is 0
-007829 prevLogIndex: 0, prevLogTerm: 0
-007831 prevLogIndex: 0, prevLogTerm: 0
-007833 prevLogIndex: 0, prevLogTerm: 0
-007847 prevLogIndex: 0, prevLogTerm: 0
-007851 prevLogIndex: 0, prevLogTerm: 0
-007852 prevLogIndex: 0, prevLogTerm: 0
-007853 S2 log becomes: "[0]"
-007866 prevLogIndex: 0, prevLogTerm: 0
-007867 [S0] changes matchIndex of [S1] to 0
-007872 prevLogIndex: 0, prevLogTerm: 0
-007872 S2 log becomes: "[0]"
-007876 [S2](Follower)'s Commit Index is 0
-007881 S2 log becomes: "[0]"
-007889 [S0] changes matchIndex of [S1] to 0
-007890 [S2](Follower)'s Commit Index is 0
-007898 prevLogIndex: 0, prevLogTerm: 0
-007906 [S0] changes matchIndex of [S1] to 0
-007908 [S2](Follower)'s Commit Index is 0
-007910 S2 log becomes: "[0]"
-007910 prevLogIndex: 0, prevLogTerm: 0
-007914 prevLogIndex: 0, prevLogTerm: 0
-007915 prevLogIndex: 0, prevLogTerm: 0
-007919 prevLogIndex: 0, prevLogTerm: 0
-007919 S2 log becomes: "[0]"
-007925 prevLogIndex: 0, prevLogTerm: 0
-007925 [S2](Follower)'s Commit Index is 0
-007929 prevLogIndex: 0, prevLogTerm: 0
-007933 prevLogIndex: 0, prevLogTerm: 0
-007943 prevLogIndex: 0, prevLogTerm: 0
-007945 prevLogIndex: 0, prevLogTerm: 0
-007946 [S0] changes matchIndex of [S1] to 0
-007952 prevLogIndex: 0, prevLogTerm: 0
-007956 [S0] changes matchIndex of [S2] to 0
-007956 prevLogIndex: 0, prevLogTerm: 0
-007959 S2 log becomes: "[0]"
-007962 prevLogIndex: 0, prevLogTerm: 0
-007970 [S0] changes matchIndex of [S2] to 0
-007971 prevLogIndex: 0, prevLogTerm: 0
-007976 [S2](Follower)'s Commit Index is 0
-007977 prevLogIndex: 0, prevLogTerm: 0
-007982 S2 log becomes: "[0]"
-007984 [S0](Leader)'s Commit Index is 0
-007988 S2 log becomes: "[0]"
-007990 [S0](Leader)'s Commit Index is 0
-007992 prevLogIndex: 0, prevLogTerm: 0
-007995 prevLogIndex: 0, prevLogTerm: 0
-008000 S2 log becomes: "[0]"
-008005 [S2](Follower)'s Commit Index is 0
-008012 prevLogIndex: 0, prevLogTerm: 0
-008013 [S0] changes matchIndex of [S1] to 0
-008016 prevLogIndex: 0, prevLogTerm: 0
-008022 prevLogIndex: 0, prevLogTerm: 0
-008025 S2 log becomes: "[0]"
-008026 prevLogIndex: 0, prevLogTerm: 0
-008033 [S2](Follower)'s Commit Index is 0
-008033 prevLogIndex: 0, prevLogTerm: 0
-008039 [S0] changes matchIndex of [S2] to 0
-008039 prevLogIndex: 0, prevLogTerm: 0
-008041 S2 log becomes: "[0]"
-008044 [S0](Leader)'s Commit Index is 0
-008051 S2 log becomes: "[0]"
-008052 [S0] changes matchIndex of [S1] to 0
-008053 S2 log becomes: "[0]"
-008068 prevLogIndex: 0, prevLogTerm: 0
-008069 prevLogIndex: 0, prevLogTerm: 0
-008073 [S0] changes matchIndex of [S2] to 0
-008073 [S2](Follower)'s Commit Index is 0
-008082 prevLogIndex: 0, prevLogTerm: 0
-008085 prevLogIndex: 0, prevLogTerm: 0
-008086 S2 log becomes: "[0]"
-008087 prevLogIndex: 0, prevLogTerm: 0
-008090 [S0](Leader)'s Commit Index is 0
-008094 prevLogIndex: 0, prevLogTerm: 0
-008094 S2 log becomes: "[0]"
-008098 prevLogIndex: 0, prevLogTerm: 0
-008107 [S0] changes matchIndex of [S1] to 0
-008115 prevLogIndex: 0, prevLogTerm: 0
-008116 prevLogIndex: 0, prevLogTerm: 0
-008116 S2 log becomes: "[0]"
-008118 prevLogIndex: 0, prevLogTerm: 0
-008119 [S2](Follower)'s Commit Index is 0
-008124 [S2](Follower)'s Commit Index is 0
-008125 [S0] changes matchIndex of [S2] to 0
-008126 S2 log becomes: "[0]"
-008130 [S0](Leader)'s Commit Index is 0
-008136 prevLogIndex: 0, prevLogTerm: 0
-008136 S2 log becomes: "[0]"
-008140 prevLogIndex: 0, prevLogTerm: 0
-008143 [S0] changes matchIndex of [S2] to 0
-008143 prevLogIndex: 0, prevLogTerm: 0
-008148 prevLogIndex: 0, prevLogTerm: 0
-008149 S2 log becomes: "[0]"
-008151 [S2](Follower)'s Commit Index is 0
-008153 prevLogIndex: 0, prevLogTerm: 0
-008154 S2 log becomes: "[0]"
-008158 [S0](Leader)'s Commit Index is 0
-008170 [S0] changes matchIndex of [S2] to 0
-008180 prevLogIndex: 0, prevLogTerm: 0
-008186 prevLogIndex: 0, prevLogTerm: 0
-008187 [S2](Follower)'s Commit Index is 0
-008191 prevLogIndex: 0, prevLogTerm: 0
-008196 S2 log becomes: "[0]"
-008203 prevLogIndex: 0, prevLogTerm: 0
-008209 prevLogIndex: 0, prevLogTerm: 0
-008210 S2 log becomes: "[0]"
-008213 [S0](Leader)'s Commit Index is 0
-008214 prevLogIndex: 0, prevLogTerm: 0
-008215 S2 log becomes: "[0]"
-008217 prevLogIndex: 0, prevLogTerm: 0
-008220 [S0] changes matchIndex of [S2] to 0
-008223 S2 log becomes: "[0]"
-008223 prevLogIndex: 0, prevLogTerm: 0
-008227 S2 log becomes: "[0]"
-008229 [S2](Follower)'s Commit Index is 0
-008236 prevLogIndex: 0, prevLogTerm: 0
-008237 [S2](Follower)'s Commit Index is 0
-008242 prevLogIndex: 0, prevLogTerm: 0
-008244 S2 log becomes: "[0]"
-008248 prevLogIndex: 0, prevLogTerm: 0
-008250 S2 log becomes: "[0]"
-008259 prevLogIndex: 0, prevLogTerm: 0
-008260 [S0](Leader)'s Commit Index is 0
-008266 [S0] changes matchIndex of [S2] to 0
-008267 S2 log becomes: "[0]"
-008270 [S2](Follower)'s Commit Index is 0
-008276 prevLogIndex: 0, prevLogTerm: 0
-008282 prevLogIndex: 0, prevLogTerm: 0
-008284 S2 log becomes: "[0]"
-008286 prevLogIndex: 0, prevLogTerm: 0
-008293 prevLogIndex: 0, prevLogTerm: 0
-008294 [S0](Leader)'s Commit Index is 0
-008297 prevLogIndex: 0, prevLogTerm: 0
-008297 S2 log becomes: "[0]"
-008298 prevLogIndex: 0, prevLogTerm: 0
-008299 [S2](Follower)'s Commit Index is 0
-008309 S2 log becomes: "[0]"
-008311 prevLogIndex: 0, prevLogTerm: 0
-008317 prevLogIndex: 0, prevLogTerm: 0
-008326 prevLogIndex: 0, prevLogTerm: 0
-008327 S2 log becomes: "[0]"
-008334 [S2](Follower)'s Commit Index is 0
-008334 prevLogIndex: 0, prevLogTerm: 0
-008335 prevLogIndex: 0, prevLogTerm: 0
-008342 S2 log becomes: "[0]"
-008348 [S2](Follower)'s Commit Index is 0
-008350 [S0] changes matchIndex of [S2] to 0
-008352 prevLogIndex: 0, prevLogTerm: 0
-008352 prevLogIndex: 0, prevLogTerm: 0
-008354 S2 log becomes: "[0]"
-008354 [S2](Follower)'s Commit Index is 0
-008356 S2 log becomes: "[0]"
-008358 [S2](Follower)'s Commit Index is 0
-008360 S2 log becomes: "[0]"
-008365 [S0] changes matchIndex of [S2] to 0
-008365 S2 log becomes: "[0]"
-008367 [S2](Follower)'s Commit Index is 0
-008371 S2 log becomes: "[0]"
-008374 S2 log becomes: "[0]"
-008376 S2 log becomes: "[0]"
-008378 [S2](Follower)'s Commit Index is 0
-008382 [S2](Follower)'s Commit Index is 0
-008384 S2 log becomes: "[0]"
-008388 S2 log becomes: "[0]"
-008391 [S2](Follower)'s Commit Index is 0
-008393 S2 log becomes: "[0]"
-008396 S2 log becomes: "[0]"
-008398 [S2](Follower)'s Commit Index is 0
-008403 S2 log becomes: "[0]"
-008406 [S0] changes matchIndex of [S2] to 0
-008411 S2 log becomes: "[0]"
-008411 [S0] changes matchIndex of [S2] to 0
-008413 [S2](Follower)'s Commit Index is 0
-008416 S2 log becomes: "[0]"
-008420 S2 log becomes: "[0]"
-008422 [S2](Follower)'s Commit Index is 0
-008427 [S0] changes matchIndex of [S2] to 0
-008429 S2 log becomes: "[0]"
-008433 S2 log becomes: "[0]"
-008435 S2 log becomes: "[0]"
-008437 S2 log becomes: "[0]"
-008439 S2 log becomes: "[0]"
-008444 [S0] changes matchIndex of [S2] to 0
-008445 S2 log becomes: "[0]"
-008449 S2 log becomes: "[0]"
-008451 S2 log becomes: "[0]"
-008453 [S2](Follower)'s Commit Index is 0
-008459 [S2](Follower)'s Commit Index is 0
-008456 [S2](Follower)'s Commit Index is 0
-008461 [S2](Follower)'s Commit Index is 0
-008466 S2 log becomes: "[0]"
-008471 S2 log becomes: "[0]"
-008473 [S0] changes matchIndex of [S2] to 0
-008474 S2 log becomes: "[0]"
-008476 S2 log becomes: "[0]"
-008478 S2 log becomes: "[0]"
-008480 S2 log becomes: "[0]"
-008483 S2 log becomes: "[0]"
-008484 [S2](Follower)'s Commit Index is 0
-008486 S2 log becomes: "[0]"
-008490 S2 log becomes: "[0]"
-008492 [S2](Follower)'s Commit Index is 0
-008497 [S2](Follower)'s Commit Index is 0
-008498 [S0] changes matchIndex of [S2] to 0
-008503 S2 log becomes: "[0]"
-008504 [S0] changes matchIndex of [S2] to 0
-008509 [S2](Follower)'s Commit Index is 0
-008510 [S0] changes matchIndex of [S2] to 0
-008511 S2 log becomes: "[0]"
-008513 S2 log becomes: "[0]"
-008516 S2 log becomes: "[0]"
-008518 S2 log becomes: "[0]"
-008520 [S2](Follower)'s Commit Index is 0
-008522 S2 log becomes: "[0]"
-008526 S2 log becomes: "[0]"
-008527 [S0] changes matchIndex of [S2] to 0
-008528 S2 log becomes: "[0]"
-008530 S2 log becomes: "[0]"
-008532 S2 log becomes: "[0]"
-008536 S2 log becomes: "[0]"
-008541 S2 log becomes: "[0]"
-008543 [S2](Follower)'s Commit Index is 0
-008546 S2 log becomes: "[0]"
-008549 S2 log becomes: "[0]"
-008553 S2 log becomes: "[0]"
-008554 [S0] changes matchIndex of [S2] to 0
-008556 [S2](Follower)'s Commit Index is 0
-008560 [S2](Follower)'s Commit Index is 0
-008564 S2 log becomes: "[0]"
-008566 S2 log becomes: "[0]"
-008568 [S2](Follower)'s Commit Index is 0
-008573 [S0] changes matchIndex of [S2] to 0
-008573 S2 log becomes: "[0]"
-008577 S2 log becomes: "[0]"
-008579 S2 log becomes: "[0]"
-008581 [S2](Follower)'s Commit Index is 0
-008583 S2 log becomes: "[0]"
-008587 S2 log becomes: "[0]"
-008587 [S0] changes matchIndex of [S2] to 0
-008591 S2 log becomes: "[0]"
-008593 [S2](Follower)'s Commit Index is 0
-008597 [S2](Follower)'s Commit Index is 0
-008600 [S2](Follower)'s Commit Index is 0
-008603 S2 log becomes: "[0]"
-008604 S2 log becomes: "[0]"
-008611 [S0] changes matchIndex of [S2] to 0
-008611 S2 log becomes: "[0]"
-008612 S2 log becomes: "[0]"
-008615 [S2](Follower)'s Commit Index is 0
-008617 S2 log becomes: "[0]"
-008624 S2 log becomes: "[0]"
-008626 [S2](Follower)'s Commit Index is 0
-008629 S2 log becomes: "[0]"
-008633 S2 log becomes: "[0]"
-008635 S2 log becomes: "[0]"
-008637 [S2](Follower)'s Commit Index is 0
-008639 S2 log becomes: "[0]"
-008645 [S0] changes matchIndex of [S2] to 0
-008647 [S0] changes matchIndex of [S2] to 0
-008647 [S2](Follower)'s Commit Index is 0
-008651 S2 log becomes: "[0]"
-008653 [S2](Follower)'s Commit Index is 0
-008655 S2 log becomes: "[0]"
-008659 S2 log becomes: "[0]"
-008661 S2 log becomes: "[0]"
-008663 [S2](Follower)'s Commit Index is 0
-008667 S2 log becomes: "[0]"
-008668 [S0] changes matchIndex of [S2] to 0
-008669 [S2](Follower)'s Commit Index is 0
-008674 S2 log becomes: "[0]"
-008676 S2 log becomes: "[0]"
-008680 S2 log becomes: "[0]"
-008681 [S0] changes matchIndex of [S2] to 0
-008682 [S2](Follower)'s Commit Index is 0
-008684 S2 log becomes: "[0]"
-008686 S2 log becomes: "[0]"
-008688 [S2](Follower)'s Commit Index is 0
-008692 S2 log becomes: "[0]"
-008694 [S2](Follower)'s Commit Index is 0
-008697 S2 log becomes: "[0]"
-008700 [S2](Follower)'s Commit Index is 0
-008702 S2 log becomes: "[0]"
-008704 [S2](Follower)'s Commit Index is 0
-008709 [S0] changes matchIndex of [S2] to 0
-008709 S2 log becomes: "[0]"
-008713 S2 log becomes: "[0]"
-008713 [S0] changes matchIndex of [S2] to 0
-008715 [S2](Follower)'s Commit Index is 0
-008717 S2 log becomes: "[0]"
-008718 [S2](Follower)'s Commit Index is 0
-008721 S2 log becomes: "[0]"
-008726 [S2](Follower)'s Commit Index is 0
-008730 S2 log becomes: "[0]"
-008731 [S0] changes matchIndex of [S2] to 0
-008732 S2 log becomes: "[0]"
-008734 [S2](Follower)'s Commit Index is 0
-008737 S2 log becomes: "[0]"
-008738 S2 log becomes: "[0]"
-008742 S2 log becomes: "[0]"
-008744 [S2](Follower)'s Commit Index is 0
-008746 S2 log becomes: "[0]"
-008749 [S2](Follower)'s Commit Index is 0
-008750 [S0] changes matchIndex of [S2] to 0
-008751 S2 log becomes: "[0]"
-008753 S2 log becomes: "[0]"
-008755 S2 log becomes: "[0]"
-008757 [S2](Follower)'s Commit Index is 0
-008761 S2 log becomes: "[0]"
-008763 S2 log becomes: "[0]"
-008765 [S2](Follower)'s Commit Index is 0
-008772 [S0] changes matchIndex of [S2] to 0
-008772 [S0] changes matchIndex of [S2] to 0
-008775 S2 log becomes: "[0]"
-008777 S2 log becomes: "[0]"
-008777 [S2](Follower)'s Commit Index is 0
-008796 [S2](Follower)'s Commit Index is 0
-008806 [S2](Follower)'s Commit Index is 0
-008806 [S0] changes matchIndex of [S2] to 0
-008807 [S0] changes matchIndex of [S2] to 0
-008810 [S2](Follower)'s Commit Index is 0
-008814 [S2](Follower)'s Commit Index is 0
-008815 [S0] changes matchIndex of [S2] to 0
-008816 [S2](Follower)'s Commit Index is 0
-008818 [S2](Follower)'s Commit Index is 0
-008823 [S0] changes matchIndex of [S2] to 0
-008826 [S2](Follower)'s Commit Index is 0
-008826 [S0] changes matchIndex of [S2] to 0
-008828 [S2](Follower)'s Commit Index is 0
-008833 [S2](Follower)'s Commit Index is 0
-008833 [S0] changes matchIndex of [S2] to 0
-008835 [S2](Follower)'s Commit Index is 0
-008839 [S2](Follower)'s Commit Index is 0
-008840 [S0] changes matchIndex of [S2] to 0
-008843 [S2](Follower)'s Commit Index is 0
-008849 [S2](Follower)'s Commit Index is 0
-008849 [S0] changes matchIndex of [S2] to 0
-008851 [S2](Follower)'s Commit Index is 0
-008856 [S0] changes matchIndex of [S2] to 0
-008858 [S2](Follower)'s Commit Index is 0
-008860 [S2](Follower)'s Commit Index is 0
-008862 [S2](Follower)'s Commit Index is 0
-008864 [S2](Follower)'s Commit Index is 0
-008866 [S2](Follower)'s Commit Index is 0
-008869 [S2](Follower)'s Commit Index is 0
-008871 [S2](Follower)'s Commit Index is 0
-008873 [S2](Follower)'s Commit Index is 0
-008878 [S0] changes matchIndex of [S2] to 0
-008881 [S0] changes matchIndex of [S2] to 0
-008884 [S0] changes matchIndex of [S2] to 0
-008884 [S2](Follower)'s Commit Index is 0
-008885 [S0] changes matchIndex of [S2] to 0
-008886 [S2](Follower)'s Commit Index is 0
-008890 [S2](Follower)'s Commit Index is 0
-008892 [S2](Follower)'s Commit Index is 0
-008893 [S2](Follower)'s Commit Index is 0
-008895 [S2](Follower)'s Commit Index is 0
-008897 [S2](Follower)'s Commit Index is 0
-008902 [S2](Follower)'s Commit Index is 0
-008902 [S0] changes matchIndex of [S2] to 0
-008904 [S2](Follower)'s Commit Index is 0
-008909 [S0] changes matchIndex of [S2] to 0
-008911 [S0] changes matchIndex of [S2] to 0
-008912 [S2](Follower)'s Commit Index is 0
-008918 [S0] changes matchIndex of [S2] to 0
-008920 [S2](Follower)'s Commit Index is 0
-008922 [S2](Follower)'s Commit Index is 0
-008924 [S2](Follower)'s Commit Index is 0
-008926 [S2](Follower)'s Commit Index is 0
-008930 [S2](Follower)'s Commit Index is 0
-008931 [S0] changes matchIndex of [S2] to 0
-008932 [S2](Follower)'s Commit Index is 0
-008935 [S2](Follower)'s Commit Index is 0
-008938 [S2](Follower)'s Commit Index is 0
-008940 [S2](Follower)'s Commit Index is 0
-008942 [S2](Follower)'s Commit Index is 0
-008944 [S2](Follower)'s Commit Index is 0
-008949 [S2](Follower)'s Commit Index is 0
-008950 [S0] changes matchIndex of [S2] to 0
-008951 [S2](Follower)'s Commit Index is 0
-008953 [S2](Follower)'s Commit Index is 0
-008960 [S0] changes matchIndex of [S2] to 0
-008961 [S0] changes matchIndex of [S2] to 0
-008962 [S2](Follower)'s Commit Index is 0
-008964 [S2](Follower)'s Commit Index is 0
-008969 [S0] changes matchIndex of [S2] to 0
-008971 [S2](Follower)'s Commit Index is 0
-008973 [S2](Follower)'s Commit Index is 0
-008975 [S2](Follower)'s Commit Index is 0
-008979 [S2](Follower)'s Commit Index is 0
-008980 [S0] changes matchIndex of [S2] to 0
-008981 [S2](Follower)'s Commit Index is 0
-008985 [S2](Follower)'s Commit Index is 0
-008990 [S0] changes matchIndex of [S2] to 0
-008993 [S2](Follower)'s Commit Index is 0
-008994 [S0] changes matchIndex of [S2] to 0
-008995 [S0] changes matchIndex of [S2] to 0
-008995 [S2](Follower)'s Commit Index is 0
-008999 [S2](Follower)'s Commit Index is 0
-009001 [S2](Follower)'s Commit Index is 0
-009006 [S2](Follower)'s Commit Index is 0
-009006 [S0] changes matchIndex of [S2] to 0
-009008 [S2](Follower)'s Commit Index is 0
-009013 [S2](Follower)'s Commit Index is 0
-009013 [S0] changes matchIndex of [S2] to 0
-009014 [S2](Follower)'s Commit Index is 0
-009017 [S2](Follower)'s Commit Index is 0
-009021 [S2](Follower)'s Commit Index is 0
-009022 [S0] changes matchIndex of [S2] to 0
-009028 [S2](Follower)'s Commit Index is 0
-009030 [S0] changes matchIndex of [S2] to 0
-009032 [S2](Follower)'s Commit Index is 0
-009034 [S0] changes matchIndex of [S2] to 0
-009035 [S2](Follower)'s Commit Index is 0
-009037 [S2](Follower)'s Commit Index is 0
-009042 [S2](Follower)'s Commit Index is 0
-009042 [S0] changes matchIndex of [S2] to 0
-009048 [S2](Follower)'s Commit Index is 0
-009050 [S0] changes matchIndex of [S2] to 0
-009050 [S2](Follower)'s Commit Index is 0
-009052 [S2](Follower)'s Commit Index is 0
-009059 [S2](Follower)'s Commit Index is 0
-009060 [S0] changes matchIndex of [S2] to 0
-009061 [S2](Follower)'s Commit Index is 0
-009065 [S2](Follower)'s Commit Index is 0
-009066 [S0] changes matchIndex of [S2] to 0
-009069 [S2](Follower)'s Commit Index is 0
-009071 [S0] changes matchIndex of [S2] to 0
-009074 [S2](Follower)'s Commit Index is 0
-009075 [S0] changes matchIndex of [S2] to 0
-009080 [S0] changes matchIndex of [S2] to 0
-009081 [S2](Follower)'s Commit Index is 0
-009083 [S2](Follower)'s Commit Index is 0
-009089 [S2](Follower)'s Commit Index is 0
-009090 [S0] changes matchIndex of [S2] to 0
-009093 [S2](Follower)'s Commit Index is 0
-009095 [S0] changes matchIndex of [S2] to 0
-009097 [S2](Follower)'s Commit Index is 0
-009099 [S0] changes matchIndex of [S2] to 0
-009102 [S2](Follower)'s Commit Index is 0
-009106 [S2](Follower)'s Commit Index is 0
-009107 [S0] changes matchIndex of [S2] to 0
-009108 [S2](Follower)'s Commit Index is 0
-009110 [S2](Follower)'s Commit Index is 0
-009115 [S2](Follower)'s Commit Index is 0
-009117 [S0] changes matchIndex of [S2] to 0
-009120 [S2](Follower)'s Commit Index is 0
-009120 [S0] changes matchIndex of [S2] to 0
-009122 [S2](Follower)'s Commit Index is 0
-009124 [S2](Follower)'s Commit Index is 0
-009128 [S2](Follower)'s Commit Index is 0
-009130 [S0] changes matchIndex of [S2] to 0
-009130 [S2](Follower)'s Commit Index is 0
-009136 [S0] changes matchIndex of [S2] to 0
-009138 [S2](Follower)'s Commit Index is 0
-009140 [S2](Follower)'s Commit Index is 0
-009146 [S0] changes matchIndex of [S2] to 0
-009150 [S0] changes matchIndex of [S2] to 0
-009151 [S0] changes matchIndex of [S2] to 0
-009158 [S0] changes matchIndex of [S2] to 0
-009159 [S0] changes matchIndex of [S2] to 0
-009164 [S0] changes matchIndex of [S2] to 0
-009166 [S0] changes matchIndex of [S2] to 0
-009170 [S0] changes matchIndex of [S2] to 0
-009175 [S0] changes matchIndex of [S2] to 0
-009177 [S0] changes matchIndex of [S2] to 0
-009181 [S0] changes matchIndex of [S2] to 0
-009183 [S0] changes matchIndex of [S2] to 0
-009187 [S0] changes matchIndex of [S2] to 0
-009190 [S0] changes matchIndex of [S2] to 0
-009194 [S0] changes matchIndex of [S2] to 0
-009199 [S0] changes matchIndex of [S2] to 0
-009201 [S0] changes matchIndex of [S2] to 0
-009203 [S0] changes matchIndex of [S2] to 0
-009205 [S0] changes matchIndex of [S2] to 0
-009207 [S0] changes matchIndex of [S2] to 0
-009211 [S0] changes matchIndex of [S2] to 0
-009211 [S0] changes matchIndex of [S2] to 0
-009213 [S0] changes matchIndex of [S2] to 0
-009224 [S0] changes matchIndex of [S2] to 0
-009228 [S0] changes matchIndex of [S2] to 0
-009231 [S0] changes matchIndex of [S2] to 0
-009233 [S0] changes matchIndex of [S2] to 0
-009237 [S0] changes matchIndex of [S2] to 0
-009238 [S0] changes matchIndex of [S2] to 0
-009241 [S0] changes matchIndex of [S2] to 0
-009244 [S0] changes matchIndex of [S2] to 0
-009249 [S0] changes matchIndex of [S2] to 0
-009255 [S0] changes matchIndex of [S2] to 0
-009260 [S0] changes matchIndex of [S2] to 0
-009262 [S0] changes matchIndex of [S2] to 0
-009265 [S0] changes matchIndex of [S2] to 0
-009267 [S0] changes matchIndex of [S2] to 0
-009269 [S0] changes matchIndex of [S2] to 0
-009273 [S0] changes matchIndex of [S2] to 0
-009276 [S0] changes matchIndex of [S2] to 0
-009279 [S0] changes matchIndex of [S2] to 0
-009281 [S0] changes matchIndex of [S2] to 0
-009285 [S0] changes matchIndex of [S2] to 0
-009287 [S0] changes matchIndex of [S2] to 0
-009290 [S0] changes matchIndex of [S2] to 0
-009294 [S0] changes matchIndex of [S2] to 0
-009296 [S0] changes matchIndex of [S2] to 0
-009303 [S0] changes matchIndex of [S2] to 0
-009305 [S0] changes matchIndex of [S2] to 0
-009311 [S0] changes matchIndex of [S2] to 0
-009314 [S0] changes matchIndex of [S2] to 0
-009316 [S0] changes matchIndex of [S2] to 0
-009317 [S0] changes matchIndex of [S2] to 0
-009321 [S0] changes matchIndex of [S2] to 0
-009325 [S0] changes matchIndex of [S2] to 0
-009328 [S0] changes matchIndex of [S2] to 0
-009333 [S0] changes matchIndex of [S2] to 0
-009334 [S0] changes matchIndex of [S2] to 0
-009336 [S0] changes matchIndex of [S2] to 0
-009339 [S0] changes matchIndex of [S2] to 0
-009341 [S0] changes matchIndex of [S2] to 0
-009343 [S0] changes matchIndex of [S2] to 0
-009349 [S0] changes matchIndex of [S2] to 0
-009351 [S0] changes matchIndex of [S2] to 0
-009353 [S0] changes matchIndex of [S2] to 0
-009357 [S0] changes matchIndex of [S2] to 0
-009362 [S0] changes matchIndex of [S2] to 0
-009365 [S0] changes matchIndex of [S2] to 0
-009368 [S0] changes matchIndex of [S2] to 0
-009370 [S0] changes matchIndex of [S2] to 0
-009374 [S0] changes matchIndex of [S2] to 0
-009379 [S0] changes matchIndex of [S2] to 0
-009381 [S0] changes matchIndex of [S2] to 0
-009383 [S0] changes matchIndex of [S2] to 0
-009388 [S0] changes matchIndex of [S2] to 0
-009390 [S0] changes matchIndex of [S2] to 0
-009395 [S0] changes matchIndex of [S2] to 0
-009401 [S0] changes matchIndex of [S2] to 0
-009408 [S0] changes matchIndex of [S2] to 0
-009410 [S0] changes matchIndex of [S2] to 0
-009413 [S0] changes matchIndex of [S2] to 0
-009417 [S0] changes matchIndex of [S2] to 0
-009422 [S0] changes matchIndex of [S2] to 0
-009425 [S0] changes matchIndex of [S2] to 0
-009428 [S0] changes matchIndex of [S2] to 0
-009432 [S0] changes matchIndex of [S2] to 0
-009434 [S0] changes matchIndex of [S2] to 0
-009438 [S0] changes matchIndex of [S2] to 0
-009441 [S0] changes matchIndex of [S2] to 0
-009446 [S0] changes matchIndex of [S2] to 0
-009447 [S0] changes matchIndex of [S2] to 0
-009450 [S0] changes matchIndex of [S2] to 0
-009454 [S0] changes matchIndex of [S2] to 0
-009459 [S0] changes matchIndex of [S2] to 0
-009461 [S0] changes matchIndex of [S2] to 0
-015386 [S2] becomes {Candidate}
-015393 [S2] currentTerm -> (2)
-015397 [S2] sends RequestVote -> [S0]
-015398 [S2] sends RequestVote -> [S1]
-023381 [S2] becomes {Candidate}
-023384 [S2] currentTerm -> (3)
-023387 [S2] sends RequestVote -> [S0]
-023388 [S2] sends RequestVote -> [S1]
-030423 [S2] becomes {Candidate}
-030426 [S2] currentTerm -> (4)
-030429 [S2] sends RequestVote -> [S1]
-030429 [S2] sends RequestVote -> [S0]
-037827 [S2] becomes {Candidate}
-037831 [S2] currentTerm -> (5)
-037834 [S2] sends RequestVote -> [S0]
-037835 [S2] sends RequestVote -> [S1]
-045421 [S2] becomes {Candidate}
-045427 [S2] currentTerm -> (6)
-045432 [S2] sends RequestVote -> [S1]
-045432 [S2] sends RequestVote -> [S0]
-053313 [S2] becomes {Candidate}
-053317 [S2] currentTerm -> (7)
-053321 [S2] sends RequestVote -> [S1]
-053322 [S2] sends RequestVote -> [S0]
-060696 [S2] becomes {Candidate}
-060700 [S2] currentTerm -> (8)
-060704 [S2] sends RequestVote -> [S0]
-060705 [S2] sends RequestVote -> [S1]
-068550 [S2] becomes {Candidate}
-068556 [S2] currentTerm -> (9)
-068560 [S2] sends RequestVote -> [S0]
-068560 [S2] sends RequestVote -> [S1]
-075643 [S2] becomes {Candidate}
-075645 [S2] currentTerm -> (10)
-075648 [S2] sends RequestVote -> [S0]
-075649 [S2] sends RequestVote -> [S1]
-083477 [S2] becomes {Candidate}
-083480 [S2] currentTerm -> (11)
-083484 [S2] sends RequestVote -> [S0]
-083485 [S2] sends RequestVote -> [S1]
-091479 [S2] becomes {Candidate}
-091483 [S2] currentTerm -> (12)
-091487 [S2] sends RequestVote -> [S1]
-091488 [S2] sends RequestVote -> [S0]
-098583 [S2] becomes {Candidate}
-098588 [S2] currentTerm -> (13)
-098591 [S2] sends RequestVote -> [S1]
-098592 [S2] sends RequestVote -> [S0]
-105837 [S2] becomes {Candidate}
-105843 [S2] currentTerm -> (14)
-105848 [S2] sends RequestVote -> [S0]
-105848 [S2] sends RequestVote -> [S1]
-112952 [S2] becomes {Candidate}
-112962 [S2] currentTerm -> (15)
-112972 [S2] sends RequestVote -> [S1]
-112973 [S2] sends RequestVote -> [S0]
-120535 [S2] becomes {Candidate}
-120538 [S2] currentTerm -> (16)
-120543 [S2] sends RequestVote -> [S1]
-120543 [S2] sends RequestVote -> [S0]
-128487 [S2] becomes {Candidate}
-128490 [S2] currentTerm -> (17)
-128492 [S2] sends RequestVote -> [S1]
-128493 [S2] sends RequestVote -> [S0]
-135831 [S2] becomes {Candidate}
-135834 [S2] currentTerm -> (18)
-135838 [S2] sends RequestVote -> [S0]
-135838 [S2] sends RequestVote -> [S1]
-143323 [S2] becomes {Candidate}
-143327 [S2] currentTerm -> (19)
-143330 [S2] sends RequestVote -> [S1]
-143330 [S2] sends RequestVote -> [S0]
-151215 [S2] becomes {Candidate}
-151218 [S2] currentTerm -> (20)
-151221 [S2] sends RequestVote -> [S1]
-151221 [S2] sends RequestVote -> [S0]
-158949 [S2] becomes {Candidate}
-158952 [S2] currentTerm -> (21)
-158959 [S2] sends RequestVote -> [S0]
-158959 [S2] sends RequestVote -> [S1]
-166753 [S2] becomes {Candidate}
-166757 [S2] currentTerm -> (22)
-166762 [S2] sends RequestVote -> [S0]
-166762 [S2] sends RequestVote -> [S1]
-174405 [S2] becomes {Candidate}
-174409 [S2] currentTerm -> (23)
-174412 [S2] sends RequestVote -> [S0]
-174412 [S2] sends RequestVote -> [S1]
-181658 [S2] becomes {Candidate}
-181662 [S2] currentTerm -> (24)
-181666 [S2] sends RequestVote -> [S1]
-181666 [S2] sends RequestVote -> [S0]
-188831 [S2] becomes {Candidate}
-188835 [S2] currentTerm -> (25)
-188837 [S2] sends RequestVote -> [S1]
-188838 [S2] sends RequestVote -> [S0]
-196734 [S2] becomes {Candidate}
-196738 [S2] currentTerm -> (26)
-196743 [S2] sends RequestVote -> [S1]
-196744 [S2] sends RequestVote -> [S0]
-204171 [S2] becomes {Candidate}
-204173 [S2] currentTerm -> (27)
-204177 [S2] sends RequestVote -> [S0]
-204177 [S2] sends RequestVote -> [S1]
-211273 [S2] becomes {Candidate}
-211277 [S2] currentTerm -> (28)
-211280 [S2] sends RequestVote -> [S1]
-211280 [S2] sends RequestVote -> [S0]
-218967 [S2] becomes {Candidate}
-218970 [S2] currentTerm -> (29)
-218974 [S2] sends RequestVote -> [S1]
-218974 [S2] sends RequestVote -> [S0]
-226731 [S2] becomes {Candidate}
-226734 [S2] currentTerm -> (30)
-226737 [S2] sends RequestVote -> [S0]
-226738 [S2] sends RequestVote -> [S1]
-234605 [S2] becomes {Candidate}
-234611 [S2] currentTerm -> (31)
-234614 [S2] sends RequestVote -> [S0]
-234615 [S2] sends RequestVote -> [S1]
-242488 [S2] becomes {Candidate}
-242491 [S2] currentTerm -> (32)
-242495 [S2] sends RequestVote -> [S0]
-242497 [S2] sends RequestVote -> [S1]
-250470 [S2] becomes {Candidate}
-250473 [S2] currentTerm -> (33)
-250476 [S2] sends RequestVote -> [S0]
-250477 [S2] sends RequestVote -> [S1]
-258026 [S2] becomes {Candidate}
-258031 [S2] currentTerm -> (34)
-258035 [S2] sends RequestVote -> [S0]
-258036 [S2] sends RequestVote -> [S1]
-265168 [S2] becomes {Candidate}
-265172 [S2] currentTerm -> (35)
-265175 [S2] sends RequestVote -> [S0]
-265175 [S2] sends RequestVote -> [S1]
-272391 [S2] becomes {Candidate}
-272396 [S2] currentTerm -> (36)
-272399 [S2] sends RequestVote -> [S0]
-272399 [S2] sends RequestVote -> [S1]
-signal: interrupt
-FAIL	6.824/raft	27.819s
+000018 [S0] sends RequestVote -> [S2]
+000017 [S0] sends RequestVote -> [S1]
+000019 [S2] becomes {Candidate}
+000028 [S2] currentTerm -> (1)
+000022 [S1] sends RequestVote -> [S0]
+000036 Otherwise
+000038 [S1] refused Vote -> [S0]
+000040 Otherwise
+000042 [S0] refused Vote -> [S1]
+000036 Otherwise
+000047 [S2] refused Vote -> [S0]
+000035 [S2] sends RequestVote -> [S0]
+000035 [S2] sends RequestVote -> [S1]
+000022 [S1] sends RequestVote -> [S2]
+000055 Otherwise
+000057 [S0] refused Vote -> [S2]
+000058 Otherwise
+000061 [S1] refused Vote -> [S2]
+000061 Otherwise
+000064 [S2] refused Vote -> [S1]
+010560 [S0] becomes {Candidate}
+010565 [S0] currentTerm -> (2)
+010570 [S0] sends RequestVote -> [S1]
+010572 [S2] becomes {Candidate}
+010574 [S2] currentTerm -> (2)
+010570 [S0] sends RequestVote -> [S2]
+010583 [S1] becomes {Follower}
+010586 [S1] currentTerm -> (2)
+010588 [S0] Got Vote <- [S1]
+010590 {Election}[S1] Reset Election Timer
+010579 [S2] sends RequestVote -> [S1]
+010580 [S2] sends RequestVote -> [S0]
+010588 Otherwise
+010597 [S2] refused Vote -> [S0]
+010594 [S0] get (2) votes now
+010601 [S0] becomes {Leader}
+010603 [S0] sends HeartBeat -> [S1]
+010607 [S0] sends HeartBeat -> [S2]
+010608 Otherwise
+010611 [S1] refused Vote -> [S2]
+010610 Otherwise
+010615 [S0] refused Vote -> [S2]
+010616 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:00.8503613 -0400 EDT m=+1.062612701
+010616 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:00.8503854 -0400 EDT m=+1.062636801
+011072 [S0] sends HeartBeat -> [S1]
+011078 [S0] sends HeartBeat -> [S2]
+011087 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:00.8974691 -0400 EDT m=+1.109720401
+011088 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:00.8975594 -0400 EDT m=+1.109810701
+011583 [S0] sends HeartBeat -> [S1]
+011587 [S0] sends HeartBeat -> [S2]
+011594 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:00.9481535 -0400 EDT m=+1.160404801
+011596 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:00.9483904 -0400 EDT m=+1.160641701
+012092 [S0] sends HeartBeat -> [S1]
+012096 [S0] sends HeartBeat -> [S2]
+012104 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:00.9991456 -0400 EDT m=+1.211397001
+012105 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:00.9992432 -0400 EDT m=+1.211494501
+012600 [S0] sends HeartBeat -> [S1]
+012605 [S0] sends HeartBeat -> [S2]
+012616 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.0503507 -0400 EDT m=+1.262602001
+012617 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.0505249 -0400 EDT m=+1.262776201
+013114 [S0] sends HeartBeat -> [S1]
+013118 [S0] sends HeartBeat -> [S2]
+013127 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.1014698 -0400 EDT m=+1.313721201
+013128 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.1015653 -0400 EDT m=+1.313816601
+013624 [S0] sends HeartBeat -> [S1]
+013629 [S0] sends HeartBeat -> [S2]
+013640 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.1528338 -0400 EDT m=+1.365085201
+013641 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.1528958 -0400 EDT m=+1.365147101
+014136 [S0] sends HeartBeat -> [S1]
+014141 [S0] sends HeartBeat -> [S2]
+014149 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.2037111 -0400 EDT m=+1.415962401
+014149 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.2037373 -0400 EDT m=+1.415988601
+014647 [S0] sends HeartBeat -> [S1]
+014653 [S0] sends HeartBeat -> [S2]
+014661 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.254854 -0400 EDT m=+1.467105401
+014662 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.2549927 -0400 EDT m=+1.467244101
+015159 [S0] sends HeartBeat -> [S1]
+015164 [S0] sends HeartBeat -> [S2]
+015172 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.305976 -0400 EDT m=+1.518227401
+015175 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.3062548 -0400 EDT m=+1.518506201
+015671 [S0] sends HeartBeat -> [S1]
+015685 [S0] sends HeartBeat -> [S2]
+015699 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.3586996 -0400 EDT m=+1.570951001
+015704 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.3592276 -0400 EDT m=+1.571479001
+016197 [S0] sends HeartBeat -> [S1]
+016204 [S0] sends HeartBeat -> [S2]
+016214 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.4102244 -0400 EDT m=+1.622475701
+016217 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.4105099 -0400 EDT m=+1.622761201
+016712 [S0] sends HeartBeat -> [S1]
+016723 [S0] sends HeartBeat -> [S2]
+016737 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.4624541 -0400 EDT m=+1.674705401
+016747 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.4634963 -0400 EDT m=+1.675747701
+017240 [S0] sends HeartBeat -> [S1]
+017245 [S0] sends HeartBeat -> [S2]
+017254 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.51419 -0400 EDT m=+1.726441401
+017255 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.5142475 -0400 EDT m=+1.726498801
+017751 [S0] sends HeartBeat -> [S1]
+017758 [S0] sends HeartBeat -> [S2]
+017770 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.5658152 -0400 EDT m=+1.778066601
+017771 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.5658582 -0400 EDT m=+1.778109601
+018265 [S0] sends HeartBeat -> [S1]
+018271 [S0] sends HeartBeat -> [S2]
+018281 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.6169272 -0400 EDT m=+1.829178501
+018282 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.6170183 -0400 EDT m=+1.829269701
+018778 [S0] sends HeartBeat -> [S1]
+018785 [S0] sends HeartBeat -> [S2]
+018796 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.6683469 -0400 EDT m=+1.880598201
+018796 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.6683727 -0400 EDT m=+1.880624101
+019294 [S0] sends HeartBeat -> [S1]
+019304 [S0] sends HeartBeat -> [S2]
+019312 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.7199773 -0400 EDT m=+1.932228701
+019316 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.7203556 -0400 EDT m=+1.932606901
+019811 [S0] sends HeartBeat -> [S1]
+019818 [S0] sends HeartBeat -> [S2]
+019827 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.7715184 -0400 EDT m=+1.983769701
+019829 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.7717244 -0400 EDT m=+1.983975801
+020324 [S0] sends HeartBeat -> [S1]
+020327 [S0] sends HeartBeat -> [S2]
+020333 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.8221212 -0400 EDT m=+2.034372501
+020336 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.8224301 -0400 EDT m=+2.034681401
+020832 [S0] sends HeartBeat -> [S1]
+020837 [S0] sends HeartBeat -> [S2]
+020846 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.8734085 -0400 EDT m=+2.085659901
+020847 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.8735258 -0400 EDT m=+2.085777101
+021343 [S0] sends HeartBeat -> [S1]
+021350 [S0] sends HeartBeat -> [S2]
+021359 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.9246564 -0400 EDT m=+2.136907701
+021359 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.9246824 -0400 EDT m=+2.136933701
+021856 [S0] sends HeartBeat -> [S1]
+021861 [S0] sends HeartBeat -> [S2]
+021870 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:01.975836 -0400 EDT m=+2.188087301
+021871 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:01.9758391 -0400 EDT m=+2.188090501
+022372 [S0] sends HeartBeat -> [S1]
+022377 [S0] sends HeartBeat -> [S2]
+022383 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.0271064 -0400 EDT m=+2.239357701
+022387 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.0274846 -0400 EDT m=+2.239736001
+022885 [S0] sends HeartBeat -> [S1]
+022890 [S0] sends HeartBeat -> [S2]
+022900 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.0788178 -0400 EDT m=+2.291069101
+022903 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.0791044 -0400 EDT m=+2.291355701
+023397 [S0] sends HeartBeat -> [S1]
+023402 [S0] sends HeartBeat -> [S2]
+023411 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.1298521 -0400 EDT m=+2.342103401
+023412 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.1299416 -0400 EDT m=+2.342192901
+023907 [S0] sends HeartBeat -> [S1]
+023912 [S0] sends HeartBeat -> [S2]
+023922 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.1809638 -0400 EDT m=+2.393215201
+023923 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.1811311 -0400 EDT m=+2.393382401
+024419 [S0] sends HeartBeat -> [S1]
+024429 [S0] sends HeartBeat -> [S2]
+024441 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.2328633 -0400 EDT m=+2.445114601
+024445 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.2332399 -0400 EDT m=+2.445491301
+024937 [S0] sends HeartBeat -> [S1]
+024945 [S0] sends HeartBeat -> [S2]
+024954 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.2841528 -0400 EDT m=+2.496404101
+024954 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.2841553 -0400 EDT m=+2.496406701
+025454 [S0] sends HeartBeat -> [S1]
+025474 [S0] sends HeartBeat -> [S2]
+025482 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.3370028 -0400 EDT m=+2.549254201
+025484 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.3371698 -0400 EDT m=+2.549421101
+025983 [S0] sends HeartBeat -> [S1]
+025993 [S0] sends HeartBeat -> [S2]
+026005 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.3892919 -0400 EDT m=+2.601543201
+026007 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.3895067 -0400 EDT m=+2.601758101
+026507 [S0] sends HeartBeat -> [S1]
+026529 [S0] sends HeartBeat -> [S2]
+026539 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.4426578 -0400 EDT m=+2.654909101
+026541 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.4428777 -0400 EDT m=+2.655129001
+027039 [S0] sends HeartBeat -> [S1]
+027044 [S0] sends HeartBeat -> [S2]
+027054 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.4942016 -0400 EDT m=+2.706453001
+027054 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.4942158 -0400 EDT m=+2.706467201
+027552 [S0] sends HeartBeat -> [S1]
+027559 [S0] sends HeartBeat -> [S2]
+027567 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.5454814 -0400 EDT m=+2.757732801
+027569 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.5456912 -0400 EDT m=+2.757942601
+028066 [S0] sends HeartBeat -> [S1]
+028072 [S0] sends HeartBeat -> [S2]
+028081 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.5968847 -0400 EDT m=+2.809136001
+028085 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.5972551 -0400 EDT m=+2.809506401
+028579 [S0] sends HeartBeat -> [S1]
+028585 [S0] sends HeartBeat -> [S2]
+028592 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.6480057 -0400 EDT m=+2.860257001
+028593 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.6480606 -0400 EDT m=+2.860311901
+029090 [S0] sends HeartBeat -> [S1]
+029094 [S0] sends HeartBeat -> [S2]
+029103 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.6991191 -0400 EDT m=+2.911370501
+029104 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.6991395 -0400 EDT m=+2.911390801
+029602 [S0] sends HeartBeat -> [S1]
+029608 [S0] sends HeartBeat -> [S2]
+029617 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.7504541 -0400 EDT m=+2.962705501
+029622 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.7510366 -0400 EDT m=+2.963288001
+030114 [S0] sends HeartBeat -> [S1]
+030119 [S0] sends HeartBeat -> [S2]
+030128 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.8015491 -0400 EDT m=+3.013800401
+030130 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.8018261 -0400 EDT m=+3.014077501
+030624 [S0] sends HeartBeat -> [S1]
+030628 [S0] sends HeartBeat -> [S2]
+030638 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.8525875 -0400 EDT m=+3.064838901
+030639 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.8526397 -0400 EDT m=+3.064891101
+031134 [S0] sends HeartBeat -> [S1]
+031140 [S0] sends HeartBeat -> [S2]
+031152 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.9039687 -0400 EDT m=+3.116220001
+031156 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.9043537 -0400 EDT m=+3.116605101
+031649 [S0] sends HeartBeat -> [S1]
+031656 [S0] sends HeartBeat -> [S2]
+031664 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:02.9551505 -0400 EDT m=+3.167401801
+031667 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:02.9555105 -0400 EDT m=+3.167761901
+032162 [S0] sends HeartBeat -> [S1]
+032168 [S0] sends HeartBeat -> [S2]
+032176 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.0063794 -0400 EDT m=+3.218630801
+032177 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.0065073 -0400 EDT m=+3.218758701
+032674 [S0] sends HeartBeat -> [S1]
+032681 [S0] sends HeartBeat -> [S2]
+032692 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.0579607 -0400 EDT m=+3.270212101
+032692 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.0579925 -0400 EDT m=+3.270243801
+033187 [S0] sends HeartBeat -> [S1]
+033191 [S0] sends HeartBeat -> [S2]
+033197 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.1085291 -0400 EDT m=+3.320780401
+033200 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.1088135 -0400 EDT m=+3.321064801
+033697 [S0] sends HeartBeat -> [S1]
+033701 [S0] sends HeartBeat -> [S2]
+033707 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.1594644 -0400 EDT m=+3.371715801
+033710 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.1597637 -0400 EDT m=+3.372015101
+034206 [S0] sends HeartBeat -> [S1]
+034210 [S0] sends HeartBeat -> [S2]
+034219 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.2106542 -0400 EDT m=+3.422905501
+034223 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.2110625 -0400 EDT m=+3.423313801
+034715 [S0] sends HeartBeat -> [S1]
+034720 [S0] sends HeartBeat -> [S2]
+034725 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.2613201 -0400 EDT m=+3.473571401
+034728 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.2615746 -0400 EDT m=+3.473825901
+035225 [S0] sends HeartBeat -> [S1]
+035232 [S0] sends HeartBeat -> [S2]
+035239 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.3127005 -0400 EDT m=+3.524951901
+035243 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.3130763 -0400 EDT m=+3.525327601
+035739 [S0] sends HeartBeat -> [S1]
+035742 [S0] sends HeartBeat -> [S2]
+035750 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.3638049 -0400 EDT m=+3.576056201
+035751 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.3639254 -0400 EDT m=+3.576176701
+036248 [S0] sends HeartBeat -> [S1]
+036253 [S0] sends HeartBeat -> [S2]
+036262 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.4149479 -0400 EDT m=+3.627199201
+036263 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.4150726 -0400 EDT m=+3.627324001
+036760 [S0] sends HeartBeat -> [S1]
+036767 [S0] sends HeartBeat -> [S2]
+036775 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.4663192 -0400 EDT m=+3.678570501
+036778 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.4666324 -0400 EDT m=+3.678883701
+037274 [S0] sends HeartBeat -> [S1]
+037279 [S0] sends HeartBeat -> [S2]
+037286 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.5173808 -0400 EDT m=+3.729632101
+037288 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.5175616 -0400 EDT m=+3.729813001
+037785 [S0] sends HeartBeat -> [S1]
+037789 [S0] sends HeartBeat -> [S2]
+037798 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.5685907 -0400 EDT m=+3.780842101
+037801 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.5689208 -0400 EDT m=+3.781172201
+038296 [S0] sends HeartBeat -> [S1]
+038303 [S0] sends HeartBeat -> [S2]
+038312 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.6199951 -0400 EDT m=+3.832246401
+038316 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.6204027 -0400 EDT m=+3.832654001
+038811 [S0] sends HeartBeat -> [S1]
+038816 [S0] sends HeartBeat -> [S2]
+038826 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.6713667 -0400 EDT m=+3.883618001
+038827 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.6714698 -0400 EDT m=+3.883721101
+039321 [S0] sends HeartBeat -> [S1]
+039327 [S0] sends HeartBeat -> [S2]
+039335 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.7222476 -0400 EDT m=+3.934499001
+039344 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.7231846 -0400 EDT m=+3.935435901
+039834 [S0] sends HeartBeat -> [S1]
+039838 [S0] sends HeartBeat -> [S2]
+039846 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:03.7734113 -0400 EDT m=+3.985662601
+039854 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:03.7741436 -0400 EDT m=+3.986395001
+  ... Passed --   4.0  3  126   35678    0
+040219 [S0] becomes {Candidate}
+040223 [S0] currentTerm -> (1)
+040222 [S1] becomes {Candidate}
+Test (2A): election after network failure ...
+040229 [S1] currentTerm -> (1)
+040227 [S2] becomes {Candidate}
+040236 [S2] currentTerm -> (1)
+040228 [S0] sends RequestVote -> [S1]
+040228 [S0] sends RequestVote -> [S2]
+040234 [S1] sends RequestVote -> [S2]
+040235 [S1] sends RequestVote -> [S0]
+040248 Otherwise
+040250 [S2] refused Vote -> [S0]
+040240 [S2] sends RequestVote -> [S1]
+040240 [S2] sends RequestVote -> [S0]
+040246 Otherwise
+040259 [S1] refused Vote -> [S0]
+040261 Otherwise
+040263 [S0] refused Vote -> [S2]
+040262 Otherwise
+040268 [S1] refused Vote -> [S2]
+040266 Otherwise
+040272 [S2] refused Vote -> [S1]
+040276 Otherwise
+040279 [S0] refused Vote -> [S1]
+050777 [S2] becomes {Candidate}
+050780 [S2] currentTerm -> (2)
+050783 [S2] sends RequestVote -> [S0]
+050784 [S2] sends RequestVote -> [S1]
+050791 [S0] becomes {Follower}
+050793 [S1] becomes {Follower}
+050795 [S1] currentTerm -> (2)
+050797 [S2] Got Vote <- [S1]
+050799 {Election}[S1] Reset Election Timer
+050793 [S0] currentTerm -> (2)
+050804 [S2] Got Vote <- [S0]
+050806 {Election}[S0] Reset Election Timer
+050804 [S2] get (2) votes now
+050811 [S2] becomes {Leader}
+050813 [S2] sends HeartBeat -> [S0]
+050817 [S2] sends HeartBeat -> [S1]
+050820 [S2] get (3) votes now
+050824 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:04.8711873 -0400 EDT m=+5.083438601
+050827 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:04.8714722 -0400 EDT m=+5.083723501
+051285 [S2] sends HeartBeat -> [S0]
+051291 [S2] sends HeartBeat -> [S1]
+051800 [S2] sends HeartBeat -> [S0]
+051803 [S2] sends HeartBeat -> [S1]
+052307 [S2] sends HeartBeat -> [S0]
+052311 [S2] sends HeartBeat -> [S1]
+052816 [S2] sends HeartBeat -> [S0]
+052822 [S2] sends HeartBeat -> [S1]
+053328 [S2] sends HeartBeat -> [S0]
+053332 [S2] sends HeartBeat -> [S1]
+053840 [S2] sends HeartBeat -> [S0]
+053845 [S2] sends HeartBeat -> [S1]
+054351 [S2] sends HeartBeat -> [S0]
+054357 [S2] sends HeartBeat -> [S1]
+054863 [S2] sends HeartBeat -> [S0]
+054868 [S2] sends HeartBeat -> [S1]
+055376 [S2] sends HeartBeat -> [S0]
+055381 [S2] sends HeartBeat -> [S1]
+055887 [S2] sends HeartBeat -> [S0]
+055891 [S2] sends HeartBeat -> [S1]
+056397 [S2] sends HeartBeat -> [S0]
+056402 [S2] sends HeartBeat -> [S1]
+056910 [S2] sends HeartBeat -> [S0]
+056914 [S2] sends HeartBeat -> [S1]
+057421 [S2] sends HeartBeat -> [S0]
+057425 [S2] sends HeartBeat -> [S1]
+057956 [S2] sends HeartBeat -> [S0]
+057961 [S2] sends HeartBeat -> [S1]
+058467 [S2] sends HeartBeat -> [S0]
+058472 [S2] sends HeartBeat -> [S1]
+058981 [S2] sends HeartBeat -> [S0]
+058985 [S2] sends HeartBeat -> [S1]
+059492 [S2] sends HeartBeat -> [S0]
+059497 [S2] sends HeartBeat -> [S1]
+060006 [S2] sends HeartBeat -> [S0]
+060011 [S2] sends HeartBeat -> [S1]
+060518 [S2] sends HeartBeat -> [S0]
+060522 [S2] sends HeartBeat -> [S1]
+061027 [S2] sends HeartBeat -> [S0]
+061032 [S2] sends HeartBeat -> [S1]
+061538 [S2] sends HeartBeat -> [S0]
+061543 [S2] sends HeartBeat -> [S1]
+062049 [S2] sends HeartBeat -> [S0]
+062054 [S2] sends HeartBeat -> [S1]
+062323 [S1] becomes {Candidate}
+062327 [S1] currentTerm -> (3)
+062331 [S1] sends RequestVote -> [S0]
+062332 [S1] sends RequestVote -> [S2]
+062340 [S0] becomes {Follower}
+062342 [S0] currentTerm -> (3)
+062343 [S1] Got Vote <- [S0]
+062345 {Election}[S0] Reset Election Timer
+062349 [S1] get (2) votes now
+062351 [S1] becomes {Leader}
+062353 [S1] sends HeartBeat -> [S0]
+062355 [S1] sends HeartBeat -> [S2]
+062362 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.0249638 -0400 EDT m=+6.237215101
+062560 [S2] sends HeartBeat -> [S0]
+062566 [S2] sends HeartBeat -> [S1]
+062834 [S1] sends HeartBeat -> [S0]
+062839 [S1] sends HeartBeat -> [S2]
+062849 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.07367 -0400 EDT m=+6.285921301
+063074 [S2] sends HeartBeat -> [S0]
+063078 [S2] sends HeartBeat -> [S1]
+063347 [S1] sends HeartBeat -> [S0]
+063352 [S1] sends HeartBeat -> [S2]
+063359 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.1246783 -0400 EDT m=+6.336929701
+063583 [S2] sends HeartBeat -> [S0]
+063588 [S2] sends HeartBeat -> [S1]
+063860 [S1] sends HeartBeat -> [S0]
+063865 [S1] sends HeartBeat -> [S2]
+063872 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.1759927 -0400 EDT m=+6.388244101
+064094 [S2] sends HeartBeat -> [S0]
+064098 [S2] sends HeartBeat -> [S1]
+064370 [S1] sends HeartBeat -> [S0]
+064374 [S1] sends HeartBeat -> [S2]
+064382 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.2269767 -0400 EDT m=+6.439228001
+064604 [S2] sends HeartBeat -> [S0]
+064609 [S2] sends HeartBeat -> [S1]
+064879 [S1] sends HeartBeat -> [S0]
+064883 [S1] sends HeartBeat -> [S2]
+064890 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.2778086 -0400 EDT m=+6.490060001
+065116 [S2] sends HeartBeat -> [S0]
+065121 [S2] sends HeartBeat -> [S1]
+065389 [S1] sends HeartBeat -> [S0]
+065392 [S1] sends HeartBeat -> [S2]
+065401 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.3288672 -0400 EDT m=+6.541118501
+065628 [S2] sends HeartBeat -> [S0]
+065632 [S2] sends HeartBeat -> [S1]
+065899 [S1] sends HeartBeat -> [S0]
+065904 [S1] sends HeartBeat -> [S2]
+065913 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.3801159 -0400 EDT m=+6.592367201
+066139 [S2] sends HeartBeat -> [S0]
+066144 [S2] sends HeartBeat -> [S1]
+066151 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.4038462 -0400 EDT m=+6.616097501
+066154 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.4041968 -0400 EDT m=+6.616448101
+066156 [S1] becomes {Follower}%!(EXTRA int=3)
+066649 [S2] sends HeartBeat -> [S0]
+066653 [S2] sends HeartBeat -> [S1]
+066659 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.4546837 -0400 EDT m=+6.666935101
+066664 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.4552236 -0400 EDT m=+6.667474901
+067160 [S2] sends HeartBeat -> [S0]
+067163 [S2] sends HeartBeat -> [S1]
+067171 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.5058415 -0400 EDT m=+6.718092801
+067171 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.5059338 -0400 EDT m=+6.718185101
+067669 [S2] sends HeartBeat -> [S0]
+067674 [S2] sends HeartBeat -> [S1]
+067679 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.5566863 -0400 EDT m=+6.768937701
+067686 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.5573553 -0400 EDT m=+6.769606601
+068179 [S2] sends HeartBeat -> [S0]
+068183 [S2] sends HeartBeat -> [S1]
+068192 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.6079441 -0400 EDT m=+6.820195501
+068193 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.6080952 -0400 EDT m=+6.820346501
+068688 [S2] sends HeartBeat -> [S0]
+068692 [S2] sends HeartBeat -> [S1]
+068698 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.6585694 -0400 EDT m=+6.870820701
+068699 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.658714 -0400 EDT m=+6.870965301
+069197 [S2] sends HeartBeat -> [S0]
+069201 [S2] sends HeartBeat -> [S1]
+069209 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.7097032 -0400 EDT m=+6.921954501
+069211 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.7099371 -0400 EDT m=+6.922188401
+069708 [S2] sends HeartBeat -> [S0]
+069712 [S2] sends HeartBeat -> [S1]
+069719 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.7606434 -0400 EDT m=+6.972894701
+069721 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.7608821 -0400 EDT m=+6.973133401
+070218 [S2] sends HeartBeat -> [S0]
+070223 [S2] sends HeartBeat -> [S1]
+070229 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.8117121 -0400 EDT m=+7.023963401
+070233 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.8121254 -0400 EDT m=+7.024376801
+070730 [S2] sends HeartBeat -> [S0]
+070735 [S2] sends HeartBeat -> [S1]
+070741 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:06.8628622 -0400 EDT m=+7.075113601
+070744 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:06.8631449 -0400 EDT m=+7.075396301
+071242 [S2] sends HeartBeat -> [S0]
+071248 [S2] sends HeartBeat -> [S1]
+071755 [S2] sends HeartBeat -> [S0]
+071760 [S2] sends HeartBeat -> [S1]
+072266 [S2] sends HeartBeat -> [S0]
+072269 [S2] sends HeartBeat -> [S1]
+072776 [S2] sends HeartBeat -> [S0]
+072784 [S2] sends HeartBeat -> [S1]
+073298 [S2] sends HeartBeat -> [S0]
+073309 [S2] sends HeartBeat -> [S1]
+073820 [S2] sends HeartBeat -> [S0]
+073825 [S2] sends HeartBeat -> [S1]
+074332 [S2] sends HeartBeat -> [S0]
+074336 [S2] sends HeartBeat -> [S1]
+074841 [S2] sends HeartBeat -> [S0]
+074845 [S2] sends HeartBeat -> [S1]
+075351 [S2] sends HeartBeat -> [S0]
+075356 [S2] sends HeartBeat -> [S1]
+075862 [S2] sends HeartBeat -> [S0]
+075867 [S2] sends HeartBeat -> [S1]
+076376 [S2] sends HeartBeat -> [S0]
+076382 [S2] sends HeartBeat -> [S1]
+076888 [S2] sends HeartBeat -> [S0]
+076894 [S2] sends HeartBeat -> [S1]
+077402 [S2] sends HeartBeat -> [S0]
+077406 [S2] sends HeartBeat -> [S1]
+077913 [S2] sends HeartBeat -> [S0]
+077917 [S2] sends HeartBeat -> [S1]
+078426 [S2] sends HeartBeat -> [S0]
+078430 [S2] sends HeartBeat -> [S1]
+078935 [S2] sends HeartBeat -> [S0]
+078938 [S2] sends HeartBeat -> [S1]
+079444 [S2] sends HeartBeat -> [S0]
+079449 [S2] sends HeartBeat -> [S1]
+079957 [S2] sends HeartBeat -> [S0]
+079961 [S2] sends HeartBeat -> [S1]
+080468 [S2] sends HeartBeat -> [S0]
+080474 [S2] sends HeartBeat -> [S1]
+080980 [S2] sends HeartBeat -> [S0]
+080985 [S2] sends HeartBeat -> [S1]
+081492 [S2] sends HeartBeat -> [S0]
+081495 [S1] becomes {Candidate}
+081502 [S1] currentTerm -> (4)
+081499 [S2] sends HeartBeat -> [S1]
+081506 [S1] sends RequestVote -> [S0]
+081507 [S1] sends RequestVote -> [S2]
+082012 [S2] sends HeartBeat -> [S0]
+082017 [S2] sends HeartBeat -> [S1]
+082521 [S2] sends HeartBeat -> [S0]
+082525 [S2] sends HeartBeat -> [S1]
+083030 [S2] sends HeartBeat -> [S0]
+083035 [S2] sends HeartBeat -> [S1]
+083543 [S2] sends HeartBeat -> [S0]
+083547 [S2] sends HeartBeat -> [S1]
+083938 [S0] becomes {Candidate}
+083942 [S0] currentTerm -> (4)
+083948 [S0] sends RequestVote -> [S2]
+083948 [S0] sends RequestVote -> [S1]
+084054 [S2] sends HeartBeat -> [S0]
+084057 [S2] sends HeartBeat -> [S1]
+084562 [S2] sends HeartBeat -> [S0]
+084566 [S2] sends HeartBeat -> [S1]
+085074 [S2] sends HeartBeat -> [S0]
+085078 [S2] sends HeartBeat -> [S1]
+085584 [S2] sends HeartBeat -> [S0]
+085587 [S2] sends HeartBeat -> [S1]
+086092 [S2] sends HeartBeat -> [S0]
+086098 [S2] sends HeartBeat -> [S1]
+086604 [S2] sends HeartBeat -> [S0]
+086609 [S2] sends HeartBeat -> [S1]
+087118 [S2] sends HeartBeat -> [S0]
+087124 [S2] sends HeartBeat -> [S1]
+087632 [S2] sends HeartBeat -> [S0]
+087639 [S2] sends HeartBeat -> [S1]
+088146 [S2] sends HeartBeat -> [S0]
+088149 [S2] sends HeartBeat -> [S1]
+088654 [S2] sends HeartBeat -> [S0]
+088659 [S2] sends HeartBeat -> [S1]
+089167 [S2] sends HeartBeat -> [S0]
+089172 [S2] sends HeartBeat -> [S1]
+089679 [S2] sends HeartBeat -> [S0]
+089683 [S2] sends HeartBeat -> [S1]
+090188 [S2] sends HeartBeat -> [S0]
+090193 [S2] sends HeartBeat -> [S1]
+090700 [S2] sends HeartBeat -> [S0]
+090705 [S2] sends HeartBeat -> [S1]
+091210 [S2] sends HeartBeat -> [S0]
+091214 [S2] sends HeartBeat -> [S1]
+091720 [S2] sends HeartBeat -> [S0]
+091724 [S2] sends HeartBeat -> [S1]
+092231 [S2] sends HeartBeat -> [S0]
+092235 [S2] sends HeartBeat -> [S1]
+092558 [S1] becomes {Candidate}
+092562 [S1] currentTerm -> (5)
+092566 [S1] sends RequestVote -> [S0]
+092567 [S1] sends RequestVote -> [S2]
+092577 [S0] becomes {Follower}
+092579 [S0] currentTerm -> (5)
+092582 [S1] Got Vote <- [S0]
+092584 {Election}[S0] Reset Election Timer
+092588 [S1] get (2) votes now
+092590 [S1] becomes {Leader}
+092591 [S1] sends HeartBeat -> [S0]
+092593 [S1] sends HeartBeat -> [S2]
+092599 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.04869 -0400 EDT m=+9.260941401
+092744 [S2] sends HeartBeat -> [S0]
+092747 [S2] sends HeartBeat -> [S1]
+093069 [S1] sends HeartBeat -> [S0]
+093073 [S1] sends HeartBeat -> [S2]
+093079 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.0967327 -0400 EDT m=+9.308984001
+093253 [S2] sends HeartBeat -> [S0]
+093257 [S2] sends HeartBeat -> [S1]
+093579 [S1] sends HeartBeat -> [S0]
+093584 [S1] sends HeartBeat -> [S2]
+093592 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.1479989 -0400 EDT m=+9.360250201
+093763 [S2] sends HeartBeat -> [S0]
+093767 [S2] sends HeartBeat -> [S1]
+094091 [S1] sends HeartBeat -> [S0]
+094095 [S1] sends HeartBeat -> [S2]
+094104 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.1991609 -0400 EDT m=+9.411412301
+094273 [S2] sends HeartBeat -> [S0]
+094278 [S2] sends HeartBeat -> [S1]
+094603 [S1] sends HeartBeat -> [S0]
+094610 [S1] sends HeartBeat -> [S2]
+094617 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.2504941 -0400 EDT m=+9.462745401
+094786 [S2] sends HeartBeat -> [S0]
+094793 [S2] sends HeartBeat -> [S1]
+095117 [S1] sends HeartBeat -> [S0]
+095121 [S1] sends HeartBeat -> [S2]
+095129 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.3016569 -0400 EDT m=+9.513908201
+095298 [S2] sends HeartBeat -> [S0]
+095302 [S2] sends HeartBeat -> [S1]
+095625 [S1] sends HeartBeat -> [S0]
+095629 [S1] sends HeartBeat -> [S2]
+095638 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.3525525 -0400 EDT m=+9.564803901
+095808 [S2] sends HeartBeat -> [S0]
+095814 [S2] sends HeartBeat -> [S1]
+096134 [S1] sends HeartBeat -> [S0]
+096138 [S1] sends HeartBeat -> [S2]
+096144 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.4032114 -0400 EDT m=+9.615462701
+096148 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.4035645 -0400 EDT m=+9.615815801
+096150 [S2] becomes {Follower}%!(EXTRA int=5)
+096152 [S2] currentTerm -> (5)
+096644 [S1] sends HeartBeat -> [S0]
+096649 [S1] sends HeartBeat -> [S2]
+096655 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.454308 -0400 EDT m=+9.666559301
+096658 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.4545766 -0400 EDT m=+9.666828001
+097155 [S1] sends HeartBeat -> [S0]
+097159 [S1] sends HeartBeat -> [S2]
+097166 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.505375 -0400 EDT m=+9.717626401
+097167 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.5054835 -0400 EDT m=+9.717734801
+097665 [S1] sends HeartBeat -> [S0]
+097669 [S1] sends HeartBeat -> [S2]
+097677 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.5565126 -0400 EDT m=+9.768763901
+097680 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.5567984 -0400 EDT m=+9.769049701
+098176 [S1] sends HeartBeat -> [S0]
+098180 [S1] sends HeartBeat -> [S2]
+098187 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.6074506 -0400 EDT m=+9.819701901
+098188 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.6076253 -0400 EDT m=+9.819876601
+098685 [S1] sends HeartBeat -> [S0]
+098689 [S1] sends HeartBeat -> [S2]
+098696 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.6583625 -0400 EDT m=+9.870613901
+098698 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.6585817 -0400 EDT m=+9.870833101
+099195 [S1] sends HeartBeat -> [S0]
+099198 [S1] sends HeartBeat -> [S2]
+099206 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.7094226 -0400 EDT m=+9.921673901
+099208 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.7096018 -0400 EDT m=+9.921853201
+099704 [S1] sends HeartBeat -> [S0]
+099709 [S1] sends HeartBeat -> [S2]
+099715 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.7603206 -0400 EDT m=+9.972571901
+099721 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.7608754 -0400 EDT m=+9.973126701
+100215 [S1] sends HeartBeat -> [S0]
+100221 [S1] sends HeartBeat -> [S2]
+100228 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.8115956 -0400 EDT m=+10.023846901
+100229 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.8117275 -0400 EDT m=+10.023978801
+100727 [S1] sends HeartBeat -> [S0]
+100732 [S1] sends HeartBeat -> [S2]
+100743 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:09.863099 -0400 EDT m=+10.075350401
+100743 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:09.8631247 -0400 EDT m=+10.075376001
+  ... Passed --   6.1  3  244   54596    0
+101046 [S0] becomes {Candidate}
+101049 [S0] currentTerm -> (1)
+101052 [S0] sends RequestVote -> [S1]
+101051 [S1] becomes {Candidate}
+101057 [S1] currentTerm -> (1)
+101053 [S0] sends RequestVote -> [S2]
+101063 [S1] sends RequestVote -> [S3]
+101064 [S1] sends RequestVote -> [S5]
+101055 [S0] sends RequestVote -> [S4]
+101056 [S0] sends RequestVote -> [S6]
+101056 [S2] becomes {Candidate}
+101078 [S2] currentTerm -> (1)
+Test (2A): multiple elections ...
+101057 [S0] sends RequestVote -> [S5]
+101060 [S1] sends RequestVote -> [S0]
+101061 [S3] becomes {Candidate}
+101061 [S1] sends RequestVote -> [S2]
+101054 [S0] sends RequestVote -> [S3]
+101065 [S1] sends RequestVote -> [S4]
+101065 [S1] sends RequestVote -> [S6]
+101066 [S4] becomes {Candidate}
+101071 [S5] becomes {Candidate}
+101076 [S6] becomes {Candidate}
+101081 [S2] sends RequestVote -> [S0]
+101082 [S2] sends RequestVote -> [S1]
+101083 [S2] sends RequestVote -> [S3]
+101084 [S2] sends RequestVote -> [S4]
+101084 [S2] sends RequestVote -> [S5]
+101084 [S2] sends RequestVote -> [S6]
+101090 [S3] currentTerm -> (1)
+101092 Otherwise
+101098 Otherwise
+101107 [S4] currentTerm -> (1)
+101110 [S5] currentTerm -> (1)
+101114 [S6] currentTerm -> (1)
+101138 [S3] sends RequestVote -> [S0]
+101139 [S3] sends RequestVote -> [S1]
+101139 [S0] refused Vote -> [S1]
+101140 [S3] sends RequestVote -> [S2]
+101141 [S3] sends RequestVote -> [S5]
+101141 [S3] sends RequestVote -> [S4]
+101141 [S3] sends RequestVote -> [S6]
+101142 [S2] refused Vote -> [S1]
+101147 [S4] sends RequestVote -> [S0]
+101147 [S4] sends RequestVote -> [S1]
+101150 [S4] sends RequestVote -> [S2]
+101151 [S4] sends RequestVote -> [S3]
+101151 [S5] sends RequestVote -> [S0]
+101152 [S4] sends RequestVote -> [S6]
+101152 [S4] sends RequestVote -> [S5]
+101152 Otherwise
+101152 [S5] sends RequestVote -> [S1]
+101154 [S5] sends RequestVote -> [S2]
+101155 [S5] sends RequestVote -> [S3]
+101156 [S5] sends RequestVote -> [S4]
+101157 Otherwise
+101158 [S5] sends RequestVote -> [S6]
+101157 [S6] sends RequestVote -> [S0]
+101159 [S6] sends RequestVote -> [S1]
+101159 [S6] sends RequestVote -> [S2]
+101160 [S6] sends RequestVote -> [S3]
+101160 [S6] sends RequestVote -> [S4]
+101161 [S6] sends RequestVote -> [S5]
+101161 Otherwise
+101170 Otherwise
+101172 Otherwise
+101176 Otherwise
+101189 Otherwise
+101214 [S4] refused Vote -> [S1]
+101236 [S5] refused Vote -> [S0]
+101261 [S6] refused Vote -> [S1]
+101264 [S1] refused Vote -> [S3]
+101267 [S0] refused Vote -> [S3]
+101269 [S3] refused Vote -> [S0]
+101271 [S2] refused Vote -> [S3]
+101277 Otherwise
+101301 Otherwise
+101304 Otherwise
+101308 Otherwise
+101308 Otherwise
+101338 Otherwise
+101341 [S4] refused Vote -> [S2]
+101342 Otherwise
+101343 [S6] refused Vote -> [S2]
+101346 [S0] refused Vote -> [S2]
+101348 [S5] refused Vote -> [S4]
+101350 [S1] refused Vote -> [S2]
+101352 [S3] refused Vote -> [S4]
+101355 Otherwise
+101357 [S2] refused Vote -> [S6]
+101360 Otherwise
+101365 Otherwise
+101367 Otherwise
+101369 Otherwise
+101372 Otherwise
+101374 [S4] refused Vote -> [S6]
+101378 Otherwise
+101380 [S6] refused Vote -> [S4]
+101382 [S0] refused Vote -> [S4]
+101384 [S5] refused Vote -> [S6]
+101386 [S1] refused Vote -> [S4]
+101388 [S3] refused Vote -> [S6]
+101392 Otherwise
+101392 [S2] refused Vote -> [S4]
+101395 Otherwise
+101399 Otherwise
+101400 Otherwise
+101402 Otherwise
+101405 Otherwise
+101406 [S4] refused Vote -> [S5]
+101409 Otherwise
+101410 [S6] refused Vote -> [S5]
+101412 [S0] refused Vote -> [S6]
+101414 [S5] refused Vote -> [S3]
+101416 [S1] refused Vote -> [S6]
+101418 [S3] refused Vote -> [S5]
+101421 Otherwise
+101423 [S2] refused Vote -> [S5]
+101425 Otherwise
+101428 Otherwise
+101430 Otherwise
+101434 Otherwise
+101437 Otherwise
+101439 [S4] refused Vote -> [S3]
+101446 [S6] refused Vote -> [S3]
+101449 [S0] refused Vote -> [S5]
+101451 [S5] refused Vote -> [S2]
+101453 [S1] refused Vote -> [S5]
+101456 [S3] refused Vote -> [S2]
+112629 [S1] becomes {Candidate}
+112632 [S1] currentTerm -> (2)
+112635 [S1] sends RequestVote -> [S0]
+112636 [S1] sends RequestVote -> [S2]
+112636 [S1] sends RequestVote -> [S3]
+112642 [S2] becomes {Candidate}
+112644 [S2] currentTerm -> (2)
+112637 [S1] sends RequestVote -> [S5]
+112637 [S1] sends RequestVote -> [S6]
+112637 [S1] sends RequestVote -> [S4]
+112644 [S0] becomes {Follower}
+112656 [S0] currentTerm -> (2)
+112657 [S4] becomes {Follower}
+112659 [S4] currentTerm -> (2)
+112646 [S3] becomes {Follower}
+112658 [S1] Got Vote <- [S0]
+112665 {Election}[S0] Reset Election Timer
+112647 [S2] sends RequestVote -> [S0]
+112647 [S2] sends RequestVote -> [S1]
+112648 [S2] sends RequestVote -> [S3]
+112649 [S2] sends RequestVote -> [S4]
+112650 [S2] sends RequestVote -> [S5]
+112650 Otherwise
+112650 [S2] sends RequestVote -> [S6]
+112653 [S5] becomes {Follower}
+112654 [S6] becomes {Follower}
+112661 [S1] Got Vote <- [S4]
+112663 [S3] currentTerm -> (2)
+112670 [S1] get (2) votes now
+112678 [S2] refused Vote -> [S1]
+112683 [S5] currentTerm -> (2)
+112685 [S6] currentTerm -> (2)
+112687 {Election}[S4] Reset Election Timer
+112688 [S1] Got Vote <- [S3]
+112696 [S1] Got Vote <- [S5]
+112707 {Election}[S5] Reset Election Timer
+112698 [S1] Got Vote <- [S6]
+112711 {Election}[S6] Reset Election Timer
+112702 Otherwise
+112717 [S1] refused Vote -> [S2]
+112703 Otherwise
+112703 Otherwise
+112705 {Election}[S3] Reset Election Timer
+112710 Otherwise
+112714 Otherwise
+112720 [S1] get (3) votes now
+112722 [S4] refused Vote -> [S2]
+112724 [S0] refused Vote -> [S2]
+112727 Otherwise
+112729 [S5] refused Vote -> [S2]
+112731 [S6] refused Vote -> [S2]
+112734 [S1] get (4) votes now
+112741 [S3] refused Vote -> [S2]
+112749 [S1] becomes {Leader}
+112753 [S1] sends HeartBeat -> [S0]
+112755 [S1] sends HeartBeat -> [S2]
+112758 [S1] sends HeartBeat -> [S3]
+112760 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.0648342 -0400 EDT m=+11.277085501
+112761 [S1] sends HeartBeat -> [S4]
+112765 [S1] sends HeartBeat -> [S5]
+112764 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.0651836 -0400 EDT m=+11.277434901
+112766 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.0653671 -0400 EDT m=+11.277618401
+112768 [S1] sends HeartBeat -> [S6]
+112770 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.0657841 -0400 EDT m=+11.278035501
+112773 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.0660862 -0400 EDT m=+11.278337601
+112778 [S1] get (5) votes now
+112787 [S1] get (6) votes now
+112787 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.0675183 -0400 EDT m=+11.279769601
+113139 [S1] sends HeartBeat -> [S0]
+113143 [S1] sends HeartBeat -> [S2]
+113146 [S1] sends HeartBeat -> [S3]
+113149 [S1] sends HeartBeat -> [S4]
+113151 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.1039197 -0400 EDT m=+11.316171001
+113149 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.103708 -0400 EDT m=+11.315959301
+113152 [S1] sends HeartBeat -> [S5]
+113158 [S1] sends HeartBeat -> [S6]
+113154 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.1041726 -0400 EDT m=+11.316423901
+113162 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.1050119 -0400 EDT m=+11.317263201
+113158 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.1046275 -0400 EDT m=+11.316878901
+113166 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.1054211 -0400 EDT m=+11.317672401
+113663 [S1] sends HeartBeat -> [S0]
+113668 [S1] sends HeartBeat -> [S2]
+113672 [S1] sends HeartBeat -> [S3]
+113675 [S1] sends HeartBeat -> [S4]
+113677 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.1564878 -0400 EDT m=+11.368739101
+113678 [S1] sends HeartBeat -> [S5]
+113675 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.1563007 -0400 EDT m=+11.368552001
+113685 [S1] sends HeartBeat -> [S6]
+113691 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.1578997 -0400 EDT m=+11.370151001
+113685 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.1572531 -0400 EDT m=+11.369504501
+113687 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.1574806 -0400 EDT m=+11.369731901
+113707 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.1595006 -0400 EDT m=+11.371752001
+114194 [S1] sends HeartBeat -> [S0]
+114197 [S1] sends HeartBeat -> [S2]
+114200 [S1] sends HeartBeat -> [S3]
+114202 [S1] sends HeartBeat -> [S4]
+114205 [S1] sends HeartBeat -> [S5]
+114212 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.2099919 -0400 EDT m=+11.422243201
+114212 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.2099675 -0400 EDT m=+11.422218801
+114212 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.2099703 -0400 EDT m=+11.422221601
+114213 [S1] sends HeartBeat -> [S6]
+114214 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.2102063 -0400 EDT m=+11.422457601
+114219 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.2107199 -0400 EDT m=+11.422971201
+114231 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.2118957 -0400 EDT m=+11.424147101
+114727 [S1] sends HeartBeat -> [S0]
+114733 [S1] sends HeartBeat -> [S2]
+114735 [S1] sends HeartBeat -> [S3]
+114739 [S1] sends HeartBeat -> [S4]
+114741 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.2629304 -0400 EDT m=+11.475181701
+114740 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.2627661 -0400 EDT m=+11.475017401
+114742 [S1] sends HeartBeat -> [S5]
+114751 [S1] sends HeartBeat -> [S6]
+114756 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.2643943 -0400 EDT m=+11.476645601
+114757 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.2644604 -0400 EDT m=+11.476711701
+114770 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.2658074 -0400 EDT m=+11.478058701
+114774 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.2662263 -0400 EDT m=+11.478477701
+115257 [S1] sends HeartBeat -> [S0]
+115268 [S1] sends HeartBeat -> [S2]
+115271 [S1] sends HeartBeat -> [S3]
+115274 [S1] sends HeartBeat -> [S4]
+115274 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.3161883 -0400 EDT m=+11.528439701
+115276 [S1] sends HeartBeat -> [S5]
+115280 [S1] sends HeartBeat -> [S6]
+115277 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.3164848 -0400 EDT m=+11.528736201
+115278 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.316576 -0400 EDT m=+11.528827301
+115280 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.3167992 -0400 EDT m=+11.529050501
+115285 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.3173352 -0400 EDT m=+11.529586501
+115287 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.3174631 -0400 EDT m=+11.529714401
+115784 [S1] sends HeartBeat -> [S0]
+115787 [S1] sends HeartBeat -> [S2]
+115790 [S1] sends HeartBeat -> [S3]
+115792 [S1] sends HeartBeat -> [S4]
+115793 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.3680652 -0400 EDT m=+11.580316601
+115795 [S1] sends HeartBeat -> [S5]
+115799 [S1] sends HeartBeat -> [S6]
+115796 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.3683662 -0400 EDT m=+11.580617501
+115797 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.3685108 -0400 EDT m=+11.580762101
+115799 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.3687259 -0400 EDT m=+11.580977301
+115807 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.369451 -0400 EDT m=+11.581702401
+115809 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.3696635 -0400 EDT m=+11.581914801
+116304 [S1] sends HeartBeat -> [S0]
+116308 [S1] sends HeartBeat -> [S2]
+116312 [S1] sends HeartBeat -> [S3]
+116314 [S1] sends HeartBeat -> [S4]
+116315 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.420329 -0400 EDT m=+11.632580301
+116320 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.4207488 -0400 EDT m=+11.633000101
+116317 [S1] sends HeartBeat -> [S5]
+116320 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.4207933 -0400 EDT m=+11.633044701
+116322 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.4210032 -0400 EDT m=+11.633254501
+116324 [S1] sends HeartBeat -> [S6]
+116332 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.4219449 -0400 EDT m=+11.634196201
+116336 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.4224006 -0400 EDT m=+11.634652001
+116833 [S1] sends HeartBeat -> [S0]
+116837 [S1] sends HeartBeat -> [S2]
+116841 [S1] sends HeartBeat -> [S3]
+116844 [S1] sends HeartBeat -> [S4]
+116847 [S1] sends HeartBeat -> [S5]
+116844 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.4731776 -0400 EDT m=+11.685428901
+116848 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.4735617 -0400 EDT m=+11.685813101
+116850 [S1] sends HeartBeat -> [S6]
+116851 {Election}[S3] Reset Election Timer at 2022-05-26 14:47:11.4738489 -0400 EDT m=+11.686100201
+116852 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:11.4739923 -0400 EDT m=+11.686243601
+116855 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.4742509 -0400 EDT m=+11.686502201
+116862 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.4749915 -0400 EDT m=+11.687242901
+117359 [S1] sends HeartBeat -> [S0]
+117363 [S1] sends HeartBeat -> [S2]
+117365 [S1] sends HeartBeat -> [S3]
+117367 [S1] sends HeartBeat -> [S4]
+117371 [S1] sends HeartBeat -> [S5]
+117373 [S1] sends HeartBeat -> [S6]
+117371 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.5258521 -0400 EDT m=+11.738103501
+117372 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.525947 -0400 EDT m=+11.738198301
+117380 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.5267511 -0400 EDT m=+11.739002401
+117383 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.5270816 -0400 EDT m=+11.739332901
+117878 [S1] sends HeartBeat -> [S0]
+117885 [S1] sends HeartBeat -> [S2]
+117889 [S1] sends HeartBeat -> [S3]
+117893 [S1] sends HeartBeat -> [S4]
+117894 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.5781903 -0400 EDT m=+11.790441601
+117897 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.5784886 -0400 EDT m=+11.790739901
+117897 [S1] sends HeartBeat -> [S5]
+117907 [S1] sends HeartBeat -> [S6]
+117913 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.5800708 -0400 EDT m=+11.792322201
+117916 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.5803427 -0400 EDT m=+11.792594001
+118413 [S1] sends HeartBeat -> [S0]
+118417 [S1] sends HeartBeat -> [S2]
+118420 [S1] sends HeartBeat -> [S3]
+118424 [S1] sends HeartBeat -> [S4]
+118424 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.6311982 -0400 EDT m=+11.843449501
+118427 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.6315347 -0400 EDT m=+11.843786001
+118428 [S1] sends HeartBeat -> [S5]
+118436 [S1] sends HeartBeat -> [S6]
+118442 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.6329751 -0400 EDT m=+11.845226401
+118445 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.6333189 -0400 EDT m=+11.845570201
+118943 [S1] sends HeartBeat -> [S0]
+118947 [S1] sends HeartBeat -> [S2]
+118950 [S1] sends HeartBeat -> [S3]
+118954 [S1] sends HeartBeat -> [S4]
+118956 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.684437 -0400 EDT m=+11.896688401
+118952 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.6840117 -0400 EDT m=+11.896263001
+118957 [S1] sends HeartBeat -> [S5]
+118964 [S1] sends HeartBeat -> [S6]
+118968 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.6855887 -0400 EDT m=+11.897840001
+118971 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.6858756 -0400 EDT m=+11.898126901
+119468 [S1] sends HeartBeat -> [S0]
+119473 [S1] sends HeartBeat -> [S2]
+119476 [S1] sends HeartBeat -> [S3]
+119479 [S1] sends HeartBeat -> [S4]
+119482 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.7369543 -0400 EDT m=+11.949205601
+119482 [S1] sends HeartBeat -> [S5]
+119479 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.7367258 -0400 EDT m=+11.948977101
+119490 [S1] sends HeartBeat -> [S6]
+119498 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.7386025 -0400 EDT m=+11.950853901
+119504 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.7391906 -0400 EDT m=+11.951441901
+120000 [S1] sends HeartBeat -> [S0]
+120005 [S1] sends HeartBeat -> [S2]
+120009 [S1] sends HeartBeat -> [S3]
+120011 [S1] sends HeartBeat -> [S4]
+120012 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.7899831 -0400 EDT m=+12.002234501
+120014 [S1] sends HeartBeat -> [S5]
+120014 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.7901707 -0400 EDT m=+12.002422001
+120020 [S1] sends HeartBeat -> [S6]
+120027 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.7914583 -0400 EDT m=+12.003709601
+120030 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.7917517 -0400 EDT m=+12.004003101
+120528 [S1] sends HeartBeat -> [S0]
+120531 [S1] sends HeartBeat -> [S2]
+120535 [S1] sends HeartBeat -> [S3]
+120539 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.8426548 -0400 EDT m=+12.054906201
+120542 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.8429843 -0400 EDT m=+12.055235601
+120540 [S1] sends HeartBeat -> [S4]
+120550 [S1] sends HeartBeat -> [S5]
+120553 [S1] sends HeartBeat -> [S6]
+120558 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.8446056 -0400 EDT m=+12.056857001
+120561 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.844891 -0400 EDT m=+12.057142401
+121057 [S1] sends HeartBeat -> [S0]
+121061 [S1] sends HeartBeat -> [S2]
+121065 [S1] sends HeartBeat -> [S3]
+121068 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.8956241 -0400 EDT m=+12.107875401
+121070 [S1] sends HeartBeat -> [S4]
+121074 [S1] sends HeartBeat -> [S5]
+121072 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.8960113 -0400 EDT m=+12.108262601
+121077 [S1] sends HeartBeat -> [S6]
+121083 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.8970532 -0400 EDT m=+12.109304501
+121087 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.8974833 -0400 EDT m=+12.109734701
+121585 [S1] sends HeartBeat -> [S0]
+121588 [S1] sends HeartBeat -> [S2]
+121591 [S1] sends HeartBeat -> [S3]
+121595 [S1] sends HeartBeat -> [S4]
+121597 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:11.9484447 -0400 EDT m=+12.160696001
+121595 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:11.9482851 -0400 EDT m=+12.160536401
+121598 [S1] sends HeartBeat -> [S5]
+121604 [S1] sends HeartBeat -> [S6]
+121609 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:11.949697 -0400 EDT m=+12.161948301
+121611 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:11.9498667 -0400 EDT m=+12.162118001
+122108 [S1] sends HeartBeat -> [S0]
+122112 [S1] sends HeartBeat -> [S2]
+122114 [S1] sends HeartBeat -> [S3]
+122118 [S1] sends HeartBeat -> [S4]
+122120 [S1] sends HeartBeat -> [S5]
+122123 [S1] sends HeartBeat -> [S6]
+122629 [S1] sends HeartBeat -> [S0]
+122634 [S1] sends HeartBeat -> [S2]
+122638 [S1] sends HeartBeat -> [S3]
+122642 [S1] sends HeartBeat -> [S4]
+122647 [S1] sends HeartBeat -> [S5]
+122650 [S1] sends HeartBeat -> [S6]
+123157 [S1] sends HeartBeat -> [S0]
+123162 [S1] sends HeartBeat -> [S2]
+123167 [S1] sends HeartBeat -> [S3]
+123171 [S1] sends HeartBeat -> [S4]
+123174 [S1] sends HeartBeat -> [S5]
+123178 [S1] sends HeartBeat -> [S6]
+123682 [S1] sends HeartBeat -> [S0]
+123686 [S1] sends HeartBeat -> [S2]
+123689 [S1] sends HeartBeat -> [S3]
+123692 [S1] sends HeartBeat -> [S4]
+123695 [S1] sends HeartBeat -> [S5]
+123697 [S1] sends HeartBeat -> [S6]
+124204 [S1] sends HeartBeat -> [S0]
+124207 [S1] sends HeartBeat -> [S2]
+124210 [S1] sends HeartBeat -> [S3]
+124214 [S1] sends HeartBeat -> [S4]
+124217 [S1] sends HeartBeat -> [S5]
+124220 [S1] sends HeartBeat -> [S6]
+124725 [S1] sends HeartBeat -> [S0]
+124729 [S1] sends HeartBeat -> [S2]
+124732 [S1] sends HeartBeat -> [S3]
+124734 [S1] sends HeartBeat -> [S4]
+124737 [S1] sends HeartBeat -> [S5]
+124740 [S1] sends HeartBeat -> [S6]
+125246 [S1] sends HeartBeat -> [S0]
+125256 [S1] sends HeartBeat -> [S2]
+125261 [S1] sends HeartBeat -> [S3]
+125266 [S1] sends HeartBeat -> [S4]
+125271 [S1] sends HeartBeat -> [S5]
+125275 [S1] sends HeartBeat -> [S6]
+125783 [S1] sends HeartBeat -> [S0]
+125788 [S1] sends HeartBeat -> [S2]
+125791 [S1] sends HeartBeat -> [S3]
+125796 [S1] sends HeartBeat -> [S4]
+125799 [S1] sends HeartBeat -> [S5]
+125802 [S1] sends HeartBeat -> [S6]
+126308 [S1] sends HeartBeat -> [S0]
+126315 [S1] sends HeartBeat -> [S2]
+126320 [S1] sends HeartBeat -> [S3]
+126323 [S1] sends HeartBeat -> [S4]
+126326 [S1] sends HeartBeat -> [S5]
+126329 [S1] sends HeartBeat -> [S6]
+126835 [S1] sends HeartBeat -> [S0]
+126841 [S1] sends HeartBeat -> [S2]
+126844 [S1] sends HeartBeat -> [S3]
+126849 [S1] sends HeartBeat -> [S4]
+126853 [S1] sends HeartBeat -> [S5]
+126856 [S1] sends HeartBeat -> [S6]
+127318 [S3] becomes {Candidate}
+127323 [S3] currentTerm -> (3)
+127328 [S3] sends RequestVote -> [S0]
+127329 [S3] sends RequestVote -> [S1]
+127329 [S3] sends RequestVote -> [S2]
+127330 [S3] sends RequestVote -> [S4]
+127330 [S3] sends RequestVote -> [S5]
+127330 [S3] sends RequestVote -> [S6]
+127342 [S2] becomes {Follower}
+127348 [S2] currentTerm -> (3)
+127350 [S3] Got Vote <- [S2]
+127353 {Election}[S2] Reset Election Timer
+127349 [S5] becomes {Follower}
+127358 [S3] get (2) votes now
+127358 [S5] currentTerm -> (3)
+127362 [S3] Got Vote <- [S5]
+127351 [S6] becomes {Follower}
+127361 [S1] sends HeartBeat -> [S0]
+127369 [S1] sends HeartBeat -> [S2]
+127371 [S1] sends HeartBeat -> [S3]
+127374 [S1] sends HeartBeat -> [S4]
+127364 {Election}[S5] Reset Election Timer
+127366 [S6] currentTerm -> (3)
+127377 [S1] sends HeartBeat -> [S5]
+127383 [S1] sends HeartBeat -> [S6]
+127381 [S3] Got Vote <- [S6]
+127387 {Election}[S6] Reset Election Timer
+127382 [S3] get (3) votes now
+127392 [S3] get (4) votes now
+127394 [S3] becomes {Leader}
+127396 [S3] sends HeartBeat -> [S0]
+127399 [S3] sends HeartBeat -> [S1]
+127402 [S3] sends HeartBeat -> [S2]
+127406 [S3] sends HeartBeat -> [S4]
+127409 [S3] sends HeartBeat -> [S5]
+127412 [S3] sends HeartBeat -> [S6]
+127411 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.5299174 -0400 EDT m=+12.742168701
+127418 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.5305743 -0400 EDT m=+12.742825601
+127421 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.5309143 -0400 EDT m=+12.743165701
+127807 [S4] becomes {Candidate}
+127811 [S4] currentTerm -> (3)
+127817 [S4] sends RequestVote -> [S0]
+127817 [S4] sends RequestVote -> [S2]
+127818 [S4] sends RequestVote -> [S3]
+127818 [S4] sends RequestVote -> [S1]
+127834 [S3] sends HeartBeat -> [S0]
+127818 [S4] sends RequestVote -> [S5]
+127819 [S4] sends RequestVote -> [S6]
+127836 [S3] sends HeartBeat -> [S1]
+127844 [S3] sends HeartBeat -> [S2]
+127847 [S3] sends HeartBeat -> [S4]
+127849 [S3] sends HeartBeat -> [S5]
+127852 [S3] sends HeartBeat -> [S6]
+127852 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.5740346 -0400 EDT m=+12.786285901
+127856 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.5744293 -0400 EDT m=+12.786680601
+127860 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.5747933 -0400 EDT m=+12.787044701
+127888 [S1] sends HeartBeat -> [S0]
+127891 [S1] sends HeartBeat -> [S2]
+127894 [S1] sends HeartBeat -> [S3]
+127897 [S1] sends HeartBeat -> [S4]
+127899 [S1] sends HeartBeat -> [S5]
+127902 [S1] sends HeartBeat -> [S6]
+128356 [S3] sends HeartBeat -> [S0]
+128360 [S3] sends HeartBeat -> [S1]
+128363 [S3] sends HeartBeat -> [S2]
+128366 [S3] sends HeartBeat -> [S4]
+128370 [S3] sends HeartBeat -> [S5]
+128373 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.6261136 -0400 EDT m=+12.838365001
+128374 [S3] sends HeartBeat -> [S6]
+128381 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.6268674 -0400 EDT m=+12.839118701
+128388 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.6275949 -0400 EDT m=+12.839846201
+128406 [S1] sends HeartBeat -> [S0]
+128409 [S1] sends HeartBeat -> [S2]
+128412 [S1] sends HeartBeat -> [S3]
+128415 [S1] sends HeartBeat -> [S4]
+128418 [S1] sends HeartBeat -> [S5]
+128420 [S1] sends HeartBeat -> [S6]
+128883 [S3] sends HeartBeat -> [S0]
+128887 [S3] sends HeartBeat -> [S1]
+128890 [S3] sends HeartBeat -> [S2]
+128893 [S3] sends HeartBeat -> [S4]
+128896 [S3] sends HeartBeat -> [S5]
+128900 [S3] sends HeartBeat -> [S6]
+128900 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.6787523 -0400 EDT m=+12.891003601
+128905 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.6792945 -0400 EDT m=+12.891545801
+128908 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.6796353 -0400 EDT m=+12.891886701
+128926 [S1] sends HeartBeat -> [S0]
+128931 [S1] sends HeartBeat -> [S2]
+128934 [S1] sends HeartBeat -> [S3]
+128938 [S1] sends HeartBeat -> [S4]
+128942 [S1] sends HeartBeat -> [S5]
+128946 [S1] sends HeartBeat -> [S6]
+129405 [S3] sends HeartBeat -> [S0]
+129409 [S3] sends HeartBeat -> [S1]
+129413 [S3] sends HeartBeat -> [S2]
+129416 [S3] sends HeartBeat -> [S4]
+129419 [S3] sends HeartBeat -> [S5]
+129422 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.7310054 -0400 EDT m=+12.943256801
+129423 [S3] sends HeartBeat -> [S6]
+129428 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.7315382 -0400 EDT m=+12.943789501
+129434 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.7321402 -0400 EDT m=+12.944391501
+129451 [S1] sends HeartBeat -> [S0]
+129455 [S1] sends HeartBeat -> [S2]
+129457 [S1] sends HeartBeat -> [S3]
+129462 [S1] sends HeartBeat -> [S4]
+129467 [S1] sends HeartBeat -> [S5]
+129471 [S1] sends HeartBeat -> [S6]
+129931 [S3] sends HeartBeat -> [S0]
+129936 [S3] sends HeartBeat -> [S1]
+129939 [S3] sends HeartBeat -> [S2]
+129943 [S3] sends HeartBeat -> [S4]
+129947 [S3] sends HeartBeat -> [S5]
+129950 [S3] sends HeartBeat -> [S6]
+129950 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.783821 -0400 EDT m=+12.996072301
+129956 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.7843744 -0400 EDT m=+12.996626001
+129959 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.7846612 -0400 EDT m=+12.996912501
+129978 [S1] sends HeartBeat -> [S0]
+129982 [S1] sends HeartBeat -> [S2]
+129985 [S1] sends HeartBeat -> [S3]
+129988 [S1] sends HeartBeat -> [S4]
+129991 [S1] sends HeartBeat -> [S5]
+129994 [S1] sends HeartBeat -> [S6]
+130456 [S3] sends HeartBeat -> [S0]
+130461 [S3] sends HeartBeat -> [S1]
+130465 [S3] sends HeartBeat -> [S2]
+130473 [S3] sends HeartBeat -> [S4]
+130479 [S3] sends HeartBeat -> [S5]
+130482 [S3] sends HeartBeat -> [S6]
+130483 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.8370709 -0400 EDT m=+13.049322201
+130488 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.8376228 -0400 EDT m=+13.049874101
+130492 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.837999 -0400 EDT m=+13.050250301
+130499 [S1] sends HeartBeat -> [S0]
+130503 [S1] sends HeartBeat -> [S2]
+130506 [S1] sends HeartBeat -> [S3]
+130510 [S1] sends HeartBeat -> [S4]
+130514 [S1] sends HeartBeat -> [S5]
+130517 [S1] sends HeartBeat -> [S6]
+130987 [S3] sends HeartBeat -> [S0]
+130991 [S3] sends HeartBeat -> [S1]
+130995 [S3] sends HeartBeat -> [S2]
+130999 [S3] sends HeartBeat -> [S4]
+131003 [S3] sends HeartBeat -> [S5]
+131007 [S3] sends HeartBeat -> [S6]
+131009 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:12.8896901 -0400 EDT m=+13.101941501
+131013 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.8900755 -0400 EDT m=+13.102326801
+131020 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.8907705 -0400 EDT m=+13.103021801
+131023 [S1] sends HeartBeat -> [S0]
+131027 [S1] sends HeartBeat -> [S2]
+131030 [S1] sends HeartBeat -> [S3]
+131033 [S1] sends HeartBeat -> [S4]
+131036 [S1] sends HeartBeat -> [S5]
+131038 [S1] sends HeartBeat -> [S6]
+131513 [S3] sends HeartBeat -> [S0]
+131517 [S3] sends HeartBeat -> [S1]
+131521 [S3] sends HeartBeat -> [S2]
+131523 [S3] sends HeartBeat -> [S4]
+131526 [S3] sends HeartBeat -> [S5]
+131528 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:12.9415764 -0400 EDT m=+13.153827701
+131531 [S1] becomes {Follower}%!(EXTRA int=3)
+131530 [S3] sends HeartBeat -> [S6]
+131534 [S1] currentTerm -> (3)
+131536 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.942397 -0400 EDT m=+13.154648301
+131543 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.9430797 -0400 EDT m=+13.155331001
+132041 [S3] sends HeartBeat -> [S0]
+132047 [S3] sends HeartBeat -> [S1]
+132052 [S3] sends HeartBeat -> [S2]
+132056 [S3] sends HeartBeat -> [S4]
+132060 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:12.9948003 -0400 EDT m=+13.207051601
+132060 [S3] sends HeartBeat -> [S5]
+132067 [S3] sends HeartBeat -> [S6]
+132072 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:12.9960241 -0400 EDT m=+13.208275401
+132077 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:12.996456 -0400 EDT m=+13.208707301
+132232 [S0] becomes {Candidate}
+132235 [S0] currentTerm -> (3)
+132238 [S0] sends RequestVote -> [S1]
+132239 [S0] sends RequestVote -> [S2]
+132240 [S0] sends RequestVote -> [S3]
+132241 [S0] sends RequestVote -> [S5]
+132241 [S0] sends RequestVote -> [S4]
+132241 [S0] sends RequestVote -> [S6]
+132572 [S3] sends HeartBeat -> [S0]
+132576 [S3] sends HeartBeat -> [S1]
+132580 [S3] sends HeartBeat -> [S2]
+132583 [S3] sends HeartBeat -> [S4]
+132586 [S3] sends HeartBeat -> [S5]
+132587 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.0475029 -0400 EDT m=+13.259754201
+132589 [S3] sends HeartBeat -> [S6]
+132595 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.0482942 -0400 EDT m=+13.260545601
+132600 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.0488098 -0400 EDT m=+13.261061201
+133097 [S3] sends HeartBeat -> [S0]
+133101 [S3] sends HeartBeat -> [S1]
+133104 [S3] sends HeartBeat -> [S2]
+133107 [S3] sends HeartBeat -> [S4]
+133109 [S3] sends HeartBeat -> [S5]
+133112 [S3] sends HeartBeat -> [S6]
+133110 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.0997976 -0400 EDT m=+13.312049001
+133118 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.10058 -0400 EDT m=+13.312831401
+133120 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.1007724 -0400 EDT m=+13.313023701
+133617 [S3] sends HeartBeat -> [S0]
+133621 [S3] sends HeartBeat -> [S1]
+133625 [S3] sends HeartBeat -> [S2]
+133628 [S3] sends HeartBeat -> [S4]
+133631 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.1519227 -0400 EDT m=+13.364174101
+133632 [S3] sends HeartBeat -> [S5]
+133638 [S3] sends HeartBeat -> [S6]
+133645 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.1532928 -0400 EDT m=+13.365544201
+133648 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.1535602 -0400 EDT m=+13.365811501
+134144 [S3] sends HeartBeat -> [S0]
+134148 [S3] sends HeartBeat -> [S1]
+134151 [S3] sends HeartBeat -> [S2]
+134154 [S3] sends HeartBeat -> [S4]
+134157 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.2044492 -0400 EDT m=+13.416700601
+134157 [S3] sends HeartBeat -> [S5]
+134164 [S3] sends HeartBeat -> [S6]
+134172 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.2059425 -0400 EDT m=+13.418193901
+134176 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.2063833 -0400 EDT m=+13.418634601
+134669 [S3] sends HeartBeat -> [S0]
+134674 [S3] sends HeartBeat -> [S1]
+134679 [S3] sends HeartBeat -> [S2]
+134682 [S3] sends HeartBeat -> [S4]
+134686 [S3] sends HeartBeat -> [S5]
+134686 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.2574203 -0400 EDT m=+13.469671601
+134691 [S3] sends HeartBeat -> [S6]
+134698 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.2585471 -0400 EDT m=+13.470798401
+134704 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.2591367 -0400 EDT m=+13.471388001
+135203 [S3] sends HeartBeat -> [S0]
+135208 [S3] sends HeartBeat -> [S1]
+135212 [S3] sends HeartBeat -> [S2]
+135217 [S3] sends HeartBeat -> [S4]
+135219 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.3107312 -0400 EDT m=+13.522982501
+135221 [S3] sends HeartBeat -> [S5]
+135226 [S3] sends HeartBeat -> [S6]
+135235 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.3123085 -0400 EDT m=+13.524559901
+135243 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.3131164 -0400 EDT m=+13.525367701
+135735 [S3] sends HeartBeat -> [S0]
+135740 [S3] sends HeartBeat -> [S1]
+135743 [S3] sends HeartBeat -> [S2]
+135747 [S3] sends HeartBeat -> [S4]
+135750 [S3] sends HeartBeat -> [S5]
+135750 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.3637792 -0400 EDT m=+13.576030501
+135754 [S3] sends HeartBeat -> [S6]
+135763 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.3650426 -0400 EDT m=+13.577294001
+135767 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.3655243 -0400 EDT m=+13.577775701
+136264 [S3] sends HeartBeat -> [S0]
+136270 [S3] sends HeartBeat -> [S1]
+136275 [S3] sends HeartBeat -> [S2]
+136278 [S3] sends HeartBeat -> [S4]
+136279 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.4166718 -0400 EDT m=+13.628923101
+136282 [S3] sends HeartBeat -> [S5]
+136289 [S3] sends HeartBeat -> [S6]
+136290 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.417772 -0400 EDT m=+13.630023301
+136296 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.4183643 -0400 EDT m=+13.630615601
+136298 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.418607 -0400 EDT m=+13.630858401
+136795 [S3] sends HeartBeat -> [S0]
+136798 [S3] sends HeartBeat -> [S1]
+136801 [S3] sends HeartBeat -> [S2]
+136804 [S3] sends HeartBeat -> [S4]
+136807 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.4694355 -0400 EDT m=+13.681686801
+136807 [S3] sends HeartBeat -> [S5]
+136812 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.4699715 -0400 EDT m=+13.682222801
+136813 [S3] sends HeartBeat -> [S6]
+136818 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.4705754 -0400 EDT m=+13.682826701
+136823 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.4710843 -0400 EDT m=+13.683335601
+137319 [S3] sends HeartBeat -> [S0]
+137325 [S3] sends HeartBeat -> [S1]
+137329 [S3] sends HeartBeat -> [S2]
+137332 [S3] sends HeartBeat -> [S4]
+137334 [S3] sends HeartBeat -> [S5]
+137334 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.5222205 -0400 EDT m=+13.734471901
+137337 [S3] sends HeartBeat -> [S6]
+137341 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.5228981 -0400 EDT m=+13.735149501
+137353 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.5241087 -0400 EDT m=+13.736360101
+137368 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.5255662 -0400 EDT m=+13.737817601
+137844 [S3] sends HeartBeat -> [S0]
+137847 [S3] sends HeartBeat -> [S1]
+137850 [S3] sends HeartBeat -> [S2]
+137853 [S3] sends HeartBeat -> [S4]
+137855 [S3] sends HeartBeat -> [S5]
+137853 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.5741238 -0400 EDT m=+13.786375101
+137860 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.5747995 -0400 EDT m=+13.787050901
+137862 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.5750367 -0400 EDT m=+13.787288001
+137858 [S3] sends HeartBeat -> [S6]
+137872 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.575976 -0400 EDT m=+13.788227301
+138369 [S3] sends HeartBeat -> [S0]
+138373 [S3] sends HeartBeat -> [S1]
+138376 [S3] sends HeartBeat -> [S2]
+138379 [S3] sends HeartBeat -> [S4]
+138381 [S3] sends HeartBeat -> [S5]
+138379 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.6267319 -0400 EDT m=+13.838983201
+138384 [S3] sends HeartBeat -> [S6]
+138389 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.627717 -0400 EDT m=+13.839968401
+138391 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.6278955 -0400 EDT m=+13.840146901
+138399 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.6287148 -0400 EDT m=+13.840966101
+138892 [S3] sends HeartBeat -> [S0]
+138896 [S3] sends HeartBeat -> [S1]
+138900 [S3] sends HeartBeat -> [S2]
+138903 [S3] sends HeartBeat -> [S4]
+138905 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.6793296 -0400 EDT m=+13.891581001
+138906 [S3] sends HeartBeat -> [S5]
+138911 [S3] sends HeartBeat -> [S6]
+138912 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.6800269 -0400 EDT m=+13.892278301
+138917 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.6804649 -0400 EDT m=+13.892716201
+138920 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.6808133 -0400 EDT m=+13.893064601
+139416 [S3] sends HeartBeat -> [S0]
+139420 [S3] sends HeartBeat -> [S1]
+139423 [S3] sends HeartBeat -> [S2]
+139425 [S3] sends HeartBeat -> [S4]
+139429 [S3] sends HeartBeat -> [S5]
+139426 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.7313831 -0400 EDT m=+13.943634501
+139434 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.7321503 -0400 EDT m=+13.944401601
+139432 [S3] sends HeartBeat -> [S6]
+139439 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.7327106 -0400 EDT m=+13.944962001
+139446 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.7334143 -0400 EDT m=+13.945665701
+139942 [S3] sends HeartBeat -> [S0]
+139948 [S3] sends HeartBeat -> [S1]
+139952 [S3] sends HeartBeat -> [S2]
+139955 [S3] sends HeartBeat -> [S4]
+139956 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.7843759 -0400 EDT m=+13.996627201
+139960 [S3] sends HeartBeat -> [S5]
+139967 [S3] sends HeartBeat -> [S6]
+139967 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.7855212 -0400 EDT m=+13.997772501
+139973 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.7860533 -0400 EDT m=+13.998304701
+139976 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.7863868 -0400 EDT m=+13.998638101
+140473 [S3] sends HeartBeat -> [S0]
+140477 [S3] sends HeartBeat -> [S1]
+140481 [S3] sends HeartBeat -> [S2]
+140484 [S3] sends HeartBeat -> [S4]
+140484 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.8372009 -0400 EDT m=+14.049452201
+140487 [S3] sends HeartBeat -> [S5]
+140492 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.8380234 -0400 EDT m=+14.050274701
+140492 [S3] sends HeartBeat -> [S6]
+140497 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.8385108 -0400 EDT m=+14.050762101
+140502 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.8389674 -0400 EDT m=+14.051218701
+141000 [S3] sends HeartBeat -> [S0]
+141006 [S3] sends HeartBeat -> [S1]
+141009 [S3] sends HeartBeat -> [S2]
+141012 [S3] sends HeartBeat -> [S4]
+141014 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:13.8901722 -0400 EDT m=+14.102423601
+141015 [S3] sends HeartBeat -> [S5]
+141022 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:13.8909669 -0400 EDT m=+14.103218301
+141022 [S3] sends HeartBeat -> [S6]
+141028 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:13.8915756 -0400 EDT m=+14.103826901
+141032 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.891941 -0400 EDT m=+14.104192301
+141530 [S3] sends HeartBeat -> [S0]
+141536 [S3] sends HeartBeat -> [S1]
+141542 [S3] sends HeartBeat -> [S2]
+141546 [S3] sends HeartBeat -> [S4]
+141549 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.9437153 -0400 EDT m=+14.155966601
+141550 [S3] sends HeartBeat -> [S5]
+141558 [S3] sends HeartBeat -> [S6]
+141555 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:13.9443133 -0400 EDT m=+14.156564601
+141569 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.9457054 -0400 EDT m=+14.157956701
+142065 [S3] sends HeartBeat -> [S0]
+142068 [S3] sends HeartBeat -> [S1]
+142071 [S3] sends HeartBeat -> [S2]
+142074 [S3] sends HeartBeat -> [S4]
+142077 [S3] sends HeartBeat -> [S5]
+142077 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:13.996491 -0400 EDT m=+14.208742401
+142079 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:13.9967014 -0400 EDT m=+14.208952701
+142080 [S3] sends HeartBeat -> [S6]
+142092 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:13.9979978 -0400 EDT m=+14.210249101
+142590 [S3] sends HeartBeat -> [S0]
+142596 [S3] sends HeartBeat -> [S1]
+142600 [S3] sends HeartBeat -> [S2]
+142604 [S3] sends HeartBeat -> [S4]
+142607 [S3] sends HeartBeat -> [S5]
+142610 [S3] sends HeartBeat -> [S6]
+142608 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:14.0495859 -0400 EDT m=+14.261837201
+142610 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:14.0498272 -0400 EDT m=+14.262078501
+142617 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.0505245 -0400 EDT m=+14.262775901
+143114 [S3] sends HeartBeat -> [S0]
+143118 [S3] sends HeartBeat -> [S1]
+143121 [S3] sends HeartBeat -> [S2]
+143125 [S3] sends HeartBeat -> [S4]
+143127 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:14.1014449 -0400 EDT m=+14.313696201
+143127 [S3] sends HeartBeat -> [S5]
+143133 [S3] sends HeartBeat -> [S6]
+143133 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:14.1020496 -0400 EDT m=+14.314300901
+143144 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.1031865 -0400 EDT m=+14.315437801
+143637 [S3] sends HeartBeat -> [S0]
+143642 [S3] sends HeartBeat -> [S1]
+143646 [S3] sends HeartBeat -> [S2]
+143649 [S3] sends HeartBeat -> [S4]
+143651 [S3] sends HeartBeat -> [S5]
+143652 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:14.1539396 -0400 EDT m=+14.366190901
+143654 [S3] sends HeartBeat -> [S6]
+143655 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:14.154306 -0400 EDT m=+14.366557301
+143665 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.1552562 -0400 EDT m=+14.367507501
+144162 [S3] sends HeartBeat -> [S0]
+144166 [S3] sends HeartBeat -> [S1]
+144170 [S3] sends HeartBeat -> [S2]
+144173 [S3] sends HeartBeat -> [S4]
+144176 [S3] sends HeartBeat -> [S5]
+144176 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:14.2063958 -0400 EDT m=+14.418647201
+144179 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:14.206668 -0400 EDT m=+14.418919301
+144179 [S3] sends HeartBeat -> [S6]
+144193 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.2081336 -0400 EDT m=+14.420384901
+144691 [S3] sends HeartBeat -> [S0]
+144695 [S3] sends HeartBeat -> [S1]
+144698 [S3] sends HeartBeat -> [S2]
+144701 [S3] sends HeartBeat -> [S4]
+144705 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:14.2593045 -0400 EDT m=+14.471555801
+144708 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:14.2595909 -0400 EDT m=+14.471842301
+144705 [S3] sends HeartBeat -> [S5]
+144714 [S3] sends HeartBeat -> [S6]
+144722 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.2610304 -0400 EDT m=+14.473281801
+145219 [S3] sends HeartBeat -> [S0]
+145225 [S3] sends HeartBeat -> [S1]
+145230 [S3] sends HeartBeat -> [S2]
+145235 [S3] sends HeartBeat -> [S4]
+145238 [S3] sends HeartBeat -> [S5]
+145241 [S3] sends HeartBeat -> [S6]
+145241 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:14.3128739 -0400 EDT m=+14.525125201
+145238 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:14.3126169 -0400 EDT m=+14.524868201
+145254 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.3141677 -0400 EDT m=+14.526419001
+145750 [S3] sends HeartBeat -> [S0]
+145755 [S3] sends HeartBeat -> [S1]
+145757 [S3] sends HeartBeat -> [S2]
+145759 [S3] sends HeartBeat -> [S4]
+145762 [S3] sends HeartBeat -> [S5]
+145763 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:14.3651091 -0400 EDT m=+14.577360401
+145765 [S3] sends HeartBeat -> [S6]
+145765 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:14.3652935 -0400 EDT m=+14.577544801
+145775 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.3662553 -0400 EDT m=+14.578506601
+146272 [S3] sends HeartBeat -> [S0]
+146277 [S3] sends HeartBeat -> [S1]
+146281 [S3] sends HeartBeat -> [S2]
+146284 [S3] sends HeartBeat -> [S4]
+146287 [S3] sends HeartBeat -> [S5]
+146284 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.4172056 -0400 EDT m=+14.629456901
+146290 [S3] sends HeartBeat -> [S6]
+146295 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.4183089 -0400 EDT m=+14.630560201
+146300 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.4188346 -0400 EDT m=+14.631085901
+146799 [S3] sends HeartBeat -> [S0]
+146803 [S3] sends HeartBeat -> [S1]
+146805 [S3] sends HeartBeat -> [S2]
+146808 [S3] sends HeartBeat -> [S4]
+146811 [S3] sends HeartBeat -> [S5]
+146811 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.4698475 -0400 EDT m=+14.682098801
+146814 [S3] sends HeartBeat -> [S6]
+146820 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.4707652 -0400 EDT m=+14.683016501
+146826 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.4714028 -0400 EDT m=+14.683654101
+147321 [S3] sends HeartBeat -> [S0]
+147325 [S3] sends HeartBeat -> [S1]
+147330 [S3] sends HeartBeat -> [S2]
+147333 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.5220931 -0400 EDT m=+14.734344401
+147333 [S3] sends HeartBeat -> [S4]
+147341 [S3] sends HeartBeat -> [S5]
+147345 [S3] sends HeartBeat -> [S6]
+147352 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.5240055 -0400 EDT m=+14.736256801
+147354 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.524163 -0400 EDT m=+14.736414301
+147851 [S3] sends HeartBeat -> [S0]
+147856 [S3] sends HeartBeat -> [S1]
+147859 [S3] sends HeartBeat -> [S2]
+147865 [S3] sends HeartBeat -> [S4]
+147867 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.5754692 -0400 EDT m=+14.787720501
+147871 [S3] sends HeartBeat -> [S5]
+147878 [S3] sends HeartBeat -> [S6]
+147884 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.5771812 -0400 EDT m=+14.789432501
+147888 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.5775644 -0400 EDT m=+14.789815801
+148384 [S3] sends HeartBeat -> [S0]
+148389 [S3] sends HeartBeat -> [S1]
+148392 [S3] sends HeartBeat -> [S2]
+148395 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.6282869 -0400 EDT m=+14.840538201
+148396 [S3] sends HeartBeat -> [S4]
+148401 [S3] sends HeartBeat -> [S5]
+148403 [S3] sends HeartBeat -> [S6]
+148409 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.6296575 -0400 EDT m=+14.841908801
+148410 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.6298145 -0400 EDT m=+14.842065801
+148909 [S3] sends HeartBeat -> [S0]
+148914 [S3] sends HeartBeat -> [S1]
+148918 [S3] sends HeartBeat -> [S2]
+148921 [S3] sends HeartBeat -> [S4]
+148922 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.6809526 -0400 EDT m=+14.893204001
+148925 [S3] sends HeartBeat -> [S5]
+148930 [S3] sends HeartBeat -> [S6]
+148935 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.6823067 -0400 EDT m=+14.894558001
+148937 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.6824573 -0400 EDT m=+14.894708701
+149435 [S3] sends HeartBeat -> [S0]
+149439 [S3] sends HeartBeat -> [S1]
+149441 [S3] sends HeartBeat -> [S2]
+149445 [S3] sends HeartBeat -> [S4]
+149446 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.7333951 -0400 EDT m=+14.945646401
+149448 [S3] sends HeartBeat -> [S5]
+149455 [S3] sends HeartBeat -> [S6]
+149462 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.7349531 -0400 EDT m=+14.947204401
+149464 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.7352327 -0400 EDT m=+14.947484001
+149959 [S3] sends HeartBeat -> [S0]
+149963 [S3] sends HeartBeat -> [S1]
+149966 [S3] sends HeartBeat -> [S2]
+149969 [S3] sends HeartBeat -> [S4]
+149970 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.7858041 -0400 EDT m=+14.998055501
+149972 [S3] sends HeartBeat -> [S5]
+149976 [S3] sends HeartBeat -> [S6]
+149981 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.7869188 -0400 EDT m=+14.999170101
+149984 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.7872197 -0400 EDT m=+14.999471001
+150482 [S3] sends HeartBeat -> [S0]
+150485 [S3] sends HeartBeat -> [S1]
+150490 [S3] sends HeartBeat -> [S2]
+150492 [S3] sends HeartBeat -> [S4]
+150495 [S3] sends HeartBeat -> [S5]
+150494 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.8381765 -0400 EDT m=+15.050427801
+150498 [S3] sends HeartBeat -> [S6]
+150504 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.8391581 -0400 EDT m=+15.051409401
+150509 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.8397018 -0400 EDT m=+15.051953101
+151006 [S3] sends HeartBeat -> [S0]
+151011 [S3] sends HeartBeat -> [S1]
+151015 [S3] sends HeartBeat -> [S2]
+151018 [S3] sends HeartBeat -> [S4]
+151018 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:14.8905932 -0400 EDT m=+15.102844501
+151021 [S3] sends HeartBeat -> [S5]
+151028 [S3] sends HeartBeat -> [S6]
+151034 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:14.8921966 -0400 EDT m=+15.104447901
+151040 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:14.8927477 -0400 EDT m=+15.104999101
+151535 [S3] sends HeartBeat -> [S0]
+151538 [S3] sends HeartBeat -> [S1]
+151541 [S3] sends HeartBeat -> [S2]
+151543 [S3] sends HeartBeat -> [S4]
+151547 [S3] sends HeartBeat -> [S5]
+151550 [S3] sends HeartBeat -> [S6]
+152056 [S3] sends HeartBeat -> [S0]
+152060 [S3] sends HeartBeat -> [S1]
+152063 [S3] sends HeartBeat -> [S2]
+152067 [S3] sends HeartBeat -> [S4]
+152070 [S3] sends HeartBeat -> [S5]
+152073 [S3] sends HeartBeat -> [S6]
+152437 [S4] becomes {Candidate}
+152442 [S4] currentTerm -> (4)
+152446 [S4] sends RequestVote -> [S0]
+152448 [S4] sends RequestVote -> [S1]
+152448 [S4] sends RequestVote -> [S2]
+152448 [S4] sends RequestVote -> [S5]
+152449 [S4] sends RequestVote -> [S3]
+152449 [S4] sends RequestVote -> [S6]
+152463 [S2] becomes {Follower}
+152469 [S2] currentTerm -> (4)
+152471 [S6] becomes {Follower}
+152473 [S6] currentTerm -> (4)
+152476 [S4] Got Vote <- [S6]
+152466 [S5] becomes {Follower}
+152471 [S4] Got Vote <- [S2]
+152484 {Election}[S2] Reset Election Timer
+152479 {Election}[S6] Reset Election Timer
+152481 [S5] currentTerm -> (4)
+152492 [S4] Got Vote <- [S5]
+152494 {Election}[S5] Reset Election Timer
+152490 [S4] get (2) votes now
+152499 [S4] get (3) votes now
+152501 [S4] get (4) votes now
+152503 [S4] becomes {Leader}
+152505 [S4] sends HeartBeat -> [S0]
+152507 [S4] sends HeartBeat -> [S1]
+152510 [S4] sends HeartBeat -> [S2]
+152512 [S4] sends HeartBeat -> [S3]
+152516 [S4] sends HeartBeat -> [S5]
+152521 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.0408449 -0400 EDT m=+15.253096201
+152521 [S4] sends HeartBeat -> [S6]
+152529 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.0416389 -0400 EDT m=+15.253890201
+152534 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.0421511 -0400 EDT m=+15.254402501
+152578 [S3] sends HeartBeat -> [S0]
+152583 [S3] sends HeartBeat -> [S1]
+152586 [S3] sends HeartBeat -> [S2]
+152589 [S3] sends HeartBeat -> [S4]
+152593 [S3] sends HeartBeat -> [S5]
+152596 [S3] sends HeartBeat -> [S6]
+152951 [S4] sends HeartBeat -> [S0]
+152958 [S4] sends HeartBeat -> [S1]
+152965 [S4] sends HeartBeat -> [S2]
+152967 [S4] sends HeartBeat -> [S3]
+152970 [S4] sends HeartBeat -> [S5]
+152973 [S4] sends HeartBeat -> [S6]
+152975 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.0862723 -0400 EDT m=+15.298523701
+152981 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.0868616 -0400 EDT m=+15.299112901
+152986 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.0874159 -0400 EDT m=+15.299667201
+153102 [S3] sends HeartBeat -> [S0]
+153107 [S3] sends HeartBeat -> [S1]
+153111 [S3] sends HeartBeat -> [S2]
+153116 [S3] sends HeartBeat -> [S4]
+153119 [S3] sends HeartBeat -> [S5]
+153122 [S3] sends HeartBeat -> [S6]
+153481 [S4] sends HeartBeat -> [S0]
+153489 [S4] sends HeartBeat -> [S1]
+153494 [S4] sends HeartBeat -> [S2]
+153499 [S4] sends HeartBeat -> [S3]
+153503 [S4] sends HeartBeat -> [S5]
+153508 [S4] sends HeartBeat -> [S6]
+153513 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.1400701 -0400 EDT m=+15.352321501
+153520 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.1407838 -0400 EDT m=+15.353035101
+153522 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.1409862 -0400 EDT m=+15.353237501
+153631 [S3] sends HeartBeat -> [S0]
+153641 [S3] sends HeartBeat -> [S1]
+153647 [S3] sends HeartBeat -> [S2]
+153651 [S3] sends HeartBeat -> [S4]
+153655 [S3] sends HeartBeat -> [S5]
+153659 [S3] sends HeartBeat -> [S6]
+154014 [S4] sends HeartBeat -> [S0]
+154020 [S4] sends HeartBeat -> [S1]
+154024 [S4] sends HeartBeat -> [S2]
+154028 [S4] sends HeartBeat -> [S3]
+154031 [S4] sends HeartBeat -> [S5]
+154038 [S4] sends HeartBeat -> [S6]
+154039 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.1926822 -0400 EDT m=+15.404933501
+154048 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.1936218 -0400 EDT m=+15.405873101
+154052 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.193964 -0400 EDT m=+15.406215401
+154165 [S3] sends HeartBeat -> [S0]
+154170 [S3] sends HeartBeat -> [S1]
+154175 [S3] sends HeartBeat -> [S2]
+154182 [S3] sends HeartBeat -> [S4]
+154186 [S3] sends HeartBeat -> [S5]
+154190 [S3] sends HeartBeat -> [S6]
+154545 [S4] sends HeartBeat -> [S0]
+154549 [S4] sends HeartBeat -> [S1]
+154552 [S4] sends HeartBeat -> [S2]
+154556 [S4] sends HeartBeat -> [S3]
+154559 [S4] sends HeartBeat -> [S5]
+154563 [S4] sends HeartBeat -> [S6]
+154563 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.245079 -0400 EDT m=+15.457330301
+154570 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.2457751 -0400 EDT m=+15.458026401
+154573 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.2461196 -0400 EDT m=+15.458371001
+154697 [S3] sends HeartBeat -> [S0]
+154712 [S3] sends HeartBeat -> [S1]
+154739 [S3] sends HeartBeat -> [S2]
+154758 [S3] sends HeartBeat -> [S4]
+154770 [S3] sends HeartBeat -> [S5]
+154785 [S3] sends HeartBeat -> [S6]
+155069 [S4] sends HeartBeat -> [S0]
+155074 [S4] sends HeartBeat -> [S1]
+155078 [S4] sends HeartBeat -> [S2]
+155082 [S4] sends HeartBeat -> [S3]
+155088 [S4] sends HeartBeat -> [S5]
+155090 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.2977782 -0400 EDT m=+15.510029501
+155094 [S4] sends HeartBeat -> [S6]
+155100 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.2988348 -0400 EDT m=+15.511086201
+155106 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.2993661 -0400 EDT m=+15.511617401
+155297 [S3] sends HeartBeat -> [S0]
+155302 [S3] sends HeartBeat -> [S1]
+155305 [S3] sends HeartBeat -> [S2]
+155309 [S3] sends HeartBeat -> [S4]
+155313 [S3] sends HeartBeat -> [S5]
+155318 [S3] sends HeartBeat -> [S6]
+155602 [S4] sends HeartBeat -> [S0]
+155606 [S4] sends HeartBeat -> [S1]
+155610 [S4] sends HeartBeat -> [S2]
+155614 [S4] sends HeartBeat -> [S3]
+155617 [S4] sends HeartBeat -> [S5]
+155621 [S4] sends HeartBeat -> [S6]
+155623 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.3510895 -0400 EDT m=+15.563340801
+155630 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.3518102 -0400 EDT m=+15.564061501
+155633 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.3521007 -0400 EDT m=+15.564352001
+155825 [S3] sends HeartBeat -> [S0]
+155830 [S3] sends HeartBeat -> [S1]
+155834 [S3] sends HeartBeat -> [S2]
+155837 [S3] sends HeartBeat -> [S4]
+155840 [S3] sends HeartBeat -> [S5]
+155844 [S3] sends HeartBeat -> [S6]
+156128 [S4] sends HeartBeat -> [S0]
+156136 [S4] sends HeartBeat -> [S1]
+156140 [S4] sends HeartBeat -> [S2]
+156145 [S4] sends HeartBeat -> [S3]
+156150 [S4] sends HeartBeat -> [S5]
+156154 [S4] sends HeartBeat -> [S6]
+156154 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.4042307 -0400 EDT m=+15.616482001
+156168 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.4055656 -0400 EDT m=+15.617816901
+156174 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.4061822 -0400 EDT m=+15.618433501
+156351 [S3] sends HeartBeat -> [S0]
+156355 [S3] sends HeartBeat -> [S1]
+156359 [S3] sends HeartBeat -> [S2]
+156361 [S3] sends HeartBeat -> [S4]
+156364 [S3] sends HeartBeat -> [S5]
+156367 [S3] sends HeartBeat -> [S6]
+156669 [S4] sends HeartBeat -> [S0]
+156673 [S4] sends HeartBeat -> [S1]
+156675 [S4] sends HeartBeat -> [S2]
+156678 [S4] sends HeartBeat -> [S3]
+156682 [S4] sends HeartBeat -> [S5]
+156686 [S4] sends HeartBeat -> [S6]
+156872 [S3] sends HeartBeat -> [S0]
+156878 [S3] sends HeartBeat -> [S1]
+156883 [S3] sends HeartBeat -> [S2]
+156889 [S3] sends HeartBeat -> [S4]
+156893 [S3] sends HeartBeat -> [S5]
+156897 [S3] sends HeartBeat -> [S6]
+156897 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.4784577 -0400 EDT m=+15.690709001
+156904 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.479231 -0400 EDT m=+15.691482301
+156907 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.4794879 -0400 EDT m=+15.691739201
+157181 [S1] becomes {Candidate}
+157187 [S1] currentTerm -> (4)
+157192 [S1] sends RequestVote -> [S0]
+157195 [S1] sends RequestVote -> [S6]
+157192 [S1] sends RequestVote -> [S2]
+157192 [S1] sends RequestVote -> [S3]
+157193 [S1] sends RequestVote -> [S4]
+157193 [S4] sends HeartBeat -> [S0]
+157194 [S1] sends RequestVote -> [S5]
+157210 [S4] sends HeartBeat -> [S1]
+157215 [S4] sends HeartBeat -> [S2]
+157218 [S4] sends HeartBeat -> [S3]
+157220 [S4] sends HeartBeat -> [S5]
+157223 [S4] sends HeartBeat -> [S6]
+157402 [S3] sends HeartBeat -> [S0]
+157406 [S3] sends HeartBeat -> [S1]
+157410 [S3] sends HeartBeat -> [S2]
+157413 [S3] sends HeartBeat -> [S4]
+157416 [S3] sends HeartBeat -> [S5]
+157419 [S3] sends HeartBeat -> [S6]
+157423 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.5310889 -0400 EDT m=+15.743340301
+157429 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.5316725 -0400 EDT m=+15.743923901
+157429 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.5316708 -0400 EDT m=+15.743922101
+157729 [S4] sends HeartBeat -> [S0]
+157734 [S4] sends HeartBeat -> [S1]
+157738 [S4] sends HeartBeat -> [S2]
+157742 [S4] sends HeartBeat -> [S3]
+157746 [S4] sends HeartBeat -> [S5]
+157750 [S4] sends HeartBeat -> [S6]
+157926 [S3] sends HeartBeat -> [S0]
+157931 [S3] sends HeartBeat -> [S1]
+157934 [S3] sends HeartBeat -> [S2]
+157938 [S3] sends HeartBeat -> [S4]
+157941 [S3] sends HeartBeat -> [S5]
+157945 [S3] sends HeartBeat -> [S6]
+157947 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.5835212 -0400 EDT m=+15.795772601
+157952 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.5839701 -0400 EDT m=+15.796221401
+157958 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.5845905 -0400 EDT m=+15.796841801
+158258 [S4] sends HeartBeat -> [S0]
+158279 [S4] sends HeartBeat -> [S1]
+158287 [S4] sends HeartBeat -> [S2]
+158293 [S4] sends HeartBeat -> [S3]
+158298 [S4] sends HeartBeat -> [S5]
+158303 [S4] sends HeartBeat -> [S6]
+158453 [S3] sends HeartBeat -> [S0]
+158466 [S3] sends HeartBeat -> [S1]
+158470 [S3] sends HeartBeat -> [S2]
+158473 [S3] sends HeartBeat -> [S4]
+158477 [S3] sends HeartBeat -> [S5]
+158480 [S3] sends HeartBeat -> [S6]
+158480 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.6367973 -0400 EDT m=+15.849048601
+158488 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.637579 -0400 EDT m=+15.849830301
+158491 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.6378927 -0400 EDT m=+15.850144001
+158811 [S4] sends HeartBeat -> [S0]
+158817 [S4] sends HeartBeat -> [S1]
+158820 [S4] sends HeartBeat -> [S2]
+158824 [S4] sends HeartBeat -> [S3]
+158827 [S4] sends HeartBeat -> [S5]
+158831 [S4] sends HeartBeat -> [S6]
+158986 [S3] sends HeartBeat -> [S0]
+158991 [S3] sends HeartBeat -> [S1]
+158994 [S3] sends HeartBeat -> [S2]
+158997 [S3] sends HeartBeat -> [S4]
+159000 [S3] sends HeartBeat -> [S5]
+159005 [S3] sends HeartBeat -> [S6]
+159005 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.6893083 -0400 EDT m=+15.901559601
+159011 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.6899216 -0400 EDT m=+15.902172901
+159018 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.6906229 -0400 EDT m=+15.902874201
+159338 [S4] sends HeartBeat -> [S0]
+159342 [S4] sends HeartBeat -> [S1]
+159345 [S4] sends HeartBeat -> [S2]
+159350 [S4] sends HeartBeat -> [S3]
+159354 [S4] sends HeartBeat -> [S5]
+159357 [S4] sends HeartBeat -> [S6]
+159512 [S3] sends HeartBeat -> [S0]
+159516 [S3] sends HeartBeat -> [S1]
+159519 [S3] sends HeartBeat -> [S2]
+159522 [S3] sends HeartBeat -> [S4]
+159524 [S3] sends HeartBeat -> [S5]
+159529 [S3] sends HeartBeat -> [S6]
+159532 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.7419586 -0400 EDT m=+15.954210001
+159536 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.7424296 -0400 EDT m=+15.954680901
+159539 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.7426811 -0400 EDT m=+15.954932401
+159865 [S4] sends HeartBeat -> [S0]
+159869 [S4] sends HeartBeat -> [S1]
+159872 [S4] sends HeartBeat -> [S2]
+159874 [S4] sends HeartBeat -> [S3]
+159879 [S4] sends HeartBeat -> [S5]
+159883 [S4] sends HeartBeat -> [S6]
+160036 [S3] sends HeartBeat -> [S0]
+160046 [S3] sends HeartBeat -> [S1]
+160050 [S3] sends HeartBeat -> [S2]
+160052 [S3] sends HeartBeat -> [S4]
+160055 [S3] sends HeartBeat -> [S5]
+160059 [S3] sends HeartBeat -> [S6]
+160060 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.7947399 -0400 EDT m=+16.006991201
+160066 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.7953594 -0400 EDT m=+16.007610701
+160068 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.7956368 -0400 EDT m=+16.007888101
+160390 [S4] sends HeartBeat -> [S0]
+160394 [S4] sends HeartBeat -> [S1]
+160397 [S4] sends HeartBeat -> [S2]
+160400 [S4] sends HeartBeat -> [S3]
+160403 [S4] sends HeartBeat -> [S5]
+160406 [S4] sends HeartBeat -> [S6]
+160566 [S3] sends HeartBeat -> [S0]
+160574 [S3] sends HeartBeat -> [S1]
+160581 [S3] sends HeartBeat -> [S2]
+160588 [S3] sends HeartBeat -> [S4]
+160593 [S3] sends HeartBeat -> [S5]
+160596 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.8483991 -0400 EDT m=+16.060650401
+160598 [S3] sends HeartBeat -> [S6]
+160609 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.8497149 -0400 EDT m=+16.061966301
+160614 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.8502096 -0400 EDT m=+16.062461001
+160913 [S4] sends HeartBeat -> [S0]
+160921 [S4] sends HeartBeat -> [S1]
+160926 [S4] sends HeartBeat -> [S2]
+160929 [S4] sends HeartBeat -> [S3]
+160933 [S4] sends HeartBeat -> [S5]
+160937 [S4] sends HeartBeat -> [S6]
+161109 [S3] sends HeartBeat -> [S0]
+161113 [S3] sends HeartBeat -> [S1]
+161116 [S3] sends HeartBeat -> [S2]
+161118 [S3] sends HeartBeat -> [S4]
+161121 [S3] sends HeartBeat -> [S5]
+161124 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:15.9011524 -0400 EDT m=+16.113403701
+161125 [S3] sends HeartBeat -> [S6]
+161134 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:15.9021388 -0400 EDT m=+16.114390201
+161137 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.9025115 -0400 EDT m=+16.114762801
+161444 [S4] sends HeartBeat -> [S0]
+161448 [S4] sends HeartBeat -> [S1]
+161452 [S4] sends HeartBeat -> [S2]
+161455 [S4] sends HeartBeat -> [S3]
+161458 [S4] sends HeartBeat -> [S5]
+161462 [S4] sends HeartBeat -> [S6]
+161633 [S3] sends HeartBeat -> [S0]
+161637 [S3] sends HeartBeat -> [S1]
+161640 [S3] sends HeartBeat -> [S2]
+161645 [S3] sends HeartBeat -> [S4]
+161647 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:15.9535012 -0400 EDT m=+16.165752501
+161649 [S3] sends HeartBeat -> [S5]
+161652 [S3] sends HeartBeat -> [S6]
+161655 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:15.9542725 -0400 EDT m=+16.166523901
+161657 [S4] becomes {Follower}%!(EXTRA int=4)
+161662 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:15.9550351 -0400 EDT m=+16.167286401
+162159 [S3] sends HeartBeat -> [S0]
+162165 [S3] sends HeartBeat -> [S1]
+162168 [S3] sends HeartBeat -> [S2]
+162171 [S3] sends HeartBeat -> [S4]
+162174 [S3] sends HeartBeat -> [S5]
+162177 [S3] sends HeartBeat -> [S6]
+162178 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.0065898 -0400 EDT m=+16.218841201
+162182 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.0069485 -0400 EDT m=+16.219199801
+162188 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.007612 -0400 EDT m=+16.219863301
+162388 [S0] becomes {Candidate}
+162391 [S0] currentTerm -> (4)
+162394 [S0] sends RequestVote -> [S1]
+162397 [S0] sends RequestVote -> [S6]
+162397 [S0] sends RequestVote -> [S3]
+162396 [S0] sends RequestVote -> [S2]
+162396 [S0] sends RequestVote -> [S5]
+162396 [S0] sends RequestVote -> [S4]
+162683 [S3] sends HeartBeat -> [S0]
+162688 [S3] sends HeartBeat -> [S1]
+162691 [S3] sends HeartBeat -> [S2]
+162694 [S3] sends HeartBeat -> [S4]
+162696 [S3] sends HeartBeat -> [S5]
+162697 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.0584764 -0400 EDT m=+16.270727701
+162700 [S3] sends HeartBeat -> [S6]
+162703 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.0590761 -0400 EDT m=+16.271327401
+162709 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.0596388 -0400 EDT m=+16.271890201
+163205 [S3] sends HeartBeat -> [S0]
+163212 [S3] sends HeartBeat -> [S1]
+163218 [S3] sends HeartBeat -> [S2]
+163222 [S3] sends HeartBeat -> [S4]
+163227 [S3] sends HeartBeat -> [S5]
+163226 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.1114237 -0400 EDT m=+16.323675101
+163232 [S3] sends HeartBeat -> [S6]
+163235 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.1123348 -0400 EDT m=+16.324586101
+163245 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.1132972 -0400 EDT m=+16.325548501
+163740 [S3] sends HeartBeat -> [S0]
+163744 [S3] sends HeartBeat -> [S1]
+163747 [S3] sends HeartBeat -> [S2]
+163750 [S3] sends HeartBeat -> [S4]
+163752 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.164017 -0400 EDT m=+16.376268401
+163753 [S3] sends HeartBeat -> [S5]
+163757 [S3] sends HeartBeat -> [S6]
+163759 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.1646506 -0400 EDT m=+16.376901901
+163766 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.1653435 -0400 EDT m=+16.377594901
+164263 [S3] sends HeartBeat -> [S0]
+164269 [S3] sends HeartBeat -> [S1]
+164272 [S3] sends HeartBeat -> [S2]
+164276 [S3] sends HeartBeat -> [S4]
+164279 [S3] sends HeartBeat -> [S5]
+164282 [S3] sends HeartBeat -> [S6]
+164279 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.2167029 -0400 EDT m=+16.428954201
+164286 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.2173512 -0400 EDT m=+16.429602601
+164294 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.2181845 -0400 EDT m=+16.430435801
+164789 [S3] sends HeartBeat -> [S0]
+164794 [S3] sends HeartBeat -> [S1]
+164797 [S3] sends HeartBeat -> [S2]
+164800 [S3] sends HeartBeat -> [S4]
+164804 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.269173 -0400 EDT m=+16.481424401
+164804 [S3] sends HeartBeat -> [S5]
+164812 [S3] sends HeartBeat -> [S6]
+164812 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.2700317 -0400 EDT m=+16.482283001
+164821 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.2708563 -0400 EDT m=+16.483107701
+165319 [S3] sends HeartBeat -> [S0]
+165324 [S3] sends HeartBeat -> [S1]
+165327 [S3] sends HeartBeat -> [S2]
+165331 [S3] sends HeartBeat -> [S4]
+165333 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.3221338 -0400 EDT m=+16.534385101
+165334 [S3] sends HeartBeat -> [S5]
+165339 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.3226611 -0400 EDT m=+16.534912401
+165339 [S3] sends HeartBeat -> [S6]
+165349 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.323667 -0400 EDT m=+16.535918301
+165847 [S3] sends HeartBeat -> [S0]
+165853 [S3] sends HeartBeat -> [S1]
+165856 [S3] sends HeartBeat -> [S2]
+165861 [S3] sends HeartBeat -> [S4]
+165864 [S3] sends HeartBeat -> [S5]
+165866 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.3754198 -0400 EDT m=+16.587671201
+165869 [S3] sends HeartBeat -> [S6]
+165871 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.3759203 -0400 EDT m=+16.588171601
+165885 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.3772405 -0400 EDT m=+16.589491801
+166380 [S3] sends HeartBeat -> [S0]
+166386 [S3] sends HeartBeat -> [S1]
+166388 [S3] sends HeartBeat -> [S2]
+166392 [S3] sends HeartBeat -> [S4]
+166395 [S3] sends HeartBeat -> [S5]
+166397 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.428443 -0400 EDT m=+16.640694401
+166403 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.4290863 -0400 EDT m=+16.641337601
+166400 [S3] sends HeartBeat -> [S6]
+166415 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.4302605 -0400 EDT m=+16.642511801
+166912 [S3] sends HeartBeat -> [S0]
+166918 [S3] sends HeartBeat -> [S1]
+166923 [S3] sends HeartBeat -> [S2]
+166927 [S3] sends HeartBeat -> [S4]
+166930 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.4818035 -0400 EDT m=+16.694054801
+166932 [S3] sends HeartBeat -> [S5]
+166938 [S3] sends HeartBeat -> [S6]
+166941 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.4828869 -0400 EDT m=+16.695138301
+166949 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.4837279 -0400 EDT m=+16.695979301
+167446 [S3] sends HeartBeat -> [S0]
+167453 [S3] sends HeartBeat -> [S1]
+167458 [S3] sends HeartBeat -> [S2]
+167463 [S3] sends HeartBeat -> [S4]
+167463 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.5351321 -0400 EDT m=+16.747383501
+167470 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.5357553 -0400 EDT m=+16.748006601
+167474 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.5361536 -0400 EDT m=+16.748404901
+167465 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.5352938 -0400 EDT m=+16.747545101
+167466 [S3] sends HeartBeat -> [S5]
+167485 [S3] sends HeartBeat -> [S6]
+167490 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.5377745 -0400 EDT m=+16.750025801
+167493 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.5381178 -0400 EDT m=+16.750369101
+167990 [S3] sends HeartBeat -> [S0]
+167995 [S3] sends HeartBeat -> [S1]
+167999 [S3] sends HeartBeat -> [S2]
+168002 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.5889579 -0400 EDT m=+16.801209201
+168002 [S3] sends HeartBeat -> [S4]
+168008 [S3] sends HeartBeat -> [S5]
+168008 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.589619 -0400 EDT m=+16.801870301
+168010 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.5897566 -0400 EDT m=+16.802007901
+168011 [S3] sends HeartBeat -> [S6]
+168014 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.5902324 -0400 EDT m=+16.802483701
+168018 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.5905405 -0400 EDT m=+16.802791801
+168026 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.5913652 -0400 EDT m=+16.803616601
+168522 [S3] sends HeartBeat -> [S0]
+168526 [S3] sends HeartBeat -> [S1]
+168529 [S3] sends HeartBeat -> [S2]
+168532 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.6419688 -0400 EDT m=+16.854220101
+168532 [S3] sends HeartBeat -> [S4]
+168536 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.6423454 -0400 EDT m=+16.854596701
+168537 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.6425115 -0400 EDT m=+16.854762801
+168538 [S3] sends HeartBeat -> [S5]
+168544 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.6431853 -0400 EDT m=+16.855436601
+168545 [S3] sends HeartBeat -> [S6]
+168550 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.6437861 -0400 EDT m=+16.856037401
+168557 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.6445278 -0400 EDT m=+16.856779101
+169054 [S3] sends HeartBeat -> [S0]
+169059 [S3] sends HeartBeat -> [S1]
+169062 [S3] sends HeartBeat -> [S2]
+169066 [S3] sends HeartBeat -> [S4]
+169070 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.6957438 -0400 EDT m=+16.907995101
+169067 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.6955268 -0400 EDT m=+16.907778101
+169071 [S3] sends HeartBeat -> [S5]
+169074 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.6962304 -0400 EDT m=+16.908481701
+169078 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.6965645 -0400 EDT m=+16.908815801
+169080 [S3] sends HeartBeat -> [S6]
+169086 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.6973591 -0400 EDT m=+16.909610501
+169094 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.6981726 -0400 EDT m=+16.910424001
+169591 [S3] sends HeartBeat -> [S0]
+169596 [S3] sends HeartBeat -> [S1]
+169602 [S3] sends HeartBeat -> [S2]
+169606 [S3] sends HeartBeat -> [S4]
+169609 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.7496595 -0400 EDT m=+16.961910801
+169606 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.7494126 -0400 EDT m=+16.961664001
+169623 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.7510399 -0400 EDT m=+16.963291201
+169610 [S3] sends HeartBeat -> [S5]
+169617 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.750437 -0400 EDT m=+16.962688301
+169628 [S3] sends HeartBeat -> [S6]
+169633 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.7520687 -0400 EDT m=+16.964320101
+169638 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.752607 -0400 EDT m=+16.964858301
+170136 [S3] sends HeartBeat -> [S0]
+170142 [S3] sends HeartBeat -> [S1]
+170146 [S3] sends HeartBeat -> [S2]
+170150 [S3] sends HeartBeat -> [S4]
+170153 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.8041206 -0400 EDT m=+17.016371901
+170154 [S3] sends HeartBeat -> [S5]
+170152 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.8039957 -0400 EDT m=+17.016247001
+170155 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.8043162 -0400 EDT m=+17.016567501
+170159 [S3] sends HeartBeat -> [S6]
+170168 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.8055768 -0400 EDT m=+17.017828101
+170159 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.804698 -0400 EDT m=+17.016949401
+170174 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.8061419 -0400 EDT m=+17.018393301
+170670 [S3] sends HeartBeat -> [S0]
+170675 [S3] sends HeartBeat -> [S1]
+170678 [S3] sends HeartBeat -> [S2]
+170681 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.8569217 -0400 EDT m=+17.069173001
+170682 [S3] sends HeartBeat -> [S4]
+170687 [S3] sends HeartBeat -> [S5]
+170689 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.8576849 -0400 EDT m=+17.069936201
+170690 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.857741 -0400 EDT m=+17.069992401
+170691 [S3] sends HeartBeat -> [S6]
+170698 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.8585459 -0400 EDT m=+17.070797301
+170693 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.8580681 -0400 EDT m=+17.070319401
+170705 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.8592977 -0400 EDT m=+17.071549101
+171200 [S3] sends HeartBeat -> [S0]
+171206 [S3] sends HeartBeat -> [S1]
+171210 [S3] sends HeartBeat -> [S2]
+171214 [S3] sends HeartBeat -> [S4]
+171217 [S3] sends HeartBeat -> [S5]
+171219 {Election}[S1] Reset Election Timer at 2022-05-26 14:47:16.9107295 -0400 EDT m=+17.122980801
+171223 {Election}[S2] Reset Election Timer at 2022-05-26 14:47:16.911113 -0400 EDT m=+17.123364301
+171220 [S3] sends HeartBeat -> [S6]
+171219 {Election}[S0] Reset Election Timer at 2022-05-26 14:47:16.9106458 -0400 EDT m=+17.122897201
+171227 {Election}[S4] Reset Election Timer at 2022-05-26 14:47:16.9114671 -0400 EDT m=+17.123718401
+171228 {Election}[S5] Reset Election Timer at 2022-05-26 14:47:16.9116267 -0400 EDT m=+17.123878101
+171237 {Election}[S6] Reset Election Timer at 2022-05-26 14:47:16.9125291 -0400 EDT m=+17.124780401
+  ... Passed --   7.1  7  912  216190    0
+PASS
+ok  	6.824/raft	18.180s

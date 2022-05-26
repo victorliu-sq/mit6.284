@@ -82,6 +82,8 @@ Debug(dTerm, "[S%d] becomes {Follower}", rf.me, rf.currentTerm)
 
 Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
 
-Debug(dLog, "S%d log becomes: %q", rf.me, rf.GetTermArray())
+Debug(dLog, "S%d log(Term) becomes: %q", rf.me, rf.GetTermArray())
+
+Debug(dLog, "S%d log(Command) becomes: %q", rf.me, rf.GetCommandArray())
 
 */

@@ -11,6 +11,7 @@ type AppendEntryArgs struct {
 
 type AppendEntryReply struct {
 	Success bool
+	Term    int
 
 	// Conflict information
 	XValid bool // whether conflict
@@ -19,9 +20,6 @@ type AppendEntryReply struct {
 }
 
 func (rf *Raft) newAEArgs(peer int) AppendEntryArgs {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
-
 	// If prev leader's log is very long but most of log entries are not replicated
 	// Since nextIndex is optimistic, it can easily go out of range
 	next := rf.nextIndex[peer] - 1
@@ -49,8 +47,6 @@ func (rf *Raft) newAEArgs(peer int) AppendEntryArgs {
 }
 
 func (rf *Raft) newAEReply() AppendEntryReply {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return AppendEntryReply{}
 }
 
