@@ -76,14 +76,62 @@ type Raft struct {
 	lastApplied int
 
 	// DIY
-	state          RaftState
-	electionTimer  *time.Timer
-	heartBeatTimer *time.Timer
+	state         RaftState
+	electionTimer *time.Timer
+	// heartBeatTimer *time.Timer
+	heartBeatCond  *sync.Cond
 	replicatorCond []*sync.Cond
 
 	// Volatile State for leaders
 	nextIndex  []int
 	matchIndex []int
+}
+
+func Make(peers []*labrpc.ClientEnd, me int,
+	persister *Persister, applyCh chan ApplyMsg) *Raft {
+	rf := &Raft{}
+	rf.peers = peers
+	rf.persister = persister
+	rf.me = me
+
+	// Your initialization code here (2A, 2B, 2C).
+	// Persistent States
+	rf.currentTerm = 0
+	rf.votedFor = -1
+	rf.log = make([]LogEntry, 1)
+
+	// Volatile States
+	rf.commitIndex = 0
+	rf.lastApplied = 0
+
+	rf.state = Follower
+	rf.electionTimer = time.NewTimer(GetRandomElectionTime())
+	rf.replicatorCond = make([]*sync.Cond, len(peers))
+
+	// Volatile States for leader
+	rf.nextIndex = make([]int, len(rf.peers))
+	rf.matchIndex = make([]int, len(rf.peers))
+	for i, _ := range rf.peers {
+		rf.nextIndex[i] = rf.GetLastLogEntry().Index + 1
+		rf.matchIndex[i] = 0
+	}
+
+	// initialize from state persisted before a crash
+	rf.readPersist(persister.ReadRaftState())
+
+	// start separate goroutines
+	go rf.ticker()
+
+	// HeartBeatSender
+	rf.heartBeatCond = sync.NewCond(&sync.Mutex{})
+	go rf.HeartBeastSender()
+	// LogReplicationSender
+	for peer, _ := range peers {
+		rf.replicatorCond[peer] = sync.NewCond(&sync.Mutex{})
+		go rf.LogReplicationSender(peer)
+	}
+
+	return rf
 }
 
 // rf.me do not have any writing operation
@@ -121,7 +169,7 @@ func (rf *Raft) GetMajority() int {
 func (rf *Raft) ResetElectionTimer() {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	rf.electionTimer.Reset(getRandomElectionTime())
+	rf.electionTimer.Reset(GetRandomElectionTime())
 }
 
 // return currentTerm and whether this server
@@ -146,6 +194,81 @@ func (rf *Raft) GetTermArray() string {
 		terms = append(terms, logEntry.Term)
 	}
 	return fmt.Sprint(terms)
+}
+
+func (rf *Raft) GetNextIndex(peer int) int {
+	rf.mu.RLock()
+	defer rf.mu.RUnlock()
+	return rf.nextIndex[peer]
+}
+
+func (rf *Raft) GetCommitIndex() int {
+	rf.mu.RLock()
+	defer rf.mu.RUnlock()
+	return rf.commitIndex
+}
+
+func (rf *Raft) GetMatchIndex(peer int) int {
+	rf.mu.RLock()
+	defer rf.mu.RUnlock()
+	return rf.matchIndex[peer]
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	} else {
+		return b
+	}
+}
+
+func (rf *Raft) SetCommitIndex(newCommitIndex int) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	rf.commitIndex = newCommitIndex
+}
+
+func (rf *Raft) SetNextIndex(peer int, newNextIndex int) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	rf.nextIndex[peer] = newNextIndex
+}
+
+func (rf *Raft) SetMatchIndex(peer int, newMatchIndex int) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	rf.matchIndex[peer] = newMatchIndex
+}
+
+func (rf *Raft) AdvanceCommitIndexFollower(LeaderCommit int) {
+	if LeaderCommit > rf.GetCommitIndex() {
+		newCommitIndex := min(LeaderCommit, rf.GetLastLogEntry().Index)
+		rf.SetCommitIndex(newCommitIndex)
+		// Debug(dLog, "[S%d](Follower)'s Commmit Index becomes %d", rf.me, newCommitIndex)
+	}
+}
+
+func (rf *Raft) AdvanceCommitIndexLeader() {
+	if !rf.IsLeader() {
+		return
+	}
+
+	for N := rf.GetCommitIndex() + 1; N <= rf.GetLastLogEntry().Index; N++ {
+		if rf.GetLogEntry(N).Term == rf.GetTerm() {
+			num := 1
+			for peer := range rf.peers {
+				if peer != rf.me && rf.GetMatchIndex(peer) >= N {
+					// Debug(dLog, "[S%d] tries to increment Commit Index to %d, Checking [S%d]", rf.me, N, peer)
+					num++
+					if num == rf.GetMajority() {
+						rf.SetCommitIndex(N)
+						// Debug(dLog, "[S%d](Leader)'s Commmit Index becomes %d", rf.me, N)
+						break
+					}
+				}
+			}
+		}
+	}
 }
 
 //
@@ -237,11 +360,10 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	// (1) Add a new logEntry to rf.log
 	logEntry := rf.newLogEntry(command)
 	rf.AppendLogEntry(logEntry)
-	Debug(dLog, "S%d adds a new logEntry\n", rf.me)
-	Debug(dLog, "S%d log becomes: %q", rf.me, rf.GetTermArray())
+	Debug(dLog, "[S%d] adds a new logEntry of Term %d\n", rf.me, rf.GetTerm())
+	Debug(dLog, "[S%d] log becomes: %q", rf.me, rf.GetTermArray())
 	// (2) broadcast AppendEntry to each server
-	// rf.startBroadcast(false)
-	rf.broadcastLogReplication()
+	rf.BroadcastLogReplication()
 
 	// (3) update index, term
 	index, term = logEntry.Index, logEntry.Term
@@ -284,47 +406,3 @@ func (rf *Raft) killed() bool {
 // func getRandomHeartBeatTime() time.Duration {
 // 	return time.Duration((rand.Intn(100-50+1) + 50)) * time.Millisecond
 // }
-
-func Make(peers []*labrpc.ClientEnd, me int,
-	persister *Persister, applyCh chan ApplyMsg) *Raft {
-	rf := &Raft{}
-	rf.peers = peers
-	rf.persister = persister
-	rf.me = me
-
-	// Your initialization code here (2A, 2B, 2C).
-	// Persistent States
-	rf.currentTerm = 0
-	rf.votedFor = -1
-	rf.log = []LogEntry{}
-
-	// Volatile States
-	rf.commitIndex = -1
-	rf.lastApplied = -1
-
-	rf.state = Follower
-	rf.electionTimer = time.NewTimer(getRandomElectionTime())
-	rf.heartBeatTimer = time.NewTimer(getBroadCastTime())
-	rf.replicatorCond = make([]*sync.Cond, len(peers))
-
-	// Volatile States for leader
-	rf.nextIndex = make([]int, len(peers))
-	rf.matchIndex = make([]int, len(peers))
-	for i, _ := range peers {
-		rf.nextIndex[i] = rf.GetLastLogEntry().Index
-		rf.matchIndex[i] = 0
-	}
-
-	// initialize from state persisted before a crash
-	rf.readPersist(persister.ReadRaftState())
-
-	// start separate goroutines
-	go rf.ticker()
-	for peer, _ := range peers {
-		rf.replicatorCond[peer] = sync.NewCond(&sync.Mutex{})
-		go rf.replicator(peer)
-	}
-	// start
-
-	return rf
-}

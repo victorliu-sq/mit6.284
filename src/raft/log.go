@@ -58,7 +58,7 @@ func (rf *Raft) AppendLogEntry(logEntry LogEntry) {
 	rf.log = append(rf.log, logEntry)
 }
 
-func (rf *Raft) logLength() int {
+func (rf *Raft) GetLogLength() int {
 	rf.mu.RLock()
 	defer rf.mu.RUnlock()
 	return len(rf.log)
@@ -70,8 +70,38 @@ func (rf *Raft) GetIndex(index int) int {
 	return index - rf.GetFirstLogEntry().Index
 }
 
-func (rf *Raft) GetEntry(index int) LogEntry {
+func (rf *Raft) GetLogEntry(index int) LogEntry {
 	rf.mu.RLock()
 	defer rf.mu.RUnlock()
-	return rf.log[rf.GetIndex(index)]
+	// Debug(dLog, "index is %d\n", index)
+	return rf.log[index]
+}
+
+func (rf *Raft) GetSubarrayEnd(idx int) []LogEntry {
+	rf.mu.RLock()
+	defer rf.mu.RUnlock()
+	return rf.log[idx:]
+}
+
+func (rf *Raft) GetXIndex(prevLogIndex int, prevLogTerm int) int {
+	rf.mu.RLock()
+	defer rf.mu.RUnlock()
+	XIndex := prevLogIndex
+	for XIndex-1 >= 0 && rf.GetLogEntry(XIndex-1).Term == prevLogTerm {
+		XIndex--
+	}
+	return XIndex
+}
+
+func (rf *Raft) AppendNewEntries(prevLogIndex int, Entries []LogEntry) {
+	// find first logEntry in Entries that (1) out of range (2) conflicts with Term of rf.log[same idx]
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	rf.log = append(rf.log[0:prevLogIndex+1], Entries...)
+	// for idx, logEntry := range Entries {
+	// 	if idx >= len(rf.log) || rf.GetLogEntry(idx).Term != logEntry.Term {
+	// 		rf.log = append(rf.log[0:prevLogIndex+1+idx], Entries[idx:]...)
+	// 		break
+	// 	}
+	// }
 }

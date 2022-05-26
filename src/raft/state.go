@@ -19,9 +19,19 @@ func (rf *Raft) ConvertToFollower(newTerm int) {
 }
 
 func (rf *Raft) ConvertToLeader() {
+	rf.mu.RLock()
+	LastLogIndex := rf.GetLastLogEntry().Index
+	rf.mu.RUnlock()
+
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 	rf.state = Leader
+	// Reinitialize Volatile States for leader
+	for i, _ := range rf.peers {
+		rf.nextIndex[i] = LastLogIndex + 1
+		// Debug(dLog, "[S%d] nextIndex becomes %d", i, rf.nextIndex[i])
+		rf.matchIndex[i] = 0
+	}
 }
 
 func (rf *Raft) ConvertToCandidate() {
@@ -30,5 +40,4 @@ func (rf *Raft) ConvertToCandidate() {
 	rf.state = Candidate
 	rf.votedFor = rf.me
 	rf.currentTerm++
-	rf.electionTimer.Reset(getRandomElectionTime())
 }

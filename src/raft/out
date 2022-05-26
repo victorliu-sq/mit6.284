@@ -1,838 +1,1121 @@
 Test (2A): initial election ...
-004052 [S0] becomes {Candidate}
-004056 [S0] currentTerm -> (1)
-004061 [S0] sends RequestVote -> [S1]
-004062 [S0] sends RequestVote -> [S2]
-004079 [S2] becomes {Follower}
-004082 [S0] Got Vote <- [S2]
-004079 [S1] becomes {Follower}
-004087 [S0] becomes {Leader}
-004090 [S0] broadcasts HeartBeats
-004087 [S0] Got Vote <- [S1]
-007749 [S2] becomes {Candidate}
-007755 [S2] currentTerm -> (2)
-007769 [S2] sends RequestVote -> [S0]
-007770 [S2] sends RequestVote -> [S1]
-007790 [S0] becomes {Follower}
-007797 [S2] Got Vote <- [S0]
-007798 [S1] becomes {Follower}
-007804 [S2] Got Vote <- [S1]
-007804 [S2] becomes {Leader}
-007813 [S2] broadcasts HeartBeats
-011060 [S0] becomes {Candidate}
-011065 [S0] currentTerm -> (3)
-011069 [S0] sends RequestVote -> [S2]
-011069 [S0] sends RequestVote -> [S1]
-011077 [S2] becomes {Follower}
-011080 [S0] Got Vote <- [S2]
-011078 [S1] becomes {Follower}
-011085 [S0] Got Vote <- [S1]
-011084 [S0] becomes {Leader}
-011092 [S0] broadcasts HeartBeats
-014464 [S1] becomes {Candidate}
-014469 [S1] currentTerm -> (4)
-014473 [S1] sends RequestVote -> [S0]
-014474 [S1] sends RequestVote -> [S2]
-014483 [S0] becomes {Follower}
-014487 [S1] Got Vote <- [S0]
-014487 [S2] becomes {Follower}
-014493 [S1] becomes {Leader}
-014496 [S1] broadcasts HeartBeats
-014493 [S1] Got Vote <- [S2]
-017871 [S2] becomes {Candidate}
-017875 [S2] currentTerm -> (5)
-017879 [S2] sends RequestVote -> [S1]
-017879 [S2] sends RequestVote -> [S0]
-017887 [S1] becomes {Follower}
-017890 [S2] Got Vote <- [S1]
-017889 [S0] becomes {Follower}
-017895 [S2] Got Vote <- [S0]
-017897 [S2] becomes {Leader}
-017900 [S2] broadcasts HeartBeats
-021005 [S0] becomes {Candidate}
-021008 [S0] currentTerm -> (6)
-021014 [S0] sends RequestVote -> [S2]
-021014 [S0] sends RequestVote -> [S1]
-021023 [S2] becomes {Follower}
-021026 [S0] Got Vote <- [S2]
-021026 [S1] becomes {Follower}
-021032 [S0] becomes {Leader}
-021035 [S0] broadcasts HeartBeats
-021032 [S0] Got Vote <- [S1]
-024731 [S2] becomes {Candidate}
-024735 [S2] currentTerm -> (7)
-024739 [S2] sends RequestVote -> [S1]
-024739 [S2] sends RequestVote -> [S0]
-024747 [S1] becomes {Follower}
-024749 [S0] becomes {Follower}
-024751 [S2] Got Vote <- [S0]
-024749 [S2] Got Vote <- [S1]
-024755 [S2] becomes {Leader}
-024758 [S2] broadcasts HeartBeats
-warning: term changed even though there were no failures028144 [S2] becomes {Candidate}
-028149 [S2] currentTerm -> (8)
-028153 [S2] sends RequestVote -> [S0]
-028154 [S2] sends RequestVote -> [S1]
-028162 [S0] becomes {Follower}
-028166 [S2] Got Vote <- [S0]
-028166 [S1] becomes {Follower}
-028174 [S2] Got Vote <- [S1]
-028180 [S2] becomes {Leader}
-028183 [S2] broadcasts HeartBeats
-  ... Passed --   3.1  3   32    6932    0
-Test (2A): election after network failure ...
-031727 [S2] becomes {Candidate}
-031731 [S2] currentTerm -> (9)
-031735 [S2] sends RequestVote -> [S0]
-031736 [S2] sends RequestVote -> [S1]
-032157 [S1] becomes {Candidate}
-032160 [S1] currentTerm -> (9)
-032165 [S1] sends RequestVote -> [S0]
-032166 [S1] sends RequestVote -> [S2]
-032808 [S0] becomes {Candidate}
-032811 [S0] currentTerm -> (9)
-032815 [S0] sends RequestVote -> [S1]
-032815 [S0] sends RequestVote -> [S2]
-034373 [S2] becomes {Candidate}
-034376 [S2] currentTerm -> (1)
-034380 [S2] sends RequestVote -> [S1]
-034380 [S2] sends RequestVote -> [S0]
-034386 [S1] becomes {Follower}
-034389 [S2] Got Vote <- [S1]
-034389 [S0] becomes {Follower}
-034393 [S2] Got Vote <- [S0]
-034393 [S2] becomes {Leader}
-034397 [S2] broadcasts HeartBeats
-037406 [S2] becomes {Candidate}
-037410 [S2] currentTerm -> (2)
-037414 [S2] sends RequestVote -> [S1]
-037415 [S2] sends RequestVote -> [S0]
-037738 [S1] becomes {Candidate}
-037748 [S1] currentTerm -> (2)
-037754 [S1] sends RequestVote -> [S2]
-037754 [S1] sends RequestVote -> [S0]
-037772 [S0] becomes {Follower}
-037776 [S1] Got Vote <- [S0]
-037783 [S1] becomes {Leader}
-037786 [S1] broadcasts HeartBeats
-040599 [S2] becomes {Candidate}
-040603 [S2] currentTerm -> (3)
-040606 [S2] sends RequestVote -> [S1]
-040607 [S2] sends RequestVote -> [S0]
-041172 [S1] becomes {Candidate}
-041179 [S1] currentTerm -> (3)
-041184 [S1] sends RequestVote -> [S0]
-041185 [S1] sends RequestVote -> [S2]
-041192 [S0] becomes {Follower}
-041195 [S1] Got Vote <- [S0]
-041200 [S1] becomes {Leader}
-041202 [S1] broadcasts HeartBeats
-044364 [S2] becomes {Candidate}
-044368 [S2] currentTerm -> (4)
-044373 [S2] sends RequestVote -> [S0]
-044373 [S2] sends RequestVote -> [S1]
-044381 [S0] becomes {Follower}
-044384 [S2] Got Vote <- [S0]
-044385 [S1] becomes {Follower}
-044391 [S2] Got Vote <- [S1]
-044389 [S2] becomes {Leader}
-044397 [S2] broadcasts HeartBeats
-048237 [S2] becomes {Candidate}
-048240 [S2] currentTerm -> (5)
-048243 [S2] sends RequestVote -> [S1]
-048243 [S2] sends RequestVote -> [S0]
-049229 [S1] becomes {Candidate}
-049235 [S1] currentTerm -> (5)
-049238 [S1] sends RequestVote -> [S0]
-049239 [S1] sends RequestVote -> [S2]
-049330 [S0] becomes {Candidate}
-049338 [S0] currentTerm -> (5)
-049344 [S0] sends RequestVote -> [S1]
-049345 [S0] sends RequestVote -> [S2]
-051460 [S2] becomes {Candidate}
-051464 [S2] currentTerm -> (6)
-051470 [S2] sends RequestVote -> [S0]
-051473 [S2] sends RequestVote -> [S1]
-052712 [S1] becomes {Candidate}
-052715 [S1] currentTerm -> (6)
-052719 [S1] sends RequestVote -> [S0]
-052720 [S1] sends RequestVote -> [S2]
-053243 [S0] becomes {Candidate}
-053247 [S0] currentTerm -> (6)
-053252 [S0] sends RequestVote -> [S2]
-053253 [S0] sends RequestVote -> [S1]
-054623 [S2] becomes {Candidate}
-054629 [S2] currentTerm -> (7)
-054633 [S2] sends RequestVote -> [S0]
-054634 [S2] sends RequestVote -> [S1]
-056696 [S0] becomes {Candidate}
-056701 [S0] currentTerm -> (7)
-056705 [S0] sends RequestVote -> [S1]
-056706 [S0] sends RequestVote -> [S2]
-057645 [S1] becomes {Candidate}
-057650 [S1] currentTerm -> (7)
-057653 [S1] sends RequestVote -> [S0]
-057654 [S1] sends RequestVote -> [S2]
-058736 [S2] becomes {Candidate}
-058739 [S2] currentTerm -> (8)
-058742 [S2] sends RequestVote -> [S0]
-058743 [S2] sends RequestVote -> [S1]
-059809 [S0] becomes {Candidate}
-059812 [S0] currentTerm -> (8)
-059816 [S0] sends RequestVote -> [S2]
-059816 [S0] sends RequestVote -> [S1]
-061609 [S1] becomes {Candidate}
-061612 [S1] currentTerm -> (8)
-061616 [S1] sends RequestVote -> [S0]
-061616 [S1] sends RequestVote -> [S2]
-063380 [S2] becomes {Candidate}
-063384 [S2] currentTerm -> (9)
-063389 [S2] sends RequestVote -> [S0]
-063389 [S2] sends RequestVote -> [S1]
-064582 [S0] becomes {Candidate}
-064586 [S0] currentTerm -> (9)
-064589 [S0] sends RequestVote -> [S2]
-064589 [S0] sends RequestVote -> [S1]
-065813 [S1] becomes {Candidate}
-065817 [S1] currentTerm -> (9)
-065821 [S1] sends RequestVote -> [S0]
-065822 [S1] sends RequestVote -> [S2]
-066843 [S2] becomes {Candidate}
-066846 [S2] currentTerm -> (10)
-066850 [S2] sends RequestVote -> [S0]
-066850 [S2] sends RequestVote -> [S1]
-067596 [S0] becomes {Candidate}
-067605 [S0] currentTerm -> (10)
-067610 [S0] sends RequestVote -> [S1]
-067610 [S0] sends RequestVote -> [S2]
-067621 [S1] becomes {Follower}
-067623 [S0] Got Vote <- [S1]
-067628 [S0] becomes {Leader}
-067630 [S0] broadcasts HeartBeats
-070656 [S2] becomes {Candidate}
-070660 [S2] currentTerm -> (11)
-070664 [S2] sends RequestVote -> [S0]
-070664 [S2] sends RequestVote -> [S1]
-071930 [S0] becomes {Candidate}
-071936 [S0] currentTerm -> (11)
-071940 [S0] sends RequestVote -> [S2]
-071941 [S0] sends RequestVote -> [S1]
-071954 [S1] becomes {Follower}
-071958 [S0] Got Vote <- [S1]
-071966 [S0] becomes {Leader}
-071970 [S0] broadcasts HeartBeats
-075033 [S0] becomes {Candidate}
-075037 [S0] currentTerm -> (12)
-075040 [S0] sends RequestVote -> [S1]
-075041 [S0] sends RequestVote -> [S2]
-075048 [S1] becomes {Follower}
-075049 [S0] Got Vote <- [S1]
-075050 [S2] becomes {Follower}
-075053 [S0] Got Vote <- [S2]
-075054 [S0] becomes {Leader}
-075058 [S0] broadcasts HeartBeats
-  ... Passed --   4.5  3   66    9420    0
-Test (2A): multiple elections ...
-079046 [S0] becomes {Candidate}
-079050 [S0] currentTerm -> (1)
-079055 [S0] sends RequestVote -> [S1]
-079058 [S0] sends RequestVote -> [S4]
-079056 [S0] sends RequestVote -> [S2]
-079065 [S1] becomes {Follower}
-079068 [S0] Got Vote <- [S1]
-079056 [S0] sends RequestVote -> [S3]
-079067 [S0] sends RequestVote -> [S5]
-079078 [S2] becomes {Follower}
-079080 [S0] Got Vote <- [S2]
-079078 [S3] becomes {Follower}
-079086 [S0] Got Vote <- [S3]
-079074 [S4] becomes {Follower}
-079072 [S0] sends RequestVote -> [S6]
-079082 [S5] becomes {Follower}
-079090 [S0] becomes {Leader}
-079098 [S0] broadcasts HeartBeats
-079091 [S0] Got Vote <- [S4]
-079096 [S0] Got Vote <- [S5]
-079097 [S6] becomes {Follower}
-079127 [S0] Got Vote <- [S6]
-079380 [S0] becomes {Candidate}
-079383 [S0] currentTerm -> (13)
-079387 [S0] sends RequestVote -> [S2]
-079387 [S0] sends RequestVote -> [S1]
-079948 [S1] becomes {Candidate}
-079951 [S1] currentTerm -> (13)
-079954 [S1] sends RequestVote -> [S0]
-079955 [S1] sends RequestVote -> [S2]
-080068 [S2] becomes {Candidate}
-080071 [S2] currentTerm -> (13)
-080074 [S2] sends RequestVote -> [S0]
-080075 [S2] sends RequestVote -> [S1]
-082864 [S6] becomes {Candidate}
-082870 [S6] currentTerm -> (2)
-082874 [S2] becomes {Candidate}
-082878 [S2] currentTerm -> (2)
-082874 [S6] sends RequestVote -> [S1]
-082883 [S2] sends RequestVote -> [S3]
-082875 [S6] sends RequestVote -> [S0]
-082875 [S6] sends RequestVote -> [S2]
-082876 [S6] sends RequestVote -> [S3]
-082876 [S6] sends RequestVote -> [S4]
-082876 [S6] sends RequestVote -> [S5]
-082881 [S2] sends RequestVote -> [S0]
-082882 [S2] sends RequestVote -> [S1]
-082883 [S2] sends RequestVote -> [S4]
-082889 [S2] sends RequestVote -> [S5]
-082893 [S2] sends RequestVote -> [S6]
-082895 [S3] becomes {Follower}
-082922 [S2] Got Vote <- [S3]
-082912 [S0] becomes {Follower}
-082920 [S4] becomes {Follower}
-082929 [S2] Got Vote <- [S4]
-082923 [S1] becomes {Follower}
-082933 [S2] Got Vote <- [S1]
-082926 [S2] Got Vote <- [S0]
-082938 [S2] becomes {Leader}
-082940 [S2] broadcasts HeartBeats
-083927 [S5] becomes {Candidate}
-083931 [S5] currentTerm -> (2)
-083936 [S5] sends RequestVote -> [S0]
-083936 [S5] sends RequestVote -> [S1]
-083938 [S5] sends RequestVote -> [S3]
-083946 [S5] sends RequestVote -> [S6]
-083938 [S5] sends RequestVote -> [S2]
-083941 [S5] sends RequestVote -> [S4]
-086148 [S6] becomes {Candidate}
-086153 [S6] currentTerm -> (3)
-086160 [S6] sends RequestVote -> [S0]
-086160 [S6] sends RequestVote -> [S1]
-086160 [S6] sends RequestVote -> [S2]
-086173 [S6] sends RequestVote -> [S5]
-086164 [S6] sends RequestVote -> [S3]
-086171 [S6] sends RequestVote -> [S4]
-086232 [S3] becomes {Candidate}
-086236 [S3] currentTerm -> (3)
-086242 [S3] sends RequestVote -> [S0]
-086242 [S3] sends RequestVote -> [S1]
-086245 [S3] sends RequestVote -> [S2]
-086247 [S3] sends RequestVote -> [S4]
-086249 [S3] sends RequestVote -> [S6]
-086249 [S3] sends RequestVote -> [S5]
-086254 [S1] becomes {Follower}
-086266 [S3] Got Vote <- [S1]
-086257 [S2] becomes {Follower}
-086263 [S4] becomes {Follower}
-086273 [S3] Got Vote <- [S4]
-086271 [S3] Got Vote <- [S2]
-086274 [S5] becomes {Follower}
-086281 [S3] Got Vote <- [S5]
-086281 [S3] becomes {Leader}
-086285 [S3] broadcasts HeartBeats
-086701 [S0] becomes {Candidate}
-086704 [S0] currentTerm -> (3)
-086709 [S0] sends RequestVote -> [S1]
-086712 [S0] sends RequestVote -> [S6]
-086709 [S0] sends RequestVote -> [S2]
-086710 [S0] sends RequestVote -> [S3]
-086711 [S0] sends RequestVote -> [S4]
-086712 [S0] sends RequestVote -> [S5]
-089231 [S6] becomes {Candidate}
-089238 [S6] currentTerm -> (4)
-089242 [S6] sends RequestVote -> [S0]
-089243 [S6] sends RequestVote -> [S1]
-089244 [S6] sends RequestVote -> [S2]
-089244 [S6] sends RequestVote -> [S4]
-089245 [S6] sends RequestVote -> [S5]
-089245 [S6] sends RequestVote -> [S3]
-089329 [S1] becomes {Candidate}
-089339 [S1] currentTerm -> (4)
-089343 [S1] sends RequestVote -> [S0]
-089346 [S1] sends RequestVote -> [S3]
-089345 [S1] sends RequestVote -> [S2]
-089345 [S1] sends RequestVote -> [S4]
-089346 [S1] sends RequestVote -> [S5]
-089347 [S1] sends RequestVote -> [S6]
-089354 [S3] becomes {Follower}
-089367 [S1] Got Vote <- [S3]
-089360 [S2] becomes {Follower}
-089361 [S4] becomes {Follower}
-089371 [S5] becomes {Follower}
-089383 [S1] Got Vote <- [S5]
-089376 [S1] Got Vote <- [S2]
-089380 [S1] Got Vote <- [S4]
-089392 [S1] becomes {Leader}
-089395 [S1] broadcasts HeartBeats
-091314 [S0] becomes {Candidate}
-091317 [S0] currentTerm -> (4)
-091320 [S0] sends RequestVote -> [S1]
-091321 [S0] sends RequestVote -> [S2]
-091327 [S0] sends RequestVote -> [S6]
-091321 [S0] sends RequestVote -> [S3]
-091321 [S0] sends RequestVote -> [S4]
-091322 [S0] sends RequestVote -> [S5]
-092333 [S1] becomes {Candidate}
-092338 [S1] currentTerm -> (5)
-092346 [S1] sends RequestVote -> [S0]
-092346 [S1] sends RequestVote -> [S2]
-092346 [S1] sends RequestVote -> [S4]
-092347 [S1] sends RequestVote -> [S5]
-092347 [S1] sends RequestVote -> [S6]
-092347 [S1] sends RequestVote -> [S3]
-092830 [S2] becomes {Candidate}
-092834 [S2] currentTerm -> (5)
-092837 [S2] sends RequestVote -> [S0]
-092838 [S2] sends RequestVote -> [S1]
-092841 [S2] sends RequestVote -> [S3]
-092842 [S2] sends RequestVote -> [S4]
-092844 [S2] sends RequestVote -> [S5]
-092847 [S2] sends RequestVote -> [S6]
-092857 [S0] becomes {Follower}
-092859 [S2] Got Vote <- [S0]
-092861 [S3] becomes {Follower}
-092865 [S2] Got Vote <- [S3]
-092867 [S5] becomes {Follower}
-092870 [S2] Got Vote <- [S5]
-092874 [S6] becomes {Follower}
-092876 [S2] Got Vote <- [S6]
-092875 [S2] becomes {Leader}
-092881 [S2] broadcasts HeartBeats
-093490 [S4] becomes {Candidate}
-093494 [S4] currentTerm -> (5)
-093499 [S4] sends RequestVote -> [S0]
-093499 [S4] sends RequestVote -> [S1]
-093505 [S4] sends RequestVote -> [S6]
-093500 [S4] sends RequestVote -> [S3]
-093500 [S4] sends RequestVote -> [S5]
-093502 [S4] sends RequestVote -> [S2]
-095378 [S1] becomes {Candidate}
-095381 [S1] currentTerm -> (6)
-095384 [S1] sends RequestVote -> [S0]
-095387 [S1] sends RequestVote -> [S4]
-095386 [S1] sends RequestVote -> [S2]
-095386 [S1] sends RequestVote -> [S3]
-095390 [S1] sends RequestVote -> [S5]
-095394 [S1] sends RequestVote -> [S6]
-095944 [S0] becomes {Candidate}
-095951 [S0] currentTerm -> (6)
-095957 [S0] sends RequestVote -> [S1]
-095957 [S0] sends RequestVote -> [S2]
-095957 [S0] sends RequestVote -> [S3]
-095958 [S0] sends RequestVote -> [S4]
-095960 [S0] sends RequestVote -> [S5]
-095964 [S0] sends RequestVote -> [S6]
-095980 [S2] becomes {Follower}
-095987 [S0] Got Vote <- [S2]
-095999 [S5] becomes {Follower}
-096003 [S0] Got Vote <- [S5]
-095999 [S4] becomes {Follower}
-096010 [S0] Got Vote <- [S4]
-096016 [S0] becomes {Leader}
-096020 [S0] broadcasts HeartBeats
-097185 [S3] becomes {Candidate}
-097189 [S3] currentTerm -> (6)
-097192 [S3] sends RequestVote -> [S0]
-097193 [S3] sends RequestVote -> [S1]
-097193 [S3] sends RequestVote -> [S2]
-097194 [S3] sends RequestVote -> [S4]
-097197 [S3] sends RequestVote -> [S5]
-097200 [S3] sends RequestVote -> [S6]
-097343 [S6] becomes {Candidate}
-097347 [S6] currentTerm -> (6)
-097352 [S6] sends RequestVote -> [S0]
-097353 [S6] sends RequestVote -> [S1]
-097354 [S6] sends RequestVote -> [S2]
-097354 [S6] sends RequestVote -> [S3]
-097355 [S6] sends RequestVote -> [S4]
-097357 [S6] sends RequestVote -> [S5]
-099222 [S5] becomes {Candidate}
-099226 [S5] currentTerm -> (7)
-099230 [S5] sends RequestVote -> [S0]
-099231 [S5] sends RequestVote -> [S1]
-099232 [S5] sends RequestVote -> [S2]
-099234 [S5] sends RequestVote -> [S3]
-099248 [S0] becomes {Follower}
-099252 [S5] Got Vote <- [S0]
-099249 [S5] sends RequestVote -> [S6]
-099250 [S5] sends RequestVote -> [S4]
-099257 [S1] becomes {Follower}
-099266 [S5] Got Vote <- [S1]
-099261 [S2] becomes {Follower}
-099272 [S5] Got Vote <- [S2]
-099268 [S4] becomes {Follower}
-099278 [S5] Got Vote <- [S4]
-099278 [S5] becomes {Leader}
-099286 [S5] broadcasts HeartBeats
-100268 [S3] becomes {Candidate}
-100272 [S3] currentTerm -> (7)
-100277 [S3] sends RequestVote -> [S0]
-100277 [S3] sends RequestVote -> [S2]
-100283 [S3] sends RequestVote -> [S6]
-100277 [S3] sends RequestVote -> [S4]
-100278 [S3] sends RequestVote -> [S1]
-100279 [S3] sends RequestVote -> [S5]
-101625 [S6] becomes {Candidate}
-101629 [S6] currentTerm -> (7)
-101633 [S6] sends RequestVote -> [S0]
-101634 [S6] sends RequestVote -> [S5]
-101634 [S6] sends RequestVote -> [S1]
-101634 [S6] sends RequestVote -> [S2]
-101634 [S6] sends RequestVote -> [S3]
-101634 [S6] sends RequestVote -> [S4]
-102350 [S1] becomes {Candidate}
-102353 [S1] currentTerm -> (8)
-102357 [S1] sends RequestVote -> [S0]
-102360 [S1] sends RequestVote -> [S6]
-102360 [S1] sends RequestVote -> [S5]
-102359 [S1] sends RequestVote -> [S3]
-102359 [S1] sends RequestVote -> [S4]
-102358 [S1] sends RequestVote -> [S2]
-102379 [S6] becomes {Follower}
-102384 [S1] Got Vote <- [S6]
-102386 [S5] becomes {Follower}
-102391 [S1] Got Vote <- [S5]
-102402 [S4] becomes {Follower}
-102404 [S1] Got Vote <- [S4]
-102410 [S1] becomes {Leader}
-102412 [S1] broadcasts HeartBeats
-103334 [S0] becomes {Candidate}
-103339 [S0] currentTerm -> (8)
-103344 [S0] sends RequestVote -> [S1]
-103345 [S0] sends RequestVote -> [S3]
-103345 [S0] sends RequestVote -> [S2]
-103346 [S0] sends RequestVote -> [S4]
-103347 [S0] sends RequestVote -> [S5]
-103347 [S0] sends RequestVote -> [S6]
-103845 [S2] becomes {Candidate}
-103851 [S2] currentTerm -> (8)
-103855 [S2] sends RequestVote -> [S0]
-103859 [S2] sends RequestVote -> [S4]
-103860 [S2] sends RequestVote -> [S5]
-103858 [S2] sends RequestVote -> [S3]
-103857 [S2] sends RequestVote -> [S1]
-103861 [S2] sends RequestVote -> [S6]
-104545 [S3] becomes {Candidate}
-104552 [S3] currentTerm -> (8)
-104558 [S3] sends RequestVote -> [S0]
-104560 [S3] sends RequestVote -> [S1]
-104561 [S3] sends RequestVote -> [S2]
-104563 [S3] sends RequestVote -> [S4]
-104571 [S3] sends RequestVote -> [S6]
-104568 [S3] sends RequestVote -> [S5]
-105513 [S1] becomes {Candidate}
-105520 [S1] currentTerm -> (9)
-105526 [S1] sends RequestVote -> [S0]
-105527 [S1] sends RequestVote -> [S2]
-105534 [S1] sends RequestVote -> [S3]
-105544 [S1] sends RequestVote -> [S4]
-105556 [S1] sends RequestVote -> [S5]
-105560 [S1] sends RequestVote -> [S6]
-105561 [S3] becomes {Follower}
-105565 [S1] Got Vote <- [S3]
-105570 [S5] becomes {Follower}
-105572 [S1] Got Vote <- [S5]
-105575 [S6] becomes {Follower}
-105577 [S1] Got Vote <- [S6]
-105582 [S1] becomes {Leader}
-105584 [S1] broadcasts HeartBeats
-106110 [S4] becomes {Candidate}
-106115 [S4] currentTerm -> (9)
-106118 [S4] sends RequestVote -> [S0]
-106121 [S4] sends RequestVote -> [S3]
-106121 [S4] sends RequestVote -> [S2]
-106122 [S4] sends RequestVote -> [S6]
-106122 [S4] sends RequestVote -> [S5]
-106120 [S4] sends RequestVote -> [S1]
-106356 [S0] becomes {Candidate}
-106360 [S0] currentTerm -> (9)
-106365 [S0] sends RequestVote -> [S1]
-106367 [S0] sends RequestVote -> [S2]
-106367 [S0] sends RequestVote -> [S3]
-106368 [S0] sends RequestVote -> [S4]
-106368 [S0] sends RequestVote -> [S5]
-106377 [S0] sends RequestVote -> [S6]
-107898 [S2] becomes {Candidate}
-107902 [S2] currentTerm -> (9)
-107905 [S2] sends RequestVote -> [S0]
-107909 [S2] sends RequestVote -> [S3]
-107906 [S2] sends RequestVote -> [S1]
-107914 [S2] sends RequestVote -> [S4]
-107922 [S2] sends RequestVote -> [S5]
-107925 [S2] sends RequestVote -> [S6]
-108798 [S6] becomes {Candidate}
-108802 [S6] currentTerm -> (10)
-108807 [S6] sends RequestVote -> [S0]
-108808 [S6] sends RequestVote -> [S1]
-108810 [S6] sends RequestVote -> [S2]
-108814 [S6] sends RequestVote -> [S3]
-108814 [S6] sends RequestVote -> [S4]
-108818 [S6] sends RequestVote -> [S5]
-108820 [S1] becomes {Follower}
-108827 [S6] Got Vote <- [S1]
-108825 [S3] becomes {Follower}
-108833 [S6] Got Vote <- [S3]
-108831 [S5] becomes {Follower}
-108838 [S6] Got Vote <- [S5]
-108845 [S6] becomes {Leader}
-108847 [S6] broadcasts HeartBeats
-110650 [S0] becomes {Candidate}
-110653 [S0] currentTerm -> (10)
-110658 [S0] sends RequestVote -> [S1]
-110658 [S0] sends RequestVote -> [S2]
-110659 [S0] sends RequestVote -> [S3]
-110661 [S0] sends RequestVote -> [S5]
-110661 [S0] sends RequestVote -> [S4]
-110666 [S0] sends RequestVote -> [S6]
-110712 [S4] becomes {Candidate}
-110715 [S4] currentTerm -> (10)
-110718 [S4] sends RequestVote -> [S0]
-110721 [S4] sends RequestVote -> [S5]
-110719 [S4] sends RequestVote -> [S2]
-110719 [S4] sends RequestVote -> [S3]
-110720 [S4] sends RequestVote -> [S1]
-110723 [S4] sends RequestVote -> [S6]
-110747 [S2] becomes {Follower}
-110749 [S4] Got Vote <- [S2]
-112225 [S1] becomes {Candidate}
-112229 [S1] currentTerm -> (11)
-112233 [S1] sends RequestVote -> [S0]
-112234 [S1] sends RequestVote -> [S2]
-112235 [S1] sends RequestVote -> [S3]
-112242 [S1] sends RequestVote -> [S4]
-112243 [S2] becomes {Follower}
-112248 [S1] Got Vote <- [S2]
-112249 [S1] sends RequestVote -> [S5]
-112249 [S4] becomes {Follower}
-112257 [S1] Got Vote <- [S4]
-112255 [S1] sends RequestVote -> [S6]
-112270 [S6] becomes {Follower}
-112273 [S1] Got Vote <- [S6]
-112280 [S1] becomes {Leader}
-112282 [S1] broadcasts HeartBeats
-113017 [S5] becomes {Candidate}
-113020 [S5] currentTerm -> (11)
-113024 [S5] sends RequestVote -> [S0]
-113026 [S5] sends RequestVote -> [S3]
-113026 [S5] sends RequestVote -> [S4]
-113025 [S5] sends RequestVote -> [S2]
-113024 [S5] sends RequestVote -> [S1]
-113027 [S5] sends RequestVote -> [S6]
-113643 [S3] becomes {Candidate}
-113648 [S3] currentTerm -> (11)
-113652 [S3] sends RequestVote -> [S0]
-113652 [S3] sends RequestVote -> [S1]
-113653 [S3] sends RequestVote -> [S4]
-113654 [S3] sends RequestVote -> [S2]
-113656 [S3] sends RequestVote -> [S5]
-113661 [S3] sends RequestVote -> [S6]
-115023 [S0] becomes {Candidate}
-115026 [S0] currentTerm -> (11)
-115031 [S0] sends RequestVote -> [S1]
-115036 [S0] sends RequestVote -> [S2]
-115040 [S0] sends RequestVote -> [S3]
-115046 [S0] sends RequestVote -> [S4]
-115049 [S0] sends RequestVote -> [S5]
-115053 [S0] sends RequestVote -> [S6]
-115442 [S2] becomes {Candidate}
-115445 [S2] currentTerm -> (12)
-115449 [S2] sends RequestVote -> [S0]
-115453 [S2] sends RequestVote -> [S3]
-115455 [S2] sends RequestVote -> [S4]
-115453 [S2] sends RequestVote -> [S1]
-115455 [S2] sends RequestVote -> [S5]
-115456 [S2] sends RequestVote -> [S6]
-115567 [S1] becomes {Candidate}
-115570 [S1] currentTerm -> (12)
-115574 [S1] sends RequestVote -> [S0]
-115577 [S1] sends RequestVote -> [S4]
-115574 [S1] sends RequestVote -> [S2]
-115576 [S1] sends RequestVote -> [S3]
-115586 [S1] sends RequestVote -> [S5]
-115588 [S0] becomes {Follower}
-115594 [S1] Got Vote <- [S0]
-115590 [S1] sends RequestVote -> [S6]
-115595 [S3] becomes {Follower}
-115602 [S1] Got Vote <- [S3]
-115598 [S5] becomes {Follower}
-115607 [S1] Got Vote <- [S5]
-115609 [S6] becomes {Follower}
-115612 [S1] Got Vote <- [S6]
-115612 [S1] becomes {Leader}
-115616 [S1] broadcasts HeartBeats
-116787 [S4] becomes {Candidate}
-116791 [S4] currentTerm -> (12)
-116796 [S4] sends RequestVote -> [S1]
-116797 [S4] sends RequestVote -> [S0]
-116797 [S4] sends RequestVote -> [S3]
-116798 [S4] sends RequestVote -> [S5]
-116798 [S4] sends RequestVote -> [S6]
-116798 [S4] sends RequestVote -> [S2]
-118641 [S3] becomes {Candidate}
-118644 [S3] currentTerm -> (13)
-118647 [S3] sends RequestVote -> [S0]
-118648 [S3] sends RequestVote -> [S1]
-118648 [S3] sends RequestVote -> [S2]
-118655 [S0] becomes {Follower}
-118658 [S3] Got Vote <- [S0]
-118650 [S3] sends RequestVote -> [S4]
-118656 [S1] becomes {Follower}
-118656 [S3] sends RequestVote -> [S5]
-118658 [S3] sends RequestVote -> [S6]
-118668 [S3] Got Vote <- [S1]
-118681 [S6] becomes {Follower}
-118684 [S3] Got Vote <- [S6]
-118683 [S5] becomes {Follower}
-118690 [S3] Got Vote <- [S5]
-118694 [S3] becomes {Leader}
-118697 [S3] broadcasts HeartBeats
-119549 [S2] becomes {Candidate}
-119555 [S2] currentTerm -> (13)
-119562 [S2] sends RequestVote -> [S0]
-119569 [S2] sends RequestVote -> [S6]
-119569 [S2] sends RequestVote -> [S4]
-119570 [S2] sends RequestVote -> [S3]
-119570 [S2] sends RequestVote -> [S5]
-119570 [S2] sends RequestVote -> [S1]
-121120 [S4] becomes {Candidate}
-121123 [S4] currentTerm -> (13)
-121127 [S4] sends RequestVote -> [S1]
-121131 [S4] sends RequestVote -> [S5]
-121134 [S4] sends RequestVote -> [S6]
-121128 [S4] sends RequestVote -> [S0]
-121129 [S4] sends RequestVote -> [S3]
-121130 [S4] sends RequestVote -> [S2]
-121902 [S6] becomes {Candidate}
-121905 [S6] currentTerm -> (14)
-121909 [S6] sends RequestVote -> [S0]
-121911 [S6] sends RequestVote -> [S1]
-121911 [S6] sends RequestVote -> [S2]
-121911 [S6] sends RequestVote -> [S3]
-121913 [S6] sends RequestVote -> [S5]
-121913 [S6] sends RequestVote -> [S4]
-121917 [S0] becomes {Follower}
-121931 [S6] Got Vote <- [S0]
-121926 [S3] becomes {Follower}
-121930 [S5] becomes {Follower}
-121938 [S6] Got Vote <- [S5]
-121936 [S6] Got Vote <- [S3]
-121936 [S4] becomes {Follower}
-121945 [S6] Got Vote <- [S4]
-121949 [S6] becomes {Leader}
-121952 [S6] broadcasts HeartBeats
-123589 [S1] becomes {Candidate}
-123593 [S1] currentTerm -> (14)
-123595 [S1] sends RequestVote -> [S0]
-123596 [S1] sends RequestVote -> [S2]
-123597 [S1] sends RequestVote -> [S3]
-123605 [S1] sends RequestVote -> [S6]
-123597 [S1] sends RequestVote -> [S4]
-123601 [S1] sends RequestVote -> [S5]
-124353 [S2] becomes {Candidate}
-124358 [S2] currentTerm -> (14)
-124363 [S2] sends RequestVote -> [S0]
-124364 [S2] sends RequestVote -> [S1]
-124365 [S2] sends RequestVote -> [S3]
-124365 [S2] sends RequestVote -> [S5]
-124365 [S2] sends RequestVote -> [S4]
-124365 [S2] sends RequestVote -> [S6]
-125210 [S3] becomes {Candidate}
-125213 [S3] currentTerm -> (15)
-125217 [S3] sends RequestVote -> [S0]
-125218 [S3] sends RequestVote -> [S1]
-125219 [S3] sends RequestVote -> [S4]
-125219 [S3] sends RequestVote -> [S5]
-125230 [S1] becomes {Follower}
-125219 [S3] sends RequestVote -> [S6]
-125220 [S3] sends RequestVote -> [S2]
-125227 [S0] becomes {Follower}
-125234 [S4] becomes {Follower}
-125247 [S3] Got Vote <- [S4]
-125235 [S3] Got Vote <- [S1]
-125241 [S5] becomes {Follower}
-125243 [S6] becomes {Follower}
-125244 [S3] Got Vote <- [S0]
-125246 [S2] becomes {Follower}
-125258 [S3] Got Vote <- [S5]
-125260 [S3] Got Vote <- [S6]
-125265 [S3] Got Vote <- [S2]
-125265 [S3] becomes {Leader}
-125277 [S3] broadcasts HeartBeats
-128242 [S3] becomes {Candidate}
-128245 [S3] currentTerm -> (16)
-128249 [S3] sends RequestVote -> [S0]
-128252 [S3] sends RequestVote -> [S4]
-128252 [S3] sends RequestVote -> [S6]
-128251 [S3] sends RequestVote -> [S1]
-128259 [S0] becomes {Follower}
-128263 [S3] Got Vote <- [S0]
-128252 [S3] sends RequestVote -> [S5]
-128264 [S1] becomes {Follower}
-128271 [S3] Got Vote <- [S1]
-128251 [S3] sends RequestVote -> [S2]
-128264 [S6] becomes {Follower}
-128264 [S4] becomes {Follower}
-128278 [S5] becomes {Follower}
-128285 [S3] Got Vote <- [S5]
-128280 [S3] Got Vote <- [S6]
-128282 [S3] Got Vote <- [S4]
-128285 [S2] becomes {Follower}
-128297 [S3] Got Vote <- [S2]
-128290 [S3] becomes {Leader}
-128303 [S3] broadcasts HeartBeats
-  ... Passed --   5.4  7  372   55728    0
-PASS
-131386 [S5] becomes {Candidate}
-131391 [S5] currentTerm -> (17)
-131394 [S5] sends RequestVote -> [S0]
-131397 [S5] sends RequestVote -> [S4]
-131394 [S5] sends RequestVote -> [S1]
-131395 [S5] sends RequestVote -> [S2]
-131395 [S5] sends RequestVote -> [S3]
-131397 [S5] sends RequestVote -> [S6]
-131537 [S1] becomes {Candidate}
-131542 [S1] currentTerm -> (17)
-131547 [S1] sends RequestVote -> [S0]
-131547 [S1] sends RequestVote -> [S2]
-131553 [S6] becomes {Candidate}
-131555 [S6] currentTerm -> (17)
-131548 [S1] sends RequestVote -> [S4]
-131562 [S6] sends RequestVote -> [S1]
-131548 [S1] sends RequestVote -> [S5]
-131548 [S1] sends RequestVote -> [S6]
-131548 [S1] sends RequestVote -> [S3]
-131562 [S6] sends RequestVote -> [S3]
-131563 [S6] sends RequestVote -> [S0]
-131563 [S6] sends RequestVote -> [S2]
-131563 [S6] sends RequestVote -> [S4]
-131563 [S6] sends RequestVote -> [S5]
-131565 [S3] becomes {Candidate}
-131587 [S3] currentTerm -> (17)
-131591 [S3] sends RequestVote -> [S0]
-131591 [S3] sends RequestVote -> [S1]
-131591 [S3] sends RequestVote -> [S2]
-131592 [S3] sends RequestVote -> [S4]
-131592 [S3] sends RequestVote -> [S5]
-131592 [S3] sends RequestVote -> [S6]
-131896 [S0] becomes {Candidate}
-131901 [S0] currentTerm -> (17)
-131904 [S0] sends RequestVote -> [S1]
-131907 [S0] sends RequestVote -> [S5]
-131907 [S0] sends RequestVote -> [S6]
-131905 [S0] sends RequestVote -> [S3]
-131906 [S0] sends RequestVote -> [S4]
-131905 [S0] sends RequestVote -> [S2]
-132655 [S4] becomes {Candidate}
-132660 [S4] currentTerm -> (17)
-132664 [S4] sends RequestVote -> [S0]
-132665 [S4] sends RequestVote -> [S1]
-132665 [S4] sends RequestVote -> [S2]
-132666 [S4] sends RequestVote -> [S5]
-132666 [S4] sends RequestVote -> [S3]
-132666 [S4] sends RequestVote -> [S6]
-132956 [S2] becomes {Candidate}
-132960 [S2] currentTerm -> (17)
-132963 [S2] sends RequestVote -> [S0]
-132966 [S2] sends RequestVote -> [S6]
-132966 [S2] sends RequestVote -> [S5]
-132965 [S2] sends RequestVote -> [S3]
-132965 [S2] sends RequestVote -> [S4]
-132964 [S2] sends RequestVote -> [S1]
-ok  	6.824/raft	14.007s
+007031 [S0] becomes {Candidate}
+007034 [S0] currentTerm -> (1)
+007038 [S0] sends RequestVote -> [S2]
+007038 [S0] sends RequestVote -> [S1]
+007049 [S2] becomes {Follower}
+007053 [S0] Got Vote <- [S2]
+007051 [S1] becomes {Follower}
+007065 [S0] Got Vote <- [S1]
+007062 [S0] becomes {Leader}
+007082 prevLogIndex: 0, prevLogTerm: 0
+007087 S1 log becomes: "[0]"
+007092 [S1](Follower)'s Commit Index is 0
+007085 prevLogIndex: 0, prevLogTerm: 0
+007105 S2 log becomes: "[0]"
+007097 prevLogIndex: 0, prevLogTerm: 0
+007102 prevLogIndex: 0, prevLogTerm: 0
+007115 S2 log becomes: "[0]"
+007104 [S0] changes matchIndex of [S1] to 0
+007104 prevLogIndex: 0, prevLogTerm: 0
+007109 prevLogIndex: 0, prevLogTerm: 0
+007109 [S2](Follower)'s Commit Index is 0
+007110 prevLogIndex: 0, prevLogTerm: 0
+007112 S1 log becomes: "[0]"
+007114 prevLogIndex: 0, prevLogTerm: 0
+007114 prevLogIndex: 0, prevLogTerm: 0
+007121 prevLogIndex: 0, prevLogTerm: 0
+007121 [S2](Follower)'s Commit Index is 0
+007122 prevLogIndex: 0, prevLogTerm: 0
+007122 prevLogIndex: 0, prevLogTerm: 0
+007124 [S0](Leader)'s Commit Index is 0
+007126 S1 log becomes: "[0]"
+007126 prevLogIndex: 0, prevLogTerm: 0
+007127 prevLogIndex: 0, prevLogTerm: 0
+007127 S2 log becomes: "[0]"
+007133 S1 log becomes: "[0]"
+007134 prevLogIndex: 0, prevLogTerm: 0
+007135 [S1](Follower)'s Commit Index is 0
+007136 [S0] changes matchIndex of [S2] to 0
+007137 S2 log becomes: "[0]"
+007138 prevLogIndex: 0, prevLogTerm: 0
+007139 S2 log becomes: "[0]"
+007141 S2 log becomes: "[0]"
+007142 prevLogIndex: 0, prevLogTerm: 0
+007142 prevLogIndex: 0, prevLogTerm: 0
+007144 prevLogIndex: 0, prevLogTerm: 0
+007146 S1 log becomes: "[0]"
+007147 [S0] changes matchIndex of [S2] to 0
+007148 S1 log becomes: "[0]"
+007149 prevLogIndex: 0, prevLogTerm: 0
+007151 [S1](Follower)'s Commit Index is 0
+007153 S1 log becomes: "[0]"
+007154 prevLogIndex: 0, prevLogTerm: 0
+007154 S2 log becomes: "[0]"
+007155 prevLogIndex: 0, prevLogTerm: 0
+007156 prevLogIndex: 0, prevLogTerm: 0
+007157 [S2](Follower)'s Commit Index is 0
+007158 prevLogIndex: 0, prevLogTerm: 0
+007158 [S1](Follower)'s Commit Index is 0
+007158 prevLogIndex: 0, prevLogTerm: 0
+007161 prevLogIndex: 0, prevLogTerm: 0
+007161 S2 log becomes: "[0]"
+007165 prevLogIndex: 0, prevLogTerm: 0
+007167 [S0](Leader)'s Commit Index is 0
+007167 [S0] changes matchIndex of [S1] to 0
+007173 prevLogIndex: 0, prevLogTerm: 0
+007173 [S2](Follower)'s Commit Index is 0
+007174 prevLogIndex: 0, prevLogTerm: 0
+007175 S1 log becomes: "[0]"
+007176 [S2](Follower)'s Commit Index is 0
+007178 prevLogIndex: 0, prevLogTerm: 0
+007179 S1 log becomes: "[0]"
+007180 prevLogIndex: 0, prevLogTerm: 0
+007182 S2 log becomes: "[0]"
+007182 [S2](Follower)'s Commit Index is 0
+007182 prevLogIndex: 0, prevLogTerm: 0
+007183 S1 log becomes: "[0]"
+007184 prevLogIndex: 0, prevLogTerm: 0
+007184 [S1](Follower)'s Commit Index is 0
+007186 prevLogIndex: 0, prevLogTerm: 0
+007186 [S0](Leader)'s Commit Index is 0
+007187 [S1](Follower)'s Commit Index is 0
+007189 S2 log becomes: "[0]"
+007189 prevLogIndex: 0, prevLogTerm: 0
+007193 prevLogIndex: 0, prevLogTerm: 0
+007194 prevLogIndex: 0, prevLogTerm: 0
+007195 [S0] changes matchIndex of [S1] to 0
+007195 prevLogIndex: 0, prevLogTerm: 0
+007196 [S1](Follower)'s Commit Index is 0
+007196 prevLogIndex: 0, prevLogTerm: 0
+007198 prevLogIndex: 0, prevLogTerm: 0
+007198 S1 log becomes: "[0]"
+007200 [S2](Follower)'s Commit Index is 0
+007202 S2 log becomes: "[0]"
+007206 prevLogIndex: 0, prevLogTerm: 0
+007205 prevLogIndex: 0, prevLogTerm: 0
+007207 S2 log becomes: "[0]"
+007212 prevLogIndex: 0, prevLogTerm: 0
+007212 prevLogIndex: 0, prevLogTerm: 0
+007212 S2 log becomes: "[0]"
+007213 [S0] changes matchIndex of [S2] to 0
+007221 prevLogIndex: 0, prevLogTerm: 0
+007221 prevLogIndex: 0, prevLogTerm: 0
+007223 prevLogIndex: 0, prevLogTerm: 0
+007224 S1 log becomes: "[0]"
+007226 prevLogIndex: 0, prevLogTerm: 0
+007226 [S0] changes matchIndex of [S1] to 0
+007227 S1 log becomes: "[0]"
+007228 prevLogIndex: 0, prevLogTerm: 0
+007229 [S2](Follower)'s Commit Index is 0
+007232 prevLogIndex: 0, prevLogTerm: 0
+007232 S1 log becomes: "[0]"
+007234 prevLogIndex: 0, prevLogTerm: 0
+007236 prevLogIndex: 0, prevLogTerm: 0
+007236 [S0](Leader)'s Commit Index is 0
+007238 S1 log becomes: "[0]"
+007242 prevLogIndex: 0, prevLogTerm: 0
+007242 prevLogIndex: 0, prevLogTerm: 0
+007242 S2 log becomes: "[0]"
+007245 [S1](Follower)'s Commit Index is 0
+007245 [S0] changes matchIndex of [S2] to 0
+007247 prevLogIndex: 0, prevLogTerm: 0
+007249 [S0] changes matchIndex of [S2] to 0
+007251 S2 log becomes: "[0]"
+007253 prevLogIndex: 0, prevLogTerm: 0
+007255 prevLogIndex: 0, prevLogTerm: 0
+007255 [S1](Follower)'s Commit Index is 0
+007255 prevLogIndex: 0, prevLogTerm: 0
+007257 S1 log becomes: "[0]"
+007258 [S2](Follower)'s Commit Index is 0
+007259 prevLogIndex: 0, prevLogTerm: 0
+007262 prevLogIndex: 0, prevLogTerm: 0
+007263 prevLogIndex: 0, prevLogTerm: 0
+007264 prevLogIndex: 0, prevLogTerm: 0
+007265 S2 log becomes: "[0]"
+007266 [S0] changes matchIndex of [S2] to 0
+007267 [S1](Follower)'s Commit Index is 0
+007271 prevLogIndex: 0, prevLogTerm: 0
+007271 S2 log becomes: "[0]"
+007271 prevLogIndex: 0, prevLogTerm: 0
+007273 prevLogIndex: 0, prevLogTerm: 0
+007275 prevLogIndex: 0, prevLogTerm: 0
+007275 S2 log becomes: "[0]"
+007277 [S0] changes matchIndex of [S1] to 0
+007280 prevLogIndex: 0, prevLogTerm: 0
+007283 [S2](Follower)'s Commit Index is 0
+007284 prevLogIndex: 0, prevLogTerm: 0
+007284 prevLogIndex: 0, prevLogTerm: 0
+007285 [S0] changes matchIndex of [S1] to 0
+007287 S1 log becomes: "[0]"
+007288 prevLogIndex: 0, prevLogTerm: 0
+007290 prevLogIndex: 0, prevLogTerm: 0
+007290 S1 log becomes: "[0]"
+007291 prevLogIndex: 0, prevLogTerm: 0
+007292 S1 log becomes: "[0]"
+007294 prevLogIndex: 0, prevLogTerm: 0
+007295 prevLogIndex: 0, prevLogTerm: 0
+007296 [S0](Leader)'s Commit Index is 0
+007297 prevLogIndex: 0, prevLogTerm: 0
+007298 S1 log becomes: "[0]"
+007298 prevLogIndex: 0, prevLogTerm: 0
+007302 S2 log becomes: "[0]"
+007304 [S0] changes matchIndex of [S1] to 0
+007304 S2 log becomes: "[0]"
+007305 prevLogIndex: 0, prevLogTerm: 0
+007306 [S1](Follower)'s Commit Index is 0
+007310 prevLogIndex: 0, prevLogTerm: 0
+007310 [S2](Follower)'s Commit Index is 0
+007314 [S0] changes matchIndex of [S2] to 0
+007314 prevLogIndex: 0, prevLogTerm: 0
+007314 prevLogIndex: 0, prevLogTerm: 0
+007314 S1 log becomes: "[0]"
+007315 prevLogIndex: 0, prevLogTerm: 0
+007316 S2 log becomes: "[0]"
+007317 [S2](Follower)'s Commit Index is 0
+007319 S1 log becomes: "[0]"
+007320 prevLogIndex: 0, prevLogTerm: 0
+007321 S2 log becomes: "[0]"
+007322 prevLogIndex: 0, prevLogTerm: 0
+007322 [S2](Follower)'s Commit Index is 0
+007324 prevLogIndex: 0, prevLogTerm: 0
+007324 [S0](Leader)'s Commit Index is 0
+007326 S1 log becomes: "[0]"
+007326 prevLogIndex: 0, prevLogTerm: 0
+007327 prevLogIndex: 0, prevLogTerm: 0
+007328 S2 log becomes: "[0]"
+007329 S1 log becomes: "[0]"
+007331 prevLogIndex: 0, prevLogTerm: 0
+007332 [S1](Follower)'s Commit Index is 0
+007333 prevLogIndex: 0, prevLogTerm: 0
+007334 S2 log becomes: "[0]"
+007336 [S0](Leader)'s Commit Index is 0
+007337 prevLogIndex: 0, prevLogTerm: 0
+007337 [S1](Follower)'s Commit Index is 0
+007338 prevLogIndex: 0, prevLogTerm: 0
+007339 S2 log becomes: "[0]"
+007345 prevLogIndex: 0, prevLogTerm: 0
+007345 [S0] changes matchIndex of [S2] to 0
+007346 S1 log becomes: "[0]"
+007348 [S1](Follower)'s Commit Index is 0
+007349 prevLogIndex: 0, prevLogTerm: 0
+007350 S1 log becomes: "[0]"
+007351 S2 log becomes: "[0]"
+007355 prevLogIndex: 0, prevLogTerm: 0
+007355 prevLogIndex: 0, prevLogTerm: 0
+007357 prevLogIndex: 0, prevLogTerm: 0
+007357 prevLogIndex: 0, prevLogTerm: 0
+007359 [S1](Follower)'s Commit Index is 0
+007360 prevLogIndex: 0, prevLogTerm: 0
+007361 S2 log becomes: "[0]"
+007362 S1 log becomes: "[0]"
+007362 prevLogIndex: 0, prevLogTerm: 0
+007364 prevLogIndex: 0, prevLogTerm: 0
+007364 [S2](Follower)'s Commit Index is 0
+007367 prevLogIndex: 0, prevLogTerm: 0
+007368 [S0] changes matchIndex of [S1] to 0
+007370 [S0](Leader)'s Commit Index is 0
+007371 prevLogIndex: 0, prevLogTerm: 0
+007373 prevLogIndex: 0, prevLogTerm: 0
+007375 prevLogIndex: 0, prevLogTerm: 0
+007375 S2 log becomes: "[0]"
+007378 [S0](Leader)'s Commit Index is 0
+007378 prevLogIndex: 0, prevLogTerm: 0
+007382 prevLogIndex: 0, prevLogTerm: 0
+007382 [S2](Follower)'s Commit Index is 0
+007385 prevLogIndex: 0, prevLogTerm: 0
+007386 S1 log becomes: "[0]"
+007387 prevLogIndex: 0, prevLogTerm: 0
+007390 prevLogIndex: 0, prevLogTerm: 0
+007390 S2 log becomes: "[0]"
+007391 prevLogIndex: 0, prevLogTerm: 0
+007396 prevLogIndex: 0, prevLogTerm: 0
+007397 [S0] changes matchIndex of [S1] to 0
+007397 S1 log becomes: "[0]"
+007397 prevLogIndex: 0, prevLogTerm: 0
+007400 prevLogIndex: 0, prevLogTerm: 0
+007400 [S1](Follower)'s Commit Index is 0
+007400 prevLogIndex: 0, prevLogTerm: 0
+007401 prevLogIndex: 0, prevLogTerm: 0
+007407 prevLogIndex: 0, prevLogTerm: 0
+007408 prevLogIndex: 0, prevLogTerm: 0
+007409 prevLogIndex: 0, prevLogTerm: 0
+007409 prevLogIndex: 0, prevLogTerm: 0
+007410 S2 log becomes: "[0]"
+007412 [S0] changes matchIndex of [S2] to 0
+007413 S1 log becomes: "[0]"
+007415 S2 log becomes: "[0]"
+007417 S1 log becomes: "[0]"
+007419 prevLogIndex: 0, prevLogTerm: 0
+007419 [S2](Follower)'s Commit Index is 0
+007421 prevLogIndex: 0, prevLogTerm: 0
+007421 [S0](Leader)'s Commit Index is 0
+007425 prevLogIndex: 0, prevLogTerm: 0
+007426 S2 log becomes: "[0]"
+007427 [S0] changes matchIndex of [S1] to 0
+007427 [S2](Follower)'s Commit Index is 0
+007429 S1 log becomes: "[0]"
+007431 S1 log becomes: "[0]"
+007432 prevLogIndex: 0, prevLogTerm: 0
+007432 S2 log becomes: "[0]"
+007434 [S2](Follower)'s Commit Index is 0
+007436 prevLogIndex: 0, prevLogTerm: 0
+007437 prevLogIndex: 0, prevLogTerm: 0
+007437 [S0](Leader)'s Commit Index is 0
+007438 prevLogIndex: 0, prevLogTerm: 0
+007442 prevLogIndex: 0, prevLogTerm: 0
+007442 prevLogIndex: 0, prevLogTerm: 0
+007443 S1 log becomes: "[0]"
+007445 prevLogIndex: 0, prevLogTerm: 0
+007447 prevLogIndex: 0, prevLogTerm: 0
+007447 [S0] changes matchIndex of [S2] to 0
+007449 S2 log becomes: "[0]"
+007450 prevLogIndex: 0, prevLogTerm: 0
+007451 S1 log becomes: "[0]"
+007451 prevLogIndex: 0, prevLogTerm: 0
+007455 prevLogIndex: 0, prevLogTerm: 0
+007455 [S0](Leader)'s Commit Index is 0
+007459 [S1](Follower)'s Commit Index is 0
+007459 prevLogIndex: 0, prevLogTerm: 0
+007460 prevLogIndex: 0, prevLogTerm: 0
+007461 S1 log becomes: "[0]"
+007463 S2 log becomes: "[0]"
+007464 prevLogIndex: 0, prevLogTerm: 0
+007464 prevLogIndex: 0, prevLogTerm: 0
+007465 [S1](Follower)'s Commit Index is 0
+007466 S2 log becomes: "[0]"
+007468 [S1](Follower)'s Commit Index is 0
+007468 prevLogIndex: 0, prevLogTerm: 0
+007470 S2 log becomes: "[0]"
+007471 prevLogIndex: 0, prevLogTerm: 0
+007471 S1 log becomes: "[0]"
+007474 prevLogIndex: 0, prevLogTerm: 0
+007475 prevLogIndex: 0, prevLogTerm: 0
+007476 S2 log becomes: "[0]"
+007477 [S1](Follower)'s Commit Index is 0
+007479 S1 log becomes: "[0]"
+007480 [S2](Follower)'s Commit Index is 0
+007482 prevLogIndex: 0, prevLogTerm: 0
+007483 prevLogIndex: 0, prevLogTerm: 0
+007484 [S2](Follower)'s Commit Index is 0
+007484 [S0](Leader)'s Commit Index is 0
+007485 S2 log becomes: "[0]"
+007486 prevLogIndex: 0, prevLogTerm: 0
+007487 prevLogIndex: 0, prevLogTerm: 0
+007489 [S0] changes matchIndex of [S1] to 0
+007489 S1 log becomes: "[0]"
+007494 prevLogIndex: 0, prevLogTerm: 0
+007497 [S0] changes matchIndex of [S2] to 0
+007498 [S0](Leader)'s Commit Index is 0
+007498 prevLogIndex: 0, prevLogTerm: 0
+007499 prevLogIndex: 0, prevLogTerm: 0
+007499 S1 log becomes: "[0]"
+007501 S2 log becomes: "[0]"
+007504 prevLogIndex: 0, prevLogTerm: 0
+007504 [S1](Follower)'s Commit Index is 0
+007504 prevLogIndex: 0, prevLogTerm: 0
+007506 prevLogIndex: 0, prevLogTerm: 0
+007506 S2 log becomes: "[0]"
+007508 [S2](Follower)'s Commit Index is 0
+007512 prevLogIndex: 0, prevLogTerm: 0
+007513 prevLogIndex: 0, prevLogTerm: 0
+007514 prevLogIndex: 0, prevLogTerm: 0
+007515 [S0] changes matchIndex of [S2] to 0
+007515 [S1](Follower)'s Commit Index is 0
+007518 S1 log becomes: "[0]"
+007522 prevLogIndex: 0, prevLogTerm: 0
+007522 prevLogIndex: 0, prevLogTerm: 0
+007524 prevLogIndex: 0, prevLogTerm: 0
+007524 [S2](Follower)'s Commit Index is 0
+007525 S2 log becomes: "[0]"
+007528 prevLogIndex: 0, prevLogTerm: 0
+007530 prevLogIndex: 0, prevLogTerm: 0
+007530 [S0] changes matchIndex of [S2] to 0
+007531 S1 log becomes: "[0]"
+007535 prevLogIndex: 0, prevLogTerm: 0
+007538 prevLogIndex: 0, prevLogTerm: 0
+007538 [S1](Follower)'s Commit Index is 0
+007542 prevLogIndex: 0, prevLogTerm: 0
+007545 S2 log becomes: "[0]"
+007547 [S2](Follower)'s Commit Index is 0
+007551 S2 log becomes: "[0]"
+007554 prevLogIndex: 0, prevLogTerm: 0
+007556 [S0] changes matchIndex of [S1] to 0
+007559 prevLogIndex: 0, prevLogTerm: 0
+007560 [S2](Follower)'s Commit Index is 0
+007562 prevLogIndex: 0, prevLogTerm: 0
+007570 S2 log becomes: "[0]"
+007572 prevLogIndex: 0, prevLogTerm: 0
+007572 [S0] changes matchIndex of [S1] to 0
+007574 [S2](Follower)'s Commit Index is 0
+007576 S2 log becomes: "[0]"
+007576 prevLogIndex: 0, prevLogTerm: 0
+007578 [S0](Leader)'s Commit Index is 0
+007578 prevLogIndex: 0, prevLogTerm: 0
+007588 [S0] changes matchIndex of [S1] to 0
+007591 prevLogIndex: 0, prevLogTerm: 0
+007592 [S2](Follower)'s Commit Index is 0
+007594 prevLogIndex: 0, prevLogTerm: 0
+007599 prevLogIndex: 0, prevLogTerm: 0
+007599 S2 log becomes: "[0]"
+007602 S2 log becomes: "[0]"
+007604 prevLogIndex: 0, prevLogTerm: 0
+007612 prevLogIndex: 0, prevLogTerm: 0
+007616 [S0] changes matchIndex of [S1] to 0
+007618 [S2](Follower)'s Commit Index is 0
+007621 prevLogIndex: 0, prevLogTerm: 0
+007622 S2 log becomes: "[0]"
+007629 prevLogIndex: 0, prevLogTerm: 0
+007630 [S0] changes matchIndex of [S2] to 0
+007630 prevLogIndex: 0, prevLogTerm: 0
+007631 S2 log becomes: "[0]"
+007632 prevLogIndex: 0, prevLogTerm: 0
+007633 [S0](Leader)'s Commit Index is 0
+007635 prevLogIndex: 0, prevLogTerm: 0
+007638 S2 log becomes: "[0]"
+007642 prevLogIndex: 0, prevLogTerm: 0
+007648 [S2](Follower)'s Commit Index is 0
+007655 S2 log becomes: "[0]"
+007661 prevLogIndex: 0, prevLogTerm: 0
+007695 S2 log becomes: "[0]"
+007697 prevLogIndex: 0, prevLogTerm: 0
+007701 S2 log becomes: "[0]"
+007703 prevLogIndex: 0, prevLogTerm: 0
+007704 [S2](Follower)'s Commit Index is 0
+007705 prevLogIndex: 0, prevLogTerm: 0
+007709 S2 log becomes: "[0]"
+007713 [S0](Leader)'s Commit Index is 0
+007714 prevLogIndex: 0, prevLogTerm: 0
+007714 prevLogIndex: 0, prevLogTerm: 0
+007719 prevLogIndex: 0, prevLogTerm: 0
+007725 S2 log becomes: "[0]"
+007725 [S0] changes matchIndex of [S2] to 0
+007726 S2 log becomes: "[0]"
+007730 prevLogIndex: 0, prevLogTerm: 0
+007730 [S0] changes matchIndex of [S1] to 0
+007730 prevLogIndex: 0, prevLogTerm: 0
+007732 S2 log becomes: "[0]"
+007734 prevLogIndex: 0, prevLogTerm: 0
+007734 prevLogIndex: 0, prevLogTerm: 0
+007735 S2 log becomes: "[0]"
+007737 [S2](Follower)'s Commit Index is 0
+007739 prevLogIndex: 0, prevLogTerm: 0
+007739 [S0](Leader)'s Commit Index is 0
+007743 [S2](Follower)'s Commit Index is 0
+007747 prevLogIndex: 0, prevLogTerm: 0
+007753 S2 log becomes: "[0]"
+007755 prevLogIndex: 0, prevLogTerm: 0
+007757 [S0] changes matchIndex of [S2] to 0
+007758 prevLogIndex: 0, prevLogTerm: 0
+007763 S2 log becomes: "[0]"
+007765 [S2](Follower)'s Commit Index is 0
+007767 [S0](Leader)'s Commit Index is 0
+007768 prevLogIndex: 0, prevLogTerm: 0
+007772 [S0] changes matchIndex of [S2] to 0
+007773 prevLogIndex: 0, prevLogTerm: 0
+007775 prevLogIndex: 0, prevLogTerm: 0
+007778 prevLogIndex: 0, prevLogTerm: 0
+007788 prevLogIndex: 0, prevLogTerm: 0
+007788 [S2](Follower)'s Commit Index is 0
+007794 prevLogIndex: 0, prevLogTerm: 0
+007800 [S0] changes matchIndex of [S2] to 0
+007801 prevLogIndex: 0, prevLogTerm: 0
+007804 prevLogIndex: 0, prevLogTerm: 0
+007806 S2 log becomes: "[0]"
+007815 S2 log becomes: "[0]"
+007819 S2 log becomes: "[0]"
+007820 S2 log becomes: "[0]"
+007822 [S0](Leader)'s Commit Index is 0
+007822 prevLogIndex: 0, prevLogTerm: 0
+007824 [S2](Follower)'s Commit Index is 0
+007829 prevLogIndex: 0, prevLogTerm: 0
+007831 prevLogIndex: 0, prevLogTerm: 0
+007833 prevLogIndex: 0, prevLogTerm: 0
+007847 prevLogIndex: 0, prevLogTerm: 0
+007851 prevLogIndex: 0, prevLogTerm: 0
+007852 prevLogIndex: 0, prevLogTerm: 0
+007853 S2 log becomes: "[0]"
+007866 prevLogIndex: 0, prevLogTerm: 0
+007867 [S0] changes matchIndex of [S1] to 0
+007872 prevLogIndex: 0, prevLogTerm: 0
+007872 S2 log becomes: "[0]"
+007876 [S2](Follower)'s Commit Index is 0
+007881 S2 log becomes: "[0]"
+007889 [S0] changes matchIndex of [S1] to 0
+007890 [S2](Follower)'s Commit Index is 0
+007898 prevLogIndex: 0, prevLogTerm: 0
+007906 [S0] changes matchIndex of [S1] to 0
+007908 [S2](Follower)'s Commit Index is 0
+007910 S2 log becomes: "[0]"
+007910 prevLogIndex: 0, prevLogTerm: 0
+007914 prevLogIndex: 0, prevLogTerm: 0
+007915 prevLogIndex: 0, prevLogTerm: 0
+007919 prevLogIndex: 0, prevLogTerm: 0
+007919 S2 log becomes: "[0]"
+007925 prevLogIndex: 0, prevLogTerm: 0
+007925 [S2](Follower)'s Commit Index is 0
+007929 prevLogIndex: 0, prevLogTerm: 0
+007933 prevLogIndex: 0, prevLogTerm: 0
+007943 prevLogIndex: 0, prevLogTerm: 0
+007945 prevLogIndex: 0, prevLogTerm: 0
+007946 [S0] changes matchIndex of [S1] to 0
+007952 prevLogIndex: 0, prevLogTerm: 0
+007956 [S0] changes matchIndex of [S2] to 0
+007956 prevLogIndex: 0, prevLogTerm: 0
+007959 S2 log becomes: "[0]"
+007962 prevLogIndex: 0, prevLogTerm: 0
+007970 [S0] changes matchIndex of [S2] to 0
+007971 prevLogIndex: 0, prevLogTerm: 0
+007976 [S2](Follower)'s Commit Index is 0
+007977 prevLogIndex: 0, prevLogTerm: 0
+007982 S2 log becomes: "[0]"
+007984 [S0](Leader)'s Commit Index is 0
+007988 S2 log becomes: "[0]"
+007990 [S0](Leader)'s Commit Index is 0
+007992 prevLogIndex: 0, prevLogTerm: 0
+007995 prevLogIndex: 0, prevLogTerm: 0
+008000 S2 log becomes: "[0]"
+008005 [S2](Follower)'s Commit Index is 0
+008012 prevLogIndex: 0, prevLogTerm: 0
+008013 [S0] changes matchIndex of [S1] to 0
+008016 prevLogIndex: 0, prevLogTerm: 0
+008022 prevLogIndex: 0, prevLogTerm: 0
+008025 S2 log becomes: "[0]"
+008026 prevLogIndex: 0, prevLogTerm: 0
+008033 [S2](Follower)'s Commit Index is 0
+008033 prevLogIndex: 0, prevLogTerm: 0
+008039 [S0] changes matchIndex of [S2] to 0
+008039 prevLogIndex: 0, prevLogTerm: 0
+008041 S2 log becomes: "[0]"
+008044 [S0](Leader)'s Commit Index is 0
+008051 S2 log becomes: "[0]"
+008052 [S0] changes matchIndex of [S1] to 0
+008053 S2 log becomes: "[0]"
+008068 prevLogIndex: 0, prevLogTerm: 0
+008069 prevLogIndex: 0, prevLogTerm: 0
+008073 [S0] changes matchIndex of [S2] to 0
+008073 [S2](Follower)'s Commit Index is 0
+008082 prevLogIndex: 0, prevLogTerm: 0
+008085 prevLogIndex: 0, prevLogTerm: 0
+008086 S2 log becomes: "[0]"
+008087 prevLogIndex: 0, prevLogTerm: 0
+008090 [S0](Leader)'s Commit Index is 0
+008094 prevLogIndex: 0, prevLogTerm: 0
+008094 S2 log becomes: "[0]"
+008098 prevLogIndex: 0, prevLogTerm: 0
+008107 [S0] changes matchIndex of [S1] to 0
+008115 prevLogIndex: 0, prevLogTerm: 0
+008116 prevLogIndex: 0, prevLogTerm: 0
+008116 S2 log becomes: "[0]"
+008118 prevLogIndex: 0, prevLogTerm: 0
+008119 [S2](Follower)'s Commit Index is 0
+008124 [S2](Follower)'s Commit Index is 0
+008125 [S0] changes matchIndex of [S2] to 0
+008126 S2 log becomes: "[0]"
+008130 [S0](Leader)'s Commit Index is 0
+008136 prevLogIndex: 0, prevLogTerm: 0
+008136 S2 log becomes: "[0]"
+008140 prevLogIndex: 0, prevLogTerm: 0
+008143 [S0] changes matchIndex of [S2] to 0
+008143 prevLogIndex: 0, prevLogTerm: 0
+008148 prevLogIndex: 0, prevLogTerm: 0
+008149 S2 log becomes: "[0]"
+008151 [S2](Follower)'s Commit Index is 0
+008153 prevLogIndex: 0, prevLogTerm: 0
+008154 S2 log becomes: "[0]"
+008158 [S0](Leader)'s Commit Index is 0
+008170 [S0] changes matchIndex of [S2] to 0
+008180 prevLogIndex: 0, prevLogTerm: 0
+008186 prevLogIndex: 0, prevLogTerm: 0
+008187 [S2](Follower)'s Commit Index is 0
+008191 prevLogIndex: 0, prevLogTerm: 0
+008196 S2 log becomes: "[0]"
+008203 prevLogIndex: 0, prevLogTerm: 0
+008209 prevLogIndex: 0, prevLogTerm: 0
+008210 S2 log becomes: "[0]"
+008213 [S0](Leader)'s Commit Index is 0
+008214 prevLogIndex: 0, prevLogTerm: 0
+008215 S2 log becomes: "[0]"
+008217 prevLogIndex: 0, prevLogTerm: 0
+008220 [S0] changes matchIndex of [S2] to 0
+008223 S2 log becomes: "[0]"
+008223 prevLogIndex: 0, prevLogTerm: 0
+008227 S2 log becomes: "[0]"
+008229 [S2](Follower)'s Commit Index is 0
+008236 prevLogIndex: 0, prevLogTerm: 0
+008237 [S2](Follower)'s Commit Index is 0
+008242 prevLogIndex: 0, prevLogTerm: 0
+008244 S2 log becomes: "[0]"
+008248 prevLogIndex: 0, prevLogTerm: 0
+008250 S2 log becomes: "[0]"
+008259 prevLogIndex: 0, prevLogTerm: 0
+008260 [S0](Leader)'s Commit Index is 0
+008266 [S0] changes matchIndex of [S2] to 0
+008267 S2 log becomes: "[0]"
+008270 [S2](Follower)'s Commit Index is 0
+008276 prevLogIndex: 0, prevLogTerm: 0
+008282 prevLogIndex: 0, prevLogTerm: 0
+008284 S2 log becomes: "[0]"
+008286 prevLogIndex: 0, prevLogTerm: 0
+008293 prevLogIndex: 0, prevLogTerm: 0
+008294 [S0](Leader)'s Commit Index is 0
+008297 prevLogIndex: 0, prevLogTerm: 0
+008297 S2 log becomes: "[0]"
+008298 prevLogIndex: 0, prevLogTerm: 0
+008299 [S2](Follower)'s Commit Index is 0
+008309 S2 log becomes: "[0]"
+008311 prevLogIndex: 0, prevLogTerm: 0
+008317 prevLogIndex: 0, prevLogTerm: 0
+008326 prevLogIndex: 0, prevLogTerm: 0
+008327 S2 log becomes: "[0]"
+008334 [S2](Follower)'s Commit Index is 0
+008334 prevLogIndex: 0, prevLogTerm: 0
+008335 prevLogIndex: 0, prevLogTerm: 0
+008342 S2 log becomes: "[0]"
+008348 [S2](Follower)'s Commit Index is 0
+008350 [S0] changes matchIndex of [S2] to 0
+008352 prevLogIndex: 0, prevLogTerm: 0
+008352 prevLogIndex: 0, prevLogTerm: 0
+008354 S2 log becomes: "[0]"
+008354 [S2](Follower)'s Commit Index is 0
+008356 S2 log becomes: "[0]"
+008358 [S2](Follower)'s Commit Index is 0
+008360 S2 log becomes: "[0]"
+008365 [S0] changes matchIndex of [S2] to 0
+008365 S2 log becomes: "[0]"
+008367 [S2](Follower)'s Commit Index is 0
+008371 S2 log becomes: "[0]"
+008374 S2 log becomes: "[0]"
+008376 S2 log becomes: "[0]"
+008378 [S2](Follower)'s Commit Index is 0
+008382 [S2](Follower)'s Commit Index is 0
+008384 S2 log becomes: "[0]"
+008388 S2 log becomes: "[0]"
+008391 [S2](Follower)'s Commit Index is 0
+008393 S2 log becomes: "[0]"
+008396 S2 log becomes: "[0]"
+008398 [S2](Follower)'s Commit Index is 0
+008403 S2 log becomes: "[0]"
+008406 [S0] changes matchIndex of [S2] to 0
+008411 S2 log becomes: "[0]"
+008411 [S0] changes matchIndex of [S2] to 0
+008413 [S2](Follower)'s Commit Index is 0
+008416 S2 log becomes: "[0]"
+008420 S2 log becomes: "[0]"
+008422 [S2](Follower)'s Commit Index is 0
+008427 [S0] changes matchIndex of [S2] to 0
+008429 S2 log becomes: "[0]"
+008433 S2 log becomes: "[0]"
+008435 S2 log becomes: "[0]"
+008437 S2 log becomes: "[0]"
+008439 S2 log becomes: "[0]"
+008444 [S0] changes matchIndex of [S2] to 0
+008445 S2 log becomes: "[0]"
+008449 S2 log becomes: "[0]"
+008451 S2 log becomes: "[0]"
+008453 [S2](Follower)'s Commit Index is 0
+008459 [S2](Follower)'s Commit Index is 0
+008456 [S2](Follower)'s Commit Index is 0
+008461 [S2](Follower)'s Commit Index is 0
+008466 S2 log becomes: "[0]"
+008471 S2 log becomes: "[0]"
+008473 [S0] changes matchIndex of [S2] to 0
+008474 S2 log becomes: "[0]"
+008476 S2 log becomes: "[0]"
+008478 S2 log becomes: "[0]"
+008480 S2 log becomes: "[0]"
+008483 S2 log becomes: "[0]"
+008484 [S2](Follower)'s Commit Index is 0
+008486 S2 log becomes: "[0]"
+008490 S2 log becomes: "[0]"
+008492 [S2](Follower)'s Commit Index is 0
+008497 [S2](Follower)'s Commit Index is 0
+008498 [S0] changes matchIndex of [S2] to 0
+008503 S2 log becomes: "[0]"
+008504 [S0] changes matchIndex of [S2] to 0
+008509 [S2](Follower)'s Commit Index is 0
+008510 [S0] changes matchIndex of [S2] to 0
+008511 S2 log becomes: "[0]"
+008513 S2 log becomes: "[0]"
+008516 S2 log becomes: "[0]"
+008518 S2 log becomes: "[0]"
+008520 [S2](Follower)'s Commit Index is 0
+008522 S2 log becomes: "[0]"
+008526 S2 log becomes: "[0]"
+008527 [S0] changes matchIndex of [S2] to 0
+008528 S2 log becomes: "[0]"
+008530 S2 log becomes: "[0]"
+008532 S2 log becomes: "[0]"
+008536 S2 log becomes: "[0]"
+008541 S2 log becomes: "[0]"
+008543 [S2](Follower)'s Commit Index is 0
+008546 S2 log becomes: "[0]"
+008549 S2 log becomes: "[0]"
+008553 S2 log becomes: "[0]"
+008554 [S0] changes matchIndex of [S2] to 0
+008556 [S2](Follower)'s Commit Index is 0
+008560 [S2](Follower)'s Commit Index is 0
+008564 S2 log becomes: "[0]"
+008566 S2 log becomes: "[0]"
+008568 [S2](Follower)'s Commit Index is 0
+008573 [S0] changes matchIndex of [S2] to 0
+008573 S2 log becomes: "[0]"
+008577 S2 log becomes: "[0]"
+008579 S2 log becomes: "[0]"
+008581 [S2](Follower)'s Commit Index is 0
+008583 S2 log becomes: "[0]"
+008587 S2 log becomes: "[0]"
+008587 [S0] changes matchIndex of [S2] to 0
+008591 S2 log becomes: "[0]"
+008593 [S2](Follower)'s Commit Index is 0
+008597 [S2](Follower)'s Commit Index is 0
+008600 [S2](Follower)'s Commit Index is 0
+008603 S2 log becomes: "[0]"
+008604 S2 log becomes: "[0]"
+008611 [S0] changes matchIndex of [S2] to 0
+008611 S2 log becomes: "[0]"
+008612 S2 log becomes: "[0]"
+008615 [S2](Follower)'s Commit Index is 0
+008617 S2 log becomes: "[0]"
+008624 S2 log becomes: "[0]"
+008626 [S2](Follower)'s Commit Index is 0
+008629 S2 log becomes: "[0]"
+008633 S2 log becomes: "[0]"
+008635 S2 log becomes: "[0]"
+008637 [S2](Follower)'s Commit Index is 0
+008639 S2 log becomes: "[0]"
+008645 [S0] changes matchIndex of [S2] to 0
+008647 [S0] changes matchIndex of [S2] to 0
+008647 [S2](Follower)'s Commit Index is 0
+008651 S2 log becomes: "[0]"
+008653 [S2](Follower)'s Commit Index is 0
+008655 S2 log becomes: "[0]"
+008659 S2 log becomes: "[0]"
+008661 S2 log becomes: "[0]"
+008663 [S2](Follower)'s Commit Index is 0
+008667 S2 log becomes: "[0]"
+008668 [S0] changes matchIndex of [S2] to 0
+008669 [S2](Follower)'s Commit Index is 0
+008674 S2 log becomes: "[0]"
+008676 S2 log becomes: "[0]"
+008680 S2 log becomes: "[0]"
+008681 [S0] changes matchIndex of [S2] to 0
+008682 [S2](Follower)'s Commit Index is 0
+008684 S2 log becomes: "[0]"
+008686 S2 log becomes: "[0]"
+008688 [S2](Follower)'s Commit Index is 0
+008692 S2 log becomes: "[0]"
+008694 [S2](Follower)'s Commit Index is 0
+008697 S2 log becomes: "[0]"
+008700 [S2](Follower)'s Commit Index is 0
+008702 S2 log becomes: "[0]"
+008704 [S2](Follower)'s Commit Index is 0
+008709 [S0] changes matchIndex of [S2] to 0
+008709 S2 log becomes: "[0]"
+008713 S2 log becomes: "[0]"
+008713 [S0] changes matchIndex of [S2] to 0
+008715 [S2](Follower)'s Commit Index is 0
+008717 S2 log becomes: "[0]"
+008718 [S2](Follower)'s Commit Index is 0
+008721 S2 log becomes: "[0]"
+008726 [S2](Follower)'s Commit Index is 0
+008730 S2 log becomes: "[0]"
+008731 [S0] changes matchIndex of [S2] to 0
+008732 S2 log becomes: "[0]"
+008734 [S2](Follower)'s Commit Index is 0
+008737 S2 log becomes: "[0]"
+008738 S2 log becomes: "[0]"
+008742 S2 log becomes: "[0]"
+008744 [S2](Follower)'s Commit Index is 0
+008746 S2 log becomes: "[0]"
+008749 [S2](Follower)'s Commit Index is 0
+008750 [S0] changes matchIndex of [S2] to 0
+008751 S2 log becomes: "[0]"
+008753 S2 log becomes: "[0]"
+008755 S2 log becomes: "[0]"
+008757 [S2](Follower)'s Commit Index is 0
+008761 S2 log becomes: "[0]"
+008763 S2 log becomes: "[0]"
+008765 [S2](Follower)'s Commit Index is 0
+008772 [S0] changes matchIndex of [S2] to 0
+008772 [S0] changes matchIndex of [S2] to 0
+008775 S2 log becomes: "[0]"
+008777 S2 log becomes: "[0]"
+008777 [S2](Follower)'s Commit Index is 0
+008796 [S2](Follower)'s Commit Index is 0
+008806 [S2](Follower)'s Commit Index is 0
+008806 [S0] changes matchIndex of [S2] to 0
+008807 [S0] changes matchIndex of [S2] to 0
+008810 [S2](Follower)'s Commit Index is 0
+008814 [S2](Follower)'s Commit Index is 0
+008815 [S0] changes matchIndex of [S2] to 0
+008816 [S2](Follower)'s Commit Index is 0
+008818 [S2](Follower)'s Commit Index is 0
+008823 [S0] changes matchIndex of [S2] to 0
+008826 [S2](Follower)'s Commit Index is 0
+008826 [S0] changes matchIndex of [S2] to 0
+008828 [S2](Follower)'s Commit Index is 0
+008833 [S2](Follower)'s Commit Index is 0
+008833 [S0] changes matchIndex of [S2] to 0
+008835 [S2](Follower)'s Commit Index is 0
+008839 [S2](Follower)'s Commit Index is 0
+008840 [S0] changes matchIndex of [S2] to 0
+008843 [S2](Follower)'s Commit Index is 0
+008849 [S2](Follower)'s Commit Index is 0
+008849 [S0] changes matchIndex of [S2] to 0
+008851 [S2](Follower)'s Commit Index is 0
+008856 [S0] changes matchIndex of [S2] to 0
+008858 [S2](Follower)'s Commit Index is 0
+008860 [S2](Follower)'s Commit Index is 0
+008862 [S2](Follower)'s Commit Index is 0
+008864 [S2](Follower)'s Commit Index is 0
+008866 [S2](Follower)'s Commit Index is 0
+008869 [S2](Follower)'s Commit Index is 0
+008871 [S2](Follower)'s Commit Index is 0
+008873 [S2](Follower)'s Commit Index is 0
+008878 [S0] changes matchIndex of [S2] to 0
+008881 [S0] changes matchIndex of [S2] to 0
+008884 [S0] changes matchIndex of [S2] to 0
+008884 [S2](Follower)'s Commit Index is 0
+008885 [S0] changes matchIndex of [S2] to 0
+008886 [S2](Follower)'s Commit Index is 0
+008890 [S2](Follower)'s Commit Index is 0
+008892 [S2](Follower)'s Commit Index is 0
+008893 [S2](Follower)'s Commit Index is 0
+008895 [S2](Follower)'s Commit Index is 0
+008897 [S2](Follower)'s Commit Index is 0
+008902 [S2](Follower)'s Commit Index is 0
+008902 [S0] changes matchIndex of [S2] to 0
+008904 [S2](Follower)'s Commit Index is 0
+008909 [S0] changes matchIndex of [S2] to 0
+008911 [S0] changes matchIndex of [S2] to 0
+008912 [S2](Follower)'s Commit Index is 0
+008918 [S0] changes matchIndex of [S2] to 0
+008920 [S2](Follower)'s Commit Index is 0
+008922 [S2](Follower)'s Commit Index is 0
+008924 [S2](Follower)'s Commit Index is 0
+008926 [S2](Follower)'s Commit Index is 0
+008930 [S2](Follower)'s Commit Index is 0
+008931 [S0] changes matchIndex of [S2] to 0
+008932 [S2](Follower)'s Commit Index is 0
+008935 [S2](Follower)'s Commit Index is 0
+008938 [S2](Follower)'s Commit Index is 0
+008940 [S2](Follower)'s Commit Index is 0
+008942 [S2](Follower)'s Commit Index is 0
+008944 [S2](Follower)'s Commit Index is 0
+008949 [S2](Follower)'s Commit Index is 0
+008950 [S0] changes matchIndex of [S2] to 0
+008951 [S2](Follower)'s Commit Index is 0
+008953 [S2](Follower)'s Commit Index is 0
+008960 [S0] changes matchIndex of [S2] to 0
+008961 [S0] changes matchIndex of [S2] to 0
+008962 [S2](Follower)'s Commit Index is 0
+008964 [S2](Follower)'s Commit Index is 0
+008969 [S0] changes matchIndex of [S2] to 0
+008971 [S2](Follower)'s Commit Index is 0
+008973 [S2](Follower)'s Commit Index is 0
+008975 [S2](Follower)'s Commit Index is 0
+008979 [S2](Follower)'s Commit Index is 0
+008980 [S0] changes matchIndex of [S2] to 0
+008981 [S2](Follower)'s Commit Index is 0
+008985 [S2](Follower)'s Commit Index is 0
+008990 [S0] changes matchIndex of [S2] to 0
+008993 [S2](Follower)'s Commit Index is 0
+008994 [S0] changes matchIndex of [S2] to 0
+008995 [S0] changes matchIndex of [S2] to 0
+008995 [S2](Follower)'s Commit Index is 0
+008999 [S2](Follower)'s Commit Index is 0
+009001 [S2](Follower)'s Commit Index is 0
+009006 [S2](Follower)'s Commit Index is 0
+009006 [S0] changes matchIndex of [S2] to 0
+009008 [S2](Follower)'s Commit Index is 0
+009013 [S2](Follower)'s Commit Index is 0
+009013 [S0] changes matchIndex of [S2] to 0
+009014 [S2](Follower)'s Commit Index is 0
+009017 [S2](Follower)'s Commit Index is 0
+009021 [S2](Follower)'s Commit Index is 0
+009022 [S0] changes matchIndex of [S2] to 0
+009028 [S2](Follower)'s Commit Index is 0
+009030 [S0] changes matchIndex of [S2] to 0
+009032 [S2](Follower)'s Commit Index is 0
+009034 [S0] changes matchIndex of [S2] to 0
+009035 [S2](Follower)'s Commit Index is 0
+009037 [S2](Follower)'s Commit Index is 0
+009042 [S2](Follower)'s Commit Index is 0
+009042 [S0] changes matchIndex of [S2] to 0
+009048 [S2](Follower)'s Commit Index is 0
+009050 [S0] changes matchIndex of [S2] to 0
+009050 [S2](Follower)'s Commit Index is 0
+009052 [S2](Follower)'s Commit Index is 0
+009059 [S2](Follower)'s Commit Index is 0
+009060 [S0] changes matchIndex of [S2] to 0
+009061 [S2](Follower)'s Commit Index is 0
+009065 [S2](Follower)'s Commit Index is 0
+009066 [S0] changes matchIndex of [S2] to 0
+009069 [S2](Follower)'s Commit Index is 0
+009071 [S0] changes matchIndex of [S2] to 0
+009074 [S2](Follower)'s Commit Index is 0
+009075 [S0] changes matchIndex of [S2] to 0
+009080 [S0] changes matchIndex of [S2] to 0
+009081 [S2](Follower)'s Commit Index is 0
+009083 [S2](Follower)'s Commit Index is 0
+009089 [S2](Follower)'s Commit Index is 0
+009090 [S0] changes matchIndex of [S2] to 0
+009093 [S2](Follower)'s Commit Index is 0
+009095 [S0] changes matchIndex of [S2] to 0
+009097 [S2](Follower)'s Commit Index is 0
+009099 [S0] changes matchIndex of [S2] to 0
+009102 [S2](Follower)'s Commit Index is 0
+009106 [S2](Follower)'s Commit Index is 0
+009107 [S0] changes matchIndex of [S2] to 0
+009108 [S2](Follower)'s Commit Index is 0
+009110 [S2](Follower)'s Commit Index is 0
+009115 [S2](Follower)'s Commit Index is 0
+009117 [S0] changes matchIndex of [S2] to 0
+009120 [S2](Follower)'s Commit Index is 0
+009120 [S0] changes matchIndex of [S2] to 0
+009122 [S2](Follower)'s Commit Index is 0
+009124 [S2](Follower)'s Commit Index is 0
+009128 [S2](Follower)'s Commit Index is 0
+009130 [S0] changes matchIndex of [S2] to 0
+009130 [S2](Follower)'s Commit Index is 0
+009136 [S0] changes matchIndex of [S2] to 0
+009138 [S2](Follower)'s Commit Index is 0
+009140 [S2](Follower)'s Commit Index is 0
+009146 [S0] changes matchIndex of [S2] to 0
+009150 [S0] changes matchIndex of [S2] to 0
+009151 [S0] changes matchIndex of [S2] to 0
+009158 [S0] changes matchIndex of [S2] to 0
+009159 [S0] changes matchIndex of [S2] to 0
+009164 [S0] changes matchIndex of [S2] to 0
+009166 [S0] changes matchIndex of [S2] to 0
+009170 [S0] changes matchIndex of [S2] to 0
+009175 [S0] changes matchIndex of [S2] to 0
+009177 [S0] changes matchIndex of [S2] to 0
+009181 [S0] changes matchIndex of [S2] to 0
+009183 [S0] changes matchIndex of [S2] to 0
+009187 [S0] changes matchIndex of [S2] to 0
+009190 [S0] changes matchIndex of [S2] to 0
+009194 [S0] changes matchIndex of [S2] to 0
+009199 [S0] changes matchIndex of [S2] to 0
+009201 [S0] changes matchIndex of [S2] to 0
+009203 [S0] changes matchIndex of [S2] to 0
+009205 [S0] changes matchIndex of [S2] to 0
+009207 [S0] changes matchIndex of [S2] to 0
+009211 [S0] changes matchIndex of [S2] to 0
+009211 [S0] changes matchIndex of [S2] to 0
+009213 [S0] changes matchIndex of [S2] to 0
+009224 [S0] changes matchIndex of [S2] to 0
+009228 [S0] changes matchIndex of [S2] to 0
+009231 [S0] changes matchIndex of [S2] to 0
+009233 [S0] changes matchIndex of [S2] to 0
+009237 [S0] changes matchIndex of [S2] to 0
+009238 [S0] changes matchIndex of [S2] to 0
+009241 [S0] changes matchIndex of [S2] to 0
+009244 [S0] changes matchIndex of [S2] to 0
+009249 [S0] changes matchIndex of [S2] to 0
+009255 [S0] changes matchIndex of [S2] to 0
+009260 [S0] changes matchIndex of [S2] to 0
+009262 [S0] changes matchIndex of [S2] to 0
+009265 [S0] changes matchIndex of [S2] to 0
+009267 [S0] changes matchIndex of [S2] to 0
+009269 [S0] changes matchIndex of [S2] to 0
+009273 [S0] changes matchIndex of [S2] to 0
+009276 [S0] changes matchIndex of [S2] to 0
+009279 [S0] changes matchIndex of [S2] to 0
+009281 [S0] changes matchIndex of [S2] to 0
+009285 [S0] changes matchIndex of [S2] to 0
+009287 [S0] changes matchIndex of [S2] to 0
+009290 [S0] changes matchIndex of [S2] to 0
+009294 [S0] changes matchIndex of [S2] to 0
+009296 [S0] changes matchIndex of [S2] to 0
+009303 [S0] changes matchIndex of [S2] to 0
+009305 [S0] changes matchIndex of [S2] to 0
+009311 [S0] changes matchIndex of [S2] to 0
+009314 [S0] changes matchIndex of [S2] to 0
+009316 [S0] changes matchIndex of [S2] to 0
+009317 [S0] changes matchIndex of [S2] to 0
+009321 [S0] changes matchIndex of [S2] to 0
+009325 [S0] changes matchIndex of [S2] to 0
+009328 [S0] changes matchIndex of [S2] to 0
+009333 [S0] changes matchIndex of [S2] to 0
+009334 [S0] changes matchIndex of [S2] to 0
+009336 [S0] changes matchIndex of [S2] to 0
+009339 [S0] changes matchIndex of [S2] to 0
+009341 [S0] changes matchIndex of [S2] to 0
+009343 [S0] changes matchIndex of [S2] to 0
+009349 [S0] changes matchIndex of [S2] to 0
+009351 [S0] changes matchIndex of [S2] to 0
+009353 [S0] changes matchIndex of [S2] to 0
+009357 [S0] changes matchIndex of [S2] to 0
+009362 [S0] changes matchIndex of [S2] to 0
+009365 [S0] changes matchIndex of [S2] to 0
+009368 [S0] changes matchIndex of [S2] to 0
+009370 [S0] changes matchIndex of [S2] to 0
+009374 [S0] changes matchIndex of [S2] to 0
+009379 [S0] changes matchIndex of [S2] to 0
+009381 [S0] changes matchIndex of [S2] to 0
+009383 [S0] changes matchIndex of [S2] to 0
+009388 [S0] changes matchIndex of [S2] to 0
+009390 [S0] changes matchIndex of [S2] to 0
+009395 [S0] changes matchIndex of [S2] to 0
+009401 [S0] changes matchIndex of [S2] to 0
+009408 [S0] changes matchIndex of [S2] to 0
+009410 [S0] changes matchIndex of [S2] to 0
+009413 [S0] changes matchIndex of [S2] to 0
+009417 [S0] changes matchIndex of [S2] to 0
+009422 [S0] changes matchIndex of [S2] to 0
+009425 [S0] changes matchIndex of [S2] to 0
+009428 [S0] changes matchIndex of [S2] to 0
+009432 [S0] changes matchIndex of [S2] to 0
+009434 [S0] changes matchIndex of [S2] to 0
+009438 [S0] changes matchIndex of [S2] to 0
+009441 [S0] changes matchIndex of [S2] to 0
+009446 [S0] changes matchIndex of [S2] to 0
+009447 [S0] changes matchIndex of [S2] to 0
+009450 [S0] changes matchIndex of [S2] to 0
+009454 [S0] changes matchIndex of [S2] to 0
+009459 [S0] changes matchIndex of [S2] to 0
+009461 [S0] changes matchIndex of [S2] to 0
+015386 [S2] becomes {Candidate}
+015393 [S2] currentTerm -> (2)
+015397 [S2] sends RequestVote -> [S0]
+015398 [S2] sends RequestVote -> [S1]
+023381 [S2] becomes {Candidate}
+023384 [S2] currentTerm -> (3)
+023387 [S2] sends RequestVote -> [S0]
+023388 [S2] sends RequestVote -> [S1]
+030423 [S2] becomes {Candidate}
+030426 [S2] currentTerm -> (4)
+030429 [S2] sends RequestVote -> [S1]
+030429 [S2] sends RequestVote -> [S0]
+037827 [S2] becomes {Candidate}
+037831 [S2] currentTerm -> (5)
+037834 [S2] sends RequestVote -> [S0]
+037835 [S2] sends RequestVote -> [S1]
+045421 [S2] becomes {Candidate}
+045427 [S2] currentTerm -> (6)
+045432 [S2] sends RequestVote -> [S1]
+045432 [S2] sends RequestVote -> [S0]
+053313 [S2] becomes {Candidate}
+053317 [S2] currentTerm -> (7)
+053321 [S2] sends RequestVote -> [S1]
+053322 [S2] sends RequestVote -> [S0]
+060696 [S2] becomes {Candidate}
+060700 [S2] currentTerm -> (8)
+060704 [S2] sends RequestVote -> [S0]
+060705 [S2] sends RequestVote -> [S1]
+068550 [S2] becomes {Candidate}
+068556 [S2] currentTerm -> (9)
+068560 [S2] sends RequestVote -> [S0]
+068560 [S2] sends RequestVote -> [S1]
+075643 [S2] becomes {Candidate}
+075645 [S2] currentTerm -> (10)
+075648 [S2] sends RequestVote -> [S0]
+075649 [S2] sends RequestVote -> [S1]
+083477 [S2] becomes {Candidate}
+083480 [S2] currentTerm -> (11)
+083484 [S2] sends RequestVote -> [S0]
+083485 [S2] sends RequestVote -> [S1]
+091479 [S2] becomes {Candidate}
+091483 [S2] currentTerm -> (12)
+091487 [S2] sends RequestVote -> [S1]
+091488 [S2] sends RequestVote -> [S0]
+098583 [S2] becomes {Candidate}
+098588 [S2] currentTerm -> (13)
+098591 [S2] sends RequestVote -> [S1]
+098592 [S2] sends RequestVote -> [S0]
+105837 [S2] becomes {Candidate}
+105843 [S2] currentTerm -> (14)
+105848 [S2] sends RequestVote -> [S0]
+105848 [S2] sends RequestVote -> [S1]
+112952 [S2] becomes {Candidate}
+112962 [S2] currentTerm -> (15)
+112972 [S2] sends RequestVote -> [S1]
+112973 [S2] sends RequestVote -> [S0]
+120535 [S2] becomes {Candidate}
+120538 [S2] currentTerm -> (16)
+120543 [S2] sends RequestVote -> [S1]
+120543 [S2] sends RequestVote -> [S0]
+128487 [S2] becomes {Candidate}
+128490 [S2] currentTerm -> (17)
+128492 [S2] sends RequestVote -> [S1]
+128493 [S2] sends RequestVote -> [S0]
+135831 [S2] becomes {Candidate}
+135834 [S2] currentTerm -> (18)
+135838 [S2] sends RequestVote -> [S0]
+135838 [S2] sends RequestVote -> [S1]
+143323 [S2] becomes {Candidate}
+143327 [S2] currentTerm -> (19)
+143330 [S2] sends RequestVote -> [S1]
+143330 [S2] sends RequestVote -> [S0]
+151215 [S2] becomes {Candidate}
+151218 [S2] currentTerm -> (20)
+151221 [S2] sends RequestVote -> [S1]
+151221 [S2] sends RequestVote -> [S0]
+158949 [S2] becomes {Candidate}
+158952 [S2] currentTerm -> (21)
+158959 [S2] sends RequestVote -> [S0]
+158959 [S2] sends RequestVote -> [S1]
+166753 [S2] becomes {Candidate}
+166757 [S2] currentTerm -> (22)
+166762 [S2] sends RequestVote -> [S0]
+166762 [S2] sends RequestVote -> [S1]
+174405 [S2] becomes {Candidate}
+174409 [S2] currentTerm -> (23)
+174412 [S2] sends RequestVote -> [S0]
+174412 [S2] sends RequestVote -> [S1]
+181658 [S2] becomes {Candidate}
+181662 [S2] currentTerm -> (24)
+181666 [S2] sends RequestVote -> [S1]
+181666 [S2] sends RequestVote -> [S0]
+188831 [S2] becomes {Candidate}
+188835 [S2] currentTerm -> (25)
+188837 [S2] sends RequestVote -> [S1]
+188838 [S2] sends RequestVote -> [S0]
+196734 [S2] becomes {Candidate}
+196738 [S2] currentTerm -> (26)
+196743 [S2] sends RequestVote -> [S1]
+196744 [S2] sends RequestVote -> [S0]
+204171 [S2] becomes {Candidate}
+204173 [S2] currentTerm -> (27)
+204177 [S2] sends RequestVote -> [S0]
+204177 [S2] sends RequestVote -> [S1]
+211273 [S2] becomes {Candidate}
+211277 [S2] currentTerm -> (28)
+211280 [S2] sends RequestVote -> [S1]
+211280 [S2] sends RequestVote -> [S0]
+218967 [S2] becomes {Candidate}
+218970 [S2] currentTerm -> (29)
+218974 [S2] sends RequestVote -> [S1]
+218974 [S2] sends RequestVote -> [S0]
+226731 [S2] becomes {Candidate}
+226734 [S2] currentTerm -> (30)
+226737 [S2] sends RequestVote -> [S0]
+226738 [S2] sends RequestVote -> [S1]
+234605 [S2] becomes {Candidate}
+234611 [S2] currentTerm -> (31)
+234614 [S2] sends RequestVote -> [S0]
+234615 [S2] sends RequestVote -> [S1]
+242488 [S2] becomes {Candidate}
+242491 [S2] currentTerm -> (32)
+242495 [S2] sends RequestVote -> [S0]
+242497 [S2] sends RequestVote -> [S1]
+250470 [S2] becomes {Candidate}
+250473 [S2] currentTerm -> (33)
+250476 [S2] sends RequestVote -> [S0]
+250477 [S2] sends RequestVote -> [S1]
+258026 [S2] becomes {Candidate}
+258031 [S2] currentTerm -> (34)
+258035 [S2] sends RequestVote -> [S0]
+258036 [S2] sends RequestVote -> [S1]
+265168 [S2] becomes {Candidate}
+265172 [S2] currentTerm -> (35)
+265175 [S2] sends RequestVote -> [S0]
+265175 [S2] sends RequestVote -> [S1]
+272391 [S2] becomes {Candidate}
+272396 [S2] currentTerm -> (36)
+272399 [S2] sends RequestVote -> [S0]
+272399 [S2] sends RequestVote -> [S1]
+signal: interrupt
+FAIL	6.824/raft	27.819s
