@@ -3,71 +3,49 @@ package raft
 import "time"
 
 func GetHeartBeatTime() time.Duration {
-	return 200 * time.Microsecond
+	return 50 * time.Microsecond
 }
 
 // Separate goroutine for HeartBeat
 func (rf *Raft) BroadcastHeartBeat() {
-	// rf.heartBeatCond.Signal()
 	for peer := range rf.peers {
 		if peer == rf.me {
 			continue
 		}
-		Debug(dTimer, "[S%d] sends HeartBeat -> [S%d]\n", rf.me, peer)
+		// Debug(dTimer, "[S%d] sends HeartBeat -> [S%d]\n", rf.me, peer)
 		args := rf.newAEArgs(peer)
 		reply := rf.newAEReply()
 		go rf.AppendEntryLeader(peer, &args, &reply)
 	}
 }
 
-// func (rf *Raft) HeartBeastSender() {
-// 	rf.heartBeatCond.L.Lock()
-// 	defer rf.heartBeatCond.L.Unlock()
-// 	for !rf.killed() {
-// 		for !rf.IsLeader() {
-// 			rf.heartBeatCond.Wait()
+// Separate goroutine for LogReplication
+// func (rf *Raft) BroadcastLogReplication() {
+// 	// log replication for each server
+// 	Debug(dTimer, "[S%d] broadcasts Log Replication\n", rf.me)
+// 	for peer := range rf.peers {
+// 		if peer == rf.me {
+// 			continue
 // 		}
-// 		// rf.heartBeatCond.L.Unlock()
-
-// 		rf.ResetElectionTimer()
-// 		for i := range rf.peers {
-// 			if i == rf.me {
-// 				continue
-// 			}
-// 			// Debug(dTimer, "[S%d] sends HeartBeat -> [S%d]\n", rf.me, i)
-// 			go rf.AppendEntryLeader(i)
-// 		}
-// 		time.Sleep(GetHeartBeatTime())
+// 		go func(i int) {
+// 			rf.replicatorCond[i].Signal()
+// 			// rf.AppendEntryLeader(i)
+// 		}(peer)
 // 	}
 // }
 
-// Separate goroutine for LogReplication
-func (rf *Raft) BroadcastLogReplication() {
-	// log replication for each server
-	Debug(dTimer, "[S%d] broadcasts Log Replication\n", rf.me)
-	for peer := range rf.peers {
-		if peer == rf.me {
-			continue
-		}
-		go func(i int) {
-			rf.replicatorCond[i].Signal()
-			// rf.AppendEntryLeader(i)
-		}(peer)
-	}
-}
+// func (rf *Raft) LogReplicationSender(peer int) {
+// 	for !rf.killed() {
+// 		rf.replicatorCond[peer].L.Lock()
+// 		defer rf.replicatorCond[peer].L.Unlock()
+// 		for !(rf.IsLeader() && (rf.GetNextIndex(peer) <= rf.GetLastLogEntry().Index)) {
+// 			rf.replicatorCond[peer].Wait()
+// 		}
 
-func (rf *Raft) LogReplicationSender(peer int) {
-	for !rf.killed() {
-		rf.replicatorCond[peer].L.Lock()
-		defer rf.replicatorCond[peer].L.Unlock()
-		for !(rf.IsLeader() && (rf.GetNextIndex(peer) <= rf.GetLastLogEntry().Index)) {
-			rf.replicatorCond[peer].Wait()
-		}
-
-		Debug(dTimer, "[S%d] sends Log Replication -> [S%d]\n", rf.me, peer)
-		// rf.AppendEntryLeader(peer)
-	}
-}
+// 		Debug(dTimer, "[S%d] sends Log Replication -> [S%d]\n", rf.me, peer)
+// 		// rf.AppendEntryLeader(peer)
+// 	}
+// }
 
 // **************************************************************************
 // AppendEntry Sender
@@ -126,7 +104,7 @@ func (rf *Raft) AppendEntry(args *AppendEntryArgs, reply *AppendEntryReply) {
 	isLeader := rf.GetCurState() == Leader
 	rf.ConvertToFollower(max(args.Term, term))
 	// Debug(dLog, "[S%d] Election Timer Reset", rf.me)
-	Debug(dTimer, "{Election}[S%d] Reset Election Timer at %v", rf.me, time.Now())
+	// Debug(dTimer, "[S%d]'s Election Timer is Reset", rf.me)
 	// rf.ResetElectionTimer()
 	rf.SetElectionTime()
 

@@ -30,26 +30,10 @@ func (rf *Raft) checkUpToDate(candidateIndex int, candidateTerm int) bool {
 // To avoid situation where length of log < 1
 func (rf *Raft) GetLastLogEntry() LogEntry {
 	return rf.log[len(rf.log)-1]
-	// if len(rf.log) > 0 {
-	// 	return rf.log[len(rf.log)-1]
-	// } else {
-	// 	return LogEntry{
-	// 		Index: 0,
-	// 		Term:  0,
-	// 	}
-	// }
 }
 
 func (rf *Raft) GetFirstLogEntry() LogEntry {
 	return rf.log[0]
-	// if len(rf.log) > 0 {
-	// 	return rf.log[0]
-	// } else {
-	// 	return LogEntry{
-	// 		Index: 0,
-	// 		Term:  0,
-	// 	}
-	// }
 }
 
 func (rf *Raft) AppendLogEntry(logEntry LogEntry) {
@@ -65,7 +49,6 @@ func (rf *Raft) GetIndex(index int) int {
 }
 
 func (rf *Raft) GetLogEntry(index int) LogEntry {
-	// Debug(dLog, "index is %d\n", index)
 	return rf.log[index]
 }
 

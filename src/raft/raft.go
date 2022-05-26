@@ -77,10 +77,8 @@ type Raft struct {
 
 	// DIY
 	state          RaftState
-	electionTimer  *time.Timer
-	heartBeatTimer *time.Timer
-	// heartBeatCond  *sync.Cond
-	replicatorCond []*sync.Cond
+	electionTimer  time.Ticker
+	heartBeatTimer time.Ticker
 
 	electionTime time.Time
 
@@ -110,9 +108,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.lastApplied = 0
 
 	rf.state = Follower
-	rf.electionTimer = time.NewTimer(GetRandomElectionTime())
-	rf.heartBeatTimer = time.NewTimer(GetHeartBeatTime())
-	rf.replicatorCond = make([]*sync.Cond, len(peers))
 
 	// Volatile States for leader
 	rf.nextIndex = make([]int, len(rf.peers))
@@ -122,31 +117,30 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		rf.matchIndex[i] = 0
 	}
 
+	rf.electionTime = time.Now()
+	rf.electionTimer = *time.NewTicker(50 * time.Millisecond)
+	rf.heartBeatTimer = *time.NewTicker(50 * time.Millisecond)
+
 	// initialize from state persisted before a crash
 	rf.readPersist(persister.ReadRaftState())
 
 	// start separate goroutines
-	go rf.ticker()
+	go rf.heartBeatTicker()
+	go rf.electionTicker()
 
 	rf.applyCond = sync.NewCond(&sync.Mutex{})
 	rf.applyCh = applyCh
 	// go rf.applier()
-
-	// rf.electionTime = time.Now()
-
-	// HeartBeatSender
-	// rf.heartBeatCond = sync.NewCond(&sync.Mutex{})
-	// go rf.HeartBeastSender()
-	// LogReplicationSender
-	// for peer, _ := range peers {
-	// 	rf.replicatorCond[peer] = sync.NewCond(&sync.Mutex{})
-	// 	go rf.LogReplicationSender(peer)
-	// }
-
 	return rf
 }
 
 // rf.me do not have any writing operation
+
+func (rf *Raft) IsLeaderR() bool {
+	rf.mu.RLock()
+	defer rf.mu.RUnlock()
+	return rf.state == Leader
+}
 
 func (rf *Raft) IsLeader() bool {
 	return rf.state == Leader
@@ -170,14 +164,6 @@ func (rf *Raft) GetTerm() int {
 
 func (rf *Raft) GetMajority() int {
 	return len(rf.peers)/2 + 1
-}
-
-func (rf *Raft) ResetElectionTimer() {
-	rf.electionTimer.Reset(GetRandomElectionTime())
-}
-
-func (rf *Raft) ResetHeartBeatTimer() {
-	rf.heartBeatTimer.Reset(GetHeartBeatTime())
 }
 
 // return currentTerm and whether this server
@@ -385,7 +371,7 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	Debug(dLog, "[S%d] log becomes: %q", rf.me, rf.GetTermArray())
 	// Debug(dLog, "index is %d", index)
 	// (2) broadcast AppendEntry to each server
-	rf.BroadcastLogReplication()
+	// rf.BroadcastLogReplication()
 
 	// (3) update index, term
 	return index, term, isLeader

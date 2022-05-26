@@ -5,96 +5,53 @@ import (
 	"time"
 )
 
-const electionTimeout = 1000 * time.Millisecond
+const electionTickTime = 100 * time.Microsecond
 
-func GetRandomElectionTime() time.Duration {
-	min := 400
-	max := 700
+const heartBeatTickTime = 50 * time.Millisecond
+
+func GetNextElectionTime() time.Duration {
+	min := 1000
+	max := 1300
 	return time.Duration((rand.Intn(max-min+1) + min)) * time.Millisecond
 }
 
 // *************************************************************************
 // Separate goroutine for Election
 
-func (rf *Raft) electionTick(t time.Time) {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	// if rf.IsLeader() {
-	// 	rf.ResetElectionTimer()
-	// }
-
-	// Debug(dTimer, "{Election} [S%d] Tick at %v", rf.me, t)
-	// // Debug(dTimer, "{Time} New Election:%v", time.Now())
-	// Debug(dLog, "{Election} [S%d]'s state is %v", rf.me, rf.GetCurState())
-	// rf.ResetElectionTimer()
-	// rf.startElection()
-}
-
 func (rf *Raft) SetElectionTime() {
 	t := time.Now()
-	t = t.Add(electionTimeout)
-	ms := rand.Int63() % 300
-	t = t.Add(time.Duration(ms) * time.Millisecond)
+	t = t.Add(GetNextElectionTime())
 	rf.electionTime = t
 }
 
-func (rf *Raft) heartBeatTick(t time.Time) {
+func (rf *Raft) electionTick() {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	if rf.IsLeader() {
-		Debug(dTimer, "[S%d] broadcasts HeartBeats at %v", rf.me, time.Now())
-		rf.ResetHeartBeatTimer()
-		rf.BroadcastHeartBeat()
-	} else {
-		// rf.ResetHeartBeatTimer()
-	}
-}
-
-func (rf *Raft) tick() {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	if rf.IsLeader() {
-		rf.SetElectionTime()
-		rf.BroadcastHeartBeat()
-	}
 	if time.Now().After(rf.electionTime) {
-		rf.SetElectionTime()
 		rf.startElection()
 	}
 }
 
-func (rf *Raft) ticker() {
+func (rf *Raft) heartBeatTick() {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	if rf.IsLeader() {
+		rf.SetElectionTime()
+		rf.BroadcastHeartBeat()
+	}
+}
+
+func (rf *Raft) electionTicker() {
 	for rf.killed() == false {
-		rf.tick()
-		ms := 50
-		time.Sleep(time.Duration(ms) * time.Millisecond)
-		// select {
-		// case t := <-rf.electionTimer.C:
-		// 	rf.electionTick(t)
-		// 	ms := 50
-		// 	time.Sleep(time.Duration(ms) * time.Millisecond)
-		// if rf.IsLeader() {
-		// 	rf.ResetElectionTimer()
-		// } else {
-		// 	Debug(dTimer, "{Election} [S%d] Tick at %v", rf.me, t)
-		// 	// Debug(dTimer, "{Time} New Election:%v", time.Now())
-		// 	Debug(dLog, "{Election} [S%d]'s state is %v", rf.me, rf.GetCurState())
-		// 	rf.ResetElectionTimer()
-		// 	rf.startElection()
-		// }
+		rf.electionTick()
+		time.Sleep(electionTickTime)
+	}
+}
 
-		// case t := <-rf.heartBeatTimer.C:
-		// go rf.heartBeatTick(t)
-
-		// Debug(dTimer, "{HeartBeat}[S%d]'s state is %v", rf.me, rf.GetCurState())
-		// if rf.IsLeader() {
-		// 	rf.ResetHeartBeatTimer()
-		// 	// Debug(dTimer, "[S%d] broadcasts HeartBeats at %v", rf.me, time.Now())
-		// 	rf.BroadcastHeartBeat()
-		// } else {
-		// 	rf.ResetHeartBeatTimer()
-		// }
-		// }
+func (rf *Raft) heartBeatTicker() {
+	for rf.killed() == false {
+		rf.heartBeatTick()
+		time.Sleep(heartBeatTickTime)
 	}
 }
 
@@ -104,7 +61,8 @@ func (rf *Raft) ticker() {
 func (rf *Raft) startElection() {
 	// Convert to candidate and reset election timer
 	rf.ConvertToCandidate()
-	// rf.ResetElectionTimer()
+	rf.SetElectionTime()
+
 	Debug(dTerm, "[S%d] becomes {Candidate}", rf.me)
 	Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
 	rf.BroadcastRequestVote()
@@ -132,10 +90,9 @@ func (rf *Raft) RequestVoteCandidate(votes *int, peer int, args *RequestVoteArgs
 	}
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	// Try to update Term and state after communication and reset electionTimer
+	// Rule for all servers
 	if reply.Term > rf.GetTerm() {
 		rf.ConvertToFollower(reply.Term)
-		// rf.ResetElectionTimer()
 		rf.SetElectionTime()
 
 		Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
@@ -162,8 +119,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 
-	// Try to update Term and state after communication
-	// BUT only reset timer if vote granted
+	// Rule for all servers
+	// Try to update Term and state after communication BUT only reset timer if vote granted
 	if args.Term > rf.GetTerm() {
 		rf.ConvertToFollower(args.Term)
 		Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
@@ -183,12 +140,11 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		reply.Term = rf.GetTerm()
 		reply.VoteGranted = true
 
-		Debug(dTimer, "{Election}[S%d] Reset Election Timer", rf.me)
+		Debug(dTimer, "[S%d]'s Election Timer is Reset", rf.me)
 		rf.SetVoteFor(args.CandidateId)
-		// rf.ResetElectionTimer()
 		rf.SetElectionTime()
 	} else {
-		Debug(dRV, "Otherwise")
+		// Debug(dRV, "Otherwise")
 		Debug(dRV, "[S%d] refused Vote -> [S%d]", rf.me, args.CandidateId)
 		reply.Term = rf.GetTerm()
 		reply.VoteGranted = false
