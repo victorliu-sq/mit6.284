@@ -69,7 +69,7 @@ type Raft struct {
 	// Persistent State
 	currentTerm int
 	votedFor    int
-	log         []LogEntry
+	logs        []LogEntry
 
 	// Volatile State
 	commitIndex int
@@ -96,12 +96,11 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.peers = peers
 	rf.persister = persister
 	rf.me = me
-
 	// Your initialization code here (2A, 2B, 2C).
 	// Persistent States
 	rf.currentTerm = 0
 	rf.votedFor = -1
-	rf.log = make([]LogEntry, 1)
+	rf.logs = make([]LogEntry, 1)
 
 	// Volatile States
 	rf.commitIndex = 0
@@ -117,7 +116,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		rf.matchIndex[i] = 0
 	}
 
-	rf.electionTime = time.Now()
+	rf.electionTime = time.Now().Add(GetRandomElectionTimeout())
 	rf.electionTimer = *time.NewTicker(50 * time.Millisecond)
 	rf.heartBeatTimer = *time.NewTicker(50 * time.Millisecond)
 
@@ -128,20 +127,13 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	go rf.heartBeatTicker()
 	go rf.electionTicker()
 
-	rf.applyCond = sync.NewCond(&sync.Mutex{})
+	rf.applyCond = sync.NewCond(&rf.mu)
 	rf.applyCh = applyCh
-	// go rf.applier()
+	go rf.applier()
 	return rf
 }
 
 // rf.me do not have any writing operation
-
-func (rf *Raft) IsLeaderR() bool {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
-	return rf.state == Leader
-}
-
 func (rf *Raft) IsLeader() bool {
 	return rf.state == Leader
 }
@@ -180,9 +172,25 @@ func (rf *Raft) GetState() (int, bool) {
 	return term, isleader
 }
 
+func GetTermArray(logs []LogEntry) string {
+	terms := []int{}
+	for _, logEntry := range logs {
+		terms = append(terms, logEntry.Term)
+	}
+	return fmt.Sprint(terms)
+}
+
+func GetCommandArray(logs []LogEntry) string {
+	cmds := []interface{}{}
+	for _, logEntry := range logs {
+		cmds = append(cmds, logEntry.Command)
+	}
+	return fmt.Sprint(cmds)
+}
+
 func (rf *Raft) GetTermArray() string {
 	terms := []int{}
-	for _, logEntry := range rf.log {
+	for _, logEntry := range rf.logs {
 		terms = append(terms, logEntry.Term)
 	}
 	return fmt.Sprint(terms)
@@ -190,7 +198,7 @@ func (rf *Raft) GetTermArray() string {
 
 func (rf *Raft) GetCommandArray() string {
 	cmds := []interface{}{}
-	for _, logEntry := range rf.log {
+	for _, logEntry := range rf.logs {
 		cmds = append(cmds, logEntry.Command)
 	}
 	return fmt.Sprint(cmds)
@@ -244,37 +252,6 @@ func (rf *Raft) SetNextIndex(peer int, newNextIndex int) {
 
 func (rf *Raft) SetMatchIndex(peer int, newMatchIndex int) {
 	rf.matchIndex[peer] = newMatchIndex
-}
-
-func (rf *Raft) AdvanceCommitIndexFollower(LeaderCommit int) {
-	if LeaderCommit > rf.GetCommitIndex() {
-		newCommitIndex := min(LeaderCommit, rf.GetLastLogEntry().Index)
-		rf.SetCommitIndex(newCommitIndex)
-		Debug(dLog, "[S%d](Follower)'s Commmit Index becomes %d", rf.me, newCommitIndex)
-	}
-}
-
-func (rf *Raft) AdvanceCommitIndexLeader() {
-	if !rf.IsLeader() {
-		return
-	}
-
-	for N := rf.GetCommitIndex() + 1; N <= rf.GetLastLogEntry().Index; N++ {
-		if rf.GetLogEntry(N).Term == rf.GetTerm() {
-			num := 1
-			for peer := range rf.peers {
-				if peer != rf.me && rf.GetMatchIndex(peer) >= N {
-					Debug(dLog, "[S%d] tries to increment Commit Index to %d, Checking [S%d]", rf.me, N, peer)
-					num++
-					if num == rf.GetMajority() {
-						rf.SetCommitIndex(N)
-						Debug(dLog, "[S%d](Leader)'s Commmit Index becomes %d", rf.me, N)
-						break
-					}
-				}
-			}
-		}
-	}
 }
 
 //
@@ -351,30 +328,32 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 //
 
 func (rf *Raft) Start(command interface{}) (int, int, bool) {
-	index := -1
-	term := -1
-	isLeader := true
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	// index := -1
+	// term := -1
+	// isLeader := true
 
 	// Your code here (2B).
 	// 1. if rf is not leader: return false
 	if !rf.IsLeader() {
-		isLeader = false
-		return index, term, isLeader
+		return -1, rf.GetTerm(), false
 	}
 
 	// 2. Otherwise
 	// (1) Add a new logEntry to rf.log
 	logEntry := rf.newLogEntry(command)
 	rf.AppendLogEntry(logEntry)
-	index, term = logEntry.Index, logEntry.Term
+	index, term := logEntry.Index, logEntry.Term
 	Debug(dLog, "[S%d] adds a new logEntry of {Term: %v}, {Command %v}\n", rf.me, rf.GetTerm(), command)
-	Debug(dLog, "[S%d] log becomes: %q", rf.me, rf.GetTermArray())
+	Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
+	Debug(dLog, "[S%d] log(Command) becomes: %q", rf.me, rf.GetCommandArray())
 	// Debug(dLog, "index is %d", index)
 	// (2) broadcast AppendEntry to each server
-	// rf.BroadcastLogReplication()
+	rf.BroadcastLogReplication()
 
 	// (3) update index, term
-	return index, term, isLeader
+	return index, term, true
 }
 
 //
@@ -410,29 +389,28 @@ func (rf *Raft) killed() bool {
 // for any long-running work.
 //
 
-// func getRandomHeartBeatTime() time.Duration {
-// 	return time.Duration((rand.Intn(100-50+1) + 50)) * time.Millisecond
-// }
+func (rf *Raft) applier() {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
 
-// func (rf *Raft) applier() {
-// 	for rf.killed() == false {
-// 		rf.applyCond.L.Lock()
-// 		defer rf.applyCond.L.Unlock()
-// 		// if there is no need to apply entries, just release CPU and wait other goroutine's signal if they commit new entries
-// 		for rf.GetLastApplied() >= rf.GetCommitIndex() {
-// 			rf.applyCond.Wait()
-// 		}
-// 		entries := make([]LogEntry, rf.GetCommitIndex()-rf.GetLastApplied())
-// 		copy(entries, rf.log[rf.GetLastApplied()+1:rf.GetCommitIndex()+1])
-// 		for _, logEntry := range entries {
-// 			rf.applyCh <- ApplyMsg{
-// 				CommandValid: true,
-// 				Command:      logEntry.Command,
-// 				CommandIndex: logEntry.Index,
-// 			}
-// 		}
-// 		Debug(dLog, "[S%d] applies entries %d ~ %d in term %d", rf.me, rf.GetLastApplied(), rf.GetCommitIndex(), rf.GetTerm())
-// 		// DPrintf("{Node %v} applies entries %v-%v in term %v", rf.me, rf.lastApplied, commitIndex, rf.currentTerm)
-// 		rf.SetLastApplied(max(rf.GetLastApplied(), rf.GetCommitIndex()))
-// 	}
-// }
+	rf.lastApplied = 0
+	// we do not apply first log entry, namely {Command:<nil>, Term:0}
+
+	for !rf.killed() {
+		if rf.lastApplied+1 <= rf.commitIndex &&
+			rf.lastApplied+1 <= rf.GetLastLogEntry().Index {
+			rf.lastApplied++
+			term, cmd, cmdIdx := rf.GetLogEntry(rf.lastApplied).Term, rf.GetLogEntry(rf.lastApplied).Command, rf.GetLogEntry(rf.lastApplied).Index
+			Debug(dLog, "[S%d] applies Log Entry [{Term: %v}{Command: %v}]", rf.me, term, cmd)
+			rf.mu.Unlock()
+			rf.applyCh <- ApplyMsg{
+				CommandValid: true,
+				Command:      cmd,
+				CommandIndex: cmdIdx,
+			}
+			rf.mu.Lock()
+		} else {
+			rf.applyCond.Wait()
+		}
+	}
+}

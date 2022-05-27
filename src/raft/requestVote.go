@@ -15,8 +15,6 @@ type RequestVoteReply struct {
 }
 
 func (rf *Raft) newRVArgs() RequestVoteArgs {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return RequestVoteArgs{
 		Term:         rf.currentTerm,
 		CandidateId:  rf.me,
@@ -26,8 +24,6 @@ func (rf *Raft) newRVArgs() RequestVoteArgs {
 }
 
 func (rf *Raft) newRVReply() RequestVoteReply {
-	rf.mu.RLock()
-	defer rf.mu.RUnlock()
 	return RequestVoteReply{
 		Term:        0,
 		VoteGranted: false,

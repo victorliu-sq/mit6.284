@@ -5,13 +5,13 @@ import (
 	"time"
 )
 
-const electionTickTime = 100 * time.Microsecond
+const electionTickTime = 30 * time.Microsecond
 
-const heartBeatTickTime = 50 * time.Millisecond
+const heartBeatTickTime = 150 * time.Millisecond
 
-func GetNextElectionTime() time.Duration {
-	min := 1000
-	max := 1300
+func GetRandomElectionTimeout() time.Duration {
+	min := 300
+	max := 500
 	return time.Duration((rand.Intn(max-min+1) + min)) * time.Millisecond
 }
 
@@ -20,24 +20,19 @@ func GetNextElectionTime() time.Duration {
 
 func (rf *Raft) SetElectionTime() {
 	t := time.Now()
-	t = t.Add(GetNextElectionTime())
+	t = t.Add(GetRandomElectionTimeout())
 	rf.electionTime = t
 }
 
 func (rf *Raft) electionTick() {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	if time.Now().After(rf.electionTime) {
-		rf.startElection()
-	}
-}
-
-func (rf *Raft) heartBeatTick() {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	if rf.IsLeader() {
 		rf.SetElectionTime()
-		rf.BroadcastHeartBeat()
+	} else {
+		if time.Now().After(rf.electionTime) {
+			rf.startElection()
+		}
 	}
 }
 
@@ -48,23 +43,18 @@ func (rf *Raft) electionTicker() {
 	}
 }
 
-func (rf *Raft) heartBeatTicker() {
-	for rf.killed() == false {
-		rf.heartBeatTick()
-		time.Sleep(heartBeatTickTime)
-	}
-}
-
 // The ticker go routine starts a new election if this peer hasn't received
 // heartsbeats recently.
 
 func (rf *Raft) startElection() {
-	// Convert to candidate and reset election timer
+	// 1. Conversion to Candidate
+	// (1) increment current Term (2) Vote for itself (3)Reset election timer
 	rf.ConvertToCandidate()
 	rf.SetElectionTime()
 
 	Debug(dTerm, "[S%d] becomes {Candidate}", rf.me)
 	Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
+	// (4) Send RequestVote RPCs to all other servers
 	rf.BroadcastRequestVote()
 }
 
@@ -86,6 +76,8 @@ func (rf *Raft) BroadcastRequestVote() {
 
 func (rf *Raft) RequestVoteCandidate(votes *int, peer int, args *RequestVoteArgs, reply *RequestVoteReply) {
 	if !rf.sendRequestVote(peer, args, reply) {
+		// return
+		Debug(dRV, "[S%v] gets No feedback of RV from [S%v]", rf.me, peer)
 		return
 	}
 	rf.mu.Lock()
@@ -93,19 +85,20 @@ func (rf *Raft) RequestVoteCandidate(votes *int, peer int, args *RequestVoteArgs
 	// Rule for all servers
 	if reply.Term > rf.GetTerm() {
 		rf.ConvertToFollower(reply.Term)
-		rf.SetElectionTime()
+		// rf.SetElectionTime()
 
-		Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
-		Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
+		// Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
+		// Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
 	}
 
 	if reply.VoteGranted {
-		// If vote granted: votes++ && check if current Server becomes Leader
+		// If votes received from majority of servers: become Leader
 		(*votes)++
 		Debug(dLeader, "[S%d] get (%d) votes now\n", rf.me, *votes)
 		if *votes == rf.GetMajority() {
 			Debug(dLeader, "[S%d] becomes {Leader}\n", rf.me)
 			rf.ConvertToLeader()
+			// Upon election: send heartbeat to each server
 			rf.BroadcastHeartBeat()
 		}
 	}
@@ -124,7 +117,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	if args.Term > rf.GetTerm() {
 		rf.ConvertToFollower(args.Term)
 		Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
-		Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
+		// Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
 	}
 
 	if args.Term < rf.GetTerm() {
@@ -140,10 +133,11 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		reply.Term = rf.GetTerm()
 		reply.VoteGranted = true
 
-		Debug(dTimer, "[S%d]'s Election Timer is Reset", rf.me)
+		// Debug(dTimer, "[S%d]'s Election Timer is Reset", rf.me)
 		rf.SetVoteFor(args.CandidateId)
 		rf.SetElectionTime()
 	} else {
+		// Otherwise, reply false as 1.
 		// Debug(dRV, "Otherwise")
 		Debug(dRV, "[S%d] refused Vote -> [S%d]", rf.me, args.CandidateId)
 		reply.Term = rf.GetTerm()

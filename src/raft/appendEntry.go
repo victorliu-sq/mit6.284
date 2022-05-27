@@ -22,18 +22,18 @@ type AppendEntryReply struct {
 func (rf *Raft) newAEArgs(peer int) AppendEntryArgs {
 	// If prev leader's log is very long but most of log entries are not replicated
 	// Since nextIndex is optimistic, it can easily go out of range
-	next := rf.nextIndex[peer] - 1
-	if next <= 0 {
-		next = 1
-	} else if next > rf.GetLastLogEntry().Index+1 {
-		next = rf.GetLastLogEntry().Index
-	}
+	next := rf.nextIndex[peer]
+	// if next <= 0 {
+	// 	next = 1
+	// } else if next > rf.GetLastLogEntry().Index+1 {
+	// 	next = rf.GetLastLogEntry().Index + 1
+	// }
 
 	args := AppendEntryArgs{
 		Term:         rf.currentTerm,
 		LeaderID:     rf.me,
 		PrevLogIndex: next - 1,
-		PrevLogTerm:  rf.log[next-1].Term,
+		PrevLogTerm:  rf.logs[next-1].Term,
 		Entries:      make([]LogEntry, rf.GetLastLogEntry().Index-next+1),
 		LeaderCommit: rf.commitIndex,
 	}

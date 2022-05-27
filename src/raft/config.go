@@ -8,23 +8,19 @@ package raft
 // test with the original before submitting.
 //
 
-import (
-	"bytes"
-	"log"
-	"math/rand"
-	"runtime"
-	"sync"
-	"testing"
-
-	"6.824/labgob"
-	"6.824/labrpc"
-
-	crand "crypto/rand"
-	"encoding/base64"
-	"fmt"
-	"math/big"
-	"time"
-)
+import "6.824/labgob"
+import "6.824/labrpc"
+import "bytes"
+import "log"
+import "sync"
+import "testing"
+import "runtime"
+import "math/rand"
+import crand "crypto/rand"
+import "math/big"
+import "encoding/base64"
+import "time"
+import "fmt"
 
 func randstring(n int) string {
 	b := make([]byte, 2*n)
@@ -444,7 +440,6 @@ func (cfg *config) nCommitted(index int) (int, interface{}) {
 
 		cfg.mu.Lock()
 		cmd1, ok := cfg.logs[i][index]
-		// cfg.t.Logf("<<TEST>> Command is %v", cmd1)
 		cfg.mu.Unlock()
 
 		if ok {
@@ -520,7 +515,6 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 				index1, _, ok := rf.Start(cmd)
 				if ok {
 					index = index1
-					// cfg.t.Fatalf("index is %d", index)
 					break
 				}
 			}
@@ -532,7 +526,6 @@ func (cfg *config) one(cmd interface{}, expectedServers int, retry bool) int {
 			t1 := time.Now()
 			for time.Since(t1).Seconds() < 2 {
 				nd, cmd1 := cfg.nCommitted(index)
-				// cfg.t.Fatalf("command is %v", cmd1)
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd1 == cmd {
