@@ -53,16 +53,18 @@ func (rf *Raft) GetLogEntry(index int) LogEntry {
 }
 
 func (rf *Raft) GetSubarrayEnd(idx int) []LogEntry {
+	// Debug(dLog, "[S%v]'s log length is %v", rf.me, len(rf.logs))
+	// Debug(dLog, "[S%v]'s last Index is %v", rf.me, rf.GetLastLogEntry().Index)
 	return rf.logs[idx:]
 }
 
-func (rf *Raft) CutToEnd(idx int) {
+func (rf *Raft) CutStart(idx int) {
 	rf.logs = rf.logs[idx:]
 }
 
-func (rf *Raft) GetXIndex(prevLogIndex int, prevLogTerm int) int {
+func (rf *Raft) GetXIndex(prevLogIndex int, XTerm int) int {
 	XIndex := prevLogIndex
-	for XIndex-1 >= 0 && rf.GetLogEntry(XIndex-1).Term == prevLogTerm {
+	for XIndex-1 >= 0 && rf.GetLogEntry(XIndex-1).Term == XTerm {
 		XIndex--
 	}
 	return XIndex
@@ -70,7 +72,7 @@ func (rf *Raft) GetXIndex(prevLogIndex int, prevLogTerm int) int {
 
 func (rf *Raft) AppendNewEntries(prevLogIndex int, Entries []LogEntry) {
 	// find first logsEntry in Entries that (1) out of range (2) conflicts with Term of rf.logs[same idx]
-	rf.logs = append(rf.logs[0:prevLogIndex+1], Entries...)
+	// rf.logs = append(rf.logs[0:prevLogIndex+1], Entries...)
 	for idx, logsEntry := range Entries {
 		if prevLogIndex+1+idx >= len(rf.logs) || rf.GetLogEntry(prevLogIndex+1+idx).Term != logsEntry.Term {
 			rf.logs = append(rf.logs[0:prevLogIndex+1+idx], Entries[idx:]...)

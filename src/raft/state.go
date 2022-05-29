@@ -14,6 +14,7 @@ func (rf *Raft) ConvertToFollower(newTerm int) {
 	rf.currentTerm = newTerm
 	rf.votedFor = -1
 	rf.state = Follower
+	rf.persist()
 }
 
 func (rf *Raft) ConvertToLeader() {
@@ -31,4 +32,5 @@ func (rf *Raft) ConvertToCandidate() {
 	rf.state = Candidate
 	rf.votedFor = rf.me
 	rf.currentTerm++
+	rf.persist()
 }

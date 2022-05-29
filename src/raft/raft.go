@@ -20,14 +20,28 @@ package raft
 import (
 	//	"bytes"
 
+	"bytes"
 	"fmt"
 	"sync"
 	"sync/atomic"
 	"time"
 
 	//	"6.824/labgob"
+	"6.824/labgob"
 	"6.824/labrpc"
 )
+
+type ApplyMsg struct {
+	CommandValid bool
+	Command      interface{}
+	CommandIndex int
+
+	// For 2D:
+	SnapshotValid bool
+	Snapshot      []byte
+	SnapshotTerm  int
+	SnapshotIndex int
+}
 
 //
 // as each Raft peer becomes aware that successive log entries are
@@ -40,17 +54,6 @@ import (
 // snapshots) on the applyCh, but set CommandValid to false for these
 // other uses.
 //
-type ApplyMsg struct {
-	CommandValid bool
-	Command      interface{}
-	CommandIndex int
-
-	// For 2D:
-	SnapshotValid bool
-	Snapshot      []byte
-	SnapshotTerm  int
-	SnapshotIndex int
-}
 
 //
 // A Go object implementing a single Raft peer.
@@ -88,6 +91,10 @@ type Raft struct {
 	// Volatile State for leaders
 	nextIndex  []int
 	matchIndex []int
+
+	// Snapshot
+	lastIncludedIndex int
+	lastIncludedTerm  int
 }
 
 func Make(peers []*labrpc.ClientEnd, me int,
@@ -132,6 +139,143 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	go rf.applier()
 	return rf
 }
+
+//
+// save Raft's persistent state to stable storage,
+// where it can later be retrieved after a crash and restart.
+// see paper's Figure 2 for a description of what should be persistent.
+//
+func (rf *Raft) persist() {
+	// Your code here (2C).
+	// Example:
+	// w := new(bytes.Buffer)
+	// e := labgob.NewEncoder(w)
+	// e.Encode(rf.xxx)
+	// e.Encode(rf.yyy)
+	// data := w.Bytes()
+	// rf.persister.SaveRaftState(data)
+	w := new(bytes.Buffer)
+	e := labgob.NewEncoder(w)
+	e.Encode(rf.currentTerm)
+	e.Encode(rf.votedFor)
+	e.Encode(rf.logs)
+	data := w.Bytes()
+	rf.persister.SaveRaftState(data)
+}
+
+//
+// restore previously persisted state.
+//
+func (rf *Raft) readPersist(data []byte) {
+	if data == nil || len(data) < 1 { // bootstrap without any state?
+		return
+	}
+	// Your code here (2C).
+	// Example:
+	// r := bytes.NewBuffer(data)
+	// d := labgob.NewDecoder(r)
+	// var xxx
+	// var yyy
+	// if d.Decode(&xxx) != nil ||
+	//    d.Decode(&yyy) != nil {
+	//   error...
+	// } else {
+	//   rf.xxx = xxx
+	//   rf.yyy = yyy
+	// }
+	r := bytes.NewBuffer(data)
+	d := labgob.NewDecoder(r)
+	var currentTerm int
+	var voteFor int
+	var logs []LogEntry
+	if d.Decode(&currentTerm) != nil || d.Decode(&voteFor) != nil || d.Decode(&logs) != nil {
+		Debug(dError, "{Error} During reading Persis")
+	} else {
+		// Debug(dPersist, "[S%v] Read Persist successfully", rf.me)
+		rf.currentTerm = currentTerm
+		rf.votedFor = voteFor
+		rf.logs = logs
+		Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
+		// Debug(dLog, "[S%d] log(Command) becomes: %q", rf.me, rf.GetCommandArray())
+	}
+}
+
+func (rf *Raft) Start(command interface{}) (int, int, bool) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	// index := -1
+	// term := -1
+	// isLeader := true
+
+	// Your code here (2B).
+	// 1. if rf is not leader: return false
+	if !rf.IsLeader() {
+		return -1, rf.GetTerm(), false
+	}
+
+	// 2. Otherwise
+	// (1) Add a new logEntry to rf.log
+	logEntry := rf.newLogEntry(command)
+	rf.AppendLogEntry(logEntry)
+	index, term := logEntry.Index, logEntry.Term
+	Debug(dLog, "[S%d] adds a new logEntry of {Term: %v}, {Command %v}\n", rf.me, rf.GetTerm(), command)
+	// Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
+	// Debug(dLog, "[S%d] log(Command) becomes: %q", rf.me, rf.GetCommandArray())
+	// (2) broadcast AppendEntry to each server
+	rf.persist()
+	rf.BroadcastLogReplication()
+
+	// (3) update index, term
+	return index, term, true
+}
+
+//
+// the service using Raft (e.g. a k/v server) wants to start
+// agreement on the next command to be appended to Raft's log. if this
+// server isn't the leader, returns false. otherwise start the
+// agreement and return immediately. there is no guarantee that this
+// command will ever be committed to the Raft log, since the leader
+// may fail or lose an election. even if the Raft instance has been killed,
+// this function should return gracefully.
+//
+// the first return value is the index that the command will appear at
+// if it's ever committed. the second return value is the current
+// term. the third return value is true if this server believes it is
+// the leader.
+//
+
+//
+// the tester doesn't halt goroutines created by Raft after each test,
+// but it does call the Kill() method. your code can use killed() to
+// check whether Kill() has been called. the use of atomic avoids the
+// need for a lock.
+//
+// the issue is that long-running goroutines use memory and may chew
+// up CPU time, perhaps causing later tests to fail and generating
+// confusing debug output. any goroutine with a long-running loop
+// should call killed() to check whether it should stop.
+//
+func (rf *Raft) Kill() {
+	atomic.StoreInt32(&rf.dead, 1)
+	// Your code here, if desired.
+}
+
+func (rf *Raft) killed() bool {
+	z := atomic.LoadInt32(&rf.dead)
+	return z == 1
+}
+
+//
+// the service or tester wants to create a Raft server. the ports
+// of all the Raft servers (including this one) are in peers[]. this
+// server's port is peers[me]. all the servers' peers[] arrays
+// have the same order. persister is a place for this server to
+// save its persistent state, and also initially holds the most
+// recent saved state, if any. applyCh is a channel on which the
+// tester or service expects Raft to send ApplyMsg messages.
+// Make() must return quickly, so it should start goroutines
+// for any long-running work.
+//
 
 // rf.me do not have any writing operation
 func (rf *Raft) IsLeader() bool {
@@ -222,6 +366,10 @@ func (rf *Raft) GetMatchIndex(peer int) int {
 	return rf.matchIndex[peer]
 }
 
+func (rf *Raft) GetLastIndex() int {
+	return len(rf.logs) - 1
+}
+
 func min(a, b int) int {
 	if a < b {
 		return a
@@ -252,165 +400,4 @@ func (rf *Raft) SetNextIndex(peer int, newNextIndex int) {
 
 func (rf *Raft) SetMatchIndex(peer int, newMatchIndex int) {
 	rf.matchIndex[peer] = newMatchIndex
-}
-
-//
-// save Raft's persistent state to stable storage,
-// where it can later be retrieved after a crash and restart.
-// see paper's Figure 2 for a description of what should be persistent.
-//
-func (rf *Raft) persist() {
-	// Your code here (2C).
-	// Example:
-	// w := new(bytes.Buffer)
-	// e := labgob.NewEncoder(w)
-	// e.Encode(rf.xxx)
-	// e.Encode(rf.yyy)
-	// data := w.Bytes()
-	// rf.persister.SaveRaftState(data)
-}
-
-//
-// restore previously persisted state.
-//
-func (rf *Raft) readPersist(data []byte) {
-	if data == nil || len(data) < 1 { // bootstrap without any state?
-		return
-	}
-	// Your code here (2C).
-	// Example:
-	// r := bytes.NewBuffer(data)
-	// d := labgob.NewDecoder(r)
-	// var xxx
-	// var yyy
-	// if d.Decode(&xxx) != nil ||
-	//    d.Decode(&yyy) != nil {
-	//   error...
-	// } else {
-	//   rf.xxx = xxx
-	//   rf.yyy = yyy
-	// }
-}
-
-//
-// A service wants to switch to snapshot.  Only do so if Raft hasn't
-// have more recent info since it communicate the snapshot on applyCh.
-//
-func (rf *Raft) CondInstallSnapshot(lastIncludedTerm int, lastIncludedIndex int, snapshot []byte) bool {
-
-	// Your code here (2D).
-
-	return true
-}
-
-// the service says it has created a snapshot that has
-// all info up to and including index. this means the
-// service no longer needs the log through (and including)
-// that index. Raft should now trim its log as much as possible.
-func (rf *Raft) Snapshot(index int, snapshot []byte) {
-	// Your code here (2D).
-
-}
-
-//
-// the service using Raft (e.g. a k/v server) wants to start
-// agreement on the next command to be appended to Raft's log. if this
-// server isn't the leader, returns false. otherwise start the
-// agreement and return immediately. there is no guarantee that this
-// command will ever be committed to the Raft log, since the leader
-// may fail or lose an election. even if the Raft instance has been killed,
-// this function should return gracefully.
-//
-// the first return value is the index that the command will appear at
-// if it's ever committed. the second return value is the current
-// term. the third return value is true if this server believes it is
-// the leader.
-//
-
-func (rf *Raft) Start(command interface{}) (int, int, bool) {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	// index := -1
-	// term := -1
-	// isLeader := true
-
-	// Your code here (2B).
-	// 1. if rf is not leader: return false
-	if !rf.IsLeader() {
-		return -1, rf.GetTerm(), false
-	}
-
-	// 2. Otherwise
-	// (1) Add a new logEntry to rf.log
-	logEntry := rf.newLogEntry(command)
-	rf.AppendLogEntry(logEntry)
-	index, term := logEntry.Index, logEntry.Term
-	Debug(dLog, "[S%d] adds a new logEntry of {Term: %v}, {Command %v}\n", rf.me, rf.GetTerm(), command)
-	Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
-	Debug(dLog, "[S%d] log(Command) becomes: %q", rf.me, rf.GetCommandArray())
-	// Debug(dLog, "index is %d", index)
-	// (2) broadcast AppendEntry to each server
-	rf.BroadcastLogReplication()
-
-	// (3) update index, term
-	return index, term, true
-}
-
-//
-// the tester doesn't halt goroutines created by Raft after each test,
-// but it does call the Kill() method. your code can use killed() to
-// check whether Kill() has been called. the use of atomic avoids the
-// need for a lock.
-//
-// the issue is that long-running goroutines use memory and may chew
-// up CPU time, perhaps causing later tests to fail and generating
-// confusing debug output. any goroutine with a long-running loop
-// should call killed() to check whether it should stop.
-//
-func (rf *Raft) Kill() {
-	atomic.StoreInt32(&rf.dead, 1)
-	// Your code here, if desired.
-}
-
-func (rf *Raft) killed() bool {
-	z := atomic.LoadInt32(&rf.dead)
-	return z == 1
-}
-
-//
-// the service or tester wants to create a Raft server. the ports
-// of all the Raft servers (including this one) are in peers[]. this
-// server's port is peers[me]. all the servers' peers[] arrays
-// have the same order. persister is a place for this server to
-// save its persistent state, and also initially holds the most
-// recent saved state, if any. applyCh is a channel on which the
-// tester or service expects Raft to send ApplyMsg messages.
-// Make() must return quickly, so it should start goroutines
-// for any long-running work.
-//
-
-func (rf *Raft) applier() {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-
-	rf.lastApplied = 0
-	// we do not apply first log entry, namely {Command:<nil>, Term:0}
-
-	for !rf.killed() {
-		if rf.lastApplied+1 <= rf.commitIndex &&
-			rf.lastApplied+1 <= rf.GetLastLogEntry().Index {
-			rf.lastApplied++
-			term, cmd, cmdIdx := rf.GetLogEntry(rf.lastApplied).Term, rf.GetLogEntry(rf.lastApplied).Command, rf.GetLogEntry(rf.lastApplied).Index
-			Debug(dLog, "[S%d] applies Log Entry [{Term: %v}{Command: %v}]", rf.me, term, cmd)
-			rf.mu.Unlock()
-			rf.applyCh <- ApplyMsg{
-				CommandValid: true,
-				Command:      cmd,
-				CommandIndex: cmdIdx,
-			}
-			rf.mu.Lock()
-		} else {
-			rf.applyCond.Wait()
-		}
-	}
 }
