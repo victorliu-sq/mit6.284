@@ -5,22 +5,9 @@ import (
 	"time"
 )
 
-const electionTickTime = 30 * time.Microsecond
-
-func GetRandomElectionTimeout() time.Duration {
-	min := 1000
-	max := 1300
-	return time.Duration((rand.Intn(max-min+1) + min)) * time.Millisecond
-}
-
 // *************************************************************************
-// Separate goroutine for Election
-
-func (rf *Raft) SetElectionTime() {
-	t := time.Now()
-	t = t.Add(GetRandomElectionTimeout())
-	rf.electionTime = t
-}
+// Election Ticker
+const electionTickTime = 30 * time.Microsecond
 
 func (rf *Raft) electionTick() {
 	rf.mu.Lock()
@@ -41,12 +28,21 @@ func (rf *Raft) electionTicker() {
 	}
 }
 
-// The ticker go routine starts a new election if this peer hasn't received
-// heartsbeats recently.
+func GetRandomElectionTimeout() time.Duration {
+	min := 1000
+	max := 1300
+	return time.Duration((rand.Intn(max-min+1) + min)) * time.Millisecond
+}
+
+func (rf *Raft) SetElectionTime() {
+	t := time.Now()
+	t = t.Add(GetRandomElectionTimeout())
+	rf.electionTime = t
+}
 
 func (rf *Raft) startElection() {
 	// 1. Conversion to Candidate
-	// (1) increment current Term (2) Vote for itself (3)Reset election timer
+	// (1) increment current Term (2) Vote for itself (3)Reset election timer (4) State = Candidate
 	rf.ConvertToCandidate()
 	rf.SetElectionTime()
 
@@ -66,13 +62,15 @@ func (rf *Raft) BroadcastRequestVote() {
 		// Debug(dRV, "[S%d] sends RequestVote -> [S%d]\n", rf.me, peer)
 		args := rf.newRVArgs()
 		reply := rf.newRVReply()
-		go rf.RequestVoteCandidate(&votes, peer, &args, &reply)
+		go rf.RequestVoteSender(&votes, peer, &args, &reply)
 	}
 }
 
-func (rf *Raft) RequestVoteCandidate(votes *int, peer int, args *RequestVoteArgs, reply *RequestVoteReply) {
+// *************************************************************************
+// RequestVote Sender
+
+func (rf *Raft) RequestVoteSender(votes *int, peer int, args *RequestVoteArgs, reply *RequestVoteReply) {
 	if !rf.sendRequestVote(peer, args, reply) {
-		// return
 		// Debug(dRV, "[S%v] gets No feedback of RV from [S%v]", rf.me, peer)
 		return
 	}
@@ -82,9 +80,6 @@ func (rf *Raft) RequestVoteCandidate(votes *int, peer int, args *RequestVoteArgs
 	if reply.Term > rf.GetTerm() {
 		rf.ConvertToFollower(reply.Term)
 		// rf.SetElectionTime()
-
-		// Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
-		// Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
 	}
 
 	if reply.VoteGranted {
@@ -95,16 +90,14 @@ func (rf *Raft) RequestVoteCandidate(votes *int, peer int, args *RequestVoteArgs
 			Debug(dLeader, "[S%d] becomes {Leader}\n", rf.me)
 			rf.ConvertToLeader()
 			// Upon election: send heartbeat to each server
-			rf.BroadcastHeartBeat()
+			rf.BroadcastAppendEntry(true)
 		}
 	}
 }
 
 // **************************************************************************
-// RequestVote
+// RequestVote Receiver
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
-	// Your code here (2A, 2B).
-	// receiver's implementation
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 
@@ -128,14 +121,11 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		// Debug(dRV, "[S%d] Got Vote <- [S%d]\n", args.CandidateId, rf.me)
 		reply.Term = rf.GetTerm()
 		reply.VoteGranted = true
-
-		// Debug(dTimer, "[S%d]'s Election Timer is Reset", rf.me)
 		rf.SetVoteFor(args.CandidateId)
 		rf.SetElectionTime()
 		rf.persist()
 	} else {
 		// Otherwise, reply false as 1.
-		// Debug(dRV, "Otherwise")
 		// Debug(dRV, "[S%d] refused Vote -> [S%d]", rf.me, args.CandidateId)
 		reply.Term = rf.GetTerm()
 		reply.VoteGranted = false
@@ -143,8 +133,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 }
 
 // *************************************************************************************
+// RequestVote Struct
 type RequestVoteArgs struct {
-	// Your data here (2A, 2B).
 	Term         int
 	CandidateId  int
 	LastLogIndex int
@@ -152,7 +142,6 @@ type RequestVoteArgs struct {
 }
 
 type RequestVoteReply struct {
-	// Your data here (2A).
 	Term        int
 	VoteGranted bool
 }

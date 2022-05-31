@@ -2,16 +2,9 @@ package raft
 
 import "time"
 
+// *************************************************************************
+// HeartBeat Ticker
 const heartBeatTickTime = 150 * time.Millisecond
-
-func (rf *Raft) heartBeatTick() {
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	if rf.IsLeader() {
-		rf.SetElectionTime()
-		rf.BroadcastHeartBeat()
-	}
-}
 
 func (rf *Raft) heartBeatTicker() {
 	for rf.killed() == false {
@@ -20,57 +13,68 @@ func (rf *Raft) heartBeatTicker() {
 	}
 }
 
-func (rf *Raft) BroadcastHeartBeat() {
-	for peer := range rf.peers {
-		if peer == rf.me {
-			continue
-		}
-		// Debug(dTimer, "[S%d] sends HeartBeat -> [S%d]\n", rf.me, peer)
-		args := rf.newAEArgs(peer)
-		reply := rf.newAEReply()
-		go rf.AppendEntryLeader(peer, &args, &reply)
+func (rf *Raft) heartBeatTick() {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	if rf.IsLeader() {
+		rf.SetElectionTime()
+		rf.BroadcastAppendEntry(true)
 	}
 }
 
-// Separate goroutine for LogReplication
-func (rf *Raft) BroadcastLogReplication() {
-	// log replication for each server
-	// Debug(dTimer, "[S%d] broadcasts Log Replication\n", rf.me)
+// *************************************************************************
+// Append a new Command
+func (rf *Raft) Start(command interface{}) (int, int, bool) {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+	// 1. if rf is not leader: return false
+	if !rf.IsLeader() {
+		return -1, rf.GetTerm(), false
+	}
+
+	// 2. Otherwise
+	// (1) Add a new logEntry to rf.log
+	logEntry := rf.newLogEntry(command)
+	rf.AppendLogEntry(logEntry)
+	index, term := logEntry.Index, logEntry.Term
+	// (2) broadcast AppendEntry to each server
+	rf.persist()
+	rf.BroadcastAppendEntry(false)
+
+	// (3) update index, term
+	return index, term, true
+}
+
+// *************************************************************************
+// Broadcast AppendEntry
+func (rf *Raft) BroadcastAppendEntry(isHeartBeat bool) {
 	for peer := range rf.peers {
 		if peer == rf.me {
 			continue
 		}
 
-		if rf.IsLeader() && (rf.GetNextIndex(peer) <= rf.GetLastIndex()) {
-			// Debug(dHB, "[S%v]'s log length is %v", rf.me, len(rf.logs))
+		if isHeartBeat || rf.GetNextIndex(peer) <= rf.GetLastIndex() {
 			args := rf.newAEArgs(peer)
 			reply := rf.newAEReply()
 
-			go rf.AppendEntryLeader(peer, &args, &reply)
+			go rf.AppendEntrySender(peer, &args, &reply)
 		}
 	}
 }
 
-func (rf *Raft) AppendEntryLeader(peer int, args *AppendEntryArgs, reply *AppendEntryReply) {
+// *************************************************************************
+// AppendEntry Sender
+func (rf *Raft) AppendEntrySender(peer int, args *AppendEntryArgs, reply *AppendEntryReply) {
 	if !rf.sendAppendEntry(peer, args, reply) {
 		return
-	}
-	if len(args.Entries) > 0 {
-		// Debug(dLog, "[S%v] sends AE to [S%v] with prevLogIndex: %d, prevLogTerm: %d", rf.me, peer, args.PrevLogIndex, args.PrevLogTerm)
 	}
 
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 
-	if !rf.IsLeader() || rf.GetTerm() != args.Term {
-		return
-	}
-
 	// Rule for all server
-	// Process Reply -- all server
 	if reply.Term > rf.GetTerm() {
 		rf.ConvertToFollower(reply.Term)
-		// rf.SetElectionTime()
 		Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
 		return
 	}
@@ -78,49 +82,42 @@ func (rf *Raft) AppendEntryLeader(peer int, args *AppendEntryArgs, reply *Append
 	// 3. Process Reply
 	rf.ProcessReply(peer, args, reply)
 
-	// 4. If there exists an N such that N > commitIndex, a majority of matchIOndex[i] >= N
-	// and log[N].term == currentTerm, set commitIndex = N
+	// 4. Advance commit index of leader
 	rf.AdvanceCommitIndexLeader()
-	// Debug(dLog, "[S%d](Leader)'s Commit Index is %d\n", rf.me, rf.GetCommitIndex())
+
+	// apply
 	rf.applyCond.Signal()
 }
 
 func (rf *Raft) ProcessReply(peer int, args *AppendEntryArgs, reply *AppendEntryReply) {
+	if !rf.IsLeader() || rf.GetTerm() != args.Term {
+		return
+	}
+
 	if reply.Success {
 		// contain and match
 		// Debug(dHB, "[S%v] gets AE reply from [S%v]: {contain AND match}", rf.me, peer)
 		newNext := args.PrevLogIndex + len(args.Entries) + 1
 		newMatch := args.PrevLogIndex + len(args.Entries)
 		if newNext > rf.GetNextIndex(peer) {
-			// Debug(dHB, "[S%v]'s nextIndex becomes %v", rf.me, args.PrevLogIndex+len(args.Entries)+1)
 			rf.SetNextIndex(peer, newNext)
-			// Debug(dTimer, "[S%d] changes nextIndex of [S%d] to %d\n", rf.me, peer, newMatch)
 		}
 
 		if newMatch > rf.GetMatchIndex(peer) {
 			rf.SetMatchIndex(peer, newMatch)
-			// Debug(dTimer, "[S%d] changes matchIndex of [S%d] to %d\n", rf.me, peer, newMatch)
 		}
 	} else if reply.XValid {
 		// (contain but mismatch)
-		if len(args.Entries) > 0 {
-			// Debug(dHB, "[S%v] gets AE reply from [S%v]: {contain BUT mismatch, XIndex: %v, XTerm: %v}", rf.me, peer, reply.XIndex, reply.XTerm)
-		}
 		oldNext := args.PrevLogIndex + 1
-		// newNext := rf.GetXIndexLeader(reply.XTerm, reply.XIndex)
 		newNext := reply.XIndex
 		// Debug(dHB, "[S%v]{Leader-mismatch}: oldNextIndex:%v, newNextIndex:%v, prevLogTerm:%v", rf.me, oldNext, newNext, args.PrevLogTerm)
-		// rf.SetNextIndex(peer, newNext)
-		// newNext := reply.XIndex
 		if newNext < oldNext {
 			rf.SetNextIndex(peer, newNext)
 		}
 	} else {
 		// not contain
 		// Debug(dHB, "[S%v] gets AE reply from [S%v]: {not contain} ", rf.me, peer)
-		// rf.SetNextIndex(peer, reply.XIndex)
 		newNext := reply.XIndex
-		// rf.SetNextIndex(peer, newNext)
 		if newNext < rf.GetNextIndex(peer) {
 			rf.SetNextIndex(peer, newNext)
 		}
@@ -134,25 +131,47 @@ func (rf *Raft) ProcessReply(peer int, args *AppendEntryArgs, reply *AppendEntry
 	}
 }
 
+func (rf *Raft) AdvanceCommitIndexLeader() {
+	// If there exists an N such that N > commitIndex, a majority of matchIndex[i] >= N
+	// and log[N].term == currentTerm, set commitIndex = N
+	if !rf.IsLeader() {
+		return
+	}
+
+	for N := rf.GetCommitIndex() + 1; N <= rf.GetLastIndex(); N++ {
+		if rf.GetLogEntry(N).Term == rf.GetTerm() {
+			num := 1
+			for peer := range rf.peers {
+				if peer != rf.me && rf.GetMatchIndex(peer) >= N {
+					num++
+					if num == rf.GetMajority() {
+						rf.SetCommitIndex(N)
+						break
+					}
+				}
+			}
+		}
+	}
+}
+
 // **************************************************************************
 // AppendEntry Receiver
 func (rf *Raft) AppendEntry(args *AppendEntryArgs, reply *AppendEntryReply) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-	// HeartBeat Msg
 	term := rf.GetTerm()
 	isLeader := rf.GetCurState() == Leader
+
+	// Rule for all server
 	if args.Term > rf.GetTerm() {
 		rf.ConvertToFollower(args.Term)
 	}
-	// Debug(dTimer, "[S%d]'s Election Timer is Reset", rf.me)
+
+	// HeartBeat Msg
 	rf.SetElectionTime()
 
 	// 1. Reply false if term < currentTerm
 	// No conflict
-	// if rf.me == 0 {
-	// Debug(dHB, "[S%v]'s curTerm is %v and it receives Command of term %v", rf.me, rf.currentTerm, args.Term)
-	// }
 	reply.Term = rf.GetTerm()
 	if args.Term < rf.GetTerm() {
 		reply.XValid = false
@@ -170,32 +189,22 @@ func (rf *Raft) AppendEntry(args *AppendEntryArgs, reply *AppendEntryReply) {
 	}
 
 	// 2.Rely false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm
-	// Discuss whether conflict
-	// Debug(dLog, "[S%v] receives prevLogIndex: %d, prevLogTerm: %d", rf.me, args.PrevLogIndex, args.PrevLogTerm)
-	// Debug(dLog, "[S%v] receives log Entry of length %v", rf.me, len(args.Entries))
-	if len(args.Entries) > 0 {
-		// Debug(dLog, "[S%d] receives log Entry(Term): %v", rf.me, GetTermArray(args.Entries))
-		// Debug(dLog, "[S%d] receives log Entry(Command): %v", rf.me, GetCommandArray(args.Entries))
-	}
 	if !rf.ContainAndMatch(args.PrevLogIndex, args.PrevLogTerm) {
 		reply.Success = false
 		if args.PrevLogIndex > rf.GetLastIndex() || args.PrevLogIndex < rf.GetFirstIndex() {
 			// not contain --> return length of logs
+			// lag logEntries due to crash or snapshot
 			reply.XValid = false
 			reply.XIndex = rf.GetLastIndex() + 1
-			// Debug(dHB, "[S%v] length is %v, does not contain an element at %v", rf.me, len(rf.logs), args.PrevLogIndex)
 		} else {
 			// contain but mismatch --> conflict
 			// 3. if an existing entry conflicts with a new one, delete the existing entry and all that follow it
-			// Snapshot
-
 			reply.XValid = true
 			Debug(dSnap, "[S%v]'s first index:%v, last index:%v", rf.me, rf.GetFirstIndex(), rf.GetLastIndex())
 			Debug(dSnap, "[S%v]'s PrevLogIndex is %v", rf.me, args.PrevLogIndex)
 			Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
 			reply.XTerm = rf.GetLogEntry(args.PrevLogIndex).Term
 			reply.XIndex = rf.GetXIndex(args.PrevLogIndex, reply.XTerm)
-			// Debug(dHB, "[S%v] replies XTerm:%v, XIndex:%v", rf.me, reply.XTerm, reply.XIndex)
 		}
 	} else {
 		// 4. Append any new entries not already in the log
@@ -203,23 +212,25 @@ func (rf *Raft) AppendEntry(args *AppendEntryArgs, reply *AppendEntryReply) {
 		reply.XValid = false
 		rf.AppendNewEntries(args.PrevLogIndex, args.Entries)
 		rf.persist()
-
 		// 5. Advance Commit Index for Follower
 		// If leaderCommit > commitIndex, set commitIndex = min(leaderCommit, index of last new entry)
-
 		rf.AdvanceCommitIndexFollower(args.LeaderCommit)
 		rf.applyCond.Signal()
-		if len(args.Entries) > 0 {
-			// Debug(dLog, "[S%d] log(Term) becomes: %v", rf.me, rf.GetTermArray())
-			// Debug(dLog, "S%d log(Command) becomes: %v", rf.me, rf.GetCommandArray())
-			// Debug(dLog, "[S%d](Follower)'s Commit Index is %d\n", rf.me, rf.GetCommitIndex())
+	}
+}
+
+func (rf *Raft) AppendNewEntries(prevLogIndex int, Entries []LogEntry) {
+	// find first logsEntry in Entries that (1) out of range (2) conflicts with Term of rf.logs[same idx]
+	for idx, logsEntry := range Entries {
+		if prevLogIndex+1+idx > rf.GetLastIndex() || rf.GetLogEntry(prevLogIndex+1+idx).Term != logsEntry.Term {
+			rf.logs = append(rf.logs[0:prevLogIndex+1+idx-rf.logStart], Entries[idx:]...)
+			break
 		}
 	}
 }
 
 func (rf *Raft) ContainAndMatch(prevLogIndex int, prevLogTerm int) bool {
-	if rf.GetFirstIndex() <= prevLogIndex &&
-		prevLogIndex <= rf.GetLastIndex() &&
+	if rf.GetFirstIndex() <= prevLogIndex && prevLogIndex <= rf.GetLastIndex() &&
 		prevLogTerm == rf.GetLogEntry(prevLogIndex).Term {
 		return true
 	} else {
@@ -228,38 +239,45 @@ func (rf *Raft) ContainAndMatch(prevLogIndex int, prevLogTerm int) bool {
 }
 
 func (rf *Raft) AdvanceCommitIndexFollower(LeaderCommit int) {
-	// Debug(dHB, "Leader CommitIndex:%v, [S%v]'s CommitIndex:%v ", LeaderCommit, rf.me, rf.GetCommitIndex())
 	if LeaderCommit > rf.GetCommitIndex() {
 		newCommitIndex := min(LeaderCommit, rf.GetLastIndex())
 		rf.SetCommitIndex(newCommitIndex)
-		// Debug(dLog, "[S%d](Follower)'s Commmit Index becomes %d", rf.me, newCommitIndex)
 	}
 }
 
-func (rf *Raft) AdvanceCommitIndexLeader() {
-	if !rf.IsLeader() {
-		return
+// *************************************************************************************
+// applier
+
+func (rf *Raft) applier() {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+
+	rf.lastApplied = 0
+	// we do not apply first log entry, namely {Command:<nil>, Term:0}
+	if rf.lastApplied < rf.logStart {
+		rf.lastApplied = rf.logStart
 	}
 
-	for N := rf.GetCommitIndex() + 1; N <= rf.GetLastIndex(); N++ {
-		if rf.GetLogEntry(N).Term == rf.GetTerm() {
-			num := 1
-			for peer := range rf.peers {
-				if peer != rf.me && rf.GetMatchIndex(peer) >= N {
-					// Debug(dLog, "[S%d] tries to increment Commit Index to %d, Checking [S%d]", rf.me, N, peer)
-					num++
-					if num == rf.GetMajority() {
-						rf.SetCommitIndex(N)
-						// Debug(dLog, "[S%d](Leader)'s Commmit Index becomes %d", rf.me, N)
-						break
-					}
-				}
+	for !rf.killed() {
+		if rf.lastApplied+1 <= rf.commitIndex &&
+			rf.lastApplied+1 <= rf.GetLastIndex() {
+			rf.lastApplied++
+			cmd, cmdIdx := rf.GetLogEntry(rf.lastApplied).Command, rf.GetLogEntry(rf.lastApplied).Index
+			rf.mu.Unlock()
+			rf.applyCh <- ApplyMsg{
+				CommandValid: true,
+				Command:      cmd,
+				CommandIndex: cmdIdx,
 			}
+			rf.mu.Lock()
+		} else {
+			rf.applyCond.Wait()
 		}
 	}
 }
 
 // *************************************************************************************
+// struct
 type AppendEntryArgs struct {
 	Term         int
 	LeaderID     int
@@ -279,9 +297,19 @@ type AppendEntryReply struct {
 	XIndex int  // index of first entry of Xterm
 }
 
+type ApplyMsg struct {
+	CommandValid bool
+	Command      interface{}
+	CommandIndex int
+
+	// For 2D:
+	SnapshotValid bool
+	Snapshot      []byte
+	SnapshotTerm  int
+	SnapshotIndex int
+}
+
 func (rf *Raft) newAEArgs(peer int) AppendEntryArgs {
-	// If prev leader's log is very long but most of log entries are not replicated
-	// Since nextIndex is optimistic, it can easily go out of range
 	next := rf.nextIndex[peer]
 
 	if next < rf.logStart+1 {
@@ -290,7 +318,6 @@ func (rf *Raft) newAEArgs(peer int) AppendEntryArgs {
 		next = rf.GetLastIndex() + 1
 	}
 
-	// Debug(dSnap, "[S%v]'s nextIndex of [S%v] is %v", rf.me, peer, next)
 	args := AppendEntryArgs{
 		Term:         rf.currentTerm,
 		LeaderID:     rf.me,
@@ -300,11 +327,6 @@ func (rf *Raft) newAEArgs(peer int) AppendEntryArgs {
 		LeaderCommit: rf.commitIndex,
 	}
 	copy(args.Entries, rf.GetSubarrayEnd(next))
-	// if len(args.Entries) == 0 {
-	// 	Debug(dLog, "HeartBeart Msg\n")
-	// } else {
-	// 	Debug(dLog, "Replication Msg\n")
-	// }
 	return args
 }
 

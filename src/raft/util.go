@@ -86,4 +86,10 @@ Debug(dLog, "S%d log(Term) becomes: %q", rf.me, rf.GetTermArray())
 
 Debug(dLog, "S%d log(Command) becomes: %q", rf.me, rf.GetCommandArray())
 
+Debug(dLog, "[S%d]{Leader} adds a new logEntry of {Term: %v}, {Command %v}\n", rf.me, rf.GetTerm(), command)
+
+Debug(dLog, "[S%d]{Leader} log(Term) becomes: %q", rf.me, rf.GetTermArray())
+
+Debug(dLog, "[S%d]{Leader} start is: %v", rf.me, rf.GetFirstIndex())
+
 */

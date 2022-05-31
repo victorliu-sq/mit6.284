@@ -18,13 +18,12 @@ func (rf *Raft) ConvertToFollower(newTerm int) {
 }
 
 func (rf *Raft) ConvertToLeader() {
-	// LastLogIndex := rf.GetLastIndex()
 	rf.state = Leader
 	// Reinitialize Volatile States for leader
 	for i, _ := range rf.peers {
 		rf.nextIndex[i] = rf.GetLastIndex() + 1
 		// Debug(dLog, "[S%d] nextIndex becomes %d", i, rf.nextIndex[i])
-		rf.matchIndex[i] = rf.logStart - 1
+		rf.matchIndex[i] = rf.logStart
 	}
 }
 
