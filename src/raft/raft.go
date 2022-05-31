@@ -20,14 +20,13 @@ package raft
 import (
 	//	"bytes"
 
-	"bytes"
 	"fmt"
 	"sync"
 	"sync/atomic"
 	"time"
 
 	//	"6.824/labgob"
-	"6.824/labgob"
+
 	"6.824/labrpc"
 )
 
@@ -74,6 +73,8 @@ type Raft struct {
 	votedFor    int
 	logs        []LogEntry
 
+	logStart int
+
 	// Volatile State
 	commitIndex int
 	lastApplied int
@@ -91,10 +92,6 @@ type Raft struct {
 	// Volatile State for leaders
 	nextIndex  []int
 	matchIndex []int
-
-	// Snapshot
-	lastIncludedIndex int
-	lastIncludedTerm  int
 }
 
 func Make(peers []*labrpc.ClientEnd, me int,
@@ -109,6 +106,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.votedFor = -1
 	rf.logs = make([]LogEntry, 1)
 
+	rf.logStart = 0
+
 	// Volatile States
 	rf.commitIndex = 0
 	rf.lastApplied = 0
@@ -122,6 +121,13 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		rf.nextIndex[i] = rf.GetLastLogEntry().Index + 1
 		rf.matchIndex[i] = 0
 	}
+
+	// Snapshot
+	// lastIncludedIndex = 0
+	// lastIncludedTerm = 0
+	// waitingSnapshot = nil
+	// waitingIndex = 0
+	// waitingTerm = 0
 
 	rf.electionTime = time.Now().Add(GetRandomElectionTimeout())
 	rf.electionTimer = *time.NewTicker(50 * time.Millisecond)
@@ -138,66 +144,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.applyCh = applyCh
 	go rf.applier()
 	return rf
-}
-
-//
-// save Raft's persistent state to stable storage,
-// where it can later be retrieved after a crash and restart.
-// see paper's Figure 2 for a description of what should be persistent.
-//
-func (rf *Raft) persist() {
-	// Your code here (2C).
-	// Example:
-	// w := new(bytes.Buffer)
-	// e := labgob.NewEncoder(w)
-	// e.Encode(rf.xxx)
-	// e.Encode(rf.yyy)
-	// data := w.Bytes()
-	// rf.persister.SaveRaftState(data)
-	w := new(bytes.Buffer)
-	e := labgob.NewEncoder(w)
-	e.Encode(rf.currentTerm)
-	e.Encode(rf.votedFor)
-	e.Encode(rf.logs)
-	data := w.Bytes()
-	rf.persister.SaveRaftState(data)
-}
-
-//
-// restore previously persisted state.
-//
-func (rf *Raft) readPersist(data []byte) {
-	if data == nil || len(data) < 1 { // bootstrap without any state?
-		return
-	}
-	// Your code here (2C).
-	// Example:
-	// r := bytes.NewBuffer(data)
-	// d := labgob.NewDecoder(r)
-	// var xxx
-	// var yyy
-	// if d.Decode(&xxx) != nil ||
-	//    d.Decode(&yyy) != nil {
-	//   error...
-	// } else {
-	//   rf.xxx = xxx
-	//   rf.yyy = yyy
-	// }
-	r := bytes.NewBuffer(data)
-	d := labgob.NewDecoder(r)
-	var currentTerm int
-	var voteFor int
-	var logs []LogEntry
-	if d.Decode(&currentTerm) != nil || d.Decode(&voteFor) != nil || d.Decode(&logs) != nil {
-		Debug(dError, "{Error} During reading Persis")
-	} else {
-		// Debug(dPersist, "[S%v] Read Persist successfully", rf.me)
-		rf.currentTerm = currentTerm
-		rf.votedFor = voteFor
-		rf.logs = logs
-		Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
-		// Debug(dLog, "[S%d] log(Command) becomes: %q", rf.me, rf.GetCommandArray())
-	}
 }
 
 func (rf *Raft) Start(command interface{}) (int, int, bool) {
@@ -218,8 +164,9 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	logEntry := rf.newLogEntry(command)
 	rf.AppendLogEntry(logEntry)
 	index, term := logEntry.Index, logEntry.Term
-	Debug(dLog, "[S%d] adds a new logEntry of {Term: %v}, {Command %v}\n", rf.me, rf.GetTerm(), command)
-	// Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
+	Debug(dLog, "[S%d]{Leader} adds a new logEntry of {Term: %v}, {Command %v}\n", rf.me, rf.GetTerm(), command)
+	Debug(dLog, "[S%d]{Leader} log(Term) becomes: %q", rf.me, rf.GetTermArray())
+	Debug(dLog, "[S%d]{Leader} start is: %v", rf.me, rf.GetFirstIndex())
 	// Debug(dLog, "[S%d] log(Command) becomes: %q", rf.me, rf.GetCommandArray())
 	// (2) broadcast AppendEntry to each server
 	rf.persist()
@@ -227,6 +174,37 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 
 	// (3) update index, term
 	return index, term, true
+}
+
+func (rf *Raft) applier() {
+	rf.mu.Lock()
+	defer rf.mu.Unlock()
+
+	rf.lastApplied = 0
+	// we do not apply first log entry, namely {Command:<nil>, Term:0}
+	if rf.lastApplied < rf.logStart {
+		rf.lastApplied = rf.logStart
+	}
+
+	for !rf.killed() {
+		if rf.lastApplied+1 <= rf.commitIndex &&
+			rf.lastApplied+1 <= rf.GetLastIndex() {
+			rf.lastApplied++
+			// term, cmd, cmdIdx := rf.GetLogEntry(rf.lastApplied).Term, rf.GetLogEntry(rf.lastApplied).Command, rf.GetLogEntry(rf.lastApplied).Index
+			// Debug(dLog, "[S%d] applies Log Entry [{Term: %v}{Command: %v}]", rf.me, term, cmd)
+
+			cmd, cmdIdx := rf.GetLogEntry(rf.lastApplied).Command, rf.GetLogEntry(rf.lastApplied).Index
+			rf.mu.Unlock()
+			rf.applyCh <- ApplyMsg{
+				CommandValid: true,
+				Command:      cmd,
+				CommandIndex: cmdIdx,
+			}
+			rf.mu.Lock()
+		} else {
+			rf.applyCond.Wait()
+		}
+	}
 }
 
 //
@@ -366,10 +344,6 @@ func (rf *Raft) GetMatchIndex(peer int) int {
 	return rf.matchIndex[peer]
 }
 
-func (rf *Raft) GetLastIndex() int {
-	return len(rf.logs) - 1
-}
-
 func min(a, b int) int {
 	if a < b {
 		return a
@@ -401,3 +375,11 @@ func (rf *Raft) SetNextIndex(peer int, newNextIndex int) {
 func (rf *Raft) SetMatchIndex(peer int, newMatchIndex int) {
 	rf.matchIndex[peer] = newMatchIndex
 }
+
+// func (rf *Raft) SetLastIncludedIndex(newLastIncludedIndex int) {
+// 	rf.lastIncludedIndex = newLastIncludedIndex
+// }
+
+// func (rf *Raft) SetLastIncludedTerm(newLastIncludedTerm int) {
+// 	rf.lastIncludedTerm = newLastIncludedTerm
+// }
