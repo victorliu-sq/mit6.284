@@ -8,7 +8,7 @@ import (
 	"6.824/labrpc"
 )
 
-const OpTime = 150 * time.Millisecond
+const OpTime = 50 * time.Millisecond
 
 type Clerk struct {
 	servers []*labrpc.ClientEnd
@@ -32,85 +32,125 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck.leaderId = 0
 	ck.clientId = nrand()
 	ck.sequenceId = 0
-	DPrintf("[ck %d] Hello!", ck.clientId)
+	// DPrintf("[ck %d] Hello!", ck.clientId)
 	return ck
 }
-
-//
-// fetch the current value for a key.
-// returns "" if the key does not exist.
-// keeps trying forever in the face of all other errors.
-//
-// you can send an RPC with code like this:
-// ok := ck.servers[i].Call("KVServer.Get", &args, &reply)
-//
-// the types of args and reply (including whether they are pointers)
-// must match the declared types of the RPC handler function's
-// arguments. and reply must be passed as a pointer.
-//
 
 func (ck *Clerk) Get(key string) string {
 	// You will have to modify this function.
 	args := ck.newGetArgs(key)
 	reply := ck.newGetReply()
-	DPrintf("[ck %d] Request [GET]", ck.clientId)
+	// DPrintf("[ck %d] Request [GET]", ck.clientId)
 	for {
 		ok := ck.servers[ck.leaderId].Call("KVServer.Get", &args, &reply)
-		if !ok || (ok && reply.Err == ErrWrongLeader) {
+		if reply.Err == Retry {
 			// not leader or not send successfully
 			ck.leaderId = (ck.leaderId + 1) % len(ck.servers)
-		} else if ok && reply.Err == ErrNoKey {
-			// no key
-			return ""
+			// not send successfully or time out --> retry
+			time.Sleep(OpTime)
 		} else if ok && reply.Err == OK {
-			// find key
 			return reply.Value
 		}
-		// not send successfully or time out --> retry
-		time.Sleep(OpTime)
 	}
 }
-
-//
-// shared by Put and Append.
-//
-// you can send an RPC with code like this:
-// ok := ck.servers[i].Call("KVServer.PutAppend", &args, &reply)
-//
-// the types of args and reply (including whether they are pointers)
-// must match the declared types of the RPC handler function's
-// arguments. and reply must be passed as a pointer.
-//
 
 func (ck *Clerk) PutAppend(key string, value string, op string) {
 	// You will have to modify this function.
 	ck.sequenceId++
 	args := ck.newPutAppendArgs(key, value, op, ck.sequenceId)
 	reply := ck.newPutAppendReply()
-	DPrintf("[ck %d] Request [%v]", ck.clientId, op)
+	// DPrintf("[ck %d] Request [%v]", ck.clientId, op)
 	for {
 		ok := ck.servers[ck.leaderId].Call("KVServer.PutAppend", &args, &reply)
-		if !ok || (ok && reply.Err == ErrWrongLeader) {
+		if reply.Err == Retry {
 			// not leader or not send successfully
 			ck.leaderId = (ck.leaderId + 1) % len(ck.servers)
-			// DPrintf("[ck %d] {kv%v} is not leader", ck.clientId, ck.leaderId)
-		} else if ok {
-			// DPrintf("[ck %d] has updated state with Request [%v]", ck.clientId, op)
-			// put / append successfully
+			// time out --> retry
+			// DPrintf("[ck %d] tries to send Request again", ck.clientId)
+			time.Sleep(OpTime)
+		} else if ok && reply.Err == OK {
 			return
 		}
-		// time out --> retry
-		DPrintf("[ck %d] tries to send Request again", ck.clientId)
-		time.Sleep(OpTime)
 	}
 }
-
-// ******************************************************************************
-// struct
-
 func (ck *Clerk) Put(key string, value string) {
 	ck.PutAppend(key, value, PUT)
 }
 func (ck *Clerk) Append(key string, value string) {
 	ck.PutAppend(key, value, APPEND)
+}
+
+// ******************************************************************************
+// struct
+
+const (
+	OK    = "OK"
+	Retry = "Retry"
+)
+
+const (
+	GET    = "GET"
+	PUT    = "PUT"
+	APPEND = "APPEND"
+)
+
+type OpType string
+
+type Err string
+
+type PutAppendArgs struct {
+	Key   string
+	Value string
+	Op    string // "Put" or "Append"
+	// You'll have to add definitions here.
+	// Field names must start with capital letters,
+	// otherwise RPC will break.
+	ClientId   int64
+	LeaderId   int
+	SequenceId int
+}
+
+type PutAppendReply struct {
+	Err Err
+}
+
+type GetArgs struct {
+	Key string
+	// You'll have to add definitions here.
+	SequenceId int
+	ClientID   int64
+}
+
+type GetReply struct {
+	Err   Err
+	Value string
+}
+
+func (ck *Clerk) newGetArgs(key string) GetArgs {
+	args := GetArgs{}
+	args.Key = key
+	args.ClientID = ck.clientId
+	return args
+}
+
+func (ck *Clerk) newGetReply() GetReply {
+	reply := GetReply{}
+	reply.Err = Retry
+	return reply
+}
+
+func (ck *Clerk) newPutAppendArgs(key string, value string, op string, sequenceId int) PutAppendArgs {
+	args := PutAppendArgs{}
+	args.Key = key
+	args.Value = value
+	args.ClientId = ck.clientId
+	args.SequenceId = sequenceId
+	args.Op = op
+	return args
+}
+
+func (ck *Clerk) newPutAppendReply() PutAppendReply {
+	reply := PutAppendReply{}
+	reply.Err = Retry
+	return reply
 }

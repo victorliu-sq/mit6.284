@@ -25,6 +25,7 @@ type KVServer struct {
 	state     map[string]string // key-value
 	maxSeqIds map[int64]int     // cid - maxSeqId --> duplicate or not
 	OpChans   map[int]chan Op   // logIndex - OpChan
+	persister *raft.Persister
 }
 
 //
@@ -59,6 +60,12 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 	kv.state = make(map[string]string)
 	kv.OpChans = make(map[int]chan Op)
 	kv.maxSeqIds = make(map[int64]int)
+
+	// DPrintf("max raft state is %v", maxraftstate)
+	kv.maxraftstate = maxraftstate
+	kv.persister = persister
+
+	kv.DecodeSnapshot(kv.persister.ReadSnapshot())
 	go kv.applier()
 	return kv
 }
@@ -66,20 +73,20 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 func (kv *KVServer) applier() {
 	for !kv.killed() {
 		applyMsg := <-kv.applyCh
-		if !applyMsg.CommandValid {
-			continue
+		if applyMsg.CommandValid {
+			// Command msg
+			// convert Command into Op type
+			op := applyMsg.Command.(Op)
+			kv.ProcessRaftReply(op)
+			index := applyMsg.CommandIndex
+			opChan := kv.putIfAbsent(index)
+			kv.TrySnapshot(applyMsg.CommandIndex)
+			// Try to snapshot
+			kv.sendOp(opChan, op)
+		} else {
+			// Snapshot msg
+			kv.DecodeSnapshot(applyMsg.Snapshot)
 		}
-		// convert Command into Op type
-		op := applyMsg.Command.(Op)
-		kv.ProcessReply(op)
-		index := applyMsg.CommandIndex
-		opChan := kv.putIfAbsent(index)
-		// opChan <- op
-		// select {
-		// case <-opChan:
-		// default:
-		// }
-		opChan <- op
 	}
 }
 
@@ -92,53 +99,57 @@ func (kv *KVServer) waitOp(opChan chan Op) Op {
 	}
 }
 
+func (kv *KVServer) sendOp(opChan chan Op, op Op) {
+	select {
+	case <-opChan:
+	default:
+	}
+	opChan <- op
+}
+
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 	// Your code here.
 	op := kv.newGetOp(*args)
 	// index, term
 	// set incorrect leader at first
-	reply.Err = ErrWrongLeader
 	index, _, isLeader := kv.rf.Start(op)
 	if !isLeader {
-		reply.Err = ErrWrongLeader
 		return
 	}
-	DPrintf("[kv %d] Request [GET]", kv.me)
+	// DPrintf("[kv %d] Request [GET]", kv.me)
 	// wait for Op from Opchan of [index]
 	opChan := kv.putIfAbsent(index)
 	newOp := kv.waitOp(opChan)
 	// kv.ProcessReply(newOp)
 	// DPrintf("[kv %d] with Request [GET] return the value", kv.me)
 	if isOpEqual(op, newOp) {
-		reply.Err = OK
 		kv.mu.Lock()
-		reply.Value = kv.state[newOp.Key]
+		reply.Value = kv.state[op.Key]
 		kv.mu.Unlock()
+		reply.Err = OK
 	}
 }
 
 func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
 	op := kv.newPutAppendOp(*args)
-	reply.Err = ErrWrongLeader
 	index, _, isLeader := kv.rf.Start(op)
-	DPrintf("[kv %d] receives Request [%v]", kv.me, op)
+	// DPrintf("[kv %d] receives Request [%v]", kv.me, op)
 	if !isLeader {
-		reply.Err = ErrWrongLeader
 		return
 	}
-	DPrintf("[kv %d] Request [%v]", kv.me, op)
+	// DPrintf("[kv %d] Request [%v]", kv.me, op)
 	opChan := kv.putIfAbsent(index)
 	newOp := kv.waitOp(opChan)
 	// kv.ProcessReply(newOp)
 	// DPrintf("[kv %d] with Request [%v] has updated its state", kv.me, op)
 	if isOpEqual(op, newOp) {
 		reply.Err = OK
-		DPrintf("[kv %d] key %v 's value becomes %v", kv.me, op.Key, op.Value)
+		// DPrintf("[kv %d] key %v 's value becomes %v", kv.me, op.Key, op.Value)
 	}
 }
 
-func (kv *KVServer) ProcessReply(op Op) {
+func (kv *KVServer) ProcessRaftReply(op Op) {
 	// if seqId of op <= maxSeqId of client
 	// duplicate op --> ignore
 
@@ -149,13 +160,15 @@ func (kv *KVServer) ProcessReply(op Op) {
 	defer kv.mu.Unlock()
 	maxSeqId, found := kv.maxSeqIds[op.ClientId]
 	if !found || op.SequenceId > maxSeqId {
-		kv.maxSeqIds[op.ClientId] = op.SequenceId
+		// not duplicate
 		switch op.OpType {
 		case PUT:
 			kv.state[op.Key] = op.Value
 		case APPEND:
 			kv.state[op.Key] += op.Value
 		}
+		// update max seqId at last!!
+		kv.maxSeqIds[op.ClientId] = op.SequenceId
 	}
 }
 
