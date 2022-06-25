@@ -131,7 +131,6 @@ func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
 }
 
 func (kv *KVServer) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
-	// Your code here.
 	op := kv.newPutAppendOp(*args)
 	index, _, isLeader := kv.rf.Start(op)
 	// DPrintf("[kv %d] receives Request [%v]", kv.me, op)
