@@ -46,8 +46,8 @@ func (rf *Raft) startElection() {
 	rf.ConvertToCandidate()
 	rf.SetElectionTime()
 
-	Debug(dTerm, "[S%d] becomes {Candidate}", rf.me)
-	Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
+	// Debug(dTerm, "[S%d] becomes {Candidate}", rf.me)
+	// Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
 	// (4) Send RequestVote RPCs to all other servers
 	rf.BroadcastRequestVote()
 }
@@ -87,7 +87,7 @@ func (rf *Raft) RequestVoteSender(votes *int, peer int, args *RequestVoteArgs, r
 		(*votes)++
 		// Debug(dLeader, "[S%d] get (%d) votes now\n", rf.me, *votes)
 		if *votes == rf.GetMajority() {
-			Debug(dLeader, "[S%d] becomes {Leader}\n", rf.me)
+			Debug(dLeader, "[S%v] becomes {Leader}\n", rf.me)
 			rf.ConvertToLeader()
 			// Upon election: send heartbeat to each server
 			rf.BroadcastAppendEntry(true)
@@ -105,7 +105,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Try to update Term and state after communication BUT only reset timer if vote granted
 	if args.Term > rf.GetTerm() {
 		rf.ConvertToFollower(args.Term)
-		Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
+		// Debug(dTerm, "[S%d] becomes {Follower}", rf.me)
 		// Debug(dTerm, "[S%d] currentTerm -> (%d)", rf.me, rf.GetTerm())
 	}
 

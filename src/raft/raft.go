@@ -46,6 +46,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.heartBeatTimer = *time.NewTicker(50 * time.Millisecond)
 
 	// initialize from state persisted before a crash
+	Debug(dSnap, "[S%v] restores", rf.me)
 	rf.readPersist(persister.ReadRaftState())
 
 	// start separate goroutines

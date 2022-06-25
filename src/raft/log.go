@@ -7,13 +7,6 @@ type LogEntry struct {
 	Term    int
 }
 
-func (rf *Raft) CutStart(numTrimmed int) {
-	// cut nums up to index
-	Debug(dSnap, "length of log is %v, new start is %v", len(rf.logs), numTrimmed)
-	rf.logs = append([]LogEntry(nil), rf.logs[numTrimmed:]...)
-	rf.logStart += numTrimmed
-}
-
 func (rf *Raft) GetFirstIndex() int {
 	return rf.logStart
 }

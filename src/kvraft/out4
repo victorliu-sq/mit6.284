@@ -1,0 +1,4777 @@
+000002 [S0] restores
+000007 [S1] restores
+000010 [S2] restores
+000012 [S3] restores
+000015 [S4] restores
+000017 [S5] restores
+000020 [S6] restores
+Test: unreliable net, restarts, partitions, snapshots, random keys, many clients (3B) ...
+labgob warning: Decoding into a non-default variable/field Err may not work
+021290 [S0] becomes {Leader}
+021339 [S0]'s commit Index is 0
+021469 [S0]'s commit Index is 0
+021500 [S0]'s commit Index is 0
+021559 [S0]'s commit Index is 0
+021912 [S0]'s commit Index is 0
+021928 [S0]'s commit Index is 0
+021952 [S0]'s commit Index is 0
+022013 [S0]'s commit Index is 0
+022119 [S0]'s commit Index is 1
+022185 [S0]'s commit Index is 1
+022254 [S0]'s commit Index is 2
+022385 [S0]'s commit Index is 2
+022468 [S0]'s commit Index is 3
+022471 [S0]'s commit Index is 3
+022480 [S0]'s commit Index is 3
+022495 [S0]'s commit Index is 4
+022518 [S0]'s commit Index is 4
+022538 [S0]'s commit Index is 4
+022550 [S0]'s commit Index is 4
+022567 [S0]'s commit Index is 4
+022573 [S0]'s commit Index is 6
+022598 [S0]'s commit Index is 6
+022605 [S0]'s commit Index is 6
+022618 [S0]'s commit Index is 7
+022621 [S0]'s commit Index is 7
+022638 [S0]'s commit Index is 7
+022642 [S0]'s commit Index is 7
+022661 [S0]'s commit Index is 7
+022689 [S0]'s commit Index is 7
+022711 [S0]'s commit Index is 7
+022758 [S0]'s commit Index is 7
+022765 [S0]'s commit Index is 7
+022796 [S0]'s commit Index is 8
+022845 [S0]'s commit Index is 8
+022885 [S0]'s commit Index is 8
+022907 [S0]'s commit Index is 8
+022909 [S0]'s commit Index is 8
+022912 [S0]'s commit Index is 11
+022915 [S0]'s commit Index is 11
+023007 [S0]'s commit Index is 11
+023025 [S0]'s commit Index is 11
+023056 [S0]'s commit Index is 11
+023060 [S0]'s commit Index is 11
+023111 [S0]'s commit Index is 11
+023142 [S0]'s commit Index is 11
+023161 [S0]'s commit Index is 11
+023219 [S0]'s commit Index is 12
+023222 [S0]'s commit Index is 12
+023227 [S0]'s commit Index is 12
+023240 [S0]'s commit Index is 12
+023270 [S0]'s commit Index is 12
+023273 [S0]'s commit Index is 13
+023301 [S0]'s commit Index is 13
+023319 [S0]'s commit Index is 13
+023331 [S0]'s commit Index is 14
+023400 [S0]'s commit Index is 14
+023410 [S0]'s commit Index is 14
+023469 [S0]'s commit Index is 15
+023472 [S0]'s commit Index is 15
+023469 [S3]{Leader}, old start is 0, length of log is 19, new start is 15
+023469 [S2]{Leader}, old start is 0, length of log is 19, new start is 14
+023510 [S0]'s commit Index is 15
+023513 [S0]{Leader}, old start is 0, length of log is 19, new start is 16
+023510 [S4]{Leader}, old start is 0, length of log is 19, new start is 14
+023516 [S0]{Leader}, old start is 16, length of log is 3, new start is 17
+023609 [S0]'s commit Index is 18
+023613 [S0]'s commit Index is 18
+023650 [S0]'s commit Index is 18
+023651 [S1]{Leader}, old start is 0, length of log is 19, new start is 14
+023680 [S0]'s commit Index is 18
+023690 [S0]'s commit Index is 18
+023704 [S0]'s commit Index is 18
+023713 [S0]'s commit Index is 18
+023719 [S0]'s commit Index is 21
+023730 [S0]'s commit Index is 21
+023743 [S0]'s commit Index is 21
+023760 [S0]'s commit Index is 22
+023782 [S0]'s commit Index is 22
+023805 [S0]'s commit Index is 22
+023810 [S0]'s commit Index is 22
+023859 [S0]'s commit Index is 23
+023864 [S0]'s commit Index is 23
+023871 [S0]'s commit Index is 23
+023873 [S0]'s commit Index is 23
+023875 [S0]'s commit Index is 24
+023883 [S0]'s commit Index is 24
+023892 [S0]'s commit Index is 24
+023895 [S0]'s commit Index is 25
+023900 [S0]'s commit Index is 25
+023903 [S0]'s commit Index is 25
+023905 [S0]'s commit Index is 25
+023908 [S0]'s commit Index is 26
+023921 [S0]'s commit Index is 26
+023925 [S0]'s commit Index is 26
+023952 [S0]'s commit Index is 26
+023954 [S0]'s commit Index is 26
+023957 [S0]'s commit Index is 26
+024005 [S1]{Leader}, old start is 14, length of log is 16, new start is 25
+024007 [S0]'s commit Index is 26
+024017 [S0]'s commit Index is 27
+024022 [S0]'s commit Index is 27
+024024 [S0]'s commit Index is 27
+024033 [S2]{Leader}, old start is 14, length of log is 16, new start is 25
+024033 [S0]'s commit Index is 27
+024052 [S0]'s commit Index is 28
+024060 [S0]'s commit Index is 28
+024062 [S4]{Leader}, old start is 14, length of log is 17, new start is 26
+024063 [S0]'s commit Index is 28
+024073 [S0]'s commit Index is 29
+024083 [S0]'s commit Index is 30
+024086 [S0]'s commit Index is 30
+024091 [S0]'s commit Index is 30
+024091 [S3]{Leader}, old start is 15, length of log is 16, new start is 26
+024100 [S0]'s commit Index is 30
+024112 [S0]'s commit Index is 30
+024114 [S0]'s commit Index is 30
+024116 [S0]'s commit Index is 30
+024118 [S0]'s commit Index is 30
+024132 [S0]'s commit Index is 30
+024134 [S0]'s commit Index is 30
+024142 [S0]'s commit Index is 30
+024166 [S0]'s commit Index is 30
+024193 [S0]'s commit Index is 30
+024215 [S0]'s commit Index is 30
+024219 [S0]{Leader}, old start is 17, length of log is 18, new start is 31
+024223 [S0]{Leader}, old start is 31, length of log is 4, new start is 32
+024233 [S0]'s commit Index is 33
+024251 [S0]'s commit Index is 33
+024254 [S0]'s commit Index is 33
+024257 [S0]'s commit Index is 34
+024266 [S0]'s commit Index is 34
+024284 [S0]'s commit Index is 34
+024289 [S0]'s commit Index is 34
+024296 [S0]'s commit Index is 34
+024300 [S0]'s commit Index is 34
+024327 [S0]'s commit Index is 34
+024359 [S0]'s commit Index is 34
+024368 [S0]'s commit Index is 34
+024378 [S0]'s commit Index is 36
+024380 [S0]'s commit Index is 36
+024384 [S0]'s commit Index is 38
+024392 [S0]'s commit Index is 38
+024410 [S0]'s commit Index is 38
+024428 [S0]'s commit Index is 38
+024431 [S0]'s commit Index is 38
+024439 [S0]'s commit Index is 40
+024449 [S0]'s commit Index is 40
+024473 [S0]'s commit Index is 40
+024478 [S0]'s commit Index is 40
+024480 [S0]'s commit Index is 40
+024488 [S0]'s commit Index is 40
+024500 [S0]'s commit Index is 40
+024503 [S0]'s commit Index is 40
+024506 [S0]'s commit Index is 40
+024509 [S0]'s commit Index is 40
+024529 [S0]'s commit Index is 40
+024533 [S0]'s commit Index is 40
+024530 [S3]{Leader}, old start is 26, length of log is 18, new start is 36
+024532 [S1]{Leader}, old start is 25, length of log is 17, new start is 35
+024542 [S1]{Leader}, old start is 35, length of log is 7, new start is 36
+024547 [S0]'s commit Index is 40
+024551 [S2]{Leader}, old start is 25, length of log is 17, new start is 36
+024551 [S0]'s commit Index is 40
+024559 [S0]'s commit Index is 40
+024622 [S0]'s commit Index is 40
+024667 [S0]'s commit Index is 41
+024679 [S0]'s commit Index is 41
+024679 [S4]{Leader}, old start is 26, length of log is 18, new start is 36
+024700 [S0]'s commit Index is 43
+024706 [S0]'s commit Index is 43
+024709 [S0]'s commit Index is 43
+024732 [S0]'s commit Index is 43
+024742 [S0]'s commit Index is 44
+024748 [S0]'s commit Index is 45
+024753 [S0]'s commit Index is 45
+024770 [S0]'s commit Index is 45
+024839 [S0]'s commit Index is 45
+024843 [S0]'s commit Index is 45
+024845 [S0]'s commit Index is 45
+024847 [S0]'s commit Index is 45
+024849 [S0]'s commit Index is 45
+024852 [S0]'s commit Index is 45
+024891 [S0]'s commit Index is 45
+024894 [S0]{Leader}, old start is 32, length of log is 18, new start is 46
+024898 [S0]{Leader}, old start is 46, length of log is 4, new start is 47
+024942 [S0]'s commit Index is 47
+024976 [S0]'s commit Index is 48
+024980 [S0]'s commit Index is 48
+024998 [S0]'s commit Index is 48
+025004 [S0]'s commit Index is 48
+025042 [S0]'s commit Index is 48
+025046 [S0]'s commit Index is 48
+025073 [S0]'s commit Index is 49
+025093 [S0]'s commit Index is 49
+025094 [S4]{Leader}, old start is 36, length of log is 18, new start is 47
+025096 [S0]'s commit Index is 49
+025105 [S0]'s commit Index is 49
+025105 [S2]{Leader}, old start is 36, length of log is 17, new start is 46
+025110 [S2]{Leader}, old start is 46, length of log is 7, new start is 47
+025152 [S0]'s commit Index is 52
+025165 [S0]'s commit Index is 52
+025175 [S0]'s commit Index is 53
+025193 [S0]'s commit Index is 53
+025211 [S0]'s commit Index is 53
+025223 [S0]'s commit Index is 53
+025233 [S0]'s commit Index is 53
+025236 [S0]'s commit Index is 53
+025266 [S0]'s commit Index is 53
+025270 [S0]'s commit Index is 54
+025273 [S0]'s commit Index is 54
+025266 [S3]{Leader}, old start is 36, length of log is 19, new start is 50
+025267 [S1]{Leader}, old start is 36, length of log is 19, new start is 49
+025280 [S1]{Leader}, old start is 49, length of log is 6, new start is 50
+025325 [S0]'s commit Index is 54
+025328 [S0]'s commit Index is 54
+025371 [S0]'s commit Index is 55
+025392 [S0]'s commit Index is 56
+025394 [S0]'s commit Index is 56
+025404 [S0]'s commit Index is 56
+025459 [S0]'s commit Index is 56
+025485 [S0]'s commit Index is 57
+025507 [S0]'s commit Index is 57
+025659 [S0]'s commit Index is 57
+025686 [S0]'s commit Index is 57
+025721 [S0]'s commit Index is 57
+025723 [S0]'s commit Index is 57
+025742 [S0]'s commit Index is 57
+025750 [S0]'s commit Index is 57
+025780 [S0]'s commit Index is 58
+025792 [S0]'s commit Index is 58
+025794 [S0]'s commit Index is 58
+025807 [S0]'s commit Index is 58
+025848 [S0]'s commit Index is 58
+025860 [S0]'s commit Index is 59
+025888 [S0]'s commit Index is 59
+025969 [S0]'s commit Index is 60
+025990 [S0]'s commit Index is 60
+026058 [S0]'s commit Index is 61
+026058 [S4]{Leader}, old start is 47, length of log is 17, new start is 61
+026062 [S0]'s commit Index is 61
+026069 [S0]'s commit Index is 61
+026079 [S0]'s commit Index is 61
+026099 [S0]'s commit Index is 61
+026121 [S0]'s commit Index is 61
+026124 [S0]{Leader}, old start is 47, length of log is 18, new start is 62
+026162 [S2]{Leader}, old start is 47, length of log is 16, new start is 60
+026165 [S2]{Leader}, old start is 60, length of log is 3, new start is 61
+026162 [S0]'s commit Index is 62
+026209 [S0]'s commit Index is 62
+026250 [S0]'s commit Index is 62
+026278 [S0]'s commit Index is 64
+026340 [S0]'s commit Index is 64
+026501 [S0]'s commit Index is 64
+026562 [S0]'s commit Index is 64
+026563 [S1]{Leader}, old start is 50, length of log is 16, new start is 63
+027057 [S0]'s commit Index is 64
+027064 [S0]'s commit Index is 64
+027625 [S0]'s commit Index is 64
+027695 [S0]'s commit Index is 64
+027696 [S3]{Leader}, old start is 50, length of log is 17, new start is 62
+027701 [S3]{Leader}, old start is 62, length of log is 5, new start is 63
+027844 [S0]'s commit Index is 65
+027963 [S0]'s commit Index is 65
+028083 [S0]'s commit Index is 65
+028241 [S0]'s commit Index is 67
+028272 [S0]'s commit Index is 67
+028404 [S0]'s commit Index is 67
+028474 [S0]'s commit Index is 68
+028504 [S0]'s commit Index is 68
+028506 [S0]'s commit Index is 69
+028524 [S0]'s commit Index is 69
+028534 [S0]'s commit Index is 69
+028581 [S0]'s commit Index is 70
+028584 [S0]'s commit Index is 70
+028619 [S0]'s commit Index is 70
+028646 [S0]'s commit Index is 70
+028651 [S0]'s commit Index is 70
+028653 [S0]'s commit Index is 71
+028655 [S0]'s commit Index is 71
+028661 [S0]'s commit Index is 71
+028682 [S0]'s commit Index is 71
+028691 [S0]'s commit Index is 72
+028705 [S0]'s commit Index is 72
+028729 [S0]'s commit Index is 72
+028754 [S0]'s commit Index is 73
+028782 [S0]'s commit Index is 73
+028791 [S0]'s commit Index is 73
+028794 [S0]'s commit Index is 73
+028797 [S0]'s commit Index is 73
+028800 [S0]{Leader}, old start is 62, length of log is 16, new start is 74
+028801 [S4]{Leader}, old start is 61, length of log is 16, new start is 73
+028804 [S0]'s commit Index is 74
+028809 [S0]'s commit Index is 74
+028811 [S0]'s commit Index is 74
+028817 [S0]'s commit Index is 74
+028819 [S0]'s commit Index is 76
+028856 [S0]'s commit Index is 76
+028859 [S0]'s commit Index is 76
+028861 [S0]'s commit Index is 76
+028865 [S0]'s commit Index is 76
+028877 [S0]'s commit Index is 76
+028878 [S3]{Leader}, old start is 63, length of log is 17, new start is 74
+028882 [S3]{Leader}, old start is 74, length of log is 6, new start is 75
+028897 [S0]'s commit Index is 77
+028968 [S1]{Leader}, old start is 63, length of log is 17, new start is 75
+028968 [S0]'s commit Index is 77
+028997 [S0]'s commit Index is 79
+028998 [S2]{Leader}, old start is 61, length of log is 19, new start is 74
+029002 [S2]{Leader}, old start is 74, length of log is 6, new start is 75
+029010 [S0]'s commit Index is 79
+029018 [S0]'s commit Index is 79
+029025 [S0]'s commit Index is 79
+029034 [S0]'s commit Index is 80
+029049 [S0]'s commit Index is 80
+029059 [S0]'s commit Index is 80
+029067 [S0]'s commit Index is 80
+029074 [S0]'s commit Index is 80
+029079 [S0]'s commit Index is 81
+029081 [S0]'s commit Index is 81
+029086 [S0]'s commit Index is 81
+029106 [S0]'s commit Index is 81
+029139 [S0]'s commit Index is 81
+029155 [S0]'s commit Index is 82
+029168 [S0]'s commit Index is 82
+029170 [S0]'s commit Index is 83
+029180 [S0]'s commit Index is 83
+029228 [S0]'s commit Index is 83
+029269 [S0]'s commit Index is 84
+029275 [S0]'s commit Index is 84
+029299 [S0]'s commit Index is 84
+029315 [S0]'s commit Index is 84
+029318 [S0]'s commit Index is 84
+029320 [S0]'s commit Index is 86
+029323 [S0]'s commit Index is 86
+029399 [S0]'s commit Index is 86
+029402 [S0]{Leader}, old start is 74, length of log is 17, new start is 87
+029429 [S0]'s commit Index is 87
+029449 [S0]'s commit Index is 88
+029458 [S0]'s commit Index is 88
+029459 [S1]{Leader}, old start is 75, length of log is 16, new start is 86
+029465 [S0]'s commit Index is 88
+029469 [S0]'s commit Index is 88
+029469 [S3]{Leader}, old start is 75, length of log is 16, new start is 85
+029473 [S3]{Leader}, old start is 85, length of log is 6, new start is 86
+029474 [S0]'s commit Index is 89
+029514 [S0]'s commit Index is 89
+029555 [S0]'s commit Index is 89
+029563 [S0]'s commit Index is 89
+029566 [S0]'s commit Index is 89
+029587 [S0]'s commit Index is 89
+029589 [S4]{Leader}, old start is 73, length of log is 18, new start is 86
+029588 [S2]{Leader}, old start is 75, length of log is 18, new start is 88
+029590 [S0]'s commit Index is 91
+029604 [S0]'s commit Index is 91
+029615 [S0]'s commit Index is 91
+029618 [S0]'s commit Index is 92
+029675 [S0]'s commit Index is 92
+029687 [S0]'s commit Index is 92
+029707 [S0]'s commit Index is 92
+029709 [S0]'s commit Index is 92
+029717 [S0]'s commit Index is 92
+029737 [S0]'s commit Index is 92
+029740 [S0]'s commit Index is 92
+029746 [S0]'s commit Index is 96
+029748 [S0]'s commit Index is 96
+029770 [S0]'s commit Index is 96
+029777 [S0]'s commit Index is 96
+029780 [S0]'s commit Index is 96
+029801 [S0]'s commit Index is 96
+029805 [S0]'s commit Index is 96
+029811 [S0]'s commit Index is 96
+029832 [S0]'s commit Index is 96
+029837 [S0]'s commit Index is 96
+029840 [S0]'s commit Index is 96
+029856 [S0]'s commit Index is 96
+029860 [S0]'s commit Index is 96
+029868 [S0]'s commit Index is 96
+029887 [S0]'s commit Index is 96
+029891 [S0]'s commit Index is 97
+029901 [S0]'s commit Index is 98
+029930 [S0]'s commit Index is 98
+029937 [S0]'s commit Index is 99
+029952 [S0]'s commit Index is 99
+029952 [S3]{Leader}, old start is 86, length of log is 16, new start is 94
+029969 [S0]'s commit Index is 99
+029971 [S0]'s commit Index is 99
+029971 [S1]{Leader}, old start is 86, length of log is 16, new start is 97
+029976 [S1]{Leader}, old start is 97, length of log is 5, new start is 98
+029980 [S4]{Leader}, old start is 86, length of log is 18, new start is 98
+029980 [S0]'s commit Index is 99
+029990 [S0]'s commit Index is 99
+029998 [S0]'s commit Index is 99
+030002 [S0]'s commit Index is 99
+030004 [S0]{Leader}, old start is 87, length of log is 18, new start is 100
+030006 [S0]{Leader}, old start is 100, length of log is 5, new start is 101
+030017 [S0]'s commit Index is 101
+030048 [S0]'s commit Index is 101
+030058 [S0]'s commit Index is 101
+030100 [S0]'s commit Index is 101
+030129 [S0]'s commit Index is 102
+030138 [S0]'s commit Index is 102
+030141 [S0]'s commit Index is 102
+030149 [S0]'s commit Index is 103
+030170 [S0]'s commit Index is 103
+030170 [S2]{Leader}, old start is 88, length of log is 19, new start is 100
+030174 [S2]{Leader}, old start is 100, length of log is 7, new start is 101
+030180 [S0]'s commit Index is 103
+030221 [S0]'s commit Index is 103
+030240 [S0]'s commit Index is 106
+030249 [S0]'s commit Index is 106
+030256 [S0]'s commit Index is 106
+030264 [S0]'s commit Index is 106
+030300 [S0]'s commit Index is 106
+030317 [S0]'s commit Index is 106
+030340 [S0]'s commit Index is 107
+030342 [S0]'s commit Index is 107
+030347 [S0]'s commit Index is 107
+030351 [S0]'s commit Index is 108
+030353 [S0]'s commit Index is 108
+030420 [S0]'s commit Index is 108
+030437 [S0]'s commit Index is 108
+030526 [S0]'s commit Index is 108
+030534 [S0]'s commit Index is 108
+030557 [S0]'s commit Index is 108
+030557 [S3]{Leader}, old start is 94, length of log is 16, new start is 107
+030562 [S0]'s commit Index is 109
+030565 [S3]{Leader}, old start is 107, length of log is 3, new start is 108
+030571 [S0]'s commit Index is 109
+030608 [S0]'s commit Index is 109
+030611 [S0]'s commit Index is 109
+030622 [S0]'s commit Index is 110
+030630 [S0]'s commit Index is 111
+030650 [S0]'s commit Index is 111
+030666 [S0]'s commit Index is 111
+030682 [S0]'s commit Index is 111
+030686 [S0]'s commit Index is 112
+030721 [S0]'s commit Index is 112
+030725 [S0]'s commit Index is 112
+030743 [S1]{Leader}, old start is 98, length of log is 16, new start is 109
+030746 [S1]{Leader}, old start is 109, length of log is 5, new start is 110
+030743 [S0]'s commit Index is 112
+030762 [S0]'s commit Index is 113
+030762 [S4]{Leader}, old start is 98, length of log is 16, new start is 110
+030828 [S0]'s commit Index is 113
+030847 [S0]'s commit Index is 113
+030868 [S0]'s commit Index is 113
+030871 [S0]'s commit Index is 114
+030874 [S0]{Leader}, old start is 101, length of log is 18, new start is 114
+030882 [S0]'s commit Index is 114
+030883 [S0]'s commit Index is 114
+030882 [S2]{Leader}, old start is 101, length of log is 19, new start is 114
+030924 [S0]'s commit Index is 117
+030944 [S0]'s commit Index is 117
+030956 [S0]'s commit Index is 119
+030961 [S0]'s commit Index is 119
+030975 [S0]'s commit Index is 119
+031012 [S0]'s commit Index is 119
+031020 [S0]'s commit Index is 119
+031046 [S0]'s commit Index is 119
+031049 [S0]'s commit Index is 119
+031065 [S0]'s commit Index is 119
+031068 [S0]'s commit Index is 120
+031078 [S0]'s commit Index is 120
+031081 [S0]'s commit Index is 120
+031112 [S0]'s commit Index is 120
+031143 [S0]'s commit Index is 120
+031186 [S3]{Leader}, old start is 108, length of log is 17, new start is 118
+031186 [S0]'s commit Index is 120
+031190 [S3]{Leader}, old start is 118, length of log is 7, new start is 119
+031226 [S0]'s commit Index is 120
+031232 [S0]'s commit Index is 120
+031255 [S0]'s commit Index is 120
+031255 [S4]{Leader}, old start is 110, length of log is 16, new start is 118
+031261 [S4]{Leader}, old start is 118, length of log is 8, new start is 119
+031272 [S0]'s commit Index is 120
+031276 [S0]'s commit Index is 123
+031278 [S0]'s commit Index is 123
+031286 [S0]'s commit Index is 123
+031305 [S0]'s commit Index is 123
+031308 [S0]'s commit Index is 125
+031362 [S0]'s commit Index is 125
+031364 [S0]'s commit Index is 126
+031378 [S0]'s commit Index is 126
+031402 [S0]'s commit Index is 126
+031412 [S0]'s commit Index is 126
+031426 [S0]'s commit Index is 126
+031492 [S0]'s commit Index is 126
+031492 [S2]{Leader}, old start is 114, length of log is 16, new start is 126
+031523 [S0]'s commit Index is 126
+031528 [S0]{Leader}, old start is 114, length of log is 17, new start is 127
+031581 [S0]'s commit Index is 127
+031598 [S0]'s commit Index is 127
+031639 [S0]'s commit Index is 127
+031651 [S0]'s commit Index is 127
+031658 [S0]'s commit Index is 129
+031678 [S0]'s commit Index is 129
+031686 [S0]'s commit Index is 130
+031699 [S0]'s commit Index is 130
+031717 [S0]'s commit Index is 130
+031728 [S0]'s commit Index is 130
+031877 [S0]'s commit Index is 130
+031940 [S0]'s commit Index is 130
+031992 [S0]'s commit Index is 130
+032003 [S0]'s commit Index is 130
+032007 [S0]'s commit Index is 130
+032012 [S0]'s commit Index is 132
+032014 [S0]'s commit Index is 132
+032053 [S0]'s commit Index is 132
+032185 [S3]{Leader}, old start is 119, length of log is 17, new start is 132
+032187 [S0]'s commit Index is 133
+032205 [S0]'s commit Index is 133
+032207 [S4]{Leader}, old start is 119, length of log is 17, new start is 131
+032213 [S4]{Leader}, old start is 131, length of log is 5, new start is 132
+032245 [S0]'s commit Index is 133
+032284 [S0]'s commit Index is 133
+032348 [S0]'s commit Index is 133
+032396 [S0]'s commit Index is 133
+032400 [S0]'s commit Index is 134
+032439 [S0]'s commit Index is 134
+032493 [S0]'s commit Index is 136
+032547 [S0]'s commit Index is 136
+032551 [S0]'s commit Index is 136
+032571 [S0]'s commit Index is 136
+032588 [S0]'s commit Index is 136
+032620 [S0]'s commit Index is 136
+032669 [S0]'s commit Index is 136
+032704 [S0]'s commit Index is 139
+032710 [S0]'s commit Index is 139
+032729 [S0]'s commit Index is 139
+032740 [S0]'s commit Index is 139
+032742 [S0]'s commit Index is 140
+032773 [S0]'s commit Index is 140
+032803 [S2]{Leader}, old start is 126, length of log is 17, new start is 137
+032807 [S2]{Leader}, old start is 137, length of log is 6, new start is 138
+032804 [S0]'s commit Index is 140
+032901 [S0]'s commit Index is 140
+032950 [S0]'s commit Index is 140
+033020 [S0]'s commit Index is 140
+033024 [S0]{Leader}, old start is 127, length of log is 18, new start is 141
+033026 [S0]{Leader}, old start is 141, length of log is 4, new start is 142
+033090 [S0]'s commit Index is 142
+033101 [S0]'s commit Index is 143
+033117 [S0]'s commit Index is 143
+033129 [S0]'s commit Index is 143
+033258 [S0]'s commit Index is 144
+033298 [S0]'s commit Index is 144
+033337 [S0]'s commit Index is 144
+033340 [S0]'s commit Index is 144
+033360 [S0]'s commit Index is 144
+033390 [S0]'s commit Index is 145
+033409 [S0]'s commit Index is 145
+033412 [S0]'s commit Index is 145
+033449 [S0]'s commit Index is 146
+033449 [S4]{Leader}, old start is 132, length of log is 19, new start is 145
+033454 [S4]{Leader}, old start is 145, length of log is 6, new start is 146
+033451 [S0]'s commit Index is 147
+033470 [S0]'s commit Index is 147
+033489 [S0]'s commit Index is 147
+033509 [S0]'s commit Index is 147
+033510 [S3]{Leader}, old start is 132, length of log is 18, new start is 145
+033560 [S0]'s commit Index is 147
+033567 [S0]'s commit Index is 150
+033590 [S0]'s commit Index is 150
+033639 [S0]'s commit Index is 150
+033669 [S0]'s commit Index is 150
+033718 [S0]'s commit Index is 150
+033721 [S0]'s commit Index is 150
+033748 [S0]'s commit Index is 150
+033762 [S0]'s commit Index is 151
+033770 [S0]'s commit Index is 151
+033814 [S0]'s commit Index is 153
+033817 [S0]'s commit Index is 153
+033840 [S0]'s commit Index is 153
+033859 [S0]'s commit Index is 154
+033911 [S0]'s commit Index is 154
+033912 [S2]{Leader}, old start is 138, length of log is 19, new start is 151
+033917 [S2]{Leader}, old start is 151, length of log is 6, new start is 152
+033956 [S0]'s commit Index is 154
+033958 [S0]'s commit Index is 155
+033961 [S0]{Leader}, old start is 142, length of log is 16, new start is 155
+033999 [S0]'s commit Index is 155
+034018 [S0]'s commit Index is 155
+034022 [S0]'s commit Index is 156
+034028 [S0]'s commit Index is 156
+034138 [S0]'s commit Index is 157
+034182 [S0]'s commit Index is 158
+034213 [S0]'s commit Index is 158
+034243 [S0]'s commit Index is 158
+034307 [S0]'s commit Index is 159
+034379 [S0]'s commit Index is 159
+034388 [S0]'s commit Index is 159
+034388 [S3]{Leader}, old start is 145, length of log is 17, new start is 158
+034412 [S0]'s commit Index is 160
+034414 [S0]'s commit Index is 160
+034428 [S0]'s commit Index is 160
+034428 [S4]{Leader}, old start is 146, length of log is 17, new start is 159
+034438 [S0]'s commit Index is 161
+034523 [S0]'s commit Index is 161
+034537 [S0]'s commit Index is 162
+034548 [S0]'s commit Index is 162
+034554 [S0]'s commit Index is 162
+034638 [S0]'s commit Index is 164
+034644 [S0]'s commit Index is 164
+034646 [S0]'s commit Index is 164
+034655 [S0]'s commit Index is 164
+034664 [S0]'s commit Index is 164
+034729 [S0]'s commit Index is 164
+034749 [S0]'s commit Index is 164
+034786 [S0]'s commit Index is 164
+034839 [S0]'s commit Index is 164
+034847 [S0]'s commit Index is 165
+034905 [S0]'s commit Index is 165
+034945 [S0]'s commit Index is 165
+035104 [S0]'s commit Index is 167
+035105 [S2]{Leader}, old start is 152, length of log is 17, new start is 165
+035133 [S0]'s commit Index is 167
+035157 [S0]'s commit Index is 167
+035188 [S0]'s commit Index is 168
+035228 [S0]'s commit Index is 168
+035308 [S0]'s commit Index is 169
+035331 [S0]'s commit Index is 169
+035494 [S0]'s commit Index is 169
+035515 [S0]'s commit Index is 169
+035538 [S0]'s commit Index is 169
+035541 [S0]{Leader}, old start is 155, length of log is 18, new start is 170
+035608 [S0]'s commit Index is 170
+035820 [S0]'s commit Index is 171
+035889 [S0]'s commit Index is 171
+035980 [S0]'s commit Index is 171
+036002 [S0]'s commit Index is 173
+036070 [S0]'s commit Index is 173
+036071 [S3]{Leader}, old start is 158, length of log is 19, new start is 173
+036080 [S0]'s commit Index is 173
+036092 [S0]'s commit Index is 173
+036111 [S0]'s commit Index is 173
+036144 [S0]'s commit Index is 175
+036160 [S0]'s commit Index is 175
+036169 [S4]{Leader}, old start is 159, length of log is 18, new start is 172
+036172 [S4]{Leader}, old start is 172, length of log is 5, new start is 173
+036209 [S0]'s commit Index is 175
+036221 [S0]'s commit Index is 175
+036241 [S0]'s commit Index is 175
+036261 [S0]'s commit Index is 176
+036280 [S0]'s commit Index is 176
+036337 [S0]'s commit Index is 177
+036348 [S0]'s commit Index is 177
+036430 [S0]'s commit Index is 177
+036433 [S0]'s commit Index is 178
+036509 [S0]'s commit Index is 178
+036510 [S2]{Leader}, old start is 165, length of log is 17, new start is 177
+036521 [S0]'s commit Index is 178
+036529 [S0]'s commit Index is 178
+036541 [S0]'s commit Index is 178
+036561 [S0]'s commit Index is 178
+036660 [S0]'s commit Index is 180
+036690 [S0]'s commit Index is 181
+036749 [S0]'s commit Index is 181
+036759 [S0]'s commit Index is 182
+036799 [S0]'s commit Index is 182
+036801 [S0]'s commit Index is 183
+036804 [S0]{Leader}, old start is 170, length of log is 17, new start is 183
+036809 [S0]'s commit Index is 183
+036858 [S0]'s commit Index is 184
+036868 [S0]'s commit Index is 184
+036903 [S0]'s commit Index is 184
+036950 [S0]'s commit Index is 184
+036978 [S0]'s commit Index is 184
+037044 [S0]'s commit Index is 186
+037048 [S0]'s commit Index is 186
+037045 [S4]{Leader}, old start is 173, length of log is 15, new start is 184
+037100 [S0]'s commit Index is 186
+037150 [S0]'s commit Index is 186
+037150 [S3]{Leader}, old start is 173, length of log is 16, new start is 184
+037232 [S0]'s commit Index is 187
+037299 [S0]'s commit Index is 187
+037349 [S0]'s commit Index is 187
+037369 [S0]'s commit Index is 188
+037419 [S0]'s commit Index is 189
+037430 [S0]'s commit Index is 189
+037510 [S0]'s commit Index is 189
+037538 [S0]'s commit Index is 190
+037541 [S0]'s commit Index is 191
+037539 [S2]{Leader}, old start is 177, length of log is 16, new start is 188
+037547 [S0]'s commit Index is 192
+037559 [S0]'s commit Index is 192
+037579 [S0]'s commit Index is 192
+037581 [S0]'s commit Index is 192
+037584 [S0]'s commit Index is 195
+037602 [S0]'s commit Index is 195
+037610 [S0]'s commit Index is 195
+037617 [S0]'s commit Index is 195
+037619 [S0]'s commit Index is 195
+037637 [S0]'s commit Index is 195
+037647 [S0]'s commit Index is 195
+037658 [S0]'s commit Index is 195
+037662 [S0]'s commit Index is 195
+037681 [S0]'s commit Index is 195
+037717 [S0]'s commit Index is 195
+037722 [S0]'s commit Index is 195
+037740 [S0]'s commit Index is 195
+037743 [S0]{Leader}, old start is 183, length of log is 17, new start is 196
+037760 [S0]'s commit Index is 196
+037782 [S0]'s commit Index is 196
+037821 [S0]'s commit Index is 196
+037881 [S0]'s commit Index is 198
+037881 [S3]{Leader}, old start is 184, length of log is 17, new start is 196
+037883 [S0]'s commit Index is 199
+037913 [S0]'s commit Index is 199
+037933 [S0]'s commit Index is 199
+037990 [S0]'s commit Index is 199
+037993 [S0]'s commit Index is 199
+037996 [S0]'s commit Index is 200
+037991 [S4]{Leader}, old start is 184, length of log is 17, new start is 196
+038006 [S0]'s commit Index is 200
+038015 [S0]'s commit Index is 200
+038065 [S0]'s commit Index is 201
+038074 [S0]'s commit Index is 202
+038074 [S2]{Leader}, old start is 188, length of log is 17, new start is 200
+038101 [S0]'s commit Index is 202
+038103 [S0]'s commit Index is 202
+038182 [S0]'s commit Index is 202
+038212 [S0]'s commit Index is 202
+038234 [S0]'s commit Index is 203
+038269 [S0]'s commit Index is 203
+038284 [S0]'s commit Index is 203
+038290 [S0]'s commit Index is 205
+038299 [S0]'s commit Index is 205
+038324 [S0]'s commit Index is 206
+038382 [S0]'s commit Index is 206
+038386 [S0]'s commit Index is 206
+038413 [S0]'s commit Index is 206
+038417 [S0]'s commit Index is 206
+038464 [S0]'s commit Index is 206
+038468 [S0]'s commit Index is 206
+038484 [S0]'s commit Index is 206
+038571 [S0]'s commit Index is 207
+038575 [S0]'s commit Index is 208
+038578 [S0]{Leader}, old start is 196, length of log is 17, new start is 208
+038581 [S0]{Leader}, old start is 208, length of log is 5, new start is 209
+038603 [S4]{Leader}, old start is 196, length of log is 17, new start is 207
+038608 [S0]'s commit Index is 209
+038611 [S0]'s commit Index is 210
+038622 [S0]'s commit Index is 210
+038645 [S0]'s commit Index is 210
+038708 [S0]'s commit Index is 210
+038723 [S0]'s commit Index is 211
+038724 [S3]{Leader}, old start is 196, length of log is 17, new start is 207
+038726 [S0]'s commit Index is 211
+038781 [S0]'s commit Index is 211
+038891 [S0]'s commit Index is 211
+038900 [S0]'s commit Index is 212
+038902 [S0]'s commit Index is 213
+038909 [S2]{Leader}, old start is 200, length of log is 18, new start is 211
+038909 [S0]'s commit Index is 213
+038959 [S0]'s commit Index is 213
+038971 [S0]'s commit Index is 214
+039023 [S0]'s commit Index is 214
+039038 [S0]'s commit Index is 215
+039059 [S0]'s commit Index is 215
+039063 [S0]'s commit Index is 217
+039081 [S0]'s commit Index is 217
+039084 [S0]'s commit Index is 217
+039100 [S0]'s commit Index is 217
+039102 [S0]'s commit Index is 217
+039105 [S0]'s commit Index is 217
+039107 [S0]'s commit Index is 218
+039123 [S0]'s commit Index is 218
+039192 [S0]'s commit Index is 218
+039193 [S4]{Leader}, old start is 207, length of log is 17, new start is 216
+039208 [S0]'s commit Index is 220
+039211 [S0]'s commit Index is 220
+039213 [S0]'s commit Index is 220
+039231 [S0]'s commit Index is 220
+039234 [S0]'s commit Index is 220
+039243 [S0]'s commit Index is 220
+039246 [S0]{Leader}, old start is 209, length of log is 16, new start is 221
+039249 [S0]{Leader}, old start is 221, length of log is 4, new start is 222
+039252 [S0]'s commit Index is 222
+039258 [S0]'s commit Index is 222
+039310 [S0]'s commit Index is 222
+039312 [S0]'s commit Index is 222
+039323 [S0]'s commit Index is 222
+039324 [S3]{Leader}, old start is 207, length of log is 18, new start is 218
+039328 [S3]{Leader}, old start is 218, length of log is 7, new start is 219
+039343 [S0]'s commit Index is 223
+039372 [S0]'s commit Index is 223
+039403 [S0]'s commit Index is 223
+039422 [S0]'s commit Index is 223
+039425 [S0]'s commit Index is 224
+039433 [S0]'s commit Index is 225
+039493 [S0]'s commit Index is 225
+039513 [S0]'s commit Index is 225
+039534 [S0]'s commit Index is 225
+039553 [S0]'s commit Index is 225
+039554 [S2]{Leader}, old start is 211, length of log is 18, new start is 225
+039555 [S0]'s commit Index is 225
+039581 [S0]'s commit Index is 225
+039593 [S0]'s commit Index is 228
+039602 [S0]'s commit Index is 228
+039610 [S0]'s commit Index is 228
+039663 [S0]'s commit Index is 228
+039722 [S0]'s commit Index is 228
+039734 [S0]'s commit Index is 228
+039752 [S0]'s commit Index is 228
+039790 [S0]'s commit Index is 228
+039827 [S0]'s commit Index is 229
+039830 [S0]'s commit Index is 229
+039840 [S0]'s commit Index is 229
+039840 [S4]{Leader}, old start is 216, length of log is 17, new start is 226
+039845 [S4]{Leader}, old start is 226, length of log is 7, new start is 227
+039874 [S0]'s commit Index is 232
+039884 [S0]'s commit Index is 232
+039895 [S0]'s commit Index is 232
+039897 [S0]'s commit Index is 232
+039938 [S0]'s commit Index is 232
+039961 [S3]{Leader}, old start is 219, length of log is 17, new start is 229
+039961 [S0]'s commit Index is 232
+039966 [S0]{Leader}, old start is 222, length of log is 15, new start is 233
+039987 [S0]'s commit Index is 233
+040001 [S0]'s commit Index is 233
+040041 [S0]'s commit Index is 233
+040043 [S0]'s commit Index is 235
+040071 [S0]'s commit Index is 235
+040090 [S0]'s commit Index is 235
+040092 [S0]'s commit Index is 235
+040101 [S0]'s commit Index is 236
+040102 [S2]{Leader}, old start is 225, length of log is 15, new start is 234
+040113 [S0]'s commit Index is 236
+040133 [S0]'s commit Index is 236
+040136 [S0]'s commit Index is 236
+040138 [S0]'s commit Index is 238
+040153 [S0]'s commit Index is 238
+040155 [S0]'s commit Index is 238
+040192 [S0]'s commit Index is 238
+040237 [S0]'s commit Index is 238
+040241 [S0]'s commit Index is 238
+040261 [S0]'s commit Index is 238
+040266 [S0]'s commit Index is 238
+040322 [S0]'s commit Index is 238
+040347 [S0]'s commit Index is 241
+040360 [S0]'s commit Index is 241
+040363 [S0]'s commit Index is 241
+040373 [S0]'s commit Index is 241
+040398 [S0]'s commit Index is 241
+040410 [S0]'s commit Index is 241
+040452 [S0]'s commit Index is 241
+040452 [S4]{Leader}, old start is 227, length of log is 18, new start is 239
+040457 [S4]{Leader}, old start is 239, length of log is 6, new start is 240
+040656 [S0]'s commit Index is 241
+040676 [S0]'s commit Index is 241
+040676 [S3]{Leader}, old start is 229, length of log is 16, new start is 239
+040681 [S3]{Leader}, old start is 239, length of log is 6, new start is 240
+040812 [S0]'s commit Index is 244
+040821 [S0]'s commit Index is 244
+040947 [S0]'s commit Index is 244
+041008 [S0]'s commit Index is 244
+041046 [S0]'s commit Index is 244
+041049 [S0]{Leader}, old start is 233, length of log is 15, new start is 245
+041076 [S0]'s commit Index is 245
+041097 [S0]'s commit Index is 246
+041250 [S0]'s commit Index is 246
+041337 [S2]{Leader}, old start is 234, length of log is 15, new start is 245
+041341 [S2]{Leader}, old start is 245, length of log is 4, new start is 246
+067382 [S0] becomes {Leader}
+067408 [S0]'s commit Index is 247
+067419 [S0]'s commit Index is 247
+067439 [S0]'s commit Index is 247
+067541 [S6]{Leader}, old start is 245, length of log is 1, new start is 245
+067572 [S1]{Leader}, old start is 245, length of log is 1, new start is 245
+067579 [S0]'s commit Index is 247
+067592 [S0]'s commit Index is 247
+067623 [S0]'s commit Index is 247
+067642 [S0]'s commit Index is 247
+067723 [S0]'s commit Index is 247
+067783 [S0]'s commit Index is 247
+067796 [S5]{Leader}, old start is 245, length of log is 1, new start is 245
+068090 [S0]'s commit Index is 247
+068100 [S0]'s commit Index is 247
+068191 [S0]'s commit Index is 247
+068209 [S0]'s commit Index is 251
+068240 [S0]'s commit Index is 251
+068243 [S0]'s commit Index is 251
+068277 [S0]'s commit Index is 251
+068297 [S0]'s commit Index is 251
+068300 [S0]'s commit Index is 251
+068336 [S0]'s commit Index is 252
+068348 [S0]'s commit Index is 252
+068350 [S0]'s commit Index is 252
+068359 [S0]'s commit Index is 252
+068367 [S0]'s commit Index is 252
+068379 [S0]'s commit Index is 253
+068385 [S0]'s commit Index is 253
+068397 [S0]'s commit Index is 254
+068408 [S0]'s commit Index is 254
+068411 [S0]'s commit Index is 254
+068420 [S0]'s commit Index is 254
+068429 [S0]'s commit Index is 254
+068770 [S0]'s commit Index is 254
+068801 [S0]'s commit Index is 254
+068830 [S0]'s commit Index is 254
+068840 [S0]'s commit Index is 255
+068840 [S3]{Leader}, old start is 240, length of log is 16, new start is 249
+068961 [S0]'s commit Index is 255
+068962 [S4]{Leader}, old start is 240, length of log is 16, new start is 249
+069134 [S0]'s commit Index is 255
+069205 [S0]'s commit Index is 255
+069225 [S0]'s commit Index is 255
+069295 [S0]'s commit Index is 255
+069304 [S0]'s commit Index is 255
+069314 [S0]'s commit Index is 255
+069325 [S0]'s commit Index is 255
+069375 [S0]'s commit Index is 255
+069445 [S0]'s commit Index is 256
+069455 [S0]'s commit Index is 256
+069474 [S0]'s commit Index is 256
+069969 [S0]'s commit Index is 256
+069979 [S0]'s commit Index is 256
+070079 [S0]'s commit Index is 256
+070119 [S0]'s commit Index is 257
+070129 [S0]'s commit Index is 257
+070212 [S0]'s commit Index is 257
+070708 [S0]'s commit Index is 257
+070718 [S0]'s commit Index is 257
+070766 [S0]'s commit Index is 257
+070808 [S0]'s commit Index is 257
+070810 [S0]'s commit Index is 258
+070814 [S0]{Leader}, old start is 245, length of log is 15, new start is 258
+070816 [S0]'s commit Index is 258
+070818 [S0]'s commit Index is 258
+070828 [S0]'s commit Index is 258
+070839 [S0]'s commit Index is 258
+070899 [S0]'s commit Index is 259
+070908 [S0]'s commit Index is 259
+071140 [S1]{Leader}, old start is 245, length of log is 16, new start is 259
+071192 [S0]'s commit Index is 259
+071192 [S6]{Leader}, old start is 245, length of log is 16, new start is 258
+071198 [S6]{Leader}, old start is 258, length of log is 3, new start is 259
+071273 [S0]'s commit Index is 259
+071281 [S0]'s commit Index is 259
+071284 [S0]'s commit Index is 260
+071282 [S5]{Leader}, old start is 245, length of log is 16, new start is 259
+071282 [S2]{Leader}, old start is 246, length of log is 15, new start is 258
+071294 [S2]{Leader}, old start is 258, length of log is 3, new start is 259
+071361 [S0]'s commit Index is 260
+071425 [S0]'s commit Index is 260
+071480 [S0]'s commit Index is 260
+081815 [S0] restores
+081820 [S0] log(Term) becomes: "[8 8 8 8]"
+081826 [S1] restores
+081829 [S1] log(Term) becomes: "[8 8 8]"
+081832 [S2] restores
+081834 [S2] log(Term) becomes: "[8 8 8]"
+081838 [S3] restores
+081841 [S3] log(Term) becomes: "[2 2 8 8 8 8 8 8 8 8 8 8 8]"
+081846 [S4] restores
+081848 [S4] log(Term) becomes: "[2 2 8 8 8 8 8 8 8 8 8 8 8]"
+081851 [S5] restores
+081854 [S5] log(Term) becomes: "[8 8 8]"
+081858 [S6] restores
+081862 [S6] log(Term) becomes: "[8 8 8]"
+092047 [S3] becomes {Leader}
+092203 [S3]'s commit Index is 249
+092224 [S3]'s commit Index is 249
+092233 [S3]'s commit Index is 249
+092245 [S3]'s commit Index is 249
+092263 [S3]'s commit Index is 249
+092376 [S3]'s commit Index is 249
+092386 [S3]'s commit Index is 249
+092391 [S3]'s commit Index is 249
+092506 [S3]'s commit Index is 249
+092557 [S3]'s commit Index is 249
+092824 [S3]'s commit Index is 249
+092976 [S3]'s commit Index is 249
+092985 [S3]'s commit Index is 249
+093016 [S3]'s commit Index is 262
+093045 [S4]{Leader}, old start is 249, length of log is 15, new start is 250
+093048 [S4]{Leader}, old start is 250, length of log is 14, new start is 251
+093104 [S3]'s commit Index is 262
+093107 [S3]'s commit Index is 262
+093114 [S3]'s commit Index is 262
+093117 [S3]{Leader}, old start is 249, length of log is 15, new start is 263
+093124 [S3]'s commit Index is 263
+093236 [S3]'s commit Index is 263
+093809 [S3]'s commit Index is 263
+093830 [S3]'s commit Index is 263
+093861 [S3]'s commit Index is 263
+093890 [S3]'s commit Index is 264
+093912 [S3]'s commit Index is 264
+094024 [S3]'s commit Index is 264
+094029 [S3]'s commit Index is 264
+094032 [S3]'s commit Index is 264
+094062 [S3]'s commit Index is 264
+094676 [S3]'s commit Index is 264
+094804 [S3]'s commit Index is 264
+094804 [S4]{Leader}, old start is 251, length of log is 15, new start is 264
+094825 [S3]'s commit Index is 264
+094864 [S3]'s commit Index is 265
+095379 [S3]'s commit Index is 265
+095437 [S3]'s commit Index is 265
+095468 [S3]'s commit Index is 265
+095508 [S3]'s commit Index is 265
+095540 [S3]'s commit Index is 265
+096859 [S3]'s commit Index is 265
+096870 [S3]'s commit Index is 265
+096881 [S3]'s commit Index is 265
+096910 [S3]'s commit Index is 265
+096980 [S3]'s commit Index is 265
+097081 [S3]'s commit Index is 265
+097654 [S3]'s commit Index is 265
+097662 [S3]'s commit Index is 265
+097742 [S3]'s commit Index is 265
+097744 [S3]'s commit Index is 266
+097752 [S3]'s commit Index is 266
+097762 [S3]'s commit Index is 266
+097973 [S3]'s commit Index is 266
+098023 [S3]'s commit Index is 266
+098025 [S3]'s commit Index is 266
+098053 [S3]'s commit Index is 267
+098073 [S3]'s commit Index is 267
+098268 [S3]'s commit Index is 267
+098270 [S3]'s commit Index is 267
+098359 [S3]'s commit Index is 267
+098361 [S3]'s commit Index is 267
+098364 [S3]'s commit Index is 268
+098367 [S3]'s commit Index is 268
+098380 [S3]'s commit Index is 268
+098383 [S3]'s commit Index is 268
+098406 [S3]'s commit Index is 268
+098452 [S3]'s commit Index is 268
+098461 [S3]'s commit Index is 268
+098471 [S3]'s commit Index is 268
+098480 [S3]'s commit Index is 268
+098511 [S3]'s commit Index is 269
+098531 [S3]'s commit Index is 269
+099905 [S3]'s commit Index is 269
+099943 [S3]'s commit Index is 269
+099957 [S3]'s commit Index is 269
+099993 [S3]'s commit Index is 269
+100006 [S3]'s commit Index is 269
+100026 [S3]'s commit Index is 270
+100043 [S3]'s commit Index is 270
+100073 [S3]'s commit Index is 270
+100076 [S3]'s commit Index is 270
+100124 [S3]'s commit Index is 270
+101404 [S3]'s commit Index is 270
+101434 [S3]'s commit Index is 270
+101474 [S3]'s commit Index is 270
+101494 [S3]'s commit Index is 270
+101525 [S3]'s commit Index is 270
+101584 [S3]'s commit Index is 270
+102885 [S3]'s commit Index is 270
+102925 [S3]'s commit Index is 270
+102975 [S3]'s commit Index is 270
+102985 [S3]'s commit Index is 270
+103055 [S3]'s commit Index is 270
+103105 [S3]'s commit Index is 270
+103378 [S3]'s commit Index is 270
+103428 [S3]'s commit Index is 270
+103459 [S3]'s commit Index is 270
+103581 [S3]'s commit Index is 271
+103585 [S3]'s commit Index is 271
+103708 [S3]'s commit Index is 271
+103746 [S3]'s commit Index is 271
+103757 [S3]'s commit Index is 271
+103964 [S3]'s commit Index is 272
+104012 [S3]'s commit Index is 272
+104172 [S3]'s commit Index is 272
+104330 [S3]'s commit Index is 273
+104390 [S3]'s commit Index is 273
+104394 [S3]'s commit Index is 273
+104391 [S0]{Leader}, old start is 258, length of log is 17, new start is 273
+104406 [S3]'s commit Index is 274
+104438 [S3]'s commit Index is 274
+104442 [S3]'s commit Index is 274
+104446 [S3]'s commit Index is 274
+104450 [S3]'s commit Index is 274
+104502 [S3]'s commit Index is 274
+104534 [S3]'s commit Index is 274
+104599 [S3]'s commit Index is 274
+104626 [S3]'s commit Index is 274
+104757 [S3]'s commit Index is 274
+104787 [S3]'s commit Index is 274
+104825 [S3]'s commit Index is 274
+104846 [S3]'s commit Index is 275
+104876 [S3]'s commit Index is 275
+105938 [S3]'s commit Index is 275
+106020 [S3]'s commit Index is 275
+106078 [S3]'s commit Index is 275
+106101 [S3]'s commit Index is 275
+107371 [S3]'s commit Index is 275
+107402 [S3]'s commit Index is 275
+107471 [S3]'s commit Index is 275
+107490 [S3]'s commit Index is 275
+107591 [S3]'s commit Index is 275
+107603 [S3]'s commit Index is 275
+108900 [S3]'s commit Index is 275
+108951 [S3]'s commit Index is 275
+109001 [S3]'s commit Index is 275
+109094 [S3]'s commit Index is 275
+109121 [S3]'s commit Index is 275
+109573 [S3]'s commit Index is 275
+109583 [S3]'s commit Index is 275
+109606 [S3]'s commit Index is 275
+109704 [S3]'s commit Index is 276
+109725 [S3]'s commit Index is 276
+109836 [S3]'s commit Index is 276
+109841 [S3]'s commit Index is 276
+109837 [S2]{Leader}, old start is 259, length of log is 19, new start is 276
+109889 [S5]{Leader}, old start is 259, length of log is 19, new start is 276
+109926 [S3]'s commit Index is 276
+109967 [S1]{Leader}, old start is 259, length of log is 19, new start is 276
+110011 [S6]{Leader}, old start is 259, length of log is 19, new start is 276
+110013 [S3]'s commit Index is 277
+110515 [S3]'s commit Index is 277
+110522 [S3]'s commit Index is 277
+110542 [S3]'s commit Index is 277
+110555 [S3]'s commit Index is 277
+110612 [S3]'s commit Index is 277
+111882 [S3]'s commit Index is 277
+111895 [S3]'s commit Index is 277
+111923 [S3]'s commit Index is 277
+111995 [S3]'s commit Index is 277
+112017 [S3]'s commit Index is 277
+112092 [S3]'s commit Index is 277
+113394 [S3]'s commit Index is 277
+113433 [S3]'s commit Index is 277
+113464 [S3]'s commit Index is 277
+114121 [S3]'s commit Index is 277
+114173 [S3]'s commit Index is 277
+114182 [S3]'s commit Index is 277
+114374 [S3]'s commit Index is 278
+114380 [S3]'s commit Index is 278
+114412 [S3]'s commit Index is 278
+114414 [S3]'s commit Index is 278
+114482 [S3]'s commit Index is 279
+114491 [S3]'s commit Index is 279
+114666 [S3]'s commit Index is 279
+114775 [S3]'s commit Index is 279
+114794 [S3]'s commit Index is 279
+114798 [S3]{Leader}, old start is 263, length of log is 18, new start is 280
+114805 [S3]'s commit Index is 280
+114837 [S1]{Leader}, old start is 280, length of log is 1, new start is 280
+114967 [S3]'s commit Index is 280
+114970 [S3]'s commit Index is 280
+114998 [S4]{Leader}, old start is 264, length of log is 18, new start is 280
+114998 [S3]'s commit Index is 280
+115018 [S3]'s commit Index is 281
+115035 [S3]'s commit Index is 281
+115045 [S3]'s commit Index is 281
+115067 [S3]'s commit Index is 281
+115069 [S3]'s commit Index is 281
+115075 [S3]'s commit Index is 281
+115135 [S3]'s commit Index is 281
+115193 [S3]'s commit Index is 281
+115214 [S3]'s commit Index is 281
+115233 [S2]{Leader}, old start is 280, length of log is 1, new start is 280
+115404 [S3]'s commit Index is 281
+115445 [S3]'s commit Index is 282
+116195 [S3]'s commit Index is 282
+116197 [S3]'s commit Index is 282
+116211 [S3]'s commit Index is 282
+116246 [S3]'s commit Index is 282
+116273 [S3]'s commit Index is 284
+116286 [S3]'s commit Index is 284
+116297 [S3]'s commit Index is 284
+116321 [S3]'s commit Index is 284
+116333 [S3]'s commit Index is 284
+116335 [S3]'s commit Index is 285
+116338 [S3]'s commit Index is 285
+116340 [S3]'s commit Index is 285
+116364 [S3]'s commit Index is 285
+116370 [S3]'s commit Index is 285
+116375 [S3]'s commit Index is 285
+116377 [S3]'s commit Index is 286
+116387 [S3]'s commit Index is 286
+116395 [S3]'s commit Index is 287
+116407 [S3]'s commit Index is 287
+116411 [S3]'s commit Index is 287
+116417 [S3]'s commit Index is 287
+116444 [S3]'s commit Index is 287
+116468 [S3]'s commit Index is 287
+116476 [S3]'s commit Index is 287
+116488 [S3]'s commit Index is 287
+116494 [S3]'s commit Index is 287
+116497 [S3]'s commit Index is 287
+116508 [S3]'s commit Index is 287
+116529 [S3]'s commit Index is 288
+116545 [S3]'s commit Index is 288
+116569 [S3]'s commit Index is 288
+116577 [S3]'s commit Index is 289
+116580 [S3]'s commit Index is 289
+116588 [S3]'s commit Index is 289
+116604 [S3]'s commit Index is 289
+116607 [S3]'s commit Index is 289
+116618 [S3]'s commit Index is 289
+116620 [S3]'s commit Index is 289
+116638 [S3]'s commit Index is 289
+116645 [S3]'s commit Index is 289
+116687 [S3]'s commit Index is 290
+116690 [S3]'s commit Index is 290
+116709 [S3]'s commit Index is 290
+116717 [S3]'s commit Index is 290
+116719 [S3]'s commit Index is 291
+116735 [S3]'s commit Index is 291
+116738 [S3]'s commit Index is 291
+116749 [S3]'s commit Index is 291
+116787 [S3]'s commit Index is 291
+116789 [S3]'s commit Index is 291
+116796 [S3]'s commit Index is 292
+116799 [S3]'s commit Index is 292
+116807 [S3]'s commit Index is 292
+116809 [S3]'s commit Index is 293
+116809 [S0]{Leader}, old start is 273, length of log is 20, new start is 289
+116808 [S6]{Leader}, old start is 276, length of log is 18, new start is 291
+116817 [S3]'s commit Index is 293
+116818 [S5]{Leader}, old start is 276, length of log is 18, new start is 291
+116836 [S3]'s commit Index is 293
+116859 [S3]'s commit Index is 293
+116877 [S3]'s commit Index is 293
+116919 [S3]'s commit Index is 293
+116938 [S3]'s commit Index is 294
+116946 [S3]'s commit Index is 294
+116948 [S3]'s commit Index is 294
+116959 [S3]'s commit Index is 294
+116969 [S3]'s commit Index is 295
+116978 [S3]'s commit Index is 295
+116997 [S3]'s commit Index is 295
+117009 [S3]'s commit Index is 295
+117017 [S3]'s commit Index is 295
+117048 [S3]'s commit Index is 295
+117050 [S3]'s commit Index is 295
+117078 [S3]'s commit Index is 295
+117082 [S3]'s commit Index is 295
+117085 [S3]{Leader}, old start is 280, length of log is 18, new start is 296
+117089 [S3]'s commit Index is 296
+117090 [S4]{Leader}, old start is 280, length of log is 17, new start is 295
+117092 [S3]'s commit Index is 296
+117139 [S3]'s commit Index is 297
+117179 [S3]'s commit Index is 297
+117182 [S3]'s commit Index is 297
+117182 [S2]{Leader}, old start is 280, length of log is 19, new start is 297
+117191 [S3]'s commit Index is 297
+117230 [S3]'s commit Index is 297
+117244 [S3]'s commit Index is 297
+117250 [S3]'s commit Index is 298
+117259 [S3]'s commit Index is 298
+117310 [S3]'s commit Index is 298
+117322 [S3]'s commit Index is 298
+117332 [S3]'s commit Index is 298
+117336 [S3]'s commit Index is 298
+117336 [S1]{Leader}, old start is 280, length of log is 19, new start is 296
+117344 [S1]{Leader}, old start is 296, length of log is 3, new start is 297
+117355 [S3]'s commit Index is 298
+117382 [S3]'s commit Index is 298
+117384 [S3]'s commit Index is 299
+117393 [S3]'s commit Index is 300
+117404 [S3]'s commit Index is 300
+117407 [S3]'s commit Index is 300
+117410 [S3]'s commit Index is 300
+117423 [S3]'s commit Index is 300
+117426 [S3]'s commit Index is 301
+117432 [S3]'s commit Index is 301
+117459 [S3]'s commit Index is 301
+117463 [S3]'s commit Index is 301
+117465 [S3]'s commit Index is 302
+117470 [S3]'s commit Index is 303
+117473 [S3]'s commit Index is 303
+117476 [S3]'s commit Index is 303
+117493 [S3]'s commit Index is 303
+117503 [S3]'s commit Index is 303
+117512 [S3]'s commit Index is 303
+117523 [S3]'s commit Index is 303
+117575 [S3]'s commit Index is 303
+117582 [S3]'s commit Index is 303
+117585 [S3]'s commit Index is 303
+117583 [S5]{Leader}, old start is 291, length of log is 16, new start is 302
+117593 [S3]'s commit Index is 304
+117596 [S3]'s commit Index is 304
+117603 [S3]'s commit Index is 304
+117606 [S3]'s commit Index is 304
+117609 [S3]'s commit Index is 305
+117627 [S3]'s commit Index is 305
+117635 [S3]'s commit Index is 305
+117638 [S3]'s commit Index is 305
+117647 [S3]'s commit Index is 305
+117650 [S3]'s commit Index is 305
+117655 [S3]'s commit Index is 305
+117684 [S3]'s commit Index is 305
+117686 [S3]'s commit Index is 305
+117693 [S3]'s commit Index is 306
+117706 [S3]'s commit Index is 306
+117711 [S3]'s commit Index is 306
+117723 [S3]'s commit Index is 306
+117734 [S3]'s commit Index is 306
+117763 [S3]'s commit Index is 306
+117786 [S3]'s commit Index is 306
+117813 [S6]{Leader}, old start is 291, length of log is 19, new start is 305
+117824 [S3]'s commit Index is 306
+117825 [S0]{Leader}, old start is 289, length of log is 21, new start is 305
+117839 [S3]'s commit Index is 306
+117860 [S3]'s commit Index is 306
+117877 [S3]'s commit Index is 307
+117900 [S3]'s commit Index is 308
+117905 [S3]'s commit Index is 308
+117908 [S3]'s commit Index is 308
+117911 [S3]'s commit Index is 308
+117938 [S3]'s commit Index is 308
+117943 [S3]{Leader}, old start is 296, length of log is 18, new start is 309
+117947 [S3]'s commit Index is 312
+117951 [S3]{Leader}, old start is 309, length of log is 6, new start is 310
+117956 [S3]'s commit Index is 312
+117963 [S3]'s commit Index is 312
+117966 [S3]'s commit Index is 312
+117980 [S3]'s commit Index is 312
+117985 [S3]'s commit Index is 312
+117988 [S3]'s commit Index is 312
+117995 [S3]'s commit Index is 312
+118004 [S3]'s commit Index is 312
+118018 [S3]'s commit Index is 312
+118029 [S3]'s commit Index is 312
+118030 [S2]{Leader}, old start is 297, length of log is 17, new start is 308
+118037 [S3]'s commit Index is 313
+118043 [S3]'s commit Index is 313
+118045 [S3]'s commit Index is 313
+118039 [S4]{Leader}, old start is 295, length of log is 16, new start is 307
+118047 [S3]'s commit Index is 313
+118058 [S3]'s commit Index is 313
+118061 [S3]'s commit Index is 314
+118068 [S3]'s commit Index is 314
+118071 [S3]'s commit Index is 314
+118069 [S1]{Leader}, old start is 297, length of log is 20, new start is 308
+118075 [S1]{Leader}, old start is 308, length of log is 9, new start is 309
+118077 [S3]'s commit Index is 314
+118081 [S3]'s commit Index is 314
+118089 [S3]'s commit Index is 314
+118097 [S3]'s commit Index is 314
+118099 [S3]'s commit Index is 314
+118103 [S3]'s commit Index is 314
+118107 [S3]'s commit Index is 316
+118115 [S3]'s commit Index is 316
+118125 [S3]'s commit Index is 316
+118127 [S3]'s commit Index is 316
+118131 [S3]'s commit Index is 316
+118138 [S3]'s commit Index is 316
+118152 [S3]'s commit Index is 316
+118155 [S3]'s commit Index is 316
+118169 [S3]'s commit Index is 316
+118171 [S3]'s commit Index is 316
+118178 [S3]'s commit Index is 316
+118197 [S3]'s commit Index is 316
+118205 [S3]'s commit Index is 316
+118214 [S3]'s commit Index is 317
+118216 [S3]'s commit Index is 317
+118221 [S3]'s commit Index is 317
+118221 [S5]{Leader}, old start is 302, length of log is 16, new start is 316
+118224 [S3]'s commit Index is 317
+118260 [S3]'s commit Index is 317
+118264 [S3]'s commit Index is 317
+118284 [S3]'s commit Index is 317
+118310 [S3]'s commit Index is 317
+118313 [S3]'s commit Index is 318
+118316 [S3]'s commit Index is 318
+118311 [S6]{Leader}, old start is 305, length of log is 16, new start is 317
+118312 [S0]{Leader}, old start is 305, length of log is 16, new start is 317
+118332 [S3]'s commit Index is 320
+118355 [S3]'s commit Index is 320
+118395 [S3]'s commit Index is 320
+118398 [S3]'s commit Index is 320
+118402 [S3]'s commit Index is 320
+118404 [S3]'s commit Index is 320
+118411 [S3]'s commit Index is 320
+118441 [S3]'s commit Index is 320
+118471 [S3]'s commit Index is 320
+118471 [S4]{Leader}, old start is 307, length of log is 16, new start is 318
+118477 [S4]{Leader}, old start is 318, length of log is 5, new start is 319
+118474 [S3]'s commit Index is 320
+118482 [S3]'s commit Index is 321
+118500 [S3]'s commit Index is 322
+118503 [S3]'s commit Index is 322
+118501 [S1]{Leader}, old start is 309, length of log is 16, new start is 319
+118513 [S3]'s commit Index is 322
+118516 [S3]'s commit Index is 322
+118530 [S3]'s commit Index is 322
+118540 [S3]'s commit Index is 322
+118544 [S3]'s commit Index is 322
+118546 [S2]{Leader}, old start is 308, length of log is 16, new start is 319
+118549 [S3]{Leader}, old start is 310, length of log is 16, new start is 323
+118560 [S3]'s commit Index is 323
+118563 [S3]'s commit Index is 324
+118569 [S3]'s commit Index is 324
+118579 [S3]'s commit Index is 324
+118582 [S3]'s commit Index is 324
+118589 [S3]'s commit Index is 325
+118601 [S3]'s commit Index is 325
+118614 [S3]'s commit Index is 325
+118621 [S3]'s commit Index is 325
+118626 [S3]'s commit Index is 325
+118629 [S3]'s commit Index is 325
+118632 [S3]'s commit Index is 325
+118642 [S3]'s commit Index is 325
+118645 [S3]'s commit Index is 325
+118648 [S3]'s commit Index is 325
+118651 [S3]'s commit Index is 325
+118654 [S3]'s commit Index is 326
+118657 [S3]'s commit Index is 327
+118660 [S3]'s commit Index is 327
+118663 [S3]'s commit Index is 327
+118670 [S3]'s commit Index is 327
+118675 [S3]'s commit Index is 327
+118695 [S3]'s commit Index is 327
+118709 [S3]'s commit Index is 327
+118729 [S3]'s commit Index is 327
+118732 [S3]'s commit Index is 327
+118737 [S3]'s commit Index is 327
+118752 [S3]'s commit Index is 328
+118801 [S3]'s commit Index is 328
+118812 [S3]'s commit Index is 328
+118831 [S3]'s commit Index is 328
+118852 [S3]'s commit Index is 329
+118855 [S3]'s commit Index is 329
+118857 [S3]'s commit Index is 329
+118863 [S3]'s commit Index is 329
+118899 [S3]'s commit Index is 329
+118919 [S3]'s commit Index is 329
+118930 [S3]'s commit Index is 329
+118940 [S3]'s commit Index is 329
+118952 [S3]'s commit Index is 329
+118968 [S3]'s commit Index is 329
+118990 [S3]'s commit Index is 329
+118997 [S3]'s commit Index is 330
+119001 [S3]'s commit Index is 331
+118997 [S5]{Leader}, old start is 316, length of log is 17, new start is 329
+119008 [S3]'s commit Index is 332
+119011 [S3]'s commit Index is 332
+119016 [S3]'s commit Index is 332
+119020 [S3]'s commit Index is 332
+119031 [S3]'s commit Index is 332
+119038 [S3]'s commit Index is 332
+119041 [S3]'s commit Index is 333
+119050 [S3]'s commit Index is 333
+119078 [S3]'s commit Index is 333
+119090 [S3]'s commit Index is 333
+119133 [S3]'s commit Index is 333
+119134 [S4]{Leader}, old start is 319, length of log is 18, new start is 330
+119138 [S4]{Leader}, old start is 330, length of log is 7, new start is 331
+119145 [S3]'s commit Index is 333
+119156 [S3]'s commit Index is 333
+119157 [S1]{Leader}, old start is 319, length of log is 16, new start is 330
+119163 [S1]{Leader}, old start is 330, length of log is 5, new start is 331
+119174 [S3]'s commit Index is 334
+119195 [S3]'s commit Index is 334
+119210 [S3]'s commit Index is 334
+119216 [S3]'s commit Index is 334
+119225 [S3]'s commit Index is 334
+119226 [S0]{Leader}, old start is 317, length of log is 18, new start is 331
+119231 [S3]'s commit Index is 334
+119234 [S3]'s commit Index is 334
+119236 [S3]'s commit Index is 335
+119240 [S3]{Leader}, old start is 323, length of log is 16, new start is 335
+119244 [S3]{Leader}, old start is 335, length of log is 4, new start is 336
+119264 [S3]'s commit Index is 336
+119266 [S3]'s commit Index is 337
+119264 [S2]{Leader}, old start is 319, length of log is 19, new start is 331
+119265 [S6]{Leader}, old start is 317, length of log is 18, new start is 331
+119269 [S3]'s commit Index is 337
+119278 [S3]'s commit Index is 337
+119280 [S3]'s commit Index is 337
+119282 [S3]'s commit Index is 337
+119302 [S3]'s commit Index is 337
+119307 [S3]'s commit Index is 337
+119315 [S3]'s commit Index is 337
+119320 [S3]'s commit Index is 338
+119324 [S3]'s commit Index is 338
+119329 [S3]'s commit Index is 338
+119345 [S3]'s commit Index is 338
+119355 [S3]'s commit Index is 338
+119360 [S6]{Leader}, old start is 336, length of log is 2, new start is 336
+119361 [S3]'s commit Index is 338
+119364 [S3]'s commit Index is 339
+119367 [S3]'s commit Index is 339
+119370 [S3]'s commit Index is 339
+119371 [S3]'s commit Index is 339
+119374 [S3]'s commit Index is 339
+119379 [S3]'s commit Index is 339
+119394 [S3]'s commit Index is 340
+119427 [S3]'s commit Index is 340
+119450 [S3]'s commit Index is 340
+119457 [S3]'s commit Index is 341
+119459 [S3]'s commit Index is 341
+119467 [S3]'s commit Index is 342
+119490 [S3]'s commit Index is 342
+119497 [S3]'s commit Index is 342
+119505 [S3]'s commit Index is 342
+119507 [S3]'s commit Index is 342
+119515 [S3]'s commit Index is 342
+119530 [S3]'s commit Index is 343
+119533 [S3]'s commit Index is 343
+119536 [S3]'s commit Index is 343
+119549 [S3]'s commit Index is 343
+119560 [S3]'s commit Index is 343
+119569 [S3]'s commit Index is 343
+119577 [S3]'s commit Index is 343
+119579 [S3]'s commit Index is 343
+119582 [S3]'s commit Index is 343
+119591 [S3]'s commit Index is 343
+119602 [S3]'s commit Index is 343
+119607 [S3]'s commit Index is 343
+119619 [S3]'s commit Index is 343
+119630 [S3]'s commit Index is 343
+119645 [S3]'s commit Index is 343
+119650 [S3]'s commit Index is 343
+119655 [S3]'s commit Index is 343
+119660 [S3]'s commit Index is 344
+119673 [S3]'s commit Index is 344
+119677 [S3]'s commit Index is 345
+119687 [S3]'s commit Index is 345
+119706 [S3]'s commit Index is 345
+119709 [S3]'s commit Index is 345
+119707 [S5]{Leader}, old start is 329, length of log is 16, new start is 343
+119708 [S0]{Leader}, old start is 331, length of log is 19, new start is 345
+119720 [S3]'s commit Index is 346
+119726 [S3]'s commit Index is 346
+119730 [S3]'s commit Index is 346
+119732 [S3]'s commit Index is 346
+119748 [S3]'s commit Index is 346
+119751 [S3]'s commit Index is 346
+119759 [S3]'s commit Index is 346
+119759 [S1]{Leader}, old start is 331, length of log is 17, new start is 344
+119762 [S3]{Leader}, old start is 336, length of log is 15, new start is 347
+119764 [S1]{Leader}, old start is 344, length of log is 4, new start is 345
+119779 [S3]'s commit Index is 347
+119788 [S3]'s commit Index is 347
+119788 [S2]{Leader}, old start is 331, length of log is 20, new start is 345
+119808 [S3]'s commit Index is 349
+119808 [S6]{Leader}, old start is 336, length of log is 15, new start is 346
+119829 [S3]'s commit Index is 349
+119830 [S4]{Leader}, old start is 331, length of log is 17, new start is 344
+119834 [S4]{Leader}, old start is 344, length of log is 4, new start is 345
+119849 [S3]'s commit Index is 349
+119851 [S3]'s commit Index is 349
+119854 [S3]'s commit Index is 349
+119859 [S3]'s commit Index is 349
+119863 [S3]'s commit Index is 349
+119868 [S3]'s commit Index is 349
+119880 [S3]'s commit Index is 350
+119884 [S3]'s commit Index is 350
+119890 [S3]'s commit Index is 350
+119893 [S3]'s commit Index is 350
+119895 [S3]'s commit Index is 350
+119908 [S3]'s commit Index is 350
+119920 [S3]'s commit Index is 350
+119938 [S3]'s commit Index is 350
+119944 [S3]'s commit Index is 350
+119957 [S3]'s commit Index is 350
+119967 [S3]'s commit Index is 350
+119988 [S3]'s commit Index is 350
+120009 [S3]'s commit Index is 351
+120013 [S3]'s commit Index is 351
+120079 [S3]'s commit Index is 351
+120097 [S3]'s commit Index is 351
+120110 [S3]'s commit Index is 351
+120118 [S3]'s commit Index is 352
+120128 [S3]'s commit Index is 352
+120130 [S3]'s commit Index is 354
+120141 [S3]'s commit Index is 354
+120165 [S3]'s commit Index is 354
+120172 [S3]'s commit Index is 354
+120175 [S3]'s commit Index is 354
+120180 [S3]'s commit Index is 354
+120188 [S3]'s commit Index is 354
+120191 [S3]'s commit Index is 354
+120193 [S3]'s commit Index is 354
+120196 [S3]'s commit Index is 354
+120198 [S3]'s commit Index is 354
+120201 [S3]'s commit Index is 354
+120229 [S3]'s commit Index is 354
+120236 [S3]'s commit Index is 355
+120240 [S3]'s commit Index is 355
+120248 [S3]'s commit Index is 355
+120259 [S3]'s commit Index is 356
+120281 [S3]'s commit Index is 356
+120283 [S3]'s commit Index is 356
+120315 [S3]'s commit Index is 356
+120339 [S3]'s commit Index is 356
+120355 [S3]'s commit Index is 357
+120359 [S3]'s commit Index is 357
+120390 [S3]'s commit Index is 357
+120394 [S3]'s commit Index is 357
+120398 [S3]'s commit Index is 357
+120418 [S3]'s commit Index is 357
+120419 [S5]{Leader}, old start is 343, length of log is 16, new start is 356
+120448 [S3]'s commit Index is 358
+120458 [S3]'s commit Index is 358
+120475 [S3]'s commit Index is 358
+120476 [S2]{Leader}, old start is 345, length of log is 16, new start is 356
+120510 [S3]'s commit Index is 358
+120511 [S0]{Leader}, old start is 345, length of log is 15, new start is 356
+120516 [S3]'s commit Index is 359
+120517 [S1]{Leader}, old start is 345, length of log is 16, new start is 358
+120522 [S3]'s commit Index is 359
+120531 [S3]'s commit Index is 359
+120537 [S3]'s commit Index is 359
+120540 [S3]'s commit Index is 359
+120562 [S3]'s commit Index is 359
+120568 [S3]'s commit Index is 359
+120562 [S4]{Leader}, old start is 345, length of log is 15, new start is 358
+120571 [S3]{Leader}, old start is 347, length of log is 15, new start is 360
+120605 [S3]'s commit Index is 360
+120616 [S3]'s commit Index is 360
+120621 [S3]'s commit Index is 360
+120633 [S3]'s commit Index is 360
+120636 [S3]'s commit Index is 360
+120670 [S3]'s commit Index is 360
+120738 [S3]'s commit Index is 360
+120739 [S6]{Leader}, old start is 346, length of log is 17, new start is 359
+120744 [S6]{Leader}, old start is 359, length of log is 4, new start is 360
+120741 [S3]'s commit Index is 361
+120752 [S3]'s commit Index is 361
+120764 [S3]'s commit Index is 361
+120780 [S3]'s commit Index is 361
+120794 [S3]'s commit Index is 361
+120822 [S3]'s commit Index is 362
+120833 [S3]'s commit Index is 363
+120840 [S3]'s commit Index is 363
+120843 [S3]'s commit Index is 364
+120859 [S3]'s commit Index is 365
+120881 [S3]'s commit Index is 365
+120893 [S3]'s commit Index is 365
+120896 [S3]'s commit Index is 365
+120905 [S3]'s commit Index is 365
+120909 [S3]'s commit Index is 365
+120919 [S3]'s commit Index is 365
+120921 [S3]'s commit Index is 365
+120924 [S3]'s commit Index is 365
+120927 [S3]'s commit Index is 365
+120929 [S3]'s commit Index is 365
+120931 [S3]'s commit Index is 365
+120934 [S3]'s commit Index is 365
+120938 [S3]'s commit Index is 365
+120941 [S3]'s commit Index is 365
+120952 [S3]'s commit Index is 365
+120955 [S3]'s commit Index is 365
+120962 [S3]'s commit Index is 365
+120995 [S3]'s commit Index is 365
+120997 [S3]'s commit Index is 365
+121008 [S3]'s commit Index is 366
+121013 [S3]'s commit Index is 366
+121018 [S3]'s commit Index is 366
+121062 [S3]'s commit Index is 366
+121069 [S3]'s commit Index is 367
+121082 [S3]'s commit Index is 367
+121108 [S3]'s commit Index is 367
+121121 [S3]'s commit Index is 367
+121123 [S3]'s commit Index is 368
+121132 [S3]'s commit Index is 368
+121146 [S3]'s commit Index is 368
+121151 [S3]'s commit Index is 368
+121163 [S3]'s commit Index is 368
+121168 [S3]'s commit Index is 368
+121170 [S3]'s commit Index is 368
+121173 [S3]'s commit Index is 369
+121189 [S3]'s commit Index is 369
+121195 [S3]'s commit Index is 369
+121198 [S3]'s commit Index is 369
+121197 [S0]{Leader}, old start is 356, length of log is 16, new start is 368
+121204 [S3]'s commit Index is 370
+121225 [S3]'s commit Index is 370
+121228 [S3]'s commit Index is 371
+121226 [S5]{Leader}, old start is 356, length of log is 16, new start is 367
+121226 [S2]{Leader}, old start is 356, length of log is 16, new start is 368
+121231 [S3]'s commit Index is 371
+121241 [S3]'s commit Index is 371
+121259 [S3]'s commit Index is 371
+121278 [S3]'s commit Index is 371
+121292 [S3]'s commit Index is 371
+121294 [S3]'s commit Index is 371
+121321 [S3]'s commit Index is 371
+121360 [S3]'s commit Index is 371
+121373 [S3]'s commit Index is 371
+121381 [S4]{Leader}, old start is 358, length of log is 17, new start is 370
+121382 [S3]'s commit Index is 371
+121392 [S3]'s commit Index is 371
+121394 [S3]'s commit Index is 372
+121424 [S3]'s commit Index is 372
+121428 [S3]'s commit Index is 372
+121467 [S3]'s commit Index is 372
+121478 [S3]'s commit Index is 372
+121484 [S3]'s commit Index is 372
+121487 [S3]'s commit Index is 372
+121489 [S3]'s commit Index is 374
+121493 [S3]{Leader}, old start is 360, length of log is 17, new start is 374
+121486 [S1]{Leader}, old start is 358, length of log is 19, new start is 372
+121496 [S3]'s commit Index is 374
+121503 [S3]'s commit Index is 375
+121507 [S3]'s commit Index is 375
+121509 [S3]'s commit Index is 375
+121508 [S6]{Leader}, old start is 360, length of log is 16, new start is 372
+121517 [S3]'s commit Index is 375
+121527 [S3]'s commit Index is 375
+121533 [S3]'s commit Index is 375
+121557 [S3]'s commit Index is 375
+121564 [S3]'s commit Index is 375
+121577 [S3]'s commit Index is 376
+121581 [S3]'s commit Index is 376
+121591 [S3]'s commit Index is 376
+121601 [S3]'s commit Index is 376
+121609 [S3]'s commit Index is 376
+121619 [S3]'s commit Index is 378
+121656 [S3]'s commit Index is 378
+121659 [S3]'s commit Index is 378
+121661 [S3]'s commit Index is 378
+121668 [S3]'s commit Index is 379
+121676 [S3]'s commit Index is 379
+121680 [S3]'s commit Index is 379
+121682 [S3]'s commit Index is 379
+121709 [S3]'s commit Index is 379
+121716 [S3]'s commit Index is 379
+121721 [S3]'s commit Index is 379
+121741 [S3]'s commit Index is 379
+121743 [S3]'s commit Index is 379
+121749 [S3]'s commit Index is 379
+121765 [S3]'s commit Index is 379
+121790 [S3]'s commit Index is 379
+121796 [S3]'s commit Index is 380
+121799 [S3]'s commit Index is 380
+121801 [S3]'s commit Index is 380
+121808 [S3]'s commit Index is 380
+121816 [S3]'s commit Index is 380
+121820 [S3]'s commit Index is 380
+121829 [S3]'s commit Index is 381
+121839 [S3]'s commit Index is 381
+121860 [S3]'s commit Index is 381
+121866 [S3]'s commit Index is 381
+121904 [S3]'s commit Index is 381
+121904 [S5]{Leader}, old start is 367, length of log is 16, new start is 378
+121924 [S3]'s commit Index is 381
+121935 [S2]{Leader}, old start is 368, length of log is 16, new start is 382
+121936 [S3]'s commit Index is 382
+121945 [S3]'s commit Index is 382
+121949 [S3]'s commit Index is 382
+121978 [S3]'s commit Index is 382
+122002 [S3]'s commit Index is 383
+122020 [S4]{Leader}, old start is 370, length of log is 17, new start is 383
+122041 [S3]'s commit Index is 383
+122047 [S3]'s commit Index is 383
+122059 [S3]'s commit Index is 383
+122073 [S3]'s commit Index is 383
+122101 [S3]'s commit Index is 383
+122101 [S0]{Leader}, old start is 368, length of log is 17, new start is 382
+122108 [S3]'s commit Index is 384
+122123 [S3]'s commit Index is 384
+122139 [S3]'s commit Index is 384
+122158 [S3]'s commit Index is 384
+122161 [S3]'s commit Index is 384
+122163 [S3]'s commit Index is 386
+122166 [S3]'s commit Index is 386
+122169 [S3]'s commit Index is 386
+122172 [S3]'s commit Index is 386
+122182 [S3]'s commit Index is 386
+122192 [S3]'s commit Index is 386
+122250 [S3]'s commit Index is 386
+122253 [S3]'s commit Index is 386
+122260 [S3]'s commit Index is 387
+122269 [S3]'s commit Index is 387
+122272 [S3]'s commit Index is 387
+122291 [S3]'s commit Index is 387
+122295 [S3]'s commit Index is 387
+122304 [S6]{Leader}, old start is 372, length of log is 17, new start is 384
+122307 [S6]{Leader}, old start is 384, length of log is 5, new start is 385
+122309 [S3]'s commit Index is 387
+122321 [S3]'s commit Index is 387
+122353 [S3]'s commit Index is 387
+122357 [S3]{Leader}, old start is 374, length of log is 19, new start is 388
+122363 [S3]'s commit Index is 388
+122366 [S3]'s commit Index is 388
+122368 [S3]'s commit Index is 388
+122370 [S3]'s commit Index is 390
+122369 [S1]{Leader}, old start is 372, length of log is 18, new start is 385
+122386 [S3]'s commit Index is 390
+122393 [S3]'s commit Index is 390
+122398 [S3]'s commit Index is 390
+122417 [S3]'s commit Index is 391
+122430 [S3]'s commit Index is 391
+122437 [S3]'s commit Index is 391
+122443 [S3]'s commit Index is 392
+122448 [S3]'s commit Index is 392
+122462 [S3]'s commit Index is 392
+122473 [S3]'s commit Index is 392
+122476 [S3]'s commit Index is 392
+122482 [S3]'s commit Index is 392
+122484 [S3]'s commit Index is 392
+122487 [S3]'s commit Index is 392
+122489 [S3]'s commit Index is 392
+122494 [S3]'s commit Index is 392
+122499 [S3]'s commit Index is 392
+122503 [S3]'s commit Index is 392
+122505 [S3]'s commit Index is 392
+122507 [S3]'s commit Index is 392
+122510 [S3]'s commit Index is 392
+122515 [S3]'s commit Index is 392
+122519 [S3]'s commit Index is 392
+122523 [S3]'s commit Index is 392
+122536 [S3]'s commit Index is 392
+122549 [S3]'s commit Index is 393
+122554 [S3]'s commit Index is 393
+122555 [S5]{Leader}, old start is 378, length of log is 16, new start is 389
+122557 [S3]'s commit Index is 393
+122567 [S3]'s commit Index is 393
+122588 [S3]'s commit Index is 394
+122593 [S3]'s commit Index is 395
+122604 [S3]'s commit Index is 395
+122614 [S3]'s commit Index is 395
+122617 [S3]'s commit Index is 395
+122625 [S3]'s commit Index is 395
+122648 [S3]'s commit Index is 395
+122667 [S3]'s commit Index is 395
+122669 [S4]{Leader}, old start is 383, length of log is 16, new start is 391
+122673 [S4]{Leader}, old start is 391, length of log is 8, new start is 392
+122679 [S3]'s commit Index is 395
+122694 [S3]'s commit Index is 395
+122697 [S3]'s commit Index is 395
+122707 [S3]'s commit Index is 395
+122710 [S3]'s commit Index is 398
+122708 [S6]{Leader}, old start is 385, length of log is 15, new start is 394
+122715 [S3]'s commit Index is 398
+122720 [S3]'s commit Index is 398
+122739 [S3]'s commit Index is 398
+122750 [S3]'s commit Index is 399
+122758 [S3]'s commit Index is 399
+122761 [S3]'s commit Index is 399
+122764 [S3]'s commit Index is 399
+122767 [S3]'s commit Index is 399
+122759 [S2]{Leader}, old start is 382, length of log is 16, new start is 394
+122781 [S3]'s commit Index is 399
+122784 [S3]'s commit Index is 399
+122786 [S3]'s commit Index is 399
+122787 [S1]{Leader}, old start is 385, length of log is 16, new start is 397
+122801 [S3]'s commit Index is 400
+122805 [S3]'s commit Index is 400
+122839 [S3]'s commit Index is 400
+122843 [S3]'s commit Index is 400
+122846 [S3]'s commit Index is 400
+122841 [S0]{Leader}, old start is 382, length of log is 17, new start is 394
+122853 [S3]'s commit Index is 400
+122877 [S3]'s commit Index is 400
+122886 [S3]'s commit Index is 400
+122910 [S3]'s commit Index is 400
+122917 [S3]'s commit Index is 400
+122921 [S3]'s commit Index is 400
+122924 [S3]'s commit Index is 401
+122929 [S3]'s commit Index is 401
+122937 [S3]'s commit Index is 401
+122996 [S3]'s commit Index is 401
+123004 [S3]'s commit Index is 401
+123011 [S3]'s commit Index is 401
+123031 [S3]'s commit Index is 401
+123072 [S3]'s commit Index is 401
+123076 [S3]{Leader}, old start is 388, length of log is 17, new start is 402
+123078 [S3]{Leader}, old start is 402, length of log is 3, new start is 403
+123091 [S3]'s commit Index is 403
+123094 [S3]'s commit Index is 403
+123096 [S3]'s commit Index is 403
+123107 [S3]'s commit Index is 403
+123124 [S3]'s commit Index is 404
+123127 [S3]'s commit Index is 404
+123151 [S3]'s commit Index is 404
+123155 [S3]'s commit Index is 404
+123162 [S3]'s commit Index is 404
+123174 [S3]'s commit Index is 404
+123183 [S3]'s commit Index is 404
+123183 [S5]{Leader}, old start is 389, length of log is 16, new start is 401
+123190 [S3]'s commit Index is 404
+123201 [S3]'s commit Index is 405
+123204 [S3]'s commit Index is 405
+123223 [S3]'s commit Index is 405
+123293 [S3]'s commit Index is 405
+123353 [S3]'s commit Index is 405
+123364 [S3]'s commit Index is 405
+123402 [S3]'s commit Index is 407
+123404 [S4]{Leader}, old start is 392, length of log is 16, new start is 402
+123409 [S4]{Leader}, old start is 402, length of log is 6, new start is 403
+123406 [S3]'s commit Index is 407
+123421 [S3]'s commit Index is 407
+123431 [S3]'s commit Index is 407
+123434 [S3]'s commit Index is 407
+123458 [S3]'s commit Index is 407
+123468 [S3]'s commit Index is 407
+123511 [S0]{Leader}, old start is 394, length of log is 16, new start is 407
+123511 [S3]'s commit Index is 408
+123520 [S3]'s commit Index is 408
+123527 [S3]'s commit Index is 408
+123531 [S3]'s commit Index is 408
+123537 [S3]'s commit Index is 409
+123537 [S2]{Leader}, old start is 394, length of log is 17, new start is 407
+123559 [S3]'s commit Index is 409
+123579 [S3]'s commit Index is 409
+123579 [S6]{Leader}, old start is 394, length of log is 16, new start is 407
+123585 [S3]'s commit Index is 409
+123615 [S3]'s commit Index is 409
+123615 [S1]{Leader}, old start is 397, length of log is 16, new start is 409
+123656 [S3]'s commit Index is 410
+123660 [S3]'s commit Index is 411
+123692 [S3]'s commit Index is 412
+123701 [S3]'s commit Index is 412
+123722 [S3]'s commit Index is 412
+123728 [S3]'s commit Index is 412
+123737 [S3]'s commit Index is 412
+123740 [S3]'s commit Index is 412
+123743 [S3]'s commit Index is 412
+123745 [S3]'s commit Index is 412
+123749 [S3]'s commit Index is 413
+123752 [S3]'s commit Index is 413
+123754 [S3]'s commit Index is 413
+123758 [S3]'s commit Index is 414
+123784 [S3]'s commit Index is 414
+123805 [S3]'s commit Index is 414
+123832 [S3]'s commit Index is 414
+123837 [S3]'s commit Index is 414
+123840 [S3]'s commit Index is 415
+123843 [S3]'s commit Index is 415
+123847 [S3]'s commit Index is 415
+123851 [S3]'s commit Index is 415
+123853 [S3]{Leader}, old start is 403, length of log is 16, new start is 415
+123860 [S3]'s commit Index is 415
+123851 [S5]{Leader}, old start is 401, length of log is 16, new start is 413
+123871 [S5]{Leader}, old start is 413, length of log is 4, new start is 414
+123860 [S4]{Leader}, old start is 403, length of log is 16, new start is 415
+123867 [S3]'s commit Index is 415
+123881 [S3]'s commit Index is 416
+123884 [S3]'s commit Index is 416
+123891 [S3]'s commit Index is 416
+123897 [S3]'s commit Index is 416
+123915 [S3]'s commit Index is 416
+123923 [S3]'s commit Index is 418
+123934 [S3]'s commit Index is 418
+123945 [S3]'s commit Index is 418
+123949 [S3]'s commit Index is 418
+123951 [S3]'s commit Index is 418
+123953 [S3]'s commit Index is 418
+123956 [S3]'s commit Index is 418
+123959 [S3]'s commit Index is 418
+123963 [S3]'s commit Index is 418
+123965 [S3]'s commit Index is 418
+123968 [S3]'s commit Index is 418
+123977 [S3]'s commit Index is 418
+123992 [S3]'s commit Index is 418
+123997 [S3]'s commit Index is 418
+124000 [S1]{Leader}, old start is 415, length of log is 1, new start is 415
+124003 [S3]'s commit Index is 418
+124013 [S3]'s commit Index is 418
+124016 [S3]'s commit Index is 418
+124018 [S3]'s commit Index is 419
+124025 [S3]'s commit Index is 419
+124032 [S3]'s commit Index is 419
+124068 [S3]'s commit Index is 419
+124072 [S3]'s commit Index is 419
+124075 [S3]'s commit Index is 419
+124081 [S3]'s commit Index is 419
+124091 [S3]'s commit Index is 419
+124094 [S3]'s commit Index is 419
+124097 [S3]'s commit Index is 419
+124105 [S3]'s commit Index is 420
+124117 [S3]'s commit Index is 420
+124120 [S3]'s commit Index is 420
+124122 [S3]'s commit Index is 420
+124131 [S3]'s commit Index is 421
+124157 [S3]'s commit Index is 421
+124212 [S3]'s commit Index is 421
+124217 [S3]'s commit Index is 421
+124262 [S3]'s commit Index is 421
+124320 [S3]'s commit Index is 421
+124324 [S3]'s commit Index is 421
+124329 [S3]'s commit Index is 421
+124328 [S6]{Leader}, old start is 407, length of log is 17, new start is 419
+124342 [S3]'s commit Index is 422
+124341 [S6]{Leader}, old start is 419, length of log is 5, new start is 420
+124348 [S3]'s commit Index is 423
+124349 [S2]{Leader}, old start is 407, length of log is 18, new start is 419
+124354 [S2]{Leader}, old start is 419, length of log is 6, new start is 420
+124398 [S3]'s commit Index is 424
+124415 [S3]'s commit Index is 424
+124419 [S3]'s commit Index is 424
+124433 [S3]'s commit Index is 424
+124436 [S3]'s commit Index is 424
+124454 [S3]'s commit Index is 424
+124476 [S3]'s commit Index is 424
+124485 [S3]'s commit Index is 424
+124493 [S3]'s commit Index is 424
+124496 [S3]'s commit Index is 424
+124501 [S3]'s commit Index is 424
+124503 [S3]'s commit Index is 424
+124505 [S3]'s commit Index is 424
+124507 [S3]'s commit Index is 424
+124514 [S3]'s commit Index is 424
+124527 [S3]'s commit Index is 424
+124537 [S3]'s commit Index is 424
+124543 [S3]'s commit Index is 426
+124546 [S0]{Leader}, old start is 407, length of log is 20, new start is 423
+124560 [S3]'s commit Index is 426
+124563 [S3]'s commit Index is 426
+124565 [S3]'s commit Index is 426
+124568 [S3]'s commit Index is 427
+124571 [S3]'s commit Index is 427
+124583 [S3]'s commit Index is 427
+124594 [S3]'s commit Index is 427
+124604 [S3]'s commit Index is 427
+124617 [S3]'s commit Index is 427
+124645 [S3]'s commit Index is 427
+124667 [S3]'s commit Index is 428
+124676 [S3]'s commit Index is 428
+124685 [S3]'s commit Index is 428
+124687 [S3]'s commit Index is 428
+124717 [S3]'s commit Index is 428
+124718 [S5]{Leader}, old start is 414, length of log is 16, new start is 425
+124730 [S5]{Leader}, old start is 425, length of log is 5, new start is 426
+124764 [S4]{Leader}, old start is 415, length of log is 17, new start is 426
+124765 [S3]'s commit Index is 428
+124776 [S3]'s commit Index is 429
+124780 [S3]'s commit Index is 429
+124783 [S3]'s commit Index is 429
+124787 [S3]'s commit Index is 429
+124790 [S3]{Leader}, old start is 415, length of log is 17, new start is 429
+124794 [S3]'s commit Index is 430
+124805 [S3]'s commit Index is 431
+124807 [S3]'s commit Index is 431
+124810 [S3]'s commit Index is 431
+124875 [S3]'s commit Index is 431
+124879 [S3]'s commit Index is 431
+124955 [S3]'s commit Index is 431
+124969 [S3]'s commit Index is 431
+124976 [S3]'s commit Index is 431
+125015 [S3]'s commit Index is 431
+125020 [S3]'s commit Index is 432
+125114 [S3]'s commit Index is 432
+125136 [S3]'s commit Index is 432
+125143 [S3]'s commit Index is 432
+125147 [S3]'s commit Index is 432
+125184 [S3]'s commit Index is 432
+125184 [S1]{Leader}, old start is 415, length of log is 18, new start is 430
+125188 [S3]'s commit Index is 432
+125207 [S3]'s commit Index is 433
+125214 [S3]'s commit Index is 434
+125217 [S3]'s commit Index is 434
+125234 [S3]'s commit Index is 434
+125313 [S3]'s commit Index is 434
+125313 [S6]{Leader}, old start is 420, length of log is 16, new start is 434
+125333 [S3]'s commit Index is 434
+125347 [S3]'s commit Index is 434
+125379 [S3]'s commit Index is 434
+125407 [S3]'s commit Index is 434
+125423 [S3]'s commit Index is 434
+125482 [S3]'s commit Index is 434
+125484 [S2]{Leader}, old start is 420, length of log is 17, new start is 434
+125504 [S3]'s commit Index is 436
+125652 [S3]'s commit Index is 436
+125879 [S3]'s commit Index is 436
+125938 [S3]'s commit Index is 436
+126371 [S3]'s commit Index is 436
+126540 [S3]'s commit Index is 436
+127008 [S3]'s commit Index is 436
+127014 [S3]'s commit Index is 436
+127037 [S3]'s commit Index is 436
+127060 [S3]'s commit Index is 436
+127136 [S3]'s commit Index is 436
+127279 [S3]'s commit Index is 436
+127652 [S3]'s commit Index is 436
+127753 [S3]'s commit Index is 436
+127838 [S3]'s commit Index is 436
+127959 [S3]'s commit Index is 436
+128567 [S3]'s commit Index is 436
+128589 [S3]'s commit Index is 436
+128591 [S3]'s commit Index is 436
+128618 [S3]'s commit Index is 436
+129697 [S3]'s commit Index is 436
+129716 [S3]'s commit Index is 436
+129826 [S3]'s commit Index is 436
+129907 [S3]'s commit Index is 436
+130039 [S3]'s commit Index is 436
+130373 [S3]'s commit Index is 436
+130414 [S3]'s commit Index is 436
+131398 [S3]'s commit Index is 436
+131609 [S3]'s commit Index is 436
+133090 [S3]'s commit Index is 436
+133120 [S3]'s commit Index is 436
+133493 [S3]'s commit Index is 436
+133502 [S3]'s commit Index is 436
+134450 [S3]'s commit Index is 436
+134611 [S3]'s commit Index is 436
+135736 [S3]'s commit Index is 436
+135843 [S3]'s commit Index is 436
+136058 [S3]'s commit Index is 436
+136142 [S3]'s commit Index is 436
+136175 [S3]'s commit Index is 436
+137419 [S0]{Leader}, old start is 423, length of log is 32, new start is 435
+137423 [S0]{Leader}, old start is 435, length of log is 20, new start is 436
+169377 [S0] becomes {Leader}
+169443 [S0]'s commit Index is 436
+169483 [S0]'s commit Index is 436
+169533 [S0]'s commit Index is 436
+169563 [S0]'s commit Index is 436
+169739 [S0]'s commit Index is 436
+169749 [S0]'s commit Index is 436
+169750 [S4]{Leader}, old start is 426, length of log is 30, new start is 436
+169783 [S0]'s commit Index is 436
+169798 [S0]'s commit Index is 436
+169819 [S0]'s commit Index is 436
+169823 [S0]{Leader}, old start is 436, length of log is 21, new start is 437
+169826 [S0]{Leader}, old start is 437, length of log is 20, new start is 438
+169829 [S0]{Leader}, old start is 438, length of log is 19, new start is 439
+169833 [S0]{Leader}, old start is 439, length of log is 18, new start is 440
+169836 [S0]{Leader}, old start is 440, length of log is 17, new start is 441
+169839 [S0]{Leader}, old start is 441, length of log is 16, new start is 442
+169842 [S0]{Leader}, old start is 442, length of log is 15, new start is 443
+169845 [S0]{Leader}, old start is 443, length of log is 14, new start is 444
+169930 [S0]'s commit Index is 455
+169948 [S0]'s commit Index is 455
+169969 [S5]{Leader}, old start is 444, length of log is 1, new start is 444
+169976 [S0]'s commit Index is 455
+169977 [S2]{Leader}, old start is 434, length of log is 24, new start is 437
+169981 [S2]{Leader}, old start is 437, length of log is 21, new start is 438
+169985 [S2]{Leader}, old start is 438, length of log is 20, new start is 440
+169985 [S0]'s commit Index is 456
+169988 [S2]{Leader}, old start is 440, length of log is 18, new start is 442
+169994 [S2]{Leader}, old start is 442, length of log is 16, new start is 443
+169996 [S0]'s commit Index is 456
+169997 [S3]{Leader}, old start is 429, length of log is 29, new start is 437
+170001 [S3]{Leader}, old start is 437, length of log is 21, new start is 438
+169997 [S2]{Leader}, old start is 443, length of log is 15, new start is 444
+170005 [S3]{Leader}, old start is 438, length of log is 20, new start is 440
+170006 [S0]'s commit Index is 456
+170006 [S4]{Leader}, old start is 436, length of log is 22, new start is 438
+170010 [S3]{Leader}, old start is 440, length of log is 18, new start is 442
+170017 [S0]'s commit Index is 457
+170020 [S3]{Leader}, old start is 442, length of log is 16, new start is 444
+170020 [S4]{Leader}, old start is 438, length of log is 20, new start is 440
+170036 [S4]{Leader}, old start is 440, length of log is 18, new start is 442
+170037 [S0]'s commit Index is 457
+170038 [S4]{Leader}, old start is 442, length of log is 16, new start is 443
+170043 [S4]{Leader}, old start is 443, length of log is 15, new start is 444
+170095 [S0]'s commit Index is 457
+170096 [S6]{Leader}, old start is 434, length of log is 24, new start is 438
+170101 [S6]{Leader}, old start is 438, length of log is 20, new start is 439
+170104 [S6]{Leader}, old start is 439, length of log is 19, new start is 440
+170107 [S6]{Leader}, old start is 440, length of log is 18, new start is 442
+170110 [S6]{Leader}, old start is 442, length of log is 16, new start is 443
+170113 [S6]{Leader}, old start is 443, length of log is 15, new start is 444
+170170 [S0]'s commit Index is 457
+170171 [S6]{Leader}, old start is 444, length of log is 16, new start is 456
+170175 [S6]{Leader}, old start is 456, length of log is 4, new start is 457
+170186 [S0]'s commit Index is 457
+170188 [S0]'s commit Index is 457
+170226 [S0]'s commit Index is 457
+170226 [S4]{Leader}, old start is 444, length of log is 17, new start is 457
+170237 [S0]'s commit Index is 457
+170237 [S3]{Leader}, old start is 444, length of log is 17, new start is 457
+170241 [S0]{Leader}, old start is 444, length of log is 17, new start is 459
+170243 [S0]{Leader}, old start is 459, length of log is 2, new start is 460
+170262 [S0]'s commit Index is 460
+170289 [S0]'s commit Index is 460
+170290 [S5]{Leader}, old start is 444, length of log is 16, new start is 457
+170307 [S0]'s commit Index is 460
+170317 [S0]'s commit Index is 460
+170327 [S0]'s commit Index is 460
+170329 [S0]'s commit Index is 460
+170332 [S0]'s commit Index is 460
+170333 [S2]{Leader}, old start is 444, length of log is 15, new start is 456
+170337 [S2]{Leader}, old start is 456, length of log is 3, new start is 457
+170342 [S0]'s commit Index is 460
+170358 [S0]'s commit Index is 460
+170370 [S0]'s commit Index is 460
+170372 [S0]'s commit Index is 460
+170379 [S0]'s commit Index is 460
+170399 [S5]{Leader}, old start is 460, length of log is 1, new start is 460
+170417 [S0]'s commit Index is 460
+170419 [S0]'s commit Index is 460
+170447 [S0]'s commit Index is 460
+170457 [S0]'s commit Index is 462
+170537 [S0]'s commit Index is 462
+170539 [S0]'s commit Index is 462
+170541 [S0]'s commit Index is 462
+170598 [S0]'s commit Index is 462
+170607 [S0]'s commit Index is 462
+170617 [S0]'s commit Index is 462
+170636 [S0]'s commit Index is 464
+170645 [S0]'s commit Index is 464
+170667 [S0]'s commit Index is 464
+170836 [S0]'s commit Index is 464
+170865 [S0]'s commit Index is 464
+170886 [S0]'s commit Index is 464
+170957 [S0]'s commit Index is 465
+170997 [S0]'s commit Index is 465
+171037 [S0]'s commit Index is 465
+171056 [S0]'s commit Index is 465
+171087 [S0]'s commit Index is 466
+171097 [S0]'s commit Index is 466
+171155 [S0]'s commit Index is 466
+171158 [S0]'s commit Index is 466
+171182 [S0]'s commit Index is 466
+171196 [S0]'s commit Index is 466
+171206 [S0]'s commit Index is 467
+171245 [S0]'s commit Index is 467
+171247 [S0]'s commit Index is 467
+171262 [S0]'s commit Index is 467
+171296 [S0]'s commit Index is 468
+171306 [S0]'s commit Index is 468
+171372 [S0]'s commit Index is 469
+171405 [S0]'s commit Index is 469
+171413 [S0]'s commit Index is 469
+171432 [S0]'s commit Index is 469
+171434 [S0]'s commit Index is 469
+171473 [S0]'s commit Index is 470
+171485 [S0]'s commit Index is 470
+171545 [S0]'s commit Index is 470
+171546 [S2]{Leader}, old start is 457, length of log is 16, new start is 469
+171549 [S2]{Leader}, old start is 469, length of log is 4, new start is 470
+171565 [S0]'s commit Index is 470
+171595 [S0]'s commit Index is 470
+171781 [S0]'s commit Index is 470
+172027 [S0]'s commit Index is 470
+172148 [S0]'s commit Index is 470
+172560 [S0]'s commit Index is 470
+172663 [S0]'s commit Index is 470
+172965 [S0]'s commit Index is 470
+173209 [S0]'s commit Index is 470
+173650 [S0]'s commit Index is 470
+175078 [S0]'s commit Index is 470
+175081 [S0]'s commit Index is 470
+175171 [S0]'s commit Index is 470
+175392 [S0]'s commit Index is 470
+175706 [S0]'s commit Index is 470
+176655 [S0]'s commit Index is 470
+179647 [S0]'s commit Index is 470
+180905 [S0]'s commit Index is 470
+181689 [S0]'s commit Index is 470
+181897 [S0]'s commit Index is 470
+181958 [S0]'s commit Index is 470
+181967 [S0]'s commit Index is 470
+181967 [S4]{Leader}, old start is 457, length of log is 31, new start is 469
+181972 [S4]{Leader}, old start is 469, length of log is 19, new start is 470
+182040 [S1]{Leader}, old start is 460, length of log is 1, new start is 460
+182047 [S0]'s commit Index is 470
+182050 [S0]{Leader}, old start is 460, length of log is 28, new start is 472
+182053 [S0]{Leader}, old start is 472, length of log is 16, new start is 473
+182056 [S0]{Leader}, old start is 473, length of log is 15, new start is 474
+182098 [S0]'s commit Index is 487
+182426 [S0]'s commit Index is 487
+182428 [S0]'s commit Index is 487
+182426 [S6]{Leader}, old start is 457, length of log is 32, new start is 471
+182433 [S6]{Leader}, old start is 471, length of log is 18, new start is 472
+182427 [S2]{Leader}, old start is 470, length of log is 18, new start is 471
+182436 [S6]{Leader}, old start is 472, length of log is 17, new start is 473
+182441 [S6]{Leader}, old start is 473, length of log is 16, new start is 474
+182438 [S2]{Leader}, old start is 471, length of log is 17, new start is 472
+182450 [S2]{Leader}, old start is 472, length of log is 16, new start is 473
+182453 [S2]{Leader}, old start is 473, length of log is 15, new start is 474
+182457 [S0]'s commit Index is 487
+182458 [S5]{Leader}, old start is 460, length of log is 29, new start is 471
+182464 [S5]{Leader}, old start is 471, length of log is 18, new start is 472
+182467 [S5]{Leader}, old start is 472, length of log is 17, new start is 473
+182468 [S4]{Leader}, old start is 470, length of log is 18, new start is 471
+182472 [S4]{Leader}, old start is 471, length of log is 17, new start is 472
+182470 [S5]{Leader}, old start is 473, length of log is 16, new start is 475
+182477 [S0]'s commit Index is 487
+182477 [S3]{Leader}, old start is 457, length of log is 31, new start is 472
+182475 [S4]{Leader}, old start is 472, length of log is 16, new start is 473
+182480 [S0]'s commit Index is 487
+182482 [S3]{Leader}, old start is 472, length of log is 16, new start is 474
+182485 [S4]{Leader}, old start is 473, length of log is 15, new start is 474
+182487 [S0]'s commit Index is 487
+182528 [S0]'s commit Index is 487
+182530 [S0]'s commit Index is 487
+182533 [S0]{Leader}, old start is 474, length of log is 16, new start is 488
+182547 [S0]'s commit Index is 488
+182606 [S0]'s commit Index is 488
+182609 [S0]'s commit Index is 488
+182646 [S0]'s commit Index is 488
+182669 [S0]'s commit Index is 488
+182671 [S0]'s commit Index is 489
+182672 [S1]{Leader}, old start is 474, length of log is 1, new start is 474
+182698 [S0]'s commit Index is 489
+182857 [S0]'s commit Index is 489
+182857 [S3]{Leader}, old start is 474, length of log is 17, new start is 488
+182861 [S3]{Leader}, old start is 488, length of log is 3, new start is 489
+182887 [S0]'s commit Index is 489
+182887 [S2]{Leader}, old start is 474, length of log is 17, new start is 488
+182891 [S2]{Leader}, old start is 488, length of log is 3, new start is 489
+182906 [S0]'s commit Index is 489
+182907 [S5]{Leader}, old start is 475, length of log is 16, new start is 488
+182911 [S5]{Leader}, old start is 488, length of log is 3, new start is 489
+182947 [S0]'s commit Index is 490
+182948 [S4]{Leader}, old start is 474, length of log is 17, new start is 489
+183026 [S0]'s commit Index is 490
+183026 [S6]{Leader}, old start is 474, length of log is 17, new start is 488
+183031 [S6]{Leader}, old start is 488, length of log is 3, new start is 489
+183217 [S0]'s commit Index is 490
+183255 [S0]'s commit Index is 490
+183266 [S0]'s commit Index is 490
+183286 [S0]'s commit Index is 491
+183386 [S0]'s commit Index is 491
+183412 [S0]'s commit Index is 491
+183421 [S0]'s commit Index is 491
+183442 [S0]'s commit Index is 491
+183449 [S0]'s commit Index is 492
+183477 [S0]'s commit Index is 492
+183487 [S0]'s commit Index is 492
+183496 [S0]'s commit Index is 492
+183516 [S0]'s commit Index is 492
+183556 [S0]'s commit Index is 493
+183572 [S0]'s commit Index is 493
+183572 [S1]{Leader}, old start is 488, length of log is 1, new start is 488
+183617 [S0]'s commit Index is 493
+183707 [S0]'s commit Index is 493
+183709 [S0]'s commit Index is 494
+183757 [S0]'s commit Index is 494
+183919 [S0]'s commit Index is 494
+184069 [S0]'s commit Index is 494
+184120 [S0]'s commit Index is 494
+184149 [S0]'s commit Index is 494
+184169 [S0]'s commit Index is 494
+185219 [S0]'s commit Index is 494
+185278 [S0]'s commit Index is 494
+185288 [S0]'s commit Index is 494
+185329 [S0]'s commit Index is 495
+185368 [S0]'s commit Index is 495
+185389 [S0]'s commit Index is 495
+185391 [S0]'s commit Index is 495
+185399 [S0]'s commit Index is 495
+185459 [S0]'s commit Index is 495
+185469 [S0]'s commit Index is 496
+185479 [S0]'s commit Index is 496
+185518 [S0]'s commit Index is 496
+185521 [S0]'s commit Index is 496
+185539 [S0]'s commit Index is 496
+185542 [S0]'s commit Index is 496
+185590 [S0]'s commit Index is 496
+185641 [S0]'s commit Index is 496
+185654 [S0]'s commit Index is 496
+185765 [S0]'s commit Index is 496
+185794 [S0]'s commit Index is 496
+185834 [S0]'s commit Index is 497
+186051 [S0]'s commit Index is 497
+186080 [S0]'s commit Index is 497
+186131 [S0]'s commit Index is 497
+186161 [S0]'s commit Index is 498
+186271 [S0]'s commit Index is 498
+186274 [S0]'s commit Index is 498
+186409 [S0]'s commit Index is 498
+186418 [S0]'s commit Index is 498
+186439 [S0]'s commit Index is 498
+186529 [S0]'s commit Index is 499
+186619 [S0]'s commit Index is 499
+186928 [S0]'s commit Index is 499
+186934 [S0]'s commit Index is 499
+186937 [S0]'s commit Index is 499
+186977 [S0]'s commit Index is 499
+186990 [S0]'s commit Index is 499
+187008 [S0]'s commit Index is 499
+187031 [S0]'s commit Index is 500
+187051 [S0]'s commit Index is 500
+187089 [S0]'s commit Index is 500
+187112 [S0]'s commit Index is 500
+187155 [S0]'s commit Index is 500
+187170 [S0]'s commit Index is 500
+188411 [S0]'s commit Index is 500
+188422 [S0]'s commit Index is 500
+188432 [S0]'s commit Index is 500
+188472 [S0]'s commit Index is 500
+188572 [S0]'s commit Index is 500
+188672 [S0]'s commit Index is 500
+189541 [S0]'s commit Index is 500
+189551 [S0]'s commit Index is 500
+189562 [S0]'s commit Index is 500
+189662 [S0]'s commit Index is 501
+189664 [S0]'s commit Index is 501
+189954 [S0]'s commit Index is 501
+189964 [S0]'s commit Index is 501
+190045 [S0]'s commit Index is 501
+190064 [S0]'s commit Index is 501
+190133 [S0]'s commit Index is 501
+191465 [S0]'s commit Index is 501
+191504 [S0]'s commit Index is 501
+191564 [S0]'s commit Index is 501
+191594 [S0]'s commit Index is 501
+191625 [S0]'s commit Index is 501
+201660 [S0] restores
+201664 [S0] log(Term) becomes: "[15 15 15 15 15 15 15 15 15 15 15 15 15 15]"
+201668 [S1] restores
+201670 [S1] log(Term) becomes: "[15 15 15 15 15 15 15 15 15 15 15 15 15 15]"
+201674 [S2] restores
+201676 [S2] log(Term) becomes: "[15 15 15 15 15 15 15 15 15 15 15 15 15]"
+201680 [S3] restores
+201683 [S3] log(Term) becomes: "[15 15 15 15 15 15 15 15 15 15 15 15 15]"
+201685 [S4] restores
+201688 [S4] log(Term) becomes: "[15 15 15 15 15 15 15 15 15 15 15 15 15]"
+201691 [S5] restores
+201694 [S5] log(Term) becomes: "[15 15 15 15 15 15 15 15 15 15 15 15 15]"
+201697 [S6] restores
+201699 [S6] log(Term) becomes: "[15 15 15 15 15 15 15 15 15 15 15 15 15]"
+212656 [S5] becomes {Leader}
+212703 [S5]'s commit Index is 489
+212711 [S5]'s commit Index is 489
+212822 [S5]'s commit Index is 489
+212862 [S5]'s commit Index is 489
+212892 [S5]'s commit Index is 489
+213552 [S5]'s commit Index is 489
+213573 [S5]'s commit Index is 489
+213575 [S5]'s commit Index is 489
+213643 [S5]'s commit Index is 502
+213713 [S5]'s commit Index is 502
+213731 [S5]'s commit Index is 502
+213830 [S5]'s commit Index is 502
+213840 [S5]'s commit Index is 502
+213889 [S5]'s commit Index is 502
+215262 [S5]'s commit Index is 502
+215271 [S5]'s commit Index is 502
+215354 [S5]'s commit Index is 502
+215392 [S5]'s commit Index is 502
+216742 [S5]'s commit Index is 502
+216744 [S5]'s commit Index is 502
+216772 [S5]'s commit Index is 502
+216854 [S5]'s commit Index is 502
+216875 [S5]'s commit Index is 502
+218062 [S5]'s commit Index is 502
+218142 [S5]'s commit Index is 502
+218144 [S5]'s commit Index is 502
+218202 [S5]'s commit Index is 503
+218234 [S2]{Leader}, old start is 489, length of log is 16, new start is 503
+218285 [S5]'s commit Index is 503
+218294 [S5]'s commit Index is 503
+218295 [S0]{Leader}, old start is 488, length of log is 16, new start is 503
+218312 [S5]'s commit Index is 503
+218382 [S5]'s commit Index is 503
+218383 [S4]{Leader}, old start is 489, length of log is 16, new start is 503
+218403 [S5]'s commit Index is 503
+218404 [S1]{Leader}, old start is 488, length of log is 17, new start is 503
+218407 [S5]{Leader}, old start is 489, length of log is 16, new start is 504
+218452 [S5]'s commit Index is 504
+218452 [S3]{Leader}, old start is 489, length of log is 16, new start is 503
+218465 [S5]'s commit Index is 504
+218473 [S5]'s commit Index is 504
+218475 [S5]'s commit Index is 504
+218644 [S5]'s commit Index is 504
+218704 [S5]'s commit Index is 504
+218865 [S5]'s commit Index is 504
+218865 [S6]{Leader}, old start is 489, length of log is 17, new start is 504
+219125 [S5]'s commit Index is 505
+219127 [S5]'s commit Index is 505
+219177 [S5]'s commit Index is 505
+219248 [S5]'s commit Index is 506
+219295 [S5]'s commit Index is 506
+219466 [S5]'s commit Index is 506
+219747 [S5]'s commit Index is 506
+219750 [S5]'s commit Index is 506
+219778 [S5]'s commit Index is 507
+219858 [S5]'s commit Index is 507
+219886 [S5]'s commit Index is 507
+219898 [S5]'s commit Index is 507
+221248 [S5]'s commit Index is 507
+221268 [S5]'s commit Index is 507
+221299 [S5]'s commit Index is 507
+221318 [S5]'s commit Index is 507
+221329 [S5]'s commit Index is 507
+222778 [S5]'s commit Index is 507
+222859 [S5]'s commit Index is 507
+222889 [S5]'s commit Index is 507
+222980 [S5]'s commit Index is 507
+223910 [S5]'s commit Index is 507
+223992 [S5]'s commit Index is 507
+224030 [S5]'s commit Index is 507
+224033 [S5]'s commit Index is 508
+224035 [S5]'s commit Index is 508
+224120 [S5]'s commit Index is 508
+224359 [S5]'s commit Index is 508
+224362 [S5]'s commit Index is 508
+224390 [S5]'s commit Index is 508
+224419 [S5]'s commit Index is 509
+224421 [S5]'s commit Index is 509
+224431 [S5]'s commit Index is 509
+224462 [S5]'s commit Index is 509
+224470 [S5]'s commit Index is 509
+224481 [S5]'s commit Index is 509
+225732 [S5]'s commit Index is 509
+225872 [S5]'s commit Index is 509
+225931 [S5]'s commit Index is 509
+225941 [S5]'s commit Index is 509
+225962 [S5]'s commit Index is 509
+227305 [S5]'s commit Index is 509
+227314 [S5]'s commit Index is 509
+227383 [S5]'s commit Index is 509
+227455 [S5]'s commit Index is 509
+227464 [S5]'s commit Index is 509
+228736 [S5]'s commit Index is 509
+228806 [S5]'s commit Index is 509
+228897 [S5]'s commit Index is 509
+228916 [S5]'s commit Index is 509
+228925 [S5]'s commit Index is 509
+230225 [S5]'s commit Index is 509
+230297 [S5]'s commit Index is 509
+230356 [S5]'s commit Index is 509
+230376 [S5]'s commit Index is 509
+230386 [S5]'s commit Index is 509
+231817 [S5]'s commit Index is 509
+231858 [S5]'s commit Index is 509
+231888 [S5]'s commit Index is 509
+231958 [S5]'s commit Index is 509
+231987 [S5]'s commit Index is 509
+233220 [S5]'s commit Index is 509
+233232 [S5]'s commit Index is 509
+233259 [S5]'s commit Index is 509
+233289 [S5]'s commit Index is 510
+233303 [S5]'s commit Index is 510
+233328 [S5]'s commit Index is 510
+233371 [S5]'s commit Index is 510
+233412 [S5]'s commit Index is 510
+233449 [S5]'s commit Index is 510
+233478 [S5]'s commit Index is 510
+234741 [S5]'s commit Index is 510
+234752 [S5]'s commit Index is 510
+234802 [S5]'s commit Index is 510
+234871 [S5]'s commit Index is 510
+234873 [S5]'s commit Index is 510
+236243 [S5]'s commit Index is 510
+236252 [S5]'s commit Index is 510
+236291 [S5]'s commit Index is 510
+236383 [S5]'s commit Index is 510
+237599 [S5]'s commit Index is 510
+237601 [S5]'s commit Index is 510
+237750 [S5]'s commit Index is 510
+237753 [S5]'s commit Index is 511
+237792 [S5]'s commit Index is 511
+237802 [S5]'s commit Index is 511
+237823 [S5]'s commit Index is 511
+237923 [S5]'s commit Index is 511
+237963 [S5]'s commit Index is 511
+237989 [S5]'s commit Index is 511
+238101 [S5]'s commit Index is 511
+238130 [S5]'s commit Index is 511
+238161 [S5]'s commit Index is 512
+238190 [S5]'s commit Index is 512
+238210 [S5]'s commit Index is 512
+238432 [S5]'s commit Index is 512
+238451 [S5]'s commit Index is 512
+238501 [S5]'s commit Index is 512
+238550 [S5]'s commit Index is 513
+238570 [S5]'s commit Index is 513
+238620 [S5]'s commit Index is 513
+238622 [S5]'s commit Index is 513
+238640 [S5]'s commit Index is 514
+238770 [S5]'s commit Index is 514
+238791 [S5]'s commit Index is 514
+238852 [S5]'s commit Index is 514
+238862 [S5]'s commit Index is 514
+239011 [S5]'s commit Index is 515
+239013 [S5]'s commit Index is 515
+239032 [S5]'s commit Index is 515
+239129 [S5]'s commit Index is 515
+239131 [S5]'s commit Index is 515
+239133 [S5]'s commit Index is 515
+239242 [S5]'s commit Index is 516
+239243 [S5]'s commit Index is 516
+239255 [S5]'s commit Index is 516
+239282 [S5]'s commit Index is 516
+239314 [S5]'s commit Index is 516
+239331 [S5]'s commit Index is 517
+239384 [S5]'s commit Index is 517
+239393 [S5]'s commit Index is 517
+239412 [S5]'s commit Index is 517
+239434 [S5]'s commit Index is 517
+239436 [S5]'s commit Index is 517
+239451 [S5]'s commit Index is 517
+239455 [S5]'s commit Index is 517
+239472 [S5]'s commit Index is 517
+239483 [S5]'s commit Index is 517
+239513 [S5]'s commit Index is 517
+239544 [S5]'s commit Index is 518
+239652 [S5]'s commit Index is 518
+239773 [S5]'s commit Index is 518
+239833 [S5]'s commit Index is 518
+239903 [S5]'s commit Index is 518
+239953 [S5]'s commit Index is 519
+239995 [S5]'s commit Index is 519
+240156 [S5]'s commit Index is 519
+240157 [S1]{Leader}, old start is 503, length of log is 18, new start is 519
+240196 [S5]'s commit Index is 519
+240216 [S5]'s commit Index is 519
+240216 [S3]{Leader}, old start is 503, length of log is 18, new start is 519
+240224 [S5]'s commit Index is 520
+240225 [S2]{Leader}, old start is 503, length of log is 18, new start is 519
+240246 [S5]'s commit Index is 520
+240246 [S4]{Leader}, old start is 503, length of log is 18, new start is 519
+240345 [S5]'s commit Index is 520
+240425 [S5]'s commit Index is 520
+240465 [S5]'s commit Index is 520
+240468 [S5]{Leader}, old start is 504, length of log is 18, new start is 521
+240475 [S5]'s commit Index is 521
+240505 [S5]'s commit Index is 521
+240536 [S5]'s commit Index is 521
+240696 [S5]'s commit Index is 521
+240723 [S5]'s commit Index is 521
+240747 [S5]'s commit Index is 521
+240749 [S5]'s commit Index is 521
+240753 [S5]'s commit Index is 522
+240756 [S5]'s commit Index is 522
+240773 [S5]'s commit Index is 523
+240815 [S5]'s commit Index is 523
+240818 [S5]'s commit Index is 523
+240816 [S6]{Leader}, old start is 521, length of log is 1, new start is 521
+240834 [S5]'s commit Index is 524
+240836 [S5]'s commit Index is 524
+240843 [S5]'s commit Index is 524
+240855 [S5]'s commit Index is 524
+240862 [S5]'s commit Index is 524
+240894 [S0]{Leader}, old start is 521, length of log is 1, new start is 521
+240901 [S5]'s commit Index is 524
+240905 [S5]'s commit Index is 524
+240914 [S5]'s commit Index is 524
+240918 [S5]'s commit Index is 524
+240956 [S5]'s commit Index is 525
+240966 [S5]'s commit Index is 525
+240968 [S5]'s commit Index is 525
+240991 [S5]'s commit Index is 525
+240995 [S5]'s commit Index is 525
+241000 [S5]'s commit Index is 525
+241009 [S5]'s commit Index is 527
+241046 [S5]'s commit Index is 527
+241119 [S5]'s commit Index is 527
+241137 [S5]'s commit Index is 527
+241170 [S5]'s commit Index is 527
+241186 [S5]'s commit Index is 527
+241197 [S5]'s commit Index is 527
+241208 [S5]'s commit Index is 527
+241217 [S5]'s commit Index is 527
+241227 [S5]'s commit Index is 527
+241229 [S5]'s commit Index is 528
+241240 [S5]'s commit Index is 528
+241286 [S5]'s commit Index is 530
+241302 [S5]'s commit Index is 530
+241327 [S5]'s commit Index is 530
+241329 [S5]'s commit Index is 530
+241346 [S5]'s commit Index is 530
+241356 [S5]'s commit Index is 530
+241360 [S5]'s commit Index is 530
+241362 [S5]'s commit Index is 530
+241370 [S5]'s commit Index is 530
+241392 [S5]'s commit Index is 531
+241399 [S5]'s commit Index is 531
+241402 [S5]'s commit Index is 532
+241420 [S5]'s commit Index is 532
+241428 [S5]'s commit Index is 532
+241431 [S5]'s commit Index is 532
+241435 [S5]'s commit Index is 532
+241440 [S5]'s commit Index is 532
+241442 [S5]'s commit Index is 532
+241446 [S5]'s commit Index is 533
+241451 [S5]'s commit Index is 533
+241469 [S5]'s commit Index is 533
+241476 [S5]'s commit Index is 533
+241479 [S5]'s commit Index is 533
+241489 [S5]'s commit Index is 533
+241493 [S5]'s commit Index is 533
+241499 [S5]{Leader}, old start is 521, length of log is 16, new start is 534
+241507 [S1]{Leader}, old start is 519, length of log is 17, new start is 532
+241511 [S5]'s commit Index is 534
+241517 [S5]'s commit Index is 534
+241522 [S5]'s commit Index is 534
+241529 [S5]'s commit Index is 535
+241532 [S5]'s commit Index is 535
+241532 [S4]{Leader}, old start is 519, length of log is 18, new start is 533
+241541 [S5]'s commit Index is 535
+241567 [S5]'s commit Index is 535
+241571 [S5]'s commit Index is 535
+241602 [S5]'s commit Index is 535
+241611 [S5]'s commit Index is 535
+241622 [S5]'s commit Index is 535
+241623 [S2]{Leader}, old start is 519, length of log is 19, new start is 534
+241642 [S5]'s commit Index is 536
+241650 [S5]'s commit Index is 536
+241657 [S5]'s commit Index is 536
+241662 [S5]'s commit Index is 536
+241662 [S6]{Leader}, old start is 521, length of log is 17, new start is 535
+241673 [S3]{Leader}, old start is 519, length of log is 18, new start is 533
+241679 [S5]'s commit Index is 536
+241680 [S0]{Leader}, old start is 521, length of log is 18, new start is 533
+241682 [S5]'s commit Index is 537
+241684 [S0]{Leader}, old start is 533, length of log is 6, new start is 534
+241690 [S5]'s commit Index is 538
+241692 [S5]'s commit Index is 538
+241713 [S5]'s commit Index is 538
+241719 [S5]'s commit Index is 538
+241723 [S5]'s commit Index is 538
+241737 [S5]'s commit Index is 539
+241747 [S5]'s commit Index is 539
+241757 [S5]'s commit Index is 539
+241766 [S5]'s commit Index is 540
+241779 [S5]'s commit Index is 540
+241781 [S5]'s commit Index is 540
+241783 [S5]'s commit Index is 541
+241801 [S5]'s commit Index is 541
+241815 [S5]'s commit Index is 541
+241818 [S5]'s commit Index is 541
+241820 [S5]'s commit Index is 541
+241825 [S5]'s commit Index is 541
+241859 [S5]'s commit Index is 541
+241872 [S5]'s commit Index is 541
+241875 [S5]'s commit Index is 541
+241888 [S5]'s commit Index is 541
+241897 [S5]'s commit Index is 541
+241901 [S5]'s commit Index is 542
+241905 [S5]'s commit Index is 542
+241909 [S5]'s commit Index is 542
+241928 [S5]'s commit Index is 543
+241933 [S5]'s commit Index is 543
+241946 [S5]'s commit Index is 543
+241956 [S5]'s commit Index is 544
+241961 [S5]'s commit Index is 544
+241965 [S5]'s commit Index is 544
+241973 [S5]'s commit Index is 544
+241983 [S5]'s commit Index is 544
+241988 [S5]'s commit Index is 544
+241990 [S5]'s commit Index is 544
+241993 [S5]'s commit Index is 545
+241995 [S5]{Leader}, old start is 534, length of log is 16, new start is 545
+242000 [S5]'s commit Index is 545
+242000 [S3]{Leader}, old start is 533, length of log is 17, new start is 544
+242006 [S5]'s commit Index is 546
+242023 [S5]'s commit Index is 548
+242039 [S5]'s commit Index is 548
+242041 [S6]{Leader}, old start is 535, length of log is 15, new start is 544
+242041 [S5]'s commit Index is 548
+242046 [S5]'s commit Index is 548
+242049 [S5]'s commit Index is 548
+242055 [S5]'s commit Index is 548
+242057 [S5]'s commit Index is 548
+242060 [S5]'s commit Index is 548
+242063 [S5]'s commit Index is 548
+242064 [S1]{Leader}, old start is 532, length of log is 16, new start is 543
+242071 [S5]'s commit Index is 548
+242080 [S5]'s commit Index is 548
+242081 [S2]{Leader}, old start is 534, length of log is 18, new start is 545
+242083 [S5]'s commit Index is 549
+242086 [S5]'s commit Index is 549
+242090 [S5]'s commit Index is 549
+242096 [S5]'s commit Index is 549
+242107 [S5]'s commit Index is 549
+242109 [S5]'s commit Index is 549
+242114 [S5]'s commit Index is 549
+242117 [S5]'s commit Index is 549
+242123 [S5]'s commit Index is 551
+242127 [S5]'s commit Index is 551
+242130 [S5]'s commit Index is 551
+242132 [S5]'s commit Index is 552
+242137 [S5]'s commit Index is 552
+242139 [S0]{Leader}, old start is 534, length of log is 19, new start is 545
+242139 [S5]'s commit Index is 552
+242146 [S5]'s commit Index is 552
+242149 [S5]'s commit Index is 552
+242154 [S5]'s commit Index is 552
+242159 [S5]'s commit Index is 552
+242166 [S5]'s commit Index is 552
+242168 [S5]'s commit Index is 552
+242170 [S5]'s commit Index is 552
+242172 [S5]'s commit Index is 552
+242184 [S5]'s commit Index is 552
+242200 [S5]'s commit Index is 554
+242213 [S5]'s commit Index is 554
+242215 [S4]{Leader}, old start is 533, length of log is 22, new start is 545
+242216 [S5]'s commit Index is 554
+242229 [S5]'s commit Index is 554
+242231 [S5]'s commit Index is 554
+242233 [S5]'s commit Index is 555
+242236 [S5]'s commit Index is 555
+242239 [S5]'s commit Index is 555
+242246 [S5]'s commit Index is 555
+242249 [S5]'s commit Index is 555
+242251 [S5]'s commit Index is 555
+242253 [S5]'s commit Index is 555
+242261 [S5]'s commit Index is 555
+242269 [S5]'s commit Index is 555
+242271 [S5]'s commit Index is 555
+242277 [S5]'s commit Index is 555
+242279 [S5]'s commit Index is 555
+242281 [S5]'s commit Index is 555
+242292 [S5]'s commit Index is 557
+242296 [S5]'s commit Index is 557
+242298 [S5]'s commit Index is 557
+242308 [S5]'s commit Index is 557
+242310 [S5]'s commit Index is 557
+242314 [S5]'s commit Index is 557
+242316 [S5]'s commit Index is 557
+242322 [S5]'s commit Index is 557
+242328 [S5]'s commit Index is 557
+242355 [S5]'s commit Index is 557
+242359 [S5]'s commit Index is 557
+242361 [S5]'s commit Index is 557
+242367 [S6]{Leader}, old start is 544, length of log is 17, new start is 556
+242370 [S5]'s commit Index is 557
+242372 [S5]'s commit Index is 557
+242374 [S5]'s commit Index is 557
+242381 [S5]'s commit Index is 557
+242382 [S4]{Leader}, old start is 545, length of log is 18, new start is 553
+242386 [S4]{Leader}, old start is 553, length of log is 10, new start is 554
+242384 [S5]{Leader}, old start is 545, length of log is 18, new start is 558
+242392 [S5]'s commit Index is 558
+242400 [S5]'s commit Index is 560
+242402 [S5]'s commit Index is 560
+242402 [S2]{Leader}, old start is 545, length of log is 18, new start is 556
+242409 [S5]'s commit Index is 561
+242412 [S5]'s commit Index is 561
+242414 [S5]'s commit Index is 561
+242416 [S5]'s commit Index is 561
+242413 [S1]{Leader}, old start is 543, length of log is 19, new start is 557
+242419 [S5]'s commit Index is 561
+242424 [S5]'s commit Index is 561
+242427 [S5]'s commit Index is 561
+242429 [S5]'s commit Index is 561
+242441 [S5]'s commit Index is 561
+242448 [S5]'s commit Index is 561
+242493 [S5]'s commit Index is 561
+242493 [S0]{Leader}, old start is 545, length of log is 20, new start is 559
+242510 [S3]{Leader}, old start is 544, length of log is 18, new start is 556
+242513 [S3]{Leader}, old start is 556, length of log is 6, new start is 557
+242517 [S5]'s commit Index is 562
+242520 [S5]'s commit Index is 562
+242522 [S5]'s commit Index is 562
+242527 [S5]'s commit Index is 562
+242529 [S5]'s commit Index is 562
+242532 [S5]'s commit Index is 562
+242535 [S5]'s commit Index is 565
+242541 [S5]'s commit Index is 565
+242556 [S5]'s commit Index is 565
+242560 [S5]'s commit Index is 565
+242563 [S5]'s commit Index is 565
+242567 [S5]'s commit Index is 565
+242571 [S5]'s commit Index is 565
+242573 [S5]'s commit Index is 565
+242585 [S5]'s commit Index is 565
+242590 [S5]'s commit Index is 565
+242595 [S5]'s commit Index is 565
+242602 [S5]'s commit Index is 567
+242605 [S5]'s commit Index is 567
+242620 [S5]'s commit Index is 567
+242623 [S5]'s commit Index is 567
+242625 [S5]'s commit Index is 567
+242627 [S5]'s commit Index is 567
+242632 [S5]'s commit Index is 567
+242634 [S5]'s commit Index is 567
+242640 [S5]'s commit Index is 567
+242643 [S5]'s commit Index is 567
+242645 [S5]'s commit Index is 567
+242648 [S5]'s commit Index is 567
+242652 [S5]'s commit Index is 569
+242654 [S5]'s commit Index is 569
+242674 [S5]'s commit Index is 569
+242680 [S5]'s commit Index is 569
+242693 [S5]'s commit Index is 569
+242702 [S5]'s commit Index is 569
+242704 [S5]'s commit Index is 569
+242712 [S5]'s commit Index is 569
+242731 [S5]'s commit Index is 569
+242752 [S5]'s commit Index is 569
+242772 [S5]'s commit Index is 569
+242785 [S5]'s commit Index is 569
+242823 [S5]'s commit Index is 569
+242825 [S5]'s commit Index is 570
+242823 [S4]{Leader}, old start is 554, length of log is 17, new start is 563
+242835 [S4]{Leader}, old start is 563, length of log is 8, new start is 564
+242832 [S5]'s commit Index is 570
+242841 [S5]'s commit Index is 570
+242892 [S5]'s commit Index is 570
+242895 [S5]{Leader}, old start is 558, length of log is 16, new start is 571
+242902 [S5]'s commit Index is 571
+242908 [S5]'s commit Index is 571
+242909 [S6]{Leader}, old start is 556, length of log is 17, new start is 568
+242913 [S6]{Leader}, old start is 568, length of log is 5, new start is 569
+242919 [S5]'s commit Index is 571
+242942 [S5]'s commit Index is 571
+242944 [S2]{Leader}, old start is 556, length of log is 17, new start is 566
+242948 [S2]{Leader}, old start is 566, length of log is 7, new start is 567
+242952 [S5]'s commit Index is 572
+242971 [S5]'s commit Index is 572
+242988 [S5]'s commit Index is 572
+242990 [S5]'s commit Index is 572
+242992 [S5]'s commit Index is 572
+242988 [S1]{Leader}, old start is 557, length of log is 19, new start is 572
+243000 [S5]'s commit Index is 572
+243009 [S3]{Leader}, old start is 557, length of log is 19, new start is 570
+243012 [S3]{Leader}, old start is 570, length of log is 6, new start is 571
+243016 [S5]'s commit Index is 572
+243018 [S5]'s commit Index is 573
+243064 [S5]'s commit Index is 573
+243108 [S5]'s commit Index is 574
+243143 [S5]'s commit Index is 574
+243146 [S5]'s commit Index is 574
+243168 [S5]'s commit Index is 575
+243178 [S5]'s commit Index is 575
+243178 [S0]{Leader}, old start is 559, length of log is 17, new start is 571
+243183 [S0]{Leader}, old start is 571, length of log is 5, new start is 572
+243186 [S5]'s commit Index is 575
+243194 [S5]'s commit Index is 575
+243196 [S5]'s commit Index is 575
+243223 [S5]'s commit Index is 575
+243267 [S5]'s commit Index is 575
+243272 [S5]'s commit Index is 576
+243296 [S5]'s commit Index is 576
+243353 [S5]'s commit Index is 576
+243363 [S5]'s commit Index is 576
+243374 [S5]'s commit Index is 576
+243413 [S5]'s commit Index is 577
+243423 [S5]'s commit Index is 578
+243426 [S5]'s commit Index is 578
+243435 [S5]'s commit Index is 578
+243453 [S5]'s commit Index is 578
+243455 [S5]'s commit Index is 578
+243462 [S5]'s commit Index is 580
+243476 [S5]'s commit Index is 580
+243477 [S4]{Leader}, old start is 564, length of log is 16, new start is 576
+243488 [S5]'s commit Index is 580
+243496 [S5]'s commit Index is 580
+243500 [S5]'s commit Index is 580
+243516 [S5]'s commit Index is 580
+243519 [S5]'s commit Index is 580
+243522 [S5]'s commit Index is 580
+243525 [S5]'s commit Index is 580
+243566 [S5]'s commit Index is 580
+243586 [S5]'s commit Index is 580
+243595 [S5]'s commit Index is 580
+243603 [S5]'s commit Index is 580
+243614 [S5]'s commit Index is 580
+243655 [S5]'s commit Index is 581
+243673 [S5]'s commit Index is 581
+243676 [S5]'s commit Index is 581
+243685 [S5]'s commit Index is 581
+243693 [S5]'s commit Index is 583
+243703 [S5]'s commit Index is 583
+243705 [S5]'s commit Index is 583
+243713 [S5]'s commit Index is 583
+243732 [S5]'s commit Index is 583
+243732 [S2]{Leader}, old start is 567, length of log is 18, new start is 581
+243803 [S5]'s commit Index is 584
+243810 [S5]'s commit Index is 584
+243824 [S5]'s commit Index is 584
+243843 [S5]'s commit Index is 584
+243853 [S5]'s commit Index is 584
+243855 [S5]'s commit Index is 584
+243854 [S6]{Leader}, old start is 569, length of log is 17, new start is 582
+243864 [S5]'s commit Index is 584
+243871 [S5]'s commit Index is 584
+243873 [S5]'s commit Index is 585
+243876 [S5]{Leader}, old start is 571, length of log is 17, new start is 585
+243884 [S5]'s commit Index is 585
+243891 [S5]'s commit Index is 585
+243912 [S5]'s commit Index is 585
+243915 [S5]'s commit Index is 585
+243920 [S5]'s commit Index is 585
+243923 [S5]'s commit Index is 585
+243935 [S5]'s commit Index is 585
+243941 [S5]'s commit Index is 586
+243944 [S5]'s commit Index is 586
+243946 [S5]'s commit Index is 586
+243956 [S5]'s commit Index is 586
+243956 [S1]{Leader}, old start is 572, length of log is 17, new start is 585
+243964 [S5]'s commit Index is 587
+243972 [S5]'s commit Index is 587
+243975 [S5]'s commit Index is 587
+243977 [S5]'s commit Index is 587
+243990 [S5]'s commit Index is 587
+243993 [S5]'s commit Index is 587
+243996 [S5]'s commit Index is 587
+244002 [S5]'s commit Index is 587
+244005 [S5]'s commit Index is 587
+244011 [S5]'s commit Index is 588
+244033 [S5]'s commit Index is 588
+244048 [S3]{Leader}, old start is 585, length of log is 3, new start is 585
+244060 [S5]'s commit Index is 588
+244070 [S0]{Leader}, old start is 585, length of log is 2, new start is 585
+244095 [S5]'s commit Index is 588
+244104 [S5]'s commit Index is 588
+244104 [S4]{Leader}, old start is 576, length of log is 16, new start is 587
+244123 [S5]'s commit Index is 589
+244155 [S5]'s commit Index is 589
+244179 [S5]'s commit Index is 589
+244214 [S5]'s commit Index is 590
+244216 [S5]'s commit Index is 590
+244254 [S5]'s commit Index is 590
+244256 [S5]'s commit Index is 590
+244274 [S5]'s commit Index is 590
+244279 [S5]'s commit Index is 591
+244290 [S5]'s commit Index is 591
+244344 [S5]'s commit Index is 591
+244353 [S5]'s commit Index is 591
+244379 [S5]'s commit Index is 591
+244403 [S5]'s commit Index is 591
+244405 [S5]'s commit Index is 592
+244413 [S5]'s commit Index is 592
+244418 [S5]'s commit Index is 592
+244429 [S5]'s commit Index is 592
+244528 [S5]'s commit Index is 593
+244558 [S5]'s commit Index is 593
+244578 [S5]'s commit Index is 593
+244594 [S5]'s commit Index is 593
+244653 [S5]'s commit Index is 593
+244658 [S5]'s commit Index is 593
+244684 [S5]'s commit Index is 593
+244704 [S5]'s commit Index is 594
+244706 [S5]'s commit Index is 594
+244709 [S5]'s commit Index is 594
+244738 [S5]'s commit Index is 594
+244741 [S5]'s commit Index is 594
+244739 [S2]{Leader}, old start is 581, length of log is 16, new start is 592
+244744 [S5]'s commit Index is 596
+244746 [S2]{Leader}, old start is 592, length of log is 5, new start is 593
+244755 [S5]'s commit Index is 596
+244788 [S5]'s commit Index is 596
+244791 [S5]'s commit Index is 596
+244793 [S5]'s commit Index is 596
+244804 [S5]'s commit Index is 596
+244815 [S5]'s commit Index is 596
+244854 [S5]'s commit Index is 596
+244865 [S5]'s commit Index is 597
+244881 [S5]'s commit Index is 597
+244900 [S5]'s commit Index is 597
+244905 [S5]'s commit Index is 598
+244933 [S5]'s commit Index is 598
+244973 [S5]'s commit Index is 598
+244983 [S5]'s commit Index is 598
+244993 [S5]'s commit Index is 598
+245015 [S5]'s commit Index is 598
+245015 [S6]{Leader}, old start is 582, length of log is 18, new start is 594
+245020 [S6]{Leader}, old start is 594, length of log is 6, new start is 595
+245024 [S5]'s commit Index is 598
+245058 [S5]'s commit Index is 599
+245069 [S5]'s commit Index is 599
+245091 [S5]'s commit Index is 599
+245091 [S3]{Leader}, old start is 585, length of log is 17, new start is 598
+245095 [S5]{Leader}, old start is 585, length of log is 17, new start is 600
+245104 [S5]'s commit Index is 600
+245118 [S5]'s commit Index is 600
+245148 [S5]'s commit Index is 600
+245193 [S5]'s commit Index is 600
+245193 [S1]{Leader}, old start is 585, length of log is 17, new start is 599
+245202 [S5]'s commit Index is 600
+245218 [S5]'s commit Index is 601
+245219 [S0]{Leader}, old start is 585, length of log is 16, new start is 599
+245222 [S5]'s commit Index is 601
+245234 [S5]'s commit Index is 601
+245238 [S5]'s commit Index is 601
+245243 [S5]'s commit Index is 601
+245274 [S5]'s commit Index is 601
+245284 [S5]'s commit Index is 601
+245312 [S5]'s commit Index is 601
+245313 [S4]{Leader}, old start is 587, length of log is 16, new start is 601
+245335 [S5]'s commit Index is 602
+245354 [S5]'s commit Index is 602
+245374 [S5]'s commit Index is 602
+245400 [S5]'s commit Index is 602
+245402 [S5]'s commit Index is 602
+245404 [S5]'s commit Index is 602
+245412 [S5]'s commit Index is 602
+245434 [S5]'s commit Index is 602
+245441 [S5]'s commit Index is 602
+245444 [S5]'s commit Index is 603
+245453 [S5]'s commit Index is 603
+245463 [S5]'s commit Index is 603
+245481 [S5]'s commit Index is 603
+245484 [S5]'s commit Index is 603
+245523 [S5]'s commit Index is 603
+245532 [S5]'s commit Index is 604
+245542 [S5]'s commit Index is 604
+245562 [S5]'s commit Index is 604
+245564 [S5]'s commit Index is 604
+245572 [S5]'s commit Index is 604
+245661 [S5]'s commit Index is 604
+245670 [S5]'s commit Index is 604
+245699 [S5]'s commit Index is 604
+245739 [S5]'s commit Index is 605
+245761 [S5]'s commit Index is 606
+245781 [S5]'s commit Index is 606
+245789 [S5]'s commit Index is 606
+245842 [S5]'s commit Index is 606
+245859 [S5]'s commit Index is 606
+245878 [S5]'s commit Index is 606
+245888 [S5]'s commit Index is 606
+245917 [S5]'s commit Index is 606
+245919 [S5]'s commit Index is 607
+245928 [S5]'s commit Index is 607
+245968 [S5]'s commit Index is 607
+246025 [S5]'s commit Index is 607
+246025 [S2]{Leader}, old start is 593, length of log is 16, new start is 607
+246085 [S5]'s commit Index is 607
+246088 [S5]'s commit Index is 607
+246136 [S5]'s commit Index is 608
+246202 [S5]'s commit Index is 608
+246218 [S5]'s commit Index is 608
+246278 [S5]'s commit Index is 608
+246311 [S6]{Leader}, old start is 595, length of log is 17, new start is 608
+246314 [S6]{Leader}, old start is 608, length of log is 4, new start is 609
+246328 [S5]'s commit Index is 609
+246364 [S5]'s commit Index is 609
+246366 [S5]'s commit Index is 609
+246372 [S5]'s commit Index is 609
+246378 [S5]'s commit Index is 609
+246396 [S5]'s commit Index is 609
+246398 [S5]'s commit Index is 609
+246417 [S5]'s commit Index is 609
+246437 [S5]'s commit Index is 609
+246457 [S5]'s commit Index is 610
+246472 [S5]'s commit Index is 610
+246481 [S5]'s commit Index is 611
+246508 [S5]'s commit Index is 611
+246510 [S5]'s commit Index is 611
+246512 [S5]'s commit Index is 612
+246527 [S5]'s commit Index is 612
+246561 [S5]'s commit Index is 612
+246577 [S5]'s commit Index is 612
+246586 [S5]'s commit Index is 612
+246595 [S5]'s commit Index is 612
+246618 [S5]'s commit Index is 612
+246619 [S5]'s commit Index is 612
+246621 [S5]'s commit Index is 613
+246620 [S3]{Leader}, old start is 598, length of log is 17, new start is 611
+246624 [S5]{Leader}, old start is 600, length of log is 16, new start is 613
+246629 [S5]'s commit Index is 613
+246638 [S5]'s commit Index is 613
+246639 [S0]{Leader}, old start is 599, length of log is 16, new start is 612
+246661 [S5]'s commit Index is 614
+246677 [S5]'s commit Index is 614
+246679 [S5]'s commit Index is 614
+246682 [S5]'s commit Index is 614
+246688 [S5]'s commit Index is 614
+246692 [S5]'s commit Index is 614
+246692 [S1]{Leader}, old start is 599, length of log is 17, new start is 612
+246707 [S5]'s commit Index is 615
+246707 [S4]{Leader}, old start is 601, length of log is 16, new start is 613
+246713 [S4]{Leader}, old start is 613, length of log is 4, new start is 614
+246738 [S5]'s commit Index is 615
+246740 [S5]'s commit Index is 615
+246767 [S5]'s commit Index is 616
+246769 [S5]'s commit Index is 616
+246777 [S5]'s commit Index is 616
+246779 [S5]'s commit Index is 616
+246788 [S5]'s commit Index is 616
+246790 [S5]'s commit Index is 616
+246791 [S6]{Leader}, old start is 613, length of log is 1, new start is 613
+246793 [S5]'s commit Index is 616
+246798 [S5]'s commit Index is 616
+246807 [S5]'s commit Index is 616
+246810 [S5]'s commit Index is 617
+246837 [S5]'s commit Index is 618
+246840 [S5]'s commit Index is 618
+246857 [S5]'s commit Index is 618
+246861 [S5]'s commit Index is 618
+246868 [S5]'s commit Index is 618
+246890 [S5]'s commit Index is 618
+246918 [S5]'s commit Index is 618
+246936 [S5]'s commit Index is 619
+246941 [S5]'s commit Index is 619
+246956 [S5]'s commit Index is 619
+246961 [S5]'s commit Index is 619
+246965 [S5]'s commit Index is 620
+246968 [S5]'s commit Index is 620
+246971 [S5]'s commit Index is 620
+246978 [S5]'s commit Index is 620
+246981 [S5]'s commit Index is 620
+246983 [S5]'s commit Index is 620
+246985 [S5]'s commit Index is 622
+246987 [S5]'s commit Index is 622
+246989 [S5]'s commit Index is 622
+247001 [S5]'s commit Index is 622
+247010 [S5]'s commit Index is 622
+247038 [S5]'s commit Index is 622
+247051 [S5]'s commit Index is 622
+247069 [S5]'s commit Index is 622
+247072 [S5]'s commit Index is 622
+247073 [S2]{Leader}, old start is 607, length of log is 15, new start is 617
+247077 [S2]{Leader}, old start is 617, length of log is 5, new start is 618
+247079 [S5]'s commit Index is 622
+247093 [S5]'s commit Index is 623
+247095 [S5]'s commit Index is 623
+247097 [S5]'s commit Index is 623
+247099 [S5]'s commit Index is 623
+247102 [S5]'s commit Index is 623
+247107 [S5]'s commit Index is 623
+247109 [S5]'s commit Index is 624
+247112 [S5]'s commit Index is 624
+247114 [S5]'s commit Index is 625
+247110 [S3]{Leader}, old start is 611, length of log is 15, new start is 622
+247117 [S5]'s commit Index is 625
+247121 [S5]'s commit Index is 625
+247123 [S5]'s commit Index is 625
+247143 [S5]'s commit Index is 625
+247179 [S5]'s commit Index is 625
+247199 [S5]'s commit Index is 625
+247210 [S5]'s commit Index is 625
+247213 [S5]'s commit Index is 625
+247228 [S5]'s commit Index is 625
+247230 [S5]{Leader}, old start is 613, length of log is 15, new start is 626
+247238 [S5]'s commit Index is 626
+247238 [S1]{Leader}, old start is 612, length of log is 15, new start is 623
+247252 [S5]'s commit Index is 626
+247254 [S5]'s commit Index is 626
+247280 [S5]'s commit Index is 626
+247305 [S5]'s commit Index is 626
+247306 [S0]{Leader}, old start is 612, length of log is 16, new start is 624
+247313 [S5]'s commit Index is 626
+247343 [S5]'s commit Index is 626
+247345 [S5]'s commit Index is 626
+247355 [S5]'s commit Index is 626
+247365 [S5]'s commit Index is 627
+247371 [S6]{Leader}, old start is 613, length of log is 17, new start is 624
+247373 [S6]{Leader}, old start is 624, length of log is 6, new start is 625
+247384 [S5]'s commit Index is 627
+247400 [S5]'s commit Index is 627
+247420 [S5]'s commit Index is 628
+247450 [S5]'s commit Index is 628
+247451 [S4]{Leader}, old start is 614, length of log is 16, new start is 626
+247496 [S5]'s commit Index is 629
+247608 [S5]'s commit Index is 629
+247628 [S5]'s commit Index is 629
+247639 [S5]'s commit Index is 629
+247650 [S5]'s commit Index is 631
+247692 [S5]'s commit Index is 631
+247696 [S5]'s commit Index is 631
+247721 [S5]'s commit Index is 631
+247791 [S5]'s commit Index is 631
+247793 [S5]'s commit Index is 631
+247849 [S5]'s commit Index is 631
+247949 [S5]'s commit Index is 631
+247957 [S5]'s commit Index is 631
+247958 [S2]{Leader}, old start is 618, length of log is 15, new start is 630
+247962 [S2]{Leader}, old start is 630, length of log is 3, new start is 631
+248057 [S5]'s commit Index is 631
+248060 [S5]'s commit Index is 632
+248066 [S5]'s commit Index is 632
+248096 [S5]'s commit Index is 632
+248108 [S5]'s commit Index is 634
+248127 [S5]'s commit Index is 634
+248138 [S5]'s commit Index is 634
+248198 [S5]'s commit Index is 634
+248201 [S5]'s commit Index is 634
+248238 [S5]'s commit Index is 634
+248246 [S5]'s commit Index is 634
+248258 [S5]'s commit Index is 634
+248277 [S5]'s commit Index is 634
+248287 [S5]'s commit Index is 634
+248306 [S5]'s commit Index is 634
+248317 [S5]'s commit Index is 634
+248336 [S5]'s commit Index is 634
+248348 [S5]'s commit Index is 635
+248411 [S5]'s commit Index is 635
+248467 [S5]'s commit Index is 635
+248497 [S5]'s commit Index is 635
+248516 [S5]'s commit Index is 635
+248566 [S5]'s commit Index is 635
+248597 [S5]'s commit Index is 635
+248607 [S5]'s commit Index is 635
+248697 [S5]'s commit Index is 636
+248736 [S5]'s commit Index is 636
+248738 [S5]'s commit Index is 636
+248757 [S5]'s commit Index is 636
+248837 [S5]'s commit Index is 636
+248899 [S5]'s commit Index is 637
+248913 [S5]'s commit Index is 637
+248913 [S3]{Leader}, old start is 622, length of log is 16, new start is 636
+248918 [S5]'s commit Index is 637
+248926 [S5]'s commit Index is 637
+248967 [S5]'s commit Index is 637
+248976 [S5]'s commit Index is 637
+249027 [S5]'s commit Index is 637
+249046 [S5]'s commit Index is 638
+249060 [S5]'s commit Index is 638
+249097 [S5]'s commit Index is 638
+249097 [S1]{Leader}, old start is 623, length of log is 18, new start is 637
+249100 [S5]'s commit Index is 639
+249139 [S0]{Leader}, old start is 624, length of log is 16, new start is 637
+249140 [S5]'s commit Index is 639
+249148 [S5]'s commit Index is 639
+249149 [S6]{Leader}, old start is 625, length of log is 17, new start is 638
+249152 [S6]{Leader}, old start is 638, length of log is 4, new start is 639
+249151 [S5]{Leader}, old start is 626, length of log is 16, new start is 640
+249159 [S5]'s commit Index is 640
+249180 [S5]'s commit Index is 640
+249187 [S5]'s commit Index is 640
+249199 [S5]'s commit Index is 640
+249210 [S5]'s commit Index is 641
+249217 [S5]'s commit Index is 641
+249219 [S5]'s commit Index is 641
+249221 [S5]'s commit Index is 641
+249247 [S5]'s commit Index is 641
+249257 [S5]'s commit Index is 641
+249260 [S5]'s commit Index is 643
+249267 [S5]'s commit Index is 643
+249269 [S4]{Leader}, old start is 626, length of log is 18, new start is 638
+249271 [S4]{Leader}, old start is 638, length of log is 6, new start is 639
+249279 [S5]'s commit Index is 643
+249287 [S5]'s commit Index is 643
+249290 [S5]'s commit Index is 643
+249297 [S5]'s commit Index is 643
+249300 [S5]'s commit Index is 643
+249302 [S5]'s commit Index is 643
+249307 [S5]'s commit Index is 643
+249348 [S5]'s commit Index is 643
+249361 [S5]'s commit Index is 644
+249364 [S5]'s commit Index is 644
+249370 [S5]'s commit Index is 644
+249372 [S5]'s commit Index is 645
+249379 [S5]'s commit Index is 645
+249396 [S5]'s commit Index is 645
+249448 [S5]'s commit Index is 645
+249458 [S5]'s commit Index is 645
+249487 [S5]'s commit Index is 645
+249490 [S5]'s commit Index is 645
+249528 [S5]'s commit Index is 645
+249559 [S5]'s commit Index is 645
+249562 [S5]'s commit Index is 646
+249569 [S5]'s commit Index is 646
+249573 [S5]'s commit Index is 646
+249583 [S5]'s commit Index is 646
+249633 [S5]'s commit Index is 646
+249723 [S5]'s commit Index is 647
+249739 [S2]{Leader}, old start is 631, length of log is 18, new start is 644
+249742 [S2]{Leader}, old start is 644, length of log is 5, new start is 645
+249744 [S2]{Leader}, old start is 645, length of log is 4, new start is 646
+249760 [S5]'s commit Index is 647
+249763 [S5]'s commit Index is 647
+249768 [S5]'s commit Index is 647
+249789 [S5]'s commit Index is 648
+249800 [S5]'s commit Index is 648
+249819 [S5]'s commit Index is 648
+249909 [S5]'s commit Index is 648
+250226 [S5]'s commit Index is 648
+250438 [S5]'s commit Index is 648
+250478 [S5]'s commit Index is 648
+250882 [S5]'s commit Index is 648
+250932 [S5]'s commit Index is 648
+251267 [S5]'s commit Index is 648
+251396 [S5]'s commit Index is 648
+251439 [S5]'s commit Index is 648
+251499 [S5]'s commit Index is 648
+251533 [S5]'s commit Index is 648
+251827 [S5]'s commit Index is 648
+252587 [S5]'s commit Index is 648
+252648 [S5]'s commit Index is 648
+252698 [S5]'s commit Index is 648
+252728 [S5]'s commit Index is 648
+252810 [S5]'s commit Index is 648
+252830 [S5]'s commit Index is 648
+253010 [S5]'s commit Index is 648
+253540 [S5]'s commit Index is 648
+254252 [S5]'s commit Index is 648
+254390 [S5]'s commit Index is 648
+255044 [S5]'s commit Index is 648
+255092 [S5]'s commit Index is 648
+255962 [S5]'s commit Index is 648
+256655 [S5]'s commit Index is 648
+256876 [S5]'s commit Index is 648
+256918 [S5]'s commit Index is 648
+257294 [S5]'s commit Index is 648
+257434 [S5]'s commit Index is 648
+258749 [S5]'s commit Index is 648
+258787 [S5]'s commit Index is 648
+258790 [S5]'s commit Index is 648
+260254 [S1] becomes {Leader}
+260349 [S5]'s commit Index is 648
+260401 [S1]'s commit Index is 647
+260519 [S5]'s commit Index is 648
+260543 [S1]'s commit Index is 647
+260652 [S1]'s commit Index is 647
+260675 [S1]'s commit Index is 647
+260924 [S1]'s commit Index is 649
+260945 [S1]'s commit Index is 649
+261035 [S1]'s commit Index is 649
+261114 [S1]'s commit Index is 650
+261194 [S1]'s commit Index is 650
+261244 [S1]'s commit Index is 650
+261248 [S1]{Leader}, old start is 637, length of log is 17, new start is 651
+261355 [S1]'s commit Index is 651
+261409 [S1]'s commit Index is 651
+261433 [S1]'s commit Index is 652
+261434 [S0]{Leader}, old start is 637, length of log is 18, new start is 651
+261438 [S0]{Leader}, old start is 651, length of log is 4, new start is 652
+261437 [S1]'s commit Index is 652
+261448 [S1]'s commit Index is 652
+261608 [S1]'s commit Index is 653
+261618 [S1]'s commit Index is 653
+261635 [S1]'s commit Index is 653
+261808 [S1]'s commit Index is 653
+261809 [S6]{Leader}, old start is 639, length of log is 17, new start is 651
+261814 [S6]{Leader}, old start is 651, length of log is 5, new start is 652
+261893 [S1]'s commit Index is 655
+261896 [S1]'s commit Index is 655
+261899 [S1]'s commit Index is 655
+262048 [S1]'s commit Index is 655
+262079 [S1]'s commit Index is 656
+262139 [S1]'s commit Index is 656
+262207 [S1]'s commit Index is 657
+262217 [S1]'s commit Index is 657
+262291 [S1]'s commit Index is 657
+262428 [S1]'s commit Index is 657
+262478 [S1]'s commit Index is 657
+262561 [S1]'s commit Index is 659
+262562 [S2]{Leader}, old start is 646, length of log is 16, new start is 658
+262565 [S2]{Leader}, old start is 658, length of log is 4, new start is 659
+262590 [S1]'s commit Index is 659
+262617 [S1]'s commit Index is 660
+262720 [S1]'s commit Index is 661
+262758 [S1]'s commit Index is 661
+262806 [S1]'s commit Index is 661
+262815 [S1]'s commit Index is 661
+262847 [S1]'s commit Index is 661
+262858 [S1]'s commit Index is 661
+262878 [S1]'s commit Index is 663
+262907 [S1]'s commit Index is 664
+262919 [S1]'s commit Index is 664
+262968 [S1]'s commit Index is 664
+263068 [S1]'s commit Index is 664
+263087 [S1]'s commit Index is 664
+263090 [S1]{Leader}, old start is 651, length of log is 17, new start is 665
+263098 [S1]'s commit Index is 665
+263189 [S1]'s commit Index is 667
+263207 [S1]'s commit Index is 667
+263209 [S1]'s commit Index is 667
+263252 [S1]'s commit Index is 667
+263253 [S6]{Leader}, old start is 652, length of log is 18, new start is 666
+263258 [S1]'s commit Index is 667
+263260 [S0]{Leader}, old start is 652, length of log is 18, new start is 665
+263263 [S0]{Leader}, old start is 665, length of log is 5, new start is 666
+263260 [S1]'s commit Index is 667
+263284 [S1]'s commit Index is 669
+263298 [S1]'s commit Index is 669
+263312 [S1]'s commit Index is 669
+263318 [S1]'s commit Index is 669
+263387 [S1]'s commit Index is 669
+263397 [S1]'s commit Index is 669
+263403 [S1]'s commit Index is 669
+263429 [S1]'s commit Index is 669
+263484 [S1]'s commit Index is 669
+263488 [S1]'s commit Index is 672
+263494 [S1]'s commit Index is 672
+263535 [S1]'s commit Index is 672
+263574 [S1]'s commit Index is 672
+263615 [S1]'s commit Index is 673
+263674 [S1]'s commit Index is 673
+263674 [S2]{Leader}, old start is 659, length of log is 17, new start is 670
+263679 [S2]{Leader}, old start is 670, length of log is 6, new start is 671
+263703 [S1]'s commit Index is 673
+263713 [S1]'s commit Index is 673
+263716 [S1]{Leader}, old start is 665, length of log is 15, new start is 674
+263719 [S1]{Leader}, old start is 674, length of log is 6, new start is 675
+263724 [S1]'s commit Index is 675
+263755 [S1]'s commit Index is 675
+263784 [S1]'s commit Index is 675
+263794 [S1]'s commit Index is 675
+263804 [S1]'s commit Index is 675
+263806 [S1]'s commit Index is 677
+263811 [S1]'s commit Index is 677
+263812 [S6]{Leader}, old start is 666, length of log is 15, new start is 675
+263848 [S1]'s commit Index is 677
+263850 [S1]'s commit Index is 677
+263852 [S1]'s commit Index is 678
+263854 [S1]'s commit Index is 678
+263888 [S1]'s commit Index is 678
+263897 [S1]'s commit Index is 678
+263912 [S1]'s commit Index is 679
+263915 [S1]'s commit Index is 679
+263942 [S1]'s commit Index is 679
+263944 [S1]'s commit Index is 680
+263943 [S0]{Leader}, old start is 666, length of log is 15, new start is 675
+264023 [S1]'s commit Index is 680
+264026 [S1]'s commit Index is 680
+264121 [S1]'s commit Index is 681
+264126 [S1]'s commit Index is 681
+264159 [S1]'s commit Index is 681
+264171 [S1]'s commit Index is 682
+264204 [S1]'s commit Index is 682
+264204 [S2]{Leader}, old start is 671, length of log is 15, new start is 679
+264209 [S2]{Leader}, old start is 679, length of log is 7, new start is 680
+264242 [S1]'s commit Index is 684
+264296 [S1]'s commit Index is 684
+264300 [S1]'s commit Index is 684
+264399 [S1]'s commit Index is 684
+264412 [S1]'s commit Index is 684
+264671 [S1]'s commit Index is 685
+264723 [S1]'s commit Index is 685
+264753 [S1]'s commit Index is 685
+264810 [S1]'s commit Index is 685
+264903 [S1]'s commit Index is 687
+265003 [S1]'s commit Index is 687
+265140 [S1]'s commit Index is 687
+265381 [S1]'s commit Index is 688
+265550 [S1]'s commit Index is 688
+265550 [S6]{Leader}, old start is 675, length of log is 16, new start is 688
+265610 [S1]'s commit Index is 688
+265611 [S0]{Leader}, old start is 675, length of log is 16, new start is 688
+265613 [S1]{Leader}, old start is 675, length of log is 16, new start is 689
+265619 [S1]{Leader}, old start is 689, length of log is 2, new start is 690
+265706 [S1]'s commit Index is 690
+265826 [S1]'s commit Index is 690
+265845 [S1]'s commit Index is 690
+265851 [S1]'s commit Index is 691
+266033 [S1]'s commit Index is 691
+266048 [S1]'s commit Index is 691
+266095 [S1]'s commit Index is 692
+266159 [S1]'s commit Index is 692
+266166 [S1]'s commit Index is 692
+266246 [S1]'s commit Index is 693
+266267 [S1]'s commit Index is 693
+266267 [S2]{Leader}, old start is 680, length of log is 16, new start is 692
+266294 [S1]'s commit Index is 694
+266296 [S1]'s commit Index is 694
+266423 [S1]'s commit Index is 694
+266443 [S1]'s commit Index is 694
+266564 [S1]'s commit Index is 695
+266616 [S1]'s commit Index is 695
+266639 [S1]'s commit Index is 695
+266656 [S1]'s commit Index is 696
+266678 [S1]'s commit Index is 696
+266937 [S1]'s commit Index is 697
+267167 [S1]'s commit Index is 698
+267217 [S1]'s commit Index is 698
+267263 [S1]'s commit Index is 698
+267284 [S1]'s commit Index is 699
+267326 [S1]'s commit Index is 699
+267334 [S1]'s commit Index is 699
+267358 [S1]'s commit Index is 699
+267358 [S0]{Leader}, old start is 688, length of log is 15, new start is 698
+267374 [S1]'s commit Index is 702
+267414 [S1]'s commit Index is 702
+267423 [S1]'s commit Index is 702
+267429 [S1]'s commit Index is 702
+267432 [S1]'s commit Index is 702
+267432 [S6]{Leader}, old start is 688, length of log is 16, new start is 699
+267538 [S1]'s commit Index is 702
+267542 [S1]{Leader}, old start is 690, length of log is 16, new start is 703
+267573 [S1]'s commit Index is 703
+267589 [S1]'s commit Index is 703
+267617 [S1]'s commit Index is 703
+267647 [S1]'s commit Index is 703
+267672 [S1]'s commit Index is 705
+267673 [S2]{Leader}, old start is 692, length of log is 16, new start is 703
+267677 [S1]'s commit Index is 705
+267688 [S1]'s commit Index is 705
+267733 [S1]'s commit Index is 706
+267778 [S1]'s commit Index is 706
+267783 [S1]'s commit Index is 706
+267807 [S1]'s commit Index is 706
+267813 [S1]'s commit Index is 706
+267844 [S1]'s commit Index is 707
+267866 [S1]'s commit Index is 707
+267869 [S1]'s commit Index is 707
+267899 [S1]'s commit Index is 709
+267937 [S1]'s commit Index is 709
+267948 [S1]'s commit Index is 709
+267950 [S1]'s commit Index is 709
+267985 [S1]'s commit Index is 709
+268009 [S1]'s commit Index is 710
+268047 [S1]'s commit Index is 711
+268066 [S1]'s commit Index is 712
+268087 [S1]'s commit Index is 712
+268088 [S6]{Leader}, old start is 699, length of log is 17, new start is 710
+268093 [S6]{Leader}, old start is 710, length of log is 6, new start is 711
+268105 [S1]'s commit Index is 712
+268108 [S1]'s commit Index is 713
+268110 [S1]{Leader}, old start is 703, length of log is 15, new start is 713
+268135 [S1]'s commit Index is 713
+268139 [S0]{Leader}, old start is 698, length of log is 17, new start is 711
+268152 [S1]'s commit Index is 714
+268172 [S1]'s commit Index is 714
+268185 [S1]'s commit Index is 715
+268187 [S1]'s commit Index is 715
+268215 [S1]'s commit Index is 716
+268276 [S1]'s commit Index is 716
+268302 [S1]'s commit Index is 717
+268307 [S1]'s commit Index is 717
+268345 [S1]'s commit Index is 717
+268348 [S2]{Leader}, old start is 703, length of log is 16, new start is 714
+268361 [S1]'s commit Index is 717
+268402 [S1]'s commit Index is 717
+268405 [S1]'s commit Index is 718
+268422 [S1]'s commit Index is 718
+268487 [S1]'s commit Index is 720
+268520 [S1]'s commit Index is 720
+268532 [S1]'s commit Index is 720
+268588 [S1]'s commit Index is 723
+268610 [S1]'s commit Index is 723
+268613 [S1]'s commit Index is 723
+268629 [S1]'s commit Index is 723
+268673 [S1]'s commit Index is 723
+268675 [S1]'s commit Index is 723
+268679 [S1]{Leader}, old start is 713, length of log is 18, new start is 724
+268688 [S6]{Leader}, old start is 711, length of log is 16, new start is 721
+268691 [S6]{Leader}, old start is 721, length of log is 6, new start is 722
+268707 [S1]'s commit Index is 724
+268723 [S1]'s commit Index is 725
+268733 [S1]'s commit Index is 725
+268742 [S1]'s commit Index is 725
+268751 [S1]'s commit Index is 725
+268771 [S1]'s commit Index is 726
+268784 [S1]'s commit Index is 726
+268793 [S1]'s commit Index is 726
+268809 [S1]'s commit Index is 726
+268809 [S2]{Leader}, old start is 714, length of log is 17, new start is 724
+268833 [S1]'s commit Index is 727
+268833 [S0]{Leader}, old start is 711, length of log is 20, new start is 724
+268835 [S1]'s commit Index is 727
+268876 [S1]'s commit Index is 729
+268907 [S1]'s commit Index is 730
+268917 [S1]'s commit Index is 730
+268966 [S1]'s commit Index is 731
+268982 [S1]'s commit Index is 731
+269017 [S1]'s commit Index is 731
+269026 [S1]'s commit Index is 731
+269028 [S1]'s commit Index is 731
+269108 [S1]'s commit Index is 732
+269117 [S1]'s commit Index is 732
+269119 [S1]'s commit Index is 734
+269128 [S1]'s commit Index is 734
+269131 [S1]'s commit Index is 734
+269133 [S1]'s commit Index is 734
+269166 [S1]'s commit Index is 734
+269214 [S1]'s commit Index is 734
+269215 [S0]{Leader}, old start is 724, length of log is 16, new start is 734
+269216 [S6]{Leader}, old start is 722, length of log is 17, new start is 732
+269216 [S1]'s commit Index is 734
+269222 [S6]{Leader}, old start is 732, length of log is 7, new start is 733
+269253 [S1]'s commit Index is 734
+269267 [S1]'s commit Index is 734
+269296 [S1]'s commit Index is 734
+269299 [S1]'s commit Index is 734
+269301 [S1]'s commit Index is 739
+269299 [S2]{Leader}, old start is 724, length of log is 17, new start is 733
+269304 [S1]{Leader}, old start is 724, length of log is 19, new start is 735
+269310 [S1]{Leader}, old start is 735, length of log is 8, new start is 736
+269313 [S1]'s commit Index is 739
+269316 [S1]'s commit Index is 739
+269317 [S1]'s commit Index is 739
+269320 [S1]'s commit Index is 740
+269322 [S1]'s commit Index is 740
+269326 [S1]'s commit Index is 740
+269369 [S1]'s commit Index is 740
+269423 [S1]'s commit Index is 740
+269430 [S1]'s commit Index is 740
+269451 [S1]'s commit Index is 740
+269463 [S1]'s commit Index is 740
+269472 [S1]'s commit Index is 740
+269482 [S1]'s commit Index is 740
+269486 [S1]'s commit Index is 741
+269500 [S1]'s commit Index is 742
+269525 [S1]'s commit Index is 742
+269536 [S1]'s commit Index is 742
+269538 [S1]'s commit Index is 742
+269541 [S1]'s commit Index is 743
+269544 [S1]'s commit Index is 743
+269617 [S1]'s commit Index is 743
+269646 [S1]'s commit Index is 743
+269663 [S1]'s commit Index is 743
+269692 [S1]'s commit Index is 743
+269714 [S1]'s commit Index is 743
+269777 [S1]'s commit Index is 744
+269783 [S1]'s commit Index is 746
+269792 [S1]'s commit Index is 746
+269813 [S1]'s commit Index is 747
+269814 [S2]{Leader}, old start is 733, length of log is 17, new start is 745
+269864 [S1]'s commit Index is 747
+269915 [S1]'s commit Index is 747
+269915 [S0]{Leader}, old start is 734, length of log is 16, new start is 745
+269958 [S1]'s commit Index is 747
+269960 [S6]{Leader}, old start is 733, length of log is 16, new start is 744
+269964 [S6]{Leader}, old start is 744, length of log is 5, new start is 745
+269961 [S1]'s commit Index is 747
+269970 [S1]{Leader}, old start is 736, length of log is 16, new start is 748
+270017 [S1]'s commit Index is 748
+270043 [S1]'s commit Index is 748
+270045 [S1]'s commit Index is 750
+270054 [S1]'s commit Index is 750
+270085 [S1]'s commit Index is 750
+270106 [S1]'s commit Index is 750
+270145 [S1]'s commit Index is 751
+270186 [S1]'s commit Index is 751
+270206 [S1]'s commit Index is 751
+270264 [S1]'s commit Index is 752
+270284 [S1]'s commit Index is 752
+270374 [S1]'s commit Index is 752
+270381 [S1]'s commit Index is 753
+270395 [S1]'s commit Index is 753
+270444 [S1]'s commit Index is 754
+270495 [S1]'s commit Index is 754
+270497 [S1]'s commit Index is 754
+270504 [S1]'s commit Index is 754
+270586 [S1]'s commit Index is 755
+270614 [S1]'s commit Index is 755
+270653 [S1]'s commit Index is 755
+270675 [S1]'s commit Index is 756
+270739 [S1]'s commit Index is 756
+270766 [S1]'s commit Index is 756
+270792 [S1]'s commit Index is 759
+270924 [S1]'s commit Index is 759
+270959 [S1]'s commit Index is 759
+270976 [S3]{Leader}, old start is 748, length of log is 1, new start is 748
+271053 [S1]'s commit Index is 759
+271090 [S2]{Leader}, old start is 745, length of log is 18, new start is 758
+271094 [S1]'s commit Index is 759
+271228 [S1]'s commit Index is 759
+271267 [S1]'s commit Index is 759
+272015 [S1]'s commit Index is 759
+272035 [S1]'s commit Index is 759
+272291 [S1]'s commit Index is 759
+272481 [S1]'s commit Index is 759
+272751 [S1]'s commit Index is 759
+272790 [S1]'s commit Index is 759
+272936 [S1]'s commit Index is 759
+273067 [S1]'s commit Index is 759
+273229 [S1]'s commit Index is 759
+273288 [S1]'s commit Index is 759
+273513 [S1]'s commit Index is 759
+273619 [S1]'s commit Index is 759
+273630 [S1]'s commit Index is 759
+273749 [S1]'s commit Index is 759
+273880 [S1]'s commit Index is 759
+273922 [S1]'s commit Index is 759
+273924 [S1]'s commit Index is 759
+273993 [S1]'s commit Index is 759
+274193 [S1]'s commit Index is 759
+274605 [S1]'s commit Index is 759
+274623 [S1]'s commit Index is 759
+275243 [S1]'s commit Index is 759
+275441 [S1]'s commit Index is 759
+275474 [S1]'s commit Index is 759
+275524 [S1]'s commit Index is 759
+276893 [S1]'s commit Index is 759
+276934 [S1]'s commit Index is 759
+278229 [S1]'s commit Index is 759
+278235 [S1]'s commit Index is 759
+278442 [S1]'s commit Index is 759
+278496 [S1]'s commit Index is 759
+279796 [S1]'s commit Index is 759
+279916 [S1]'s commit Index is 759
+281139 [S1]'s commit Index is 759
+281159 [S1]'s commit Index is 759
+281229 [S1]'s commit Index is 759
+281238 [S1]'s commit Index is 759
+281247 [S6] becomes {Leader}
+281252 [S6]'s commit Index is 755
+281301 [S6]'s commit Index is 755
+281304 [S1]'s commit Index is 759
+281327 [S1]'s commit Index is 759
+281344 [S1]'s commit Index is 759
+281423 [S6]'s commit Index is 755
+281432 [S6]'s commit Index is 755
+281454 [S6]'s commit Index is 755
+281470 [S1]'s commit Index is 759
+281483 [S6]'s commit Index is 755
+281491 [S1]'s commit Index is 759
+281503 [S1]'s commit Index is 759
+281505 [S5]{Leader}, old start is 745, length of log is 1, new start is 745
+281655 [S4]{Leader}, old start is 745, length of log is 1, new start is 745
+281997 [S6]'s commit Index is 755
+281998 [S5]{Leader}, old start is 745, length of log is 18, new start is 747
+282003 [S5]{Leader}, old start is 747, length of log is 16, new start is 748
+282005 [S5]{Leader}, old start is 748, length of log is 15, new start is 749
+282006 [S6]'s commit Index is 755
+282058 [S6]'s commit Index is 755
+282059 [S4]{Leader}, old start is 745, length of log is 17, new start is 747
+282060 [S6]'s commit Index is 755
+282065 [S6]{Leader}, old start is 745, length of log is 18, new start is 756
+282067 [S6]{Leader}, old start is 756, length of log is 7, new start is 757
+282137 [S6]'s commit Index is 761
+282147 [S6]'s commit Index is 761
+282299 [S1]'s commit Index is 759
+282306 [S6]'s commit Index is 761
+282309 [S6]'s commit Index is 761
+282307 [S0]{Leader}, old start is 745, length of log is 20, new start is 756
+282313 [S0]{Leader}, old start is 756, length of log is 9, new start is 757
+282377 [S6]'s commit Index is 761
+282379 [S1]'s commit Index is 759
+282377 [S4]{Leader}, old start is 747, length of log is 18, new start is 756
+282384 [S4]{Leader}, old start is 756, length of log is 9, new start is 757
+282387 [S6]'s commit Index is 763
+282400 [S6]'s commit Index is 764
+282404 [S6]'s commit Index is 764
+282470 [S6]'s commit Index is 764
+282488 [S6]'s commit Index is 765
+282497 [S6]'s commit Index is 765
+282516 [S6]'s commit Index is 765
+282566 [S6]'s commit Index is 765
+282607 [S6]'s commit Index is 766
+282608 [S5]{Leader}, old start is 749, length of log is 19, new start is 762
+282612 [S5]{Leader}, old start is 762, length of log is 6, new start is 763
+282645 [S6]'s commit Index is 766
+282647 [S6]'s commit Index is 766
+282675 [S6]'s commit Index is 766
+282703 [S6]'s commit Index is 766
+282753 [S6]'s commit Index is 766
+282757 [S6]'s commit Index is 766
+282762 [S6]'s commit Index is 766
+282768 [S6]'s commit Index is 766
+282768 [S3]{Leader}, old start is 748, length of log is 25, new start is 761
+282772 [S6]{Leader}, old start is 757, length of log is 16, new start is 767
+282776 [S6]{Leader}, old start is 767, length of log is 6, new start is 769
+282778 [S6]{Leader}, old start is 769, length of log is 4, new start is 770
+282781 [S6]'s commit Index is 770
+282838 [S6]'s commit Index is 771
+282860 [S6]'s commit Index is 771
+282864 [S6]'s commit Index is 771
+282870 [S6]'s commit Index is 771
+282875 [S6]'s commit Index is 771
+282877 [S6]'s commit Index is 773
+282872 [S0]{Leader}, old start is 757, length of log is 17, new start is 767
+282885 [S0]{Leader}, old start is 767, length of log is 7, new start is 768
+282887 [S0]{Leader}, old start is 768, length of log is 6, new start is 769
+282888 [S1]'s commit Index is 759
+282904 [S6]'s commit Index is 773
+282940 [S6]'s commit Index is 773
+282951 [S6]'s commit Index is 773
+282957 [S6]'s commit Index is 773
+282966 [S6]'s commit Index is 773
+282967 [S3]{Leader}, old start is 761, length of log is 17, new start is 772
+282970 [S3]{Leader}, old start is 772, length of log is 6, new start is 773
+282968 [S6]'s commit Index is 773
+282999 [S6]'s commit Index is 776
+283018 [S6]'s commit Index is 776
+283020 [S6]'s commit Index is 776
+283019 [S5]{Leader}, old start is 763, length of log is 16, new start is 772
+283025 [S5]{Leader}, old start is 772, length of log is 7, new start is 773
+283037 [S6]'s commit Index is 777
+283039 [S6]'s commit Index is 777
+283041 [S6]'s commit Index is 778
+283061 [S6]'s commit Index is 778
+283077 [S6]'s commit Index is 778
+283079 [S6]'s commit Index is 779
+283088 [S6]'s commit Index is 779
+283136 [S6]'s commit Index is 779
+283150 [S6]'s commit Index is 779
+283176 [S6]'s commit Index is 779
+283187 [S6]'s commit Index is 779
+283190 [S6]'s commit Index is 779
+283220 [S6]'s commit Index is 779
+283228 [S6]'s commit Index is 779
+283237 [S6]'s commit Index is 780
+283246 [S6]'s commit Index is 780
+283277 [S6]'s commit Index is 780
+283284 [S6]'s commit Index is 780
+283294 [S6]'s commit Index is 780
+283304 [S6]'s commit Index is 780
+283345 [S6]'s commit Index is 780
+283347 [S6]{Leader}, old start is 770, length of log is 17, new start is 781
+283350 [S6]{Leader}, old start is 781, length of log is 6, new start is 782
+283388 [S6]'s commit Index is 783
+283391 [S6]'s commit Index is 783
+283395 [S6]'s commit Index is 783
+283402 [S6]'s commit Index is 783
+283404 [S6]'s commit Index is 783
+283414 [S6]'s commit Index is 784
+283415 [S0]{Leader}, old start is 769, length of log is 19, new start is 781
+283419 [S6]'s commit Index is 786
+283442 [S6]'s commit Index is 786
+283473 [S6]'s commit Index is 786
+283474 [S5]{Leader}, old start is 773, length of log is 17, new start is 781
+283478 [S5]{Leader}, old start is 781, length of log is 9, new start is 782
+283571 [S6]'s commit Index is 787
+283615 [S6]'s commit Index is 787
+283642 [S6]'s commit Index is 787
+283654 [S6]'s commit Index is 787
+283654 [S3]{Leader}, old start is 773, length of log is 18, new start is 784
+283659 [S3]{Leader}, old start is 784, length of log is 7, new start is 785
+283674 [S6]'s commit Index is 790
+283704 [S6]'s commit Index is 790
+283746 [S6]'s commit Index is 790
+283769 [S6]'s commit Index is 791
+283786 [S6]'s commit Index is 791
+283814 [S6]'s commit Index is 791
+283833 [S6]'s commit Index is 791
+283911 [S6]'s commit Index is 792
+283914 [S6]'s commit Index is 792
+283914 [S0]{Leader}, old start is 781, length of log is 17, new start is 789
+283922 [S6]'s commit Index is 792
+283977 [S6]'s commit Index is 792
+284039 [S6]'s commit Index is 792
+284042 [S6]{Leader}, old start is 782, length of log is 16, new start is 793
+284045 [S6]'s commit Index is 795
+284047 [S6]{Leader}, old start is 793, length of log is 5, new start is 794
+284050 [S6]'s commit Index is 797
+284062 [S6]'s commit Index is 797
+284073 [S6]'s commit Index is 797
+284089 [S6]'s commit Index is 797
+284144 [S6]'s commit Index is 797
+284226 [S6]'s commit Index is 797
+284236 [S6]'s commit Index is 797
+284307 [S6]'s commit Index is 797
+284318 [S6]'s commit Index is 797
+284320 [S6]'s commit Index is 798
+284319 [S5]{Leader}, old start is 782, length of log is 21, new start is 794
+284331 [S6]'s commit Index is 798
+284342 [S6]'s commit Index is 798
+284379 [S6]'s commit Index is 798
+284398 [S6]'s commit Index is 801
+284408 [S6]'s commit Index is 801
+284417 [S6]'s commit Index is 801
+284447 [S6]'s commit Index is 801
+284450 [S6]'s commit Index is 801
+284459 [S6]'s commit Index is 802
+284460 [S0]{Leader}, old start is 789, length of log is 16, new start is 798
+284461 [S6]'s commit Index is 802
+284466 [S6]'s commit Index is 802
+284478 [S6]'s commit Index is 802
+284488 [S6]'s commit Index is 802
+284488 [S3]{Leader}, old start is 785, length of log is 22, new start is 798
+284492 [S3]{Leader}, old start is 798, length of log is 9, new start is 799
+284490 [S6]'s commit Index is 802
+284500 [S6]'s commit Index is 806
+284511 [S6]'s commit Index is 806
+284538 [S6]'s commit Index is 806
+284550 [S6]'s commit Index is 806
+284560 [S6]'s commit Index is 806
+284598 [S6]'s commit Index is 806
+284603 [S6]'s commit Index is 806
+284606 [S6]{Leader}, old start is 794, length of log is 16, new start is 807
+284647 [S6]'s commit Index is 807
+284651 [S6]'s commit Index is 807
+284662 [S6]'s commit Index is 807
+284689 [S6]'s commit Index is 807
+284708 [S6]'s commit Index is 807
+284765 [S6]'s commit Index is 807
+284765 [S5]{Leader}, old start is 794, length of log is 18, new start is 807
+284863 [S6]'s commit Index is 808
+284884 [S6]'s commit Index is 810
+284914 [S6]'s commit Index is 810
+284952 [S6]'s commit Index is 811
+285012 [S6]'s commit Index is 811
+285013 [S0]{Leader}, old start is 798, length of log is 15, new start is 808
+285017 [S6]'s commit Index is 811
+285040 [S6]'s commit Index is 811
+285095 [S6]'s commit Index is 811
+285114 [S6]'s commit Index is 811
+285123 [S6]'s commit Index is 811
+285123 [S3]{Leader}, old start is 799, length of log is 17, new start is 809
+285127 [S3]{Leader}, old start is 809, length of log is 7, new start is 810
+285131 [S6]'s commit Index is 813
+285133 [S6]'s commit Index is 813
+285137 [S6]'s commit Index is 813
+285143 [S6]'s commit Index is 813
+285251 [S6]'s commit Index is 813
+285392 [S6]'s commit Index is 813
+285421 [S6]'s commit Index is 813
+285432 [S6]'s commit Index is 817
+285443 [S6]'s commit Index is 817
+285630 [S6]'s commit Index is 817
+285651 [S6]'s commit Index is 818
+285661 [S6]'s commit Index is 818
+285666 [S6]'s commit Index is 819
+285669 [S6]{Leader}, old start is 807, length of log is 16, new start is 820
+285672 [S6]{Leader}, old start is 820, length of log is 3, new start is 821
+285742 [S6]'s commit Index is 821
+285822 [S6]'s commit Index is 821
+285823 [S5]{Leader}, old start is 807, length of log is 16, new start is 820
+285863 [S6]'s commit Index is 821
+285890 [S6]'s commit Index is 822
+285900 [S6]'s commit Index is 822
+285931 [S6]'s commit Index is 822
+285951 [S6]'s commit Index is 823
+285970 [S6]'s commit Index is 823
+285980 [S6]'s commit Index is 823
+286059 [S6]'s commit Index is 823
+286059 [S3]{Leader}, old start is 810, length of log is 16, new start is 822
+286064 [S3]{Leader}, old start is 822, length of log is 4, new start is 823
+286066 [S0]{Leader}, old start is 808, length of log is 17, new start is 822
+286101 [S6]'s commit Index is 823
+286174 [S6]'s commit Index is 823
+286334 [S6]'s commit Index is 824
+286514 [S6]'s commit Index is 824
+286554 [S6]'s commit Index is 824
+286603 [S6]'s commit Index is 826
+286664 [S6]'s commit Index is 826
+286724 [S6]'s commit Index is 826
+286834 [S6]'s commit Index is 827
+286841 [S6]'s commit Index is 827
+286847 [S6]'s commit Index is 827
+287018 [S6]'s commit Index is 827
+287033 [S6]'s commit Index is 828
+287035 [S6]'s commit Index is 828
+287143 [S6]'s commit Index is 828
+287208 [S6]'s commit Index is 830
+287257 [S6]'s commit Index is 830
+287289 [S6]'s commit Index is 830
+287351 [S6]'s commit Index is 830
+287386 [S6]'s commit Index is 830
+287421 [S6]'s commit Index is 830
+287426 [S6]'s commit Index is 832
+287500 [S6]'s commit Index is 832
+287503 [S6]'s commit Index is 832
+287511 [S6]'s commit Index is 832
+287660 [S6]'s commit Index is 832
+287700 [S6]'s commit Index is 832
+287700 [S5]{Leader}, old start is 820, length of log is 15, new start is 831
+287705 [S5]{Leader}, old start is 831, length of log is 4, new start is 832
+287741 [S6]'s commit Index is 832
+287745 [S6]{Leader}, old start is 821, length of log is 15, new start is 834
+287769 [S6]'s commit Index is 834
+288035 [S6]'s commit Index is 835
+288051 [S6]'s commit Index is 835
+288066 [S0]{Leader}, old start is 822, length of log is 15, new start is 834
+288067 [S6]'s commit Index is 835
+288070 [S6]'s commit Index is 836
+288409 [S6]'s commit Index is 836
+288410 [S3]{Leader}, old start is 823, length of log is 16, new start is 836
+288490 [S6]'s commit Index is 836
+288803 [S6]'s commit Index is 836
+288806 [S6]'s commit Index is 836
+288954 [S6]'s commit Index is 838
+288962 [S6]'s commit Index is 838
+289005 [S6]'s commit Index is 838
+289218 [S6]'s commit Index is 838
+289425 [S6]'s commit Index is 838
+289583 [S6]'s commit Index is 838
+289594 [S6]'s commit Index is 839
+289789 [S6]'s commit Index is 841
+289791 [S6]'s commit Index is 841
+289802 [S6]'s commit Index is 841
+289852 [S6]'s commit Index is 842
+289876 [S6]'s commit Index is 842
+289878 [S6]'s commit Index is 842
+289914 [S6]'s commit Index is 843
+289960 [S6]'s commit Index is 843
+289981 [S6]'s commit Index is 843
+289988 [S6]'s commit Index is 843
+290040 [S6]'s commit Index is 843
+290064 [S6]'s commit Index is 844
+290067 [S6]'s commit Index is 844
+290067 [S5]{Leader}, old start is 832, length of log is 16, new start is 843
+290078 [S6]'s commit Index is 845
+290131 [S6]'s commit Index is 845
+290220 [S6]'s commit Index is 846
+290276 [S6]'s commit Index is 846
+290286 [S6]'s commit Index is 846
+290290 [S6]'s commit Index is 846
+290309 [S6]'s commit Index is 846
+290317 [S0]{Leader}, old start is 834, length of log is 16, new start is 845
+290321 [S6]'s commit Index is 846
+290325 [S6]{Leader}, old start is 834, length of log is 17, new start is 847
+290328 [S6]{Leader}, old start is 847, length of log is 4, new start is 848
+290350 [S6]'s commit Index is 850
+290380 [S6]'s commit Index is 850
+290414 [S6]'s commit Index is 850
+290433 [S6]'s commit Index is 850
+290484 [S6]'s commit Index is 850
+290523 [S6]'s commit Index is 850
+290536 [S6]'s commit Index is 850
+290565 [S6]'s commit Index is 850
+290568 [S6]'s commit Index is 850
+290573 [S6]'s commit Index is 850
+290584 [S6]'s commit Index is 850
+290584 [S3]{Leader}, old start is 836, length of log is 18, new start is 847
+290589 [S3]{Leader}, old start is 847, length of log is 7, new start is 848
+290715 [S6]'s commit Index is 853
+290744 [S6]'s commit Index is 853
+290785 [S6]'s commit Index is 853
+290793 [S6]'s commit Index is 853
+290796 [S6]'s commit Index is 853
+290834 [S6]'s commit Index is 854
+290853 [S6]'s commit Index is 854
+290873 [S6]'s commit Index is 854
+290979 [S6]'s commit Index is 856
+291013 [S6]'s commit Index is 856
+291034 [S6]'s commit Index is 856
+291035 [S5]{Leader}, old start is 843, length of log is 16, new start is 854
+291039 [S5]{Leader}, old start is 854, length of log is 5, new start is 855
+291069 [S6]'s commit Index is 856
+291194 [S6]'s commit Index is 857
+291196 [S6]'s commit Index is 857
+291223 [S6]'s commit Index is 857
+291232 [S6]'s commit Index is 858
+291263 [S6]'s commit Index is 858
+291275 [S6]'s commit Index is 858
+291275 [S0]{Leader}, old start is 845, length of log is 16, new start is 857
+291368 [S6]'s commit Index is 860
+291410 [S6]'s commit Index is 860
+291419 [S6]'s commit Index is 860
+291422 [S6]{Leader}, old start is 848, length of log is 15, new start is 861
+291456 [S6]'s commit Index is 861
+291486 [S6]'s commit Index is 861
+291486 [S3]{Leader}, old start is 848, length of log is 15, new start is 858
+291491 [S3]{Leader}, old start is 858, length of log is 5, new start is 859
+291524 [S6]'s commit Index is 861
+291536 [S6]'s commit Index is 861
+291575 [S6]'s commit Index is 861
+291583 [S6]'s commit Index is 861
+291615 [S6]'s commit Index is 863
+291619 [S6]'s commit Index is 863
+291679 [S6]'s commit Index is 863
+291712 [S6]'s commit Index is 865
+291803 [S6]'s commit Index is 865
+291887 [S6]'s commit Index is 866
+291890 [S6]'s commit Index is 866
+291905 [S6]'s commit Index is 866
+291911 [S6]'s commit Index is 867
+291912 [S5]{Leader}, old start is 855, length of log is 16, new start is 867
+291914 [S6]'s commit Index is 867
+291937 [S6]'s commit Index is 867
+291942 [S6]'s commit Index is 867
+291975 [S6]'s commit Index is 869
+291998 [S6]'s commit Index is 869
+292083 [S6]'s commit Index is 869
+292088 [S6]'s commit Index is 870
+292113 [S0]{Leader}, old start is 857, length of log is 15, new start is 868
+292117 [S0]{Leader}, old start is 868, length of log is 4, new start is 869
+292156 [S6]'s commit Index is 870
+292202 [S6]'s commit Index is 870
+292204 [S6]'s commit Index is 871
+292206 [S6]{Leader}, old start is 861, length of log is 15, new start is 871
+292213 [S6]'s commit Index is 871
+292247 [S6]'s commit Index is 871
+292253 [S6]'s commit Index is 871
+292285 [S6]'s commit Index is 871
+292294 [S6]'s commit Index is 872
+292322 [S6]'s commit Index is 872
+292322 [S3]{Leader}, old start is 859, length of log is 19, new start is 871
+292353 [S6]'s commit Index is 875
+292364 [S6]'s commit Index is 875
+292371 [S6]'s commit Index is 875
+292381 [S6]'s commit Index is 875
+292386 [S6]'s commit Index is 875
+292434 [S6]'s commit Index is 875
+292445 [S6]'s commit Index is 876
+292506 [S6]'s commit Index is 877
+292514 [S6]'s commit Index is 877
+292520 [S6]'s commit Index is 878
+292542 [S6]'s commit Index is 878
+292570 [S6]'s commit Index is 878
+292619 [S6]'s commit Index is 879
+292649 [S6]'s commit Index is 879
+292662 [S6]'s commit Index is 879
+292731 [S6]'s commit Index is 879
+292740 [S6]'s commit Index is 880
+292793 [S6]'s commit Index is 880
+292793 [S5]{Leader}, old start is 867, length of log is 16, new start is 879
+292798 [S6]'s commit Index is 881
+292799 [S0]{Leader}, old start is 869, length of log is 16, new start is 879
+292803 [S0]{Leader}, old start is 879, length of log is 6, new start is 880
+292801 [S6]'s commit Index is 881
+292840 [S6]'s commit Index is 881
+292849 [S6]'s commit Index is 883
+292909 [S6]'s commit Index is 883
+292922 [S6]'s commit Index is 883
+293091 [S6]'s commit Index is 883
+293120 [S6]'s commit Index is 883
+293124 [S6]'s commit Index is 883
+293124 [S3]{Leader}, old start is 871, length of log is 17, new start is 882
+293129 [S3]{Leader}, old start is 882, length of log is 6, new start is 883
+293176 [S6]'s commit Index is 883
+293191 [S6]'s commit Index is 883
+293211 [S6]'s commit Index is 883
+293213 [S6]'s commit Index is 886
+293216 [S6]{Leader}, old start is 871, length of log is 17, new start is 884
+293220 [S6]{Leader}, old start is 884, length of log is 4, new start is 885
+293301 [S6]'s commit Index is 887
+293357 [S6]'s commit Index is 887
+293366 [S6]'s commit Index is 887
+293397 [S6]'s commit Index is 887
+293403 [S6]'s commit Index is 887
+293405 [S6]'s commit Index is 887
+293461 [S6]'s commit Index is 887
+293466 [S6]'s commit Index is 888
+293472 [S6]'s commit Index is 888
+293481 [S6]'s commit Index is 888
+293488 [S6]'s commit Index is 888
+293543 [S6]'s commit Index is 888
+293568 [S6]'s commit Index is 889
+293576 [S6]'s commit Index is 890
+293648 [S6]'s commit Index is 890
+293650 [S6]'s commit Index is 891
+293718 [S6]'s commit Index is 891
+293742 [S6]'s commit Index is 891
+293778 [S6]'s commit Index is 891
+293842 [S6]'s commit Index is 892
+293871 [S6]'s commit Index is 892
+293935 [S6]'s commit Index is 893
+293969 [S6]'s commit Index is 893
+293970 [S0]{Leader}, old start is 880, length of log is 16, new start is 892
+293974 [S0]{Leader}, old start is 892, length of log is 4, new start is 893
+293987 [S5]{Leader}, old start is 879, length of log is 17, new start is 892
+293990 [S5]{Leader}, old start is 892, length of log is 4, new start is 893
+294035 [S3]{Leader}, old start is 883, length of log is 15, new start is 893
+294112 [S6]'s commit Index is 893
+294244 [S6]'s commit Index is 893
+294283 [S6]'s commit Index is 893
+294304 [S6]'s commit Index is 893
+294317 [S1]{Leader}, old start is 885, length of log is 1, new start is 885
+294346 [S6]'s commit Index is 893
+294415 [S6]'s commit Index is 893
+294417 [S6]'s commit Index is 893
+294444 [S6]'s commit Index is 894
+294466 [S6]'s commit Index is 894
+294507 [S2]{Leader}, old start is 885, length of log is 1, new start is 885
+294536 [S4]{Leader}, old start is 885, length of log is 1, new start is 885
+294777 [S6]'s commit Index is 894
+294781 [S6]{Leader}, old start is 885, length of log is 16, new start is 895
+294784 [S6]{Leader}, old start is 895, length of log is 6, new start is 896
+294788 [S6]'s commit Index is 898
+294808 [S6]'s commit Index is 898
+294828 [S6]'s commit Index is 899
+294838 [S4]{Leader}, old start is 885, length of log is 18, new start is 896
+294869 [S6]'s commit Index is 900
+294871 [S6]'s commit Index is 900
+294882 [S6]'s commit Index is 900
+294882 [S2]{Leader}, old start is 885, length of log is 19, new start is 895
+294887 [S2]{Leader}, old start is 895, length of log is 9, new start is 896
+294889 [S6]'s commit Index is 900
+294898 [S6]'s commit Index is 900
+294937 [S6]'s commit Index is 900
+294953 [S6]'s commit Index is 900
+294953 [S1]{Leader}, old start is 885, length of log is 17, new start is 895
+294958 [S1]{Leader}, old start is 895, length of log is 7, new start is 896
+294955 [S6]'s commit Index is 901
+294963 [S6]'s commit Index is 902
+294966 [S6]'s commit Index is 902
+294968 [S6]'s commit Index is 904
+294978 [S6]'s commit Index is 905
+295012 [S6]'s commit Index is 905
+295016 [S6]'s commit Index is 905
+295019 [S6]'s commit Index is 907
+295019 [S0]{Leader}, old start is 893, length of log is 16, new start is 901
+295022 [S6]{Leader}, old start is 896, length of log is 15, new start is 907
+295031 [S6]'s commit Index is 907
+295050 [S6]'s commit Index is 907
+295053 [S6]'s commit Index is 907
+295066 [S6]'s commit Index is 907
+295068 [S6]'s commit Index is 908
+295071 [S6]'s commit Index is 908
+295073 [S6]'s commit Index is 908
+295075 [S6]'s commit Index is 908
+295072 [S4]{Leader}, old start is 896, length of log is 16, new start is 903
+295080 [S4]{Leader}, old start is 903, length of log is 9, new start is 904
+295083 [S6]'s commit Index is 908
+295085 [S6]'s commit Index is 908
+295117 [S6]'s commit Index is 908
+295120 [S6]'s commit Index is 909
+295122 [S6]'s commit Index is 909
+295125 [S6]'s commit Index is 909
+295130 [S6]'s commit Index is 909
+295150 [S6]'s commit Index is 909
+295155 [S6]'s commit Index is 909
+295159 [S6]'s commit Index is 909
+295161 [S6]'s commit Index is 909
+295165 [S6]'s commit Index is 909
+295169 [S6]'s commit Index is 909
+295202 [S6]'s commit Index is 909
+295207 [S6]'s commit Index is 909
+295208 [S1]{Leader}, old start is 896, length of log is 15, new start is 904
+295222 [S6]'s commit Index is 910
+295224 [S6]'s commit Index is 910
+295230 [S6]'s commit Index is 914
+295234 [S6]'s commit Index is 914
+295237 [S6]'s commit Index is 914
+295237 [S2]{Leader}, old start is 896, length of log is 23, new start is 903
+295242 [S2]{Leader}, old start is 903, length of log is 16, new start is 904
+295246 [S6]'s commit Index is 915
+295246 [S2]{Leader}, old start is 904, length of log is 15, new start is 905
+295253 [S2]{Leader}, old start is 905, length of log is 14, new start is 906
+295260 [S6]'s commit Index is 917
+295263 [S6]'s commit Index is 917
+295264 [S6]'s commit Index is 917
+295272 [S6]'s commit Index is 917
+295287 [S6]'s commit Index is 917
+295291 [S6]'s commit Index is 917
+295294 [S6]'s commit Index is 917
+295295 [S0]{Leader}, old start is 901, length of log is 18, new start is 910
+295299 [S6]'s commit Index is 918
+295301 [S1]{Leader}, old start is 904, length of log is 16, new start is 911
+295305 [S1]{Leader}, old start is 911, length of log is 9, new start is 912
+295314 [S6]'s commit Index is 918
+295316 [S6]'s commit Index is 918
+295329 [S6]'s commit Index is 918
+295345 [S6]'s commit Index is 918
+295357 [S6]'s commit Index is 918
+295362 [S6]'s commit Index is 918
+295387 [S6]'s commit Index is 918
+295402 [S6]'s commit Index is 918
+295440 [S6]'s commit Index is 918
+295442 [S6]'s commit Index is 918
+295443 [S4]{Leader}, old start is 904, length of log is 20, new start is 911
+295449 [S4]{Leader}, old start is 911, length of log is 13, new start is 912
+295460 [S6]'s commit Index is 918
+295461 [S0]{Leader}, old start is 910, length of log is 15, new start is 911
+295465 [S0]{Leader}, old start is 911, length of log is 14, new start is 912
+295463 [S6]{Leader}, old start is 907, length of log is 18, new start is 919
+295471 [S6]'s commit Index is 919
+295473 [S6]'s commit Index is 919
+295475 [S6]'s commit Index is 919
+295478 [S6]'s commit Index is 919
+295486 [S6]'s commit Index is 919
+295488 [S6]'s commit Index is 919
+295490 [S6]'s commit Index is 922
+295488 [S2]{Leader}, old start is 906, length of log is 17, new start is 918
+295505 [S6]'s commit Index is 922
+295514 [S6]'s commit Index is 922
+295539 [S6]'s commit Index is 922
+295541 [S6]'s commit Index is 922
+295555 [S6]'s commit Index is 923
+295566 [S6]'s commit Index is 923
+295577 [S6]'s commit Index is 923
+295579 [S6]'s commit Index is 923
+295686 [S6]'s commit Index is 923
+295699 [S6]'s commit Index is 924
+295700 [S4]{Leader}, old start is 912, length of log is 15, new start is 919
+295705 [S4]{Leader}, old start is 919, length of log is 8, new start is 920
+295721 [S6]'s commit Index is 924
+295733 [S6]'s commit Index is 924
+295734 [S0]{Leader}, old start is 912, length of log is 16, new start is 919
+295737 [S0]{Leader}, old start is 919, length of log is 9, new start is 920
+295741 [S6]'s commit Index is 924
+295750 [S6]'s commit Index is 925
+295770 [S6]'s commit Index is 925
+295770 [S1]{Leader}, old start is 912, length of log is 17, new start is 923
+295775 [S1]{Leader}, old start is 923, length of log is 6, new start is 924
+295789 [S6]'s commit Index is 926
+295809 [S6]'s commit Index is 926
+295811 [S6]'s commit Index is 927
+295817 [S6]'s commit Index is 927
+295828 [S6]'s commit Index is 928
+295888 [S6]'s commit Index is 929
+295927 [S6]'s commit Index is 929
+295949 [S6]'s commit Index is 929
+295954 [S6]'s commit Index is 929
+295979 [S6]'s commit Index is 929
+295982 [S6]'s commit Index is 929
+295998 [S6]'s commit Index is 929
+296008 [S6]'s commit Index is 930
+296016 [S6]'s commit Index is 930
+296049 [S6]'s commit Index is 930
+296058 [S6]'s commit Index is 930
+296107 [S6]'s commit Index is 931
+296110 [S6]'s commit Index is 931
+296188 [S6]'s commit Index is 931
+296227 [S6]'s commit Index is 932
+296247 [S6]'s commit Index is 932
+296257 [S6]'s commit Index is 932
+296259 [S6]'s commit Index is 932
+296258 [S2]{Leader}, old start is 918, length of log is 16, new start is 931
+296262 [S6]{Leader}, old start is 919, length of log is 17, new start is 933
+296287 [S6]'s commit Index is 933
+296308 [S6]'s commit Index is 933
+296317 [S6]'s commit Index is 933
+296317 [S0]{Leader}, old start is 920, length of log is 17, new start is 933
+296340 [S6]'s commit Index is 933
+296348 [S6]'s commit Index is 933
+296369 [S6]'s commit Index is 934
+296399 [S6]'s commit Index is 934
+296439 [S6]'s commit Index is 935
+296509 [S6]'s commit Index is 935
+296519 [S6]'s commit Index is 935
+296547 [S6]'s commit Index is 935
+296567 [S6]'s commit Index is 935
+296568 [S1]{Leader}, old start is 924, length of log is 16, new start is 935
+296569 [S6]'s commit Index is 936
+296569 [S4]{Leader}, old start is 920, length of log is 17, new start is 933
+296577 [S6]'s commit Index is 936
+296605 [S6]'s commit Index is 937
+296607 [S6]'s commit Index is 938
+296609 [S6]'s commit Index is 938
+296612 [S6]'s commit Index is 938
+296628 [S6]'s commit Index is 938
+296649 [S6]'s commit Index is 938
+296657 [S6]'s commit Index is 938
+296687 [S6]'s commit Index is 938
+296756 [S6]'s commit Index is 939
+296761 [S6]'s commit Index is 939
+296778 [S6]'s commit Index is 939
+296780 [S6]'s commit Index is 939
+296799 [S6]'s commit Index is 939
+296801 [S6]'s commit Index is 940
+296808 [S6]'s commit Index is 941
+296819 [S6]'s commit Index is 941
+296822 [S6]'s commit Index is 941
+296835 [S6]'s commit Index is 942
+296879 [S6]'s commit Index is 942
+296902 [S6]'s commit Index is 942
+296951 [S6]'s commit Index is 942
+297017 [S6]'s commit Index is 942
+297047 [S6]'s commit Index is 943
+297067 [S6]'s commit Index is 943
+297105 [S6]'s commit Index is 943
+297107 [S6]'s commit Index is 943
+297131 [S6]'s commit Index is 943
+297136 [S6]'s commit Index is 943
+297137 [S0]{Leader}, old start is 933, length of log is 16, new start is 943
+297141 [S6]'s commit Index is 944
+297141 [S2]{Leader}, old start is 931, length of log is 17, new start is 943
+297144 [S6]{Leader}, old start is 933, length of log is 16, new start is 944
+297151 [S6]'s commit Index is 947
+297166 [S6]'s commit Index is 947
+297183 [S4]{Leader}, old start is 933, length of log is 17, new start is 944
+297188 [S6]'s commit Index is 947
+297191 [S6]'s commit Index is 948
+297192 [S6]'s commit Index is 948
+297200 [S6]'s commit Index is 948
+297213 [S6]'s commit Index is 948
+297234 [S6]'s commit Index is 948
+297236 [S6]'s commit Index is 948
+297238 [S6]'s commit Index is 948
+297252 [S6]'s commit Index is 948
+297282 [S6]'s commit Index is 948
+297288 [S6]'s commit Index is 948
+297321 [S6]'s commit Index is 948
+297327 [S6]'s commit Index is 948
+297362 [S6]'s commit Index is 948
+297381 [S6]'s commit Index is 949
+297388 [S6]'s commit Index is 951
+297421 [S6]'s commit Index is 951
+297421 [S1]{Leader}, old start is 935, length of log is 18, new start is 948
+297428 [S6]'s commit Index is 952
+297434 [S6]'s commit Index is 952
+297437 [S6]'s commit Index is 952
+297440 [S6]'s commit Index is 952
+297457 [S6]'s commit Index is 952
+297460 [S6]'s commit Index is 953
+297467 [S6]'s commit Index is 953
+297475 [S6]'s commit Index is 954
+297478 [S6]'s commit Index is 954
+297480 [S6]'s commit Index is 954
+297483 [S6]'s commit Index is 954
+297505 [S6]'s commit Index is 954
+297507 [S6]'s commit Index is 954
+297527 [S6]'s commit Index is 954
+297529 [S6]'s commit Index is 954
+297577 [S6]'s commit Index is 955
+297579 [S2]{Leader}, old start is 943, length of log is 16, new start is 952
+297578 [S0]{Leader}, old start is 943, length of log is 15, new start is 953
+297579 [S6]'s commit Index is 955
+297587 [S6]'s commit Index is 955
+297582 [S2]{Leader}, old start is 952, length of log is 7, new start is 953
+297589 [S6]'s commit Index is 955
+297601 [S6]'s commit Index is 955
+297601 [S4]{Leader}, old start is 944, length of log is 15, new start is 952
+297604 [S6]{Leader}, old start is 944, length of log is 16, new start is 956
+297611 [S4]{Leader}, old start is 952, length of log is 7, new start is 953
+297612 [S6]{Leader}, old start is 956, length of log is 4, new start is 957
+297622 [S6]'s commit Index is 957
+297630 [S6]'s commit Index is 958
+297640 [S6]'s commit Index is 958
+297651 [S6]'s commit Index is 958
+297657 [S6]'s commit Index is 958
+297702 [S6]'s commit Index is 958
+297703 [S1]{Leader}, old start is 948, length of log is 15, new start is 956
+297707 [S1]{Leader}, old start is 956, length of log is 7, new start is 957
+297729 [S6]'s commit Index is 959
+297740 [S6]'s commit Index is 959
+297748 [S6]'s commit Index is 959
+297760 [S6]'s commit Index is 959
+297762 [S6]'s commit Index is 959
+297764 [S6]'s commit Index is 959
+297769 [S6]'s commit Index is 959
+297772 [S6]'s commit Index is 959
+297781 [S6]'s commit Index is 962
+297787 [S6]'s commit Index is 962
+297789 [S6]'s commit Index is 962
+297792 [S6]'s commit Index is 963
+297797 [S6]'s commit Index is 963
+297803 [S6]'s commit Index is 963
+297820 [S6]'s commit Index is 963
+297830 [S6]'s commit Index is 963
+297841 [S6]'s commit Index is 963
+297843 [S6]'s commit Index is 963
+297851 [S6]'s commit Index is 963
+297853 [S6]'s commit Index is 963
+297855 [S6]'s commit Index is 963
+297862 [S6]'s commit Index is 963
+297880 [S6]'s commit Index is 963
+297883 [S6]'s commit Index is 963
+297883 [S4]{Leader}, old start is 953, length of log is 15, new start is 961
+297895 [S6]'s commit Index is 965
+297897 [S6]'s commit Index is 965
+297897 [S2]{Leader}, old start is 953, length of log is 15, new start is 960
+297903 [S6]'s commit Index is 966
+297903 [S2]{Leader}, old start is 960, length of log is 8, new start is 961
+297942 [S6]'s commit Index is 966
+297958 [S6]'s commit Index is 966
+297970 [S6]'s commit Index is 966
+298010 [S6]'s commit Index is 966
+298013 [S6]'s commit Index is 966
+298020 [S6]'s commit Index is 967
+298022 [S6]'s commit Index is 967
+298032 [S6]'s commit Index is 967
+298049 [S6]'s commit Index is 967
+298058 [S6]'s commit Index is 967
+298092 [S6]'s commit Index is 968
+298110 [S6]'s commit Index is 968
+298239 [S6]'s commit Index is 968
+298261 [S6]'s commit Index is 968
+298281 [S6]'s commit Index is 968
+298302 [S6]'s commit Index is 969
+298302 [S0]{Leader}, old start is 953, length of log is 17, new start is 965
+298309 [S6]'s commit Index is 969
+298380 [S6]'s commit Index is 969
+298400 [S6]'s commit Index is 970
+298531 [S6]'s commit Index is 970
+298534 [S6]{Leader}, old start is 957, length of log is 16, new start is 971
+298541 [S6]'s commit Index is 971
+298659 [S6]'s commit Index is 971
+298659 [S1]{Leader}, old start is 957, length of log is 16, new start is 970
+298708 [S6]'s commit Index is 971
+298831 [S6]'s commit Index is 971
+298881 [S6]'s commit Index is 972
+298921 [S6]'s commit Index is 972
+299105 [S6]'s commit Index is 973
+299225 [S6]'s commit Index is 973
+299233 [S6]'s commit Index is 973
+299269 [S6]'s commit Index is 974
+299300 [S6]'s commit Index is 974
+299370 [S6]'s commit Index is 974
+299372 [S6]'s commit Index is 975
+299391 [S2]{Leader}, old start is 961, length of log is 15, new start is 974
+299391 [S6]'s commit Index is 975
+299400 [S6]'s commit Index is 975
+299491 [S6]'s commit Index is 975
+299502 [S4]{Leader}, old start is 961, length of log is 15, new start is 974
+299580 [S6]'s commit Index is 975
+299632 [S6]'s commit Index is 975
+299634 [S6]'s commit Index is 975
+299641 [S6]'s commit Index is 975
+299699 [S6]'s commit Index is 976
+299710 [S6]'s commit Index is 976
+299965 [S6]'s commit Index is 977
+299989 [S6]'s commit Index is 977
+300019 [S6]'s commit Index is 977
+300021 [S6]'s commit Index is 977
+300038 [S6]'s commit Index is 979
+300056 [S6]'s commit Index is 979
+300069 [S6]'s commit Index is 979
+300106 [S6]'s commit Index is 979
+300156 [S6]'s commit Index is 979
+300206 [S6]'s commit Index is 980
+300451 [S6]'s commit Index is 980
+300451 [S0]{Leader}, old start is 965, length of log is 17, new start is 979
+300539 [S6]'s commit Index is 980
+300985 [S6]'s commit Index is 980
+301004 [S6]'s commit Index is 981
+301044 [S6]'s commit Index is 981
+301335 [S6]'s commit Index is 981
+301466 [S6]'s commit Index is 981
+301476 [S6]'s commit Index is 981
+301527 [S6]'s commit Index is 982
+301709 [S6]'s commit Index is 982
+301741 [S6]'s commit Index is 982
+301759 [S6]'s commit Index is 982
+301771 [S6]'s commit Index is 983
+302333 [S6]'s commit Index is 983
+302338 [S6]'s commit Index is 983
+302340 [S1]{Leader}, old start is 970, length of log is 16, new start is 983
+302354 [S6]'s commit Index is 983
+302356 [S6]'s commit Index is 984
+302358 [S6]'s commit Index is 984
+302360 [S6]{Leader}, old start is 971, length of log is 15, new start is 984
+302367 [S6]'s commit Index is 984
+302415 [S6]'s commit Index is 984
+302441 [S6]'s commit Index is 984
+302445 [S6]'s commit Index is 985
+302485 [S6]'s commit Index is 985
+302492 [S6]'s commit Index is 985
+302523 [S6]'s commit Index is 985
+302632 [S6]'s commit Index is 986
+302688 [S6]'s commit Index is 986
+302767 [S6]'s commit Index is 986
+302769 [S6]'s commit Index is 986
+303282 [S6]'s commit Index is 987
+303285 [S6]'s commit Index is 987
+303282 [S4]{Leader}, old start is 974, length of log is 15, new start is 987
+303312 [S6]'s commit Index is 987
+303332 [S6]'s commit Index is 988
+303332 [S2]{Leader}, old start is 974, length of log is 15, new start is 987
+303828 [S6]'s commit Index is 988
+303832 [S6]'s commit Index is 988
+303862 [S6]'s commit Index is 988
+303867 [S6]'s commit Index is 989
+303948 [S6]'s commit Index is 989
+304023 [S6]'s commit Index is 989
+304032 [S6]'s commit Index is 989
+304226 [S6]'s commit Index is 989
+304274 [S6]'s commit Index is 989
+304323 [S6]'s commit Index is 989
+304413 [S6]'s commit Index is 990
+324528 [S0] restores
+324532 [S0] log(Term) becomes: "[19 19 19 19 19 19 19 19 19 19 19 19 19]"
+324536 [S1] restores
+324538 [S1] log(Term) becomes: "[19 19 19 19 19 19 19 19 19]"
+324541 [S2] restores
+324543 [S2] log(Term) becomes: "[19 19 19 19 19]"
+324546 [S3] restores
+324548 [S3] log(Term) becomes: "[19 19 19 19 19]"
+324550 [S4] restores
+324552 [S4] log(Term) becomes: "[19 19 19 19]"
+324555 [S5] restores
+324557 [S5] log(Term) becomes: "[19 19 19 19 19]"
+324560 [S6] restores
+324563 [S6] log(Term) becomes: "[19 19 19 19 19 19 19 19]"
+334953 [S0] becomes {Leader}
+335048 [S0]'s commit Index is 979
+335069 [S0]'s commit Index is 979
+335087 [S0]'s commit Index is 979
+335089 [S0]'s commit Index is 979
+335106 [S0]'s commit Index is 979
+335129 [S0]'s commit Index is 979
+335156 [S0]'s commit Index is 979
+335190 [S0]'s commit Index is 979
+335226 [S0]'s commit Index is 979
+335228 [S0]'s commit Index is 979
+335306 [S0]'s commit Index is 979
+335399 [S3]{Leader}, old start is 979, length of log is 1, new start is 979
+336683 [S0]'s commit Index is 979
+336701 [S0]'s commit Index is 979
+336728 [S0]'s commit Index is 979
+336758 [S0]'s commit Index is 979
+336769 [S0]'s commit Index is 979
+336886 [S5]{Leader}, old start is 979, length of log is 1, new start is 979
+337605 [S0]'s commit Index is 979
+337656 [S0]'s commit Index is 979
+337695 [S0]'s commit Index is 979
+338120 [S0]'s commit Index is 992
+338170 [S0]'s commit Index is 992
+338249 [S0]'s commit Index is 992
+338266 [S0]'s commit Index is 992
+338279 [S0]'s commit Index is 992
+338282 [S0]'s commit Index is 992
+338316 [S0]'s commit Index is 992
+338325 [S0]'s commit Index is 992
+338325 [S3]{Leader}, old start is 979, length of log is 16, new start is 980
+338329 [S3]{Leader}, old start is 980, length of log is 15, new start is 981
+338328 [S0]{Leader}, old start is 979, length of log is 16, new start is 993
+338338 [S0]'s commit Index is 993
+338367 [S0]'s commit Index is 993
+338386 [S0]'s commit Index is 994
+338388 [S0]'s commit Index is 994
+338397 [S0]'s commit Index is 994
+338406 [S0]'s commit Index is 994
+338417 [S0]'s commit Index is 994
+338475 [S0]'s commit Index is 994
+339571 [S0]'s commit Index is 994
+339614 [S0]'s commit Index is 994
+339621 [S5]{Leader}, old start is 979, length of log is 16, new start is 993
+339623 [S0]'s commit Index is 994
+339626 [S5]{Leader}, old start is 993, length of log is 2, new start is 994
+339750 [S0]'s commit Index is 994
+339761 [S0]'s commit Index is 994
+340250 [S0]'s commit Index is 994
+340371 [S0]'s commit Index is 994
+340421 [S0]'s commit Index is 994
+340430 [S0]'s commit Index is 995
+340620 [S0]'s commit Index is 995
+340661 [S3]{Leader}, old start is 981, length of log is 16, new start is 995
+340671 [S0]'s commit Index is 995
+340700 [S0]'s commit Index is 995
+340742 [S0]'s commit Index is 996
+340820 [S0]'s commit Index is 996
+340889 [S0]'s commit Index is 996
+340892 [S0]'s commit Index is 996
+340909 [S0]'s commit Index is 996
+340919 [S0]'s commit Index is 997
+340999 [S0]'s commit Index is 997
+341072 [S0]'s commit Index is 997
+341142 [S0]'s commit Index is 997
+341145 [S0]'s commit Index is 997
+341217 [S0]'s commit Index is 997
+341219 [S0]'s commit Index is 997
+341247 [S0]'s commit Index is 997
+341291 [S0]'s commit Index is 998
+341297 [S0]'s commit Index is 998
+341338 [S0]'s commit Index is 998
+341481 [S1]{Leader}, old start is 983, length of log is 17, new start is 998
+341481 [S0]'s commit Index is 998
+341519 [S0]'s commit Index is 998
+341520 [S6]{Leader}, old start is 984, length of log is 16, new start is 998
+341539 [S0]'s commit Index is 998
+341580 [S0]'s commit Index is 999
+341640 [S0]'s commit Index is 999
+341658 [S0]'s commit Index is 999
+341679 [S0]'s commit Index is 999
+341767 [S0]'s commit Index is 999
+341777 [S0]'s commit Index is 1000
+341791 [S0]'s commit Index is 1000
+341807 [S0]'s commit Index is 1000
+342016 [S0]'s commit Index is 1000
+342146 [S0]'s commit Index is 1000
+342148 [S0]'s commit Index is 1000
+342150 [S0]'s commit Index is 1001
+342157 [S0]'s commit Index is 1001
+342208 [S0]'s commit Index is 1001
+342219 [S0]'s commit Index is 1001
+342226 [S0]'s commit Index is 1001
+342310 [S0]'s commit Index is 1001
+342320 [S0]'s commit Index is 1002
+342328 [S0]'s commit Index is 1002
+342350 [S0]'s commit Index is 1002
+342368 [S0]'s commit Index is 1002
+342459 [S0]'s commit Index is 1002
+342461 [S0]'s commit Index is 1002
+342460 [S2]{Leader}, old start is 987, length of log is 17, new start is 1002
+342519 [S0]'s commit Index is 1003
+342530 [S4]{Leader}, old start is 987, length of log is 17, new start is 1002
+342579 [S0]'s commit Index is 1003
+342611 [S0]'s commit Index is 1003
+342663 [S0]'s commit Index is 1003
+342713 [S0]'s commit Index is 1003
+342724 [S0]'s commit Index is 1003
+342743 [S0]'s commit Index is 1003
+342754 [S0]'s commit Index is 1003
+342757 [S0]'s commit Index is 1004
+342783 [S0]'s commit Index is 1004
+342900 [S0]'s commit Index is 1004
+343045 [S0]'s commit Index is 1004
+343125 [S0]'s commit Index is 1004
+343206 [S0]'s commit Index is 1004
+343235 [S0]'s commit Index is 1005
+344093 [S0]'s commit Index is 1005
+344124 [S0]'s commit Index is 1005
+344183 [S0]'s commit Index is 1005
+344203 [S0]'s commit Index is 1005
+344284 [S0]'s commit Index is 1005
+345575 [S0]'s commit Index is 1005
+345625 [S0]'s commit Index is 1005
+345667 [S0]'s commit Index is 1005
+345674 [S0]'s commit Index is 1005
+345734 [S0]'s commit Index is 1005
+345744 [S0]'s commit Index is 1005
+347146 [S0]'s commit Index is 1005
+347157 [S0]'s commit Index is 1005
+347265 [S0]'s commit Index is 1005
+347276 [S0]'s commit Index is 1005
+347278 [S0]'s commit Index is 1005
+347801 [S0]'s commit Index is 1005
+347882 [S0]'s commit Index is 1005
+347971 [S0]'s commit Index is 1005
+347982 [S0]'s commit Index is 1006
+348001 [S0]'s commit Index is 1006
+348556 [S0]'s commit Index is 1006
+348559 [S0]'s commit Index is 1006
+348657 [S0]'s commit Index is 1006
+348677 [S0]'s commit Index is 1006
+348679 [S0]'s commit Index is 1006
+350098 [S0]'s commit Index is 1006
+350188 [S0]'s commit Index is 1006
+350248 [S0]'s commit Index is 1006
+350258 [S0]'s commit Index is 1006
+350308 [S0]'s commit Index is 1006
+351558 [S0]'s commit Index is 1006
+351640 [S0]'s commit Index is 1006
+351649 [S0]'s commit Index is 1006
+351800 [S0]'s commit Index is 1006
+353056 [S0]'s commit Index is 1006
+353066 [S0]'s commit Index is 1006
+353072 [S0]'s commit Index is 1006
+353077 [S0]'s commit Index is 1006
+353102 [S0]'s commit Index is 1007
+353112 [S0]'s commit Index is 1007
+353127 [S0]'s commit Index is 1007
+353214 [S0]'s commit Index is 1007
+353242 [S0]'s commit Index is 1007
+353256 [S0]'s commit Index is 1007
+353291 [S0]'s commit Index is 1007
+353295 [S0]'s commit Index is 1007
+353305 [S0]'s commit Index is 1008
+353435 [S0]'s commit Index is 1008
+353465 [S0]'s commit Index is 1008
+353505 [S0]'s commit Index is 1008
+353523 [S0]'s commit Index is 1008
+353593 [S0]'s commit Index is 1008
+353597 [S0]'s commit Index is 1009
+  ... Passed --  35.4  7 12364  886
+PASS
+ok  	6.824/kvraft	35.364s

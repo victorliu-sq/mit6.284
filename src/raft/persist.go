@@ -13,6 +13,7 @@ func (rf *Raft) persist() {
 	e.Encode(rf.currentTerm)
 	e.Encode(rf.votedFor)
 	e.Encode(rf.logs)
+	e.Encode(rf.logStart)
 	data := w.Bytes()
 	rf.persister.SaveRaftState(data)
 }
@@ -23,6 +24,7 @@ func (rf *Raft) persistStateAndSnapshot(snapshot []byte) {
 	e.Encode(rf.currentTerm)
 	e.Encode(rf.votedFor)
 	e.Encode(rf.logs)
+	e.Encode(rf.logStart)
 	state := w.Bytes()
 	rf.persister.SaveStateAndSnapshot(state, snapshot)
 }
@@ -37,12 +39,14 @@ func (rf *Raft) readPersist(data []byte) {
 	var currentTerm int
 	var voteFor int
 	var logs []LogEntry
-	if d.Decode(&currentTerm) != nil || d.Decode(&voteFor) != nil || d.Decode(&logs) != nil {
+	var logStart int
+	if d.Decode(&currentTerm) != nil || d.Decode(&voteFor) != nil || d.Decode(&logs) != nil || d.Decode(&logStart) != nil {
 		Debug(dError, "{Error} During reading Persis")
 	} else {
 		rf.currentTerm = currentTerm
 		rf.votedFor = voteFor
 		rf.logs = logs
+		rf.logStart = logStart
 		Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
 	}
 }
