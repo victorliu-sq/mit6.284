@@ -1,21 +1,24 @@
 Test: InstallSnapshot RPC (3B) ...
 labgob warning: Decoding into a non-default variable/field Err may not work
-  ... Passed --   3.7  3   279   63
+  ... Passed --   3.7  3   282   63
 Test: snapshot size is reasonable (3B) ...
-  ... Passed --   1.4  3  2432  800
+  ... Passed --   1.4  3  2433  800
 Test: ops complete fast enough (3B) ...
-  ... Passed --   1.5  3  3038    0
+  ... Passed --   1.4  3  3038    0
 Test: restarts, snapshots, one client (3B) ...
-  ... Passed --  23.8  5 181548 36188
+  ... Passed --  23.0  5 187247 37321
 Test: restarts, snapshots, many clients (3B) ...
-  ... Passed --  22.3  5 135480 26410
+  ... Passed --  22.2  5 177798 34885
 Test: unreliable net, snapshots, many clients (3B) ...
-  ... Passed --  17.6  5  5247  700
+  ... Passed --  17.7  5  5385  726
 Test: unreliable net, restarts, snapshots, many clients (3B) ...
-  ... Passed --  24.9  5  5846  716
+  ... Passed --  25.2  5  6374  827
 Test: unreliable net, restarts, partitions, snapshots, many clients (3B) ...
-  ... Passed --  31.3  5  3910  382
+  ... Passed --  31.2  5  3613  245
 Test: unreliable net, restarts, partitions, snapshots, random keys, many clients (3B) ...
-  ... Passed --  35.3  7 11837  720
-PASS
-ok  	6.824/kvraft	162.138s
+info: wrote history visualization to /tmp/192100856.html
+--- FAIL: TestSnapshotUnreliableRecoverConcurrentPartitionLinearizable3B (36.62s)
+    test_test.go:376: history is not linearizable
+FAIL
+exit status 1
+FAIL	6.824/kvraft	162.374s
