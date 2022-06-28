@@ -1,0 +1,2338 @@
+000002 [S0] restores
+000007 [S1] restores
+000010 [S2] restores
+Test (2D): install snapshots (disconnect) ...
+010952 [S1] becomes {Leader}
+010958 [S2]{Follower} receives PrevLogIndex is 0
+010961 [S2]{Follower}'s first index:0, last index:0
+010962 [S2]{Follower} contain and match
+010965 [AE][S2]{Follower} log(Term) becomes: "[0]"
+010959 [S0]{Follower} receives PrevLogIndex is 0
+010968 [S0]{Follower}'s first index:0, last index:0
+010970 [S0]{Follower} contain and match
+010972 [AE][S0]{Follower} log(Term) becomes: "[0]"
+010967 [S1]{Leader}'s first index:0, last index:0
+010976 [S1]'s commit Index is 0
+010977 [S1]{Leader}'s first index:0, last index:0
+010979 [S1]'s commit Index is 0
+011040 [AE][S1]{Leader}: "[0 1]"
+011050 [S2]{Follower} receives PrevLogIndex is 0
+011052 [S2]{Follower}'s first index:0, last index:0
+011054 [S2]{Follower} contain and match
+011056 [AE][S2]{Follower} log(Term) becomes: "[0 1]"
+011052 [S0]{Follower} receives PrevLogIndex is 0
+011059 [S0]{Follower}'s first index:0, last index:0
+011061 [S0]{Follower} contain and match
+011063 [AE][S0]{Follower} log(Term) becomes: "[0 1]"
+011058 [S1]{Leader}'s first index:0, last index:1
+011067 [S1]'s commit Index is 0
+011069 [S1]{Leader}'s first index:0, last index:1
+011070 [S1]'s commit Index is 1
+012021 [S0]{Follower} receives PrevLogIndex is 1
+012024 [S0]{Follower}'s first index:0, last index:1
+012026 [S0]{Follower} contain and match
+012028 [AE][S0]{Follower} log(Term) becomes: "[0 1]"
+012021 [S2]{Follower} receives PrevLogIndex is 1
+012032 [S2]{Follower}'s first index:0, last index:1
+012033 [S2]{Follower} contain and match
+012035 [AE][S2]{Follower} log(Term) becomes: "[0 1]"
+012030 [S1]{Leader}'s first index:0, last index:1
+012038 [S1]'s commit Index is 1
+012041 [S1]{Leader}'s first index:0, last index:1
+012042 [S1]'s commit Index is 1
+013522 [S2]{Follower} receives PrevLogIndex is 1
+013525 [S2]{Follower}'s first index:0, last index:1
+013528 [S2]{Follower} contain and match
+013530 [AE][S2]{Follower} log(Term) becomes: "[0 1]"
+013522 [S0]{Follower} receives PrevLogIndex is 1
+013534 [S0]{Follower}'s first index:0, last index:1
+013536 [S0]{Follower} contain and match
+013537 [AE][S0]{Follower} log(Term) becomes: "[0 1]"
+013532 [S1]{Leader}'s first index:0, last index:1
+013541 [S1]'s commit Index is 1
+013542 [S1]{Leader}'s first index:0, last index:1
+013544 [S1]'s commit Index is 1
+015023 [S2]{Follower} receives PrevLogIndex is 1
+015026 [S2]{Follower}'s first index:0, last index:1
+015028 [S2]{Follower} contain and match
+015029 [AE][S2]{Follower} log(Term) becomes: "[0 1]"
+015023 [S0]{Follower} receives PrevLogIndex is 1
+015033 [S0]{Follower}'s first index:0, last index:1
+015036 [S0]{Follower} contain and match
+015039 [AE][S0]{Follower} log(Term) becomes: "[0 1]"
+015031 [S1]{Leader}'s first index:0, last index:1
+015044 [S1]'s commit Index is 1
+015046 [S1]{Leader}'s first index:0, last index:1
+015048 [S1]'s commit Index is 1
+016524 [S0]{Follower} receives PrevLogIndex is 1
+016527 [S0]{Follower}'s first index:0, last index:1
+016529 [S0]{Follower} contain and match
+016531 [AE][S0]{Follower} log(Term) becomes: "[0 1]"
+016524 [S2]{Follower} receives PrevLogIndex is 1
+016534 [S2]{Follower}'s first index:0, last index:1
+016536 [S2]{Follower} contain and match
+016538 [AE][S2]{Follower} log(Term) becomes: "[0 1]"
+016533 [S1]{Leader}'s first index:0, last index:1
+016541 [S1]'s commit Index is 1
+016542 [S1]{Leader}'s first index:0, last index:1
+016544 [S1]'s commit Index is 1
+017200 [AE][S1]{Leader}: "[0 1 1]"
+017206 [S0]{Follower} receives PrevLogIndex is 1
+017209 [S0]{Follower}'s first index:0, last index:1
+017211 [S0]{Follower} contain and match
+017214 [AE][S0]{Follower} log(Term) becomes: "[0 1 1]"
+017217 [S1]{Leader}'s first index:0, last index:2
+017219 [S1]'s commit Index is 1
+018028 [S0]{Follower} receives PrevLogIndex is 2
+018034 [S0]{Follower}'s first index:0, last index:2
+018037 [S0]{Follower} contain and match
+018041 [AE][S0]{Follower} log(Term) becomes: "[0 1 1]"
+018045 [S1]{Leader}'s first index:0, last index:2
+018047 [S1]'s commit Index is 2
+018211 [AE][S1]{Leader}: "[0 1 1 1]"
+018214 [AE][S1]{Leader}: "[0 1 1 1 1]"
+018217 [AE][S1]{Leader}: "[0 1 1 1 1 1]"
+018219 [AE][S1]{Leader}: "[0 1 1 1 1 1 1]"
+018221 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1]"
+018224 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1 1]"
+018226 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1 1 1]"
+018216 [S0]{Follower} receives PrevLogIndex is 2
+018229 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1 1 1 1]"
+018233 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1 1 1 1 1]"
+018236 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1 1 1 1 1 1]"
+018238 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1 1 1 1 1 1 1]"
+018240 [AE][S1]{Leader}: "[0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]"
+018231 [S0]{Follower}'s first index:0, last index:2
+018244 [S0]{Follower} contain and match
+018246 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1]"
+018248 [S1]{Leader}'s first index:0, last index:14
+018250 [S1]'s commit Index is 2
+018249 [S0]{Follower} receives PrevLogIndex is 2
+018253 [S0]{Follower}'s first index:0, last index:3
+018255 [S0]{Follower} contain and match
+018257 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1]"
+018259 [S0]{Follower} receives PrevLogIndex is 2
+018260 [S0]{Follower}'s first index:0, last index:4
+018262 [S0]{Follower} contain and match
+018264 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1]"
+018259 [S1]{Leader}'s first index:0, last index:14
+018268 [S1]'s commit Index is 3
+018266 [S0]{Follower} receives PrevLogIndex is 2
+018271 [S0]{Follower}'s first index:0, last index:5
+018273 [S0]{Follower} contain and match
+018274 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1]"
+018269 [S1]{Leader}'s first index:0, last index:14
+018278 [S1]'s commit Index is 4
+018277 [S0]{Follower} receives PrevLogIndex is 2
+018281 [S0]{Follower}'s first index:0, last index:6
+018283 [S0]{Follower} contain and match
+018285 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1]"
+018280 [S1]{Leader}'s first index:0, last index:14
+018288 [S1]'s commit Index is 5
+018286 [S0]{Follower} receives PrevLogIndex is 2
+018291 [S0]{Follower}'s first index:0, last index:7
+018292 [S0]{Follower} contain and match
+018294 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1]"
+018290 [S1]{Leader}'s first index:0, last index:14
+018298 [S1]'s commit Index is 6
+018296 [S0]{Follower} receives PrevLogIndex is 2
+018301 [S0]{Follower}'s first index:0, last index:8
+018303 [S0]{Follower} contain and match
+018304 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1]"
+018300 [S1]{Leader}'s first index:0, last index:14
+018308 [S1]'s commit Index is 7
+018307 [S0]{Follower} receives PrevLogIndex is 2
+018311 [S0]{Follower}'s first index:0, last index:9
+018313 [S0]{Follower} contain and match
+018314 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1]"
+018309 [S1]{Leader}'s first index:0, last index:14
+018317 [S1]'s commit Index is 8
+018316 [S0]{Follower} receives PrevLogIndex is 2
+018321 [S0]{Follower}'s first index:0, last index:10
+018322 [S0]{Follower} contain and match
+018324 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1 1]"
+018319 [Snapshot][S1]{Leader}, old start is 0, length of log is 15, new start is 9
+018327 [Snapshot][S1]{Leader} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]"
+018329 [S1]{Leader}'s first index:9, last index:14
+018331 [S1]'s commit Index is 9
+018332 [S1]{Leader}'s first index:9, last index:14
+018334 [S1]'s commit Index is 10
+018326 [S0]{Follower} receives PrevLogIndex is 2
+018337 [S0]{Follower}'s first index:0, last index:11
+018339 [S0]{Follower} contain and match
+018341 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1 1 1]"
+018343 [S0]{Follower} receives PrevLogIndex is 2
+018344 [S0]{Follower}'s first index:0, last index:12
+018346 [S0]{Follower} contain and match
+018348 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1 1 1 1]"
+018343 [S1]{Leader}'s first index:9, last index:14
+018351 [S1]'s commit Index is 11
+018349 [S0]{Follower} receives PrevLogIndex is 2
+018354 [S0]{Follower}'s first index:0, last index:13
+018355 [S0]{Follower} contain and match
+018357 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]"
+018352 [S1]{Leader}'s first index:9, last index:14
+018360 [S1]'s commit Index is 12
+018362 [S1]{Leader}'s first index:9, last index:14
+018363 [S1]'s commit Index is 13
+019528 [S0]{Follower} receives PrevLogIndex is 14
+019530 [S0]{Follower}'s first index:0, last index:14
+019532 [S0]{Follower} contain and match
+019534 [AE][S0]{Follower} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]"
+019537 [Snapshot][S0]{Leader}, old start is 0, length of log is 15, new start is 9
+019538 [Snapshot][S0]{Leader} log(Term) becomes: "[0 1 1 1 1 1 1 1 1 1 1 1 1 1 1]"
+019537 [S1]{Leader}'s first index:9, last index:14
+019542 [S1]'s commit Index is 14
+019650 [AE][S1]{Leader}: "[1 1 1 1 1 1 1]"
+019654 [S0]{Follower} receives PrevLogIndex is 14
+019657 [S0]{Follower}'s first index:9, last index:14
+019658 [S0]{Follower} contain and match
+019660 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+019654 [S2]{Follower} receives PrevLogIndex is 9
+019664 [S2]{Follower}'s first index:0, last index:1
+019665 [S2]{Follower} not contain
+019667 [AE][S2]{Follower} log(Term) becomes: "[0 1]"
+019662 [S1]{Leader}'s first index:9, last index:15
+019671 [S1]'s commit Index is 14
+019672 [S1]{Leader}'s first index:9, last index:15
+019674 [S1]'s commit Index is 15
+019677 [Snapshot][S2]{Follower} Discard Entire log
+019678 [Snapshot][S2]{Follower} log(Term) becomes: "[1]"
+021029 [S0]{Follower} receives PrevLogIndex is 15
+021032 [S0]{Follower}'s first index:9, last index:15
+021034 [S0]{Follower} contain and match
+021029 [S2]{Follower} receives PrevLogIndex is 9
+021037 [S2]{Follower}'s first index:9, last index:9
+021039 [S2]{Follower} contain and match
+021041 [AE][S2]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+021035 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+021043 [S1]{Leader}'s first index:9, last index:15
+021046 [S1]'s commit Index is 15
+021047 [S1]{Leader}'s first index:9, last index:15
+021049 [S1]'s commit Index is 15
+022531 [S0]{Follower} receives PrevLogIndex is 15
+022536 [S0]{Follower}'s first index:9, last index:15
+022539 [S0]{Follower} contain and match
+022542 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+022532 [S2]{Follower} receives PrevLogIndex is 15
+022546 [S2]{Follower}'s first index:9, last index:15
+022548 [S2]{Follower} contain and match
+022550 [AE][S2]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+022545 [S1]{Leader}'s first index:9, last index:15
+022555 [S1]'s commit Index is 15
+022556 [S1]{Leader}'s first index:9, last index:15
+022558 [S1]'s commit Index is 15
+024032 [S2]{Follower} receives PrevLogIndex is 15
+024034 [S2]{Follower}'s first index:9, last index:15
+024036 [S2]{Follower} contain and match
+024038 [AE][S2]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+024032 [S0]{Follower} receives PrevLogIndex is 15
+024042 [S0]{Follower}'s first index:9, last index:15
+024043 [S0]{Follower} contain and match
+024045 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+024040 [S1]{Leader}'s first index:9, last index:15
+024048 [S1]'s commit Index is 15
+024050 [S1]{Leader}'s first index:9, last index:15
+024051 [S1]'s commit Index is 15
+025534 [S0]{Follower} receives PrevLogIndex is 15
+025537 [S0]{Follower}'s first index:9, last index:15
+025540 [S0]{Follower} contain and match
+025543 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+025534 [S2]{Follower} receives PrevLogIndex is 15
+025548 [S2]{Follower}'s first index:9, last index:15
+025550 [S2]{Follower} contain and match
+025552 [AE][S2]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+025546 [S1]{Leader}'s first index:9, last index:15
+025555 [S1]'s commit Index is 15
+025557 [S1]{Leader}'s first index:9, last index:15
+025558 [S1]'s commit Index is 15
+036377 [S2] becomes {Leader}
+036381 [S0]{Follower} receives PrevLogIndex is 15
+036383 [S0]{Follower}'s first index:9, last index:15
+036384 [S0]{Follower} contain and match
+036386 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1]"
+036388 [S2]{Leader}'s first index:9, last index:15
+036390 [S2]'s commit Index is 15
+036492 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2]"
+036498 [S0]{Follower} receives PrevLogIndex is 15
+036500 [S0]{Follower}'s first index:9, last index:15
+036501 [S0]{Follower} contain and match
+036503 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2]"
+036505 [S2]{Leader}'s first index:9, last index:16
+036507 [S2]'s commit Index is 15
+037565 [S0]{Follower} receives PrevLogIndex is 16
+037570 [S0]{Follower}'s first index:9, last index:16
+037572 [S0]{Follower} contain and match
+037575 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2]"
+037578 [S2]{Leader}'s first index:9, last index:16
+037580 [S2]'s commit Index is 16
+037702 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2]"
+037706 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2]"
+037708 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2]"
+037710 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2]"
+037712 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2]"
+037714 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2]"
+037716 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2]"
+037709 [S0]{Follower} receives PrevLogIndex is 16
+037720 [S0]{Follower}'s first index:9, last index:16
+037722 [S0]{Follower} contain and match
+037724 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2]"
+037724 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2]"
+037728 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2]"
+037731 [S2]{Leader}'s first index:9, last index:25
+037733 [S2]'s commit Index is 16
+037735 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2]"
+037737 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2]"
+037726 [S0]{Follower} receives PrevLogIndex is 16
+037739 [AE][S2]{Leader}: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+037741 [S0]{Follower}'s first index:9, last index:17
+037746 [S0]{Follower} contain and match
+037748 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2]"
+037751 [S0]{Follower} receives PrevLogIndex is 16
+037753 [S0]{Follower}'s first index:9, last index:18
+037755 [S0]{Follower} contain and match
+037757 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2]"
+037751 [S2]{Leader}'s first index:9, last index:28
+037761 [S2]'s commit Index is 17
+037759 [S0]{Follower} receives PrevLogIndex is 16
+037764 [S0]{Follower}'s first index:9, last index:19
+037766 [S0]{Follower} contain and match
+037767 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2]"
+037762 [S2]{Leader}'s first index:9, last index:28
+037771 [S2]'s commit Index is 18
+037772 [Snapshot][S2]{Leader}, old start is 9, length of log is 20, new start is 19
+037774 [Snapshot][S2]{Leader} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+037776 [S2]{Leader}'s first index:19, last index:28
+037778 [S2]'s commit Index is 19
+037769 [S0]{Follower} receives PrevLogIndex is 16
+037780 [S0]{Follower}'s first index:9, last index:20
+037782 [S0]{Follower} contain and match
+037784 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2]"
+037786 [S0]{Follower} receives PrevLogIndex is 16
+037788 [S0]{Follower}'s first index:9, last index:21
+037790 [S0]{Follower} contain and match
+037791 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2]"
+037786 [S2]{Leader}'s first index:19, last index:28
+037795 [S2]'s commit Index is 20
+037797 [S2]{Leader}'s first index:19, last index:28
+037799 [S2]'s commit Index is 21
+037793 [S0]{Follower} receives PrevLogIndex is 16
+037803 [S0]{Follower}'s first index:9, last index:22
+037805 [S0]{Follower} contain and match
+037807 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2]"
+037809 [S0]{Follower} receives PrevLogIndex is 16
+037811 [S0]{Follower}'s first index:9, last index:23
+037813 [S0]{Follower} contain and match
+037815 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2]"
+037810 [S2]{Leader}'s first index:19, last index:28
+037818 [S2]'s commit Index is 22
+037817 [S0]{Follower} receives PrevLogIndex is 16
+037821 [S0]{Follower}'s first index:9, last index:24
+037823 [S0]{Follower} contain and match
+037824 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2]"
+037820 [S2]{Leader}'s first index:19, last index:28
+037828 [S2]'s commit Index is 23
+037826 [S0]{Follower} receives PrevLogIndex is 17
+037831 [S0]{Follower}'s first index:9, last index:25
+037832 [S0]{Follower} contain and match
+037830 [S2]{Leader}'s first index:19, last index:28
+037835 [S2]'s commit Index is 24
+037834 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2]"
+037839 [S0]{Follower} receives PrevLogIndex is 17
+037840 [S0]{Follower}'s first index:9, last index:26
+037842 [S0]{Follower} contain and match
+037843 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2]"
+037839 [S2]{Leader}'s first index:19, last index:28
+037847 [S2]'s commit Index is 25
+037845 [S0]{Follower} receives PrevLogIndex is 17
+037850 [S0]{Follower}'s first index:9, last index:27
+037851 [S0]{Follower} contain and match
+037853 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+037848 [S2]{Leader}'s first index:19, last index:28
+037856 [S2]'s commit Index is 26
+037858 [S2]{Leader}'s first index:19, last index:28
+037860 [S2]'s commit Index is 27
+039067 [S0]{Follower} receives PrevLogIndex is 28
+039070 [S0]{Follower}'s first index:9, last index:28
+039072 [S0]{Follower} contain and match
+039075 [AE][S0]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+039077 [Snapshot][S0]{Leader}, old start is 9, length of log is 20, new start is 19
+039079 [Snapshot][S0]{Leader} log(Term) becomes: "[1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+039077 [S2]{Leader}'s first index:19, last index:28
+039083 [S2]'s commit Index is 28
+039152 [AE][S1]{Leader}: "[1 1 1 1 1 1 1 1]"
+040568 [S0]{Follower} receives PrevLogIndex is 28
+040571 [S0]{Follower}'s first index:19, last index:28
+040573 [S0]{Follower} contain and match
+040575 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+040568 [S1]{Follower} receives PrevLogIndex is 19
+040581 [S1]{Follower}'s first index:9, last index:16
+040583 [S1]{Follower} not contain
+040586 [AE][S1]{Follower} log(Term) becomes: "[1 1 1 1 1 1 1 1]"
+040579 [S2]{Leader}'s first index:19, last index:28
+040591 [S2]'s commit Index is 28
+040593 [S2]{Leader}'s first index:19, last index:28
+040595 [S2]'s commit Index is 28
+040597 [Snapshot][S1]{Follower} Discard Entire log
+040600 [Snapshot][S1]{Follower} log(Term) becomes: "[2]"
+042070 [S0]{Follower} receives PrevLogIndex is 28
+042073 [S0]{Follower}'s first index:19, last index:28
+042075 [S0]{Follower} contain and match
+042076 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+042070 [S1]{Follower} receives PrevLogIndex is 19
+042080 [S1]{Follower}'s first index:19, last index:19
+042081 [S1]{Follower} contain and match
+042083 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+042079 [S2]{Leader}'s first index:19, last index:28
+042086 [S2]'s commit Index is 28
+042089 [S2]{Leader}'s first index:19, last index:28
+042090 [S2]'s commit Index is 28
+043570 [S1]{Follower} receives PrevLogIndex is 28
+043575 [S1]{Follower}'s first index:19, last index:28
+043579 [S1]{Follower} contain and match
+043581 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+043570 [S0]{Follower} receives PrevLogIndex is 28
+043586 [S0]{Follower}'s first index:19, last index:28
+043588 [S0]{Follower} contain and match
+043590 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+043584 [S2]{Leader}'s first index:19, last index:28
+043594 [S2]'s commit Index is 28
+043596 [S2]{Leader}'s first index:19, last index:28
+043598 [S2]'s commit Index is 28
+045071 [S1]{Follower} receives PrevLogIndex is 28
+045073 [S1]{Follower}'s first index:19, last index:28
+045075 [S1]{Follower} contain and match
+045077 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+045071 [S0]{Follower} receives PrevLogIndex is 28
+045081 [S0]{Follower}'s first index:19, last index:28
+045083 [S0]{Follower} contain and match
+045084 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+045079 [S2]{Leader}'s first index:19, last index:28
+045089 [S2]'s commit Index is 28
+045092 [S2]{Leader}'s first index:19, last index:28
+045094 [S2]'s commit Index is 28
+046574 [S1]{Follower} receives PrevLogIndex is 28
+046578 [S1]{Follower}'s first index:19, last index:28
+046581 [S1]{Follower} contain and match
+046583 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+046574 [S0]{Follower} receives PrevLogIndex is 28
+046587 [S0]{Follower}'s first index:19, last index:28
+046589 [S0]{Follower} contain and match
+046591 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+046586 [S2]{Leader}'s first index:19, last index:28
+046596 [S2]'s commit Index is 28
+046598 [S2]{Leader}'s first index:19, last index:28
+046600 [S2]'s commit Index is 28
+048075 [S1]{Follower} receives PrevLogIndex is 28
+048078 [S1]{Follower}'s first index:19, last index:28
+048081 [S1]{Follower} contain and match
+048083 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+048075 [S0]{Follower} receives PrevLogIndex is 28
+048088 [S0]{Follower}'s first index:19, last index:28
+048091 [S0]{Follower} contain and match
+048093 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+048087 [S2]{Leader}'s first index:19, last index:28
+048097 [S2]'s commit Index is 28
+048099 [S2]{Leader}'s first index:19, last index:28
+048100 [S2]'s commit Index is 28
+049576 [S0]{Follower} receives PrevLogIndex is 28
+049578 [S0]{Follower}'s first index:19, last index:28
+049580 [S0]{Follower} contain and match
+049582 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+049576 [S1]{Follower} receives PrevLogIndex is 28
+049585 [S1]{Follower}'s first index:19, last index:28
+049587 [S1]{Follower} contain and match
+049589 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+049584 [S2]{Leader}'s first index:19, last index:28
+049592 [S2]'s commit Index is 28
+049594 [S2]{Leader}'s first index:19, last index:28
+049595 [S2]'s commit Index is 28
+051077 [S1]{Follower} receives PrevLogIndex is 28
+051079 [S1]{Follower}'s first index:19, last index:28
+051082 [S1]{Follower} contain and match
+051084 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+051077 [S0]{Follower} receives PrevLogIndex is 28
+051087 [S0]{Follower}'s first index:19, last index:28
+051088 [S0]{Follower} contain and match
+051090 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+051086 [S2]{Leader}'s first index:19, last index:28
+051094 [S2]'s commit Index is 28
+051096 [S2]{Leader}'s first index:19, last index:28
+051098 [S2]'s commit Index is 28
+052578 [S1]{Follower} receives PrevLogIndex is 28
+052581 [S1]{Follower}'s first index:19, last index:28
+052584 [S1]{Follower} contain and match
+052587 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+052579 [S0]{Follower} receives PrevLogIndex is 28
+052590 [S0]{Follower}'s first index:19, last index:28
+052592 [S0]{Follower} contain and match
+052595 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+052589 [S2]{Leader}'s first index:19, last index:28
+052599 [S2]'s commit Index is 28
+052601 [S2]{Leader}'s first index:19, last index:28
+052603 [S2]'s commit Index is 28
+054080 [S1]{Follower} receives PrevLogIndex is 28
+054082 [S1]{Follower}'s first index:19, last index:28
+054084 [S1]{Follower} contain and match
+054086 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+054080 [S0]{Follower} receives PrevLogIndex is 28
+054090 [S0]{Follower}'s first index:19, last index:28
+054091 [S0]{Follower} contain and match
+054093 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+054088 [S2]{Leader}'s first index:19, last index:28
+054097 [S2]'s commit Index is 28
+054099 [S2]{Leader}'s first index:19, last index:28
+054100 [S2]'s commit Index is 28
+055585 [S0]{Follower} receives PrevLogIndex is 28
+055589 [S0]{Follower}'s first index:19, last index:28
+055593 [S0]{Follower} contain and match
+055596 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+055585 [S1]{Follower} receives PrevLogIndex is 28
+055601 [S1]{Follower}'s first index:19, last index:28
+055603 [S1]{Follower} contain and match
+055605 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+055599 [S2]{Leader}'s first index:19, last index:28
+055609 [S2]'s commit Index is 28
+055611 [S2]{Leader}'s first index:19, last index:28
+055613 [S2]'s commit Index is 28
+057083 [S1]{Follower} receives PrevLogIndex is 28
+057087 [S1]{Follower}'s first index:19, last index:28
+057089 [S1]{Follower} contain and match
+057092 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+057083 [S0]{Follower} receives PrevLogIndex is 28
+057096 [S0]{Follower}'s first index:19, last index:28
+057099 [S0]{Follower} contain and match
+057101 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+057095 [S2]{Leader}'s first index:19, last index:28
+057105 [S2]'s commit Index is 28
+057108 [S2]{Leader}'s first index:19, last index:28
+057109 [S2]'s commit Index is 28
+058584 [S0]{Follower} receives PrevLogIndex is 28
+058587 [S0]{Follower}'s first index:19, last index:28
+058589 [S0]{Follower} contain and match
+058591 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+058584 [S1]{Follower} receives PrevLogIndex is 28
+058595 [S1]{Follower}'s first index:19, last index:28
+058596 [S1]{Follower} contain and match
+058598 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+058593 [S2]{Leader}'s first index:19, last index:28
+058602 [S2]'s commit Index is 28
+058604 [S2]{Leader}'s first index:19, last index:28
+058605 [S2]'s commit Index is 28
+059263 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2]"
+059268 [S0]{Follower} receives PrevLogIndex is 28
+059271 [S0]{Follower}'s first index:19, last index:28
+059272 [S0]{Follower} contain and match
+059275 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+059268 [S1]{Follower} receives PrevLogIndex is 28
+059279 [S1]{Follower}'s first index:19, last index:28
+059280 [S1]{Follower} contain and match
+059282 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+059277 [S2]{Leader}'s first index:19, last index:29
+059286 [S2]'s commit Index is 28
+059288 [S2]{Leader}'s first index:19, last index:29
+059289 [S2]'s commit Index is 29
+059291 [Snapshot][S2]{Leader}, old start is 19, length of log is 11, new start is 29
+059293 [Snapshot][S2]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+060086 [S0]{Follower} receives PrevLogIndex is 29
+060089 [S0]{Follower}'s first index:19, last index:29
+060092 [S0]{Follower} contain and match
+060094 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+060086 [S1]{Follower} receives PrevLogIndex is 29
+060099 [S1]{Follower}'s first index:19, last index:29
+060102 [S1]{Follower} contain and match
+060104 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+060097 [Snapshot][S0]{Leader}, old start is 19, length of log is 11, new start is 29
+060109 [Snapshot][S0]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+060097 [S2]{Leader}'s first index:29, last index:29
+060107 [Snapshot][S1]{Leader}, old start is 19, length of log is 11, new start is 29
+060115 [Snapshot][S1]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+060113 [S2]'s commit Index is 29
+060119 [S2]{Leader}'s first index:29, last index:29
+060120 [S2]'s commit Index is 29
+061590 [S1]{Follower} receives PrevLogIndex is 29
+061593 [S1]{Follower}'s first index:29, last index:29
+061595 [S1]{Follower} contain and match
+061598 [AE][S1]{Follower} log(Term) becomes: "[2]"
+061590 [S0]{Follower} receives PrevLogIndex is 29
+061602 [S0]{Follower}'s first index:29, last index:29
+061604 [S0]{Follower} contain and match
+061605 [AE][S0]{Follower} log(Term) becomes: "[2]"
+061600 [S2]{Leader}'s first index:29, last index:29
+061609 [S2]'s commit Index is 29
+061612 [S2]{Leader}'s first index:29, last index:29
+061614 [S2]'s commit Index is 29
+063087 [S1]{Follower} receives PrevLogIndex is 29
+063091 [S1]{Follower}'s first index:29, last index:29
+063094 [S1]{Follower} contain and match
+063097 [AE][S1]{Follower} log(Term) becomes: "[2]"
+063087 [S0]{Follower} receives PrevLogIndex is 29
+063101 [S0]{Follower}'s first index:29, last index:29
+063103 [S0]{Follower} contain and match
+063105 [AE][S0]{Follower} log(Term) becomes: "[2]"
+063099 [S2]{Leader}'s first index:29, last index:29
+063109 [S2]'s commit Index is 29
+063111 [S2]{Leader}'s first index:29, last index:29
+063113 [S2]'s commit Index is 29
+064589 [S1]{Follower} receives PrevLogIndex is 29
+064592 [S1]{Follower}'s first index:29, last index:29
+064595 [S1]{Follower} contain and match
+064597 [AE][S1]{Follower} log(Term) becomes: "[2]"
+064589 [S0]{Follower} receives PrevLogIndex is 29
+064602 [S0]{Follower}'s first index:29, last index:29
+064604 [S0]{Follower} contain and match
+064606 [AE][S0]{Follower} log(Term) becomes: "[2]"
+064600 [S2]{Leader}'s first index:29, last index:29
+064610 [S2]'s commit Index is 29
+064612 [S2]{Leader}'s first index:29, last index:29
+064614 [S2]'s commit Index is 29
+065534 [AE][S2]{Leader}: "[2 2]"
+065539 [S1]{Follower} receives PrevLogIndex is 29
+065540 [S1]{Follower}'s first index:29, last index:29
+065542 [S1]{Follower} contain and match
+065544 [AE][S1]{Follower} log(Term) becomes: "[2 2]"
+065546 [S2]{Leader}'s first index:29, last index:30
+065548 [S2]'s commit Index is 29
+066089 [S1]{Follower} receives PrevLogIndex is 30
+066092 [S1]{Follower}'s first index:29, last index:30
+066094 [S1]{Follower} contain and match
+066096 [AE][S1]{Follower} log(Term) becomes: "[2 2]"
+066098 [S2]{Leader}'s first index:29, last index:30
+066100 [S2]'s commit Index is 30
+066140 [AE][S2]{Leader}: "[2 2 2]"
+066143 [AE][S2]{Leader}: "[2 2 2 2]"
+066145 [AE][S2]{Leader}: "[2 2 2 2 2]"
+066147 [AE][S2]{Leader}: "[2 2 2 2 2 2]"
+066148 [AE][S2]{Leader}: "[2 2 2 2 2 2 2]"
+066151 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2]"
+066152 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2]"
+066155 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2]"
+066144 [S1]{Follower} receives PrevLogIndex is 30
+066156 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2]"
+066160 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2]"
+066162 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2 2]"
+066158 [S1]{Follower}'s first index:29, last index:30
+066166 [S1]{Follower} contain and match
+066168 [AE][S1]{Follower} log(Term) becomes: "[2 2 2]"
+066170 [S1]{Follower} receives PrevLogIndex is 30
+066172 [S1]{Follower}'s first index:29, last index:31
+066173 [S1]{Follower} contain and match
+066175 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2]"
+066170 [S2]{Leader}'s first index:29, last index:41
+066179 [S2]'s commit Index is 30
+066177 [S1]{Follower} receives PrevLogIndex is 30
+066182 [S1]{Follower}'s first index:29, last index:32
+066184 [S1]{Follower} contain and match
+066185 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+066180 [S2]{Leader}'s first index:29, last index:41
+066190 [S2]'s commit Index is 31
+066193 [S2]{Leader}'s first index:29, last index:41
+066196 [S2]'s commit Index is 32
+066188 [S1]{Follower} receives PrevLogIndex is 30
+066200 [S1]{Follower}'s first index:29, last index:33
+066202 [S1]{Follower} contain and match
+066204 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2]"
+066206 [S1]{Follower} receives PrevLogIndex is 30
+066208 [S1]{Follower}'s first index:29, last index:34
+066210 [S1]{Follower} contain and match
+066212 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2]"
+066207 [S2]{Leader}'s first index:29, last index:41
+066216 [S2]'s commit Index is 33
+066215 [S1]{Follower} receives PrevLogIndex is 30
+066220 [S1]{Follower}'s first index:29, last index:35
+066222 [S1]{Follower} contain and match
+066224 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2]"
+066218 [S2]{Leader}'s first index:29, last index:41
+066228 [S2]'s commit Index is 34
+066226 [S1]{Follower} receives PrevLogIndex is 30
+066232 [S1]{Follower}'s first index:29, last index:36
+066233 [S1]{Follower} contain and match
+066235 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+066237 [S1]{Follower} receives PrevLogIndex is 30
+066239 [S1]{Follower}'s first index:29, last index:37
+066240 [S1]{Follower} contain and match
+066230 [S2]{Leader}'s first index:29, last index:41
+066242 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+066244 [S2]'s commit Index is 35
+066246 [S1]{Follower} receives PrevLogIndex is 30
+066249 [S1]{Follower}'s first index:29, last index:38
+066251 [S1]{Follower} contain and match
+066252 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+066247 [S2]{Leader}'s first index:29, last index:41
+066256 [S2]'s commit Index is 36
+066258 [S2]{Leader}'s first index:29, last index:41
+066260 [S2]'s commit Index is 37
+066254 [S1]{Follower} receives PrevLogIndex is 30
+066264 [S1]{Follower}'s first index:29, last index:39
+066266 [S1]{Follower} contain and match
+066268 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2]"
+066262 [S2]{Leader}'s first index:29, last index:41
+066272 [S2]'s commit Index is 38
+066274 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+066277 [S2]{Leader}'s first index:29, last index:42
+066279 [S2]'s commit Index is 39
+066281 [Snapshot][S2]{Leader}, old start is 29, length of log is 14, new start is 39
+066271 [S1]{Follower} receives PrevLogIndex is 30
+066283 [Snapshot][S2]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+066284 [S1]{Follower}'s first index:29, last index:40
+066289 [S1]{Follower} contain and match
+066290 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2]"
+066292 [S1]{Follower} receives PrevLogIndex is 39
+066294 [S1]{Follower}'s first index:29, last index:41
+066296 [S1]{Follower} contain and match
+066298 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+066293 [S2]{Leader}'s first index:39, last index:42
+066301 [S2]'s commit Index is 40
+066300 [Snapshot][S1]{Leader}, old start is 29, length of log is 14, new start is 39
+066305 [Snapshot][S1]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+066303 [S2]{Leader}'s first index:39, last index:42
+066309 [S2]'s commit Index is 41
+067592 [S1]{Follower} receives PrevLogIndex is 42
+067595 [S1]{Follower}'s first index:39, last index:42
+067597 [S1]{Follower} contain and match
+067599 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2]"
+067602 [S2]{Leader}'s first index:39, last index:42
+067604 [S2]'s commit Index is 42
+067686 [AE][S2]{Leader}: "[2 2 2 2 2]"
+067691 [S0]{Follower} receives PrevLogIndex is 39
+067693 [S0]{Follower}'s first index:29, last index:29
+067696 [S0]{Follower} not contain
+067698 [AE][S0]{Follower} log(Term) becomes: "[2]"
+067691 [S1]{Follower} receives PrevLogIndex is 42
+067701 [S1]{Follower}'s first index:39, last index:42
+067703 [S1]{Follower} contain and match
+067705 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+067700 [S2]{Leader}'s first index:39, last index:43
+067709 [S2]'s commit Index is 42
+067710 [S2]{Leader}'s first index:39, last index:43
+067712 [S2]'s commit Index is 42
+067710 [Snapshot][S0]{Follower} Discard Entire log
+067716 [Snapshot][S0]{Follower} log(Term) becomes: "[2]"
+069091 [S1]{Follower} receives PrevLogIndex is 43
+069095 [S1]{Follower}'s first index:39, last index:43
+069097 [S1]{Follower} contain and match
+069100 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+069091 [S0]{Follower} receives PrevLogIndex is 39
+069105 [S0]{Follower}'s first index:39, last index:39
+069107 [S0]{Follower} contain and match
+069109 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+069103 [S2]{Leader}'s first index:39, last index:43
+069113 [S2]'s commit Index is 43
+069115 [S2]{Leader}'s first index:39, last index:43
+069117 [S2]'s commit Index is 43
+070593 [S0]{Follower} receives PrevLogIndex is 43
+070596 [S0]{Follower}'s first index:39, last index:43
+070598 [S0]{Follower} contain and match
+070600 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+070593 [S1]{Follower} receives PrevLogIndex is 43
+070604 [S1]{Follower}'s first index:39, last index:43
+070605 [S1]{Follower} contain and match
+070607 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+070602 [S2]{Leader}'s first index:39, last index:43
+070611 [S2]'s commit Index is 43
+070613 [S2]{Leader}'s first index:39, last index:43
+070615 [S2]'s commit Index is 43
+072095 [S0]{Follower} receives PrevLogIndex is 43
+072098 [S0]{Follower}'s first index:39, last index:43
+072101 [S0]{Follower} contain and match
+072103 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+072095 [S1]{Follower} receives PrevLogIndex is 43
+072108 [S1]{Follower}'s first index:39, last index:43
+072110 [S1]{Follower} contain and match
+072113 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+072106 [S2]{Leader}'s first index:39, last index:43
+072116 [S2]'s commit Index is 43
+072118 [S2]{Leader}'s first index:39, last index:43
+072119 [S2]'s commit Index is 43
+073595 [S1]{Follower} receives PrevLogIndex is 43
+073598 [S1]{Follower}'s first index:39, last index:43
+073600 [S1]{Follower} contain and match
+073602 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+073595 [S0]{Follower} receives PrevLogIndex is 43
+073607 [S0]{Follower}'s first index:39, last index:43
+073608 [S0]{Follower} contain and match
+073611 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+073605 [S2]{Leader}'s first index:39, last index:43
+073615 [S2]'s commit Index is 43
+073617 [S2]{Leader}'s first index:39, last index:43
+073619 [S2]'s commit Index is 43
+074081 [AE][S2]{Leader}: "[2 2 2 2 2 2]"
+074085 [S1]{Follower} receives PrevLogIndex is 43
+074087 [S1]{Follower}'s first index:39, last index:43
+074089 [S1]{Follower} contain and match
+074090 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2]"
+074093 [S2]{Leader}'s first index:39, last index:44
+074094 [S2]'s commit Index is 43
+075098 [S1]{Follower} receives PrevLogIndex is 44
+075104 [S1]{Follower}'s first index:39, last index:44
+075106 [S1]{Follower} contain and match
+075109 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2]"
+075113 [S2]{Leader}'s first index:39, last index:44
+075115 [S2]'s commit Index is 44
+075291 [AE][S2]{Leader}: "[2 2 2 2 2 2 2]"
+075294 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2]"
+075297 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2]"
+075299 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2]"
+075301 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2]"
+075304 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2]"
+075306 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075296 [S1]{Follower} receives PrevLogIndex is 44
+075308 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075312 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075314 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075316 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075310 [S1]{Follower}'s first index:39, last index:44
+075320 [S1]{Follower} contain and match
+075322 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2]"
+075324 [S2]{Leader}'s first index:39, last index:55
+075326 [S2]'s commit Index is 44
+075324 [S1]{Follower} receives PrevLogIndex is 44
+075329 [S1]{Follower}'s first index:39, last index:45
+075331 [S1]{Follower} contain and match
+075333 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2]"
+075335 [S1]{Follower} receives PrevLogIndex is 44
+075337 [S1]{Follower}'s first index:39, last index:46
+075338 [S1]{Follower} contain and match
+075340 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+075335 [S2]{Leader}'s first index:39, last index:55
+075344 [S2]'s commit Index is 45
+075342 [S1]{Follower} receives PrevLogIndex is 44
+075347 [S1]{Follower}'s first index:39, last index:47
+075349 [S1]{Follower} contain and match
+075351 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2]"
+075345 [S2]{Leader}'s first index:39, last index:55
+075357 [S2]'s commit Index is 46
+075355 [S1]{Follower} receives PrevLogIndex is 44
+075363 [S1]{Follower}'s first index:39, last index:48
+075365 [S1]{Follower} contain and match
+075368 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2]"
+075360 [S2]{Leader}'s first index:39, last index:55
+075374 [S2]'s commit Index is 47
+075371 [S1]{Follower} receives PrevLogIndex is 44
+075378 [S1]{Follower}'s first index:39, last index:49
+075379 [S1]{Follower} contain and match
+075381 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2]"
+075376 [S2]{Leader}'s first index:39, last index:55
+075385 [S2]'s commit Index is 48
+075384 [S1]{Follower} receives PrevLogIndex is 44
+075389 [S1]{Follower}'s first index:39, last index:50
+075391 [S1]{Follower} contain and match
+075393 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075387 [S2]{Leader}'s first index:39, last index:55
+075397 [S2]'s commit Index is 49
+075399 [Snapshot][S2]{Leader}, old start is 39, length of log is 17, new start is 49
+075401 [Snapshot][S2]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075396 [S1]{Follower} receives PrevLogIndex is 44
+075405 [S1]{Follower}'s first index:39, last index:51
+075407 [S1]{Follower} contain and match
+075409 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075403 [S2]{Leader}'s first index:49, last index:55
+075413 [S2]'s commit Index is 50
+075411 [S1]{Follower} receives PrevLogIndex is 44
+075417 [S1]{Follower}'s first index:39, last index:52
+075419 [S1]{Follower} contain and match
+075421 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075415 [S2]{Leader}'s first index:49, last index:55
+075425 [S2]'s commit Index is 51
+075424 [S1]{Follower} receives PrevLogIndex is 44
+075428 [S1]{Follower}'s first index:39, last index:53
+075430 [S1]{Follower} contain and match
+075433 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075427 [S2]{Leader}'s first index:49, last index:55
+075437 [S2]'s commit Index is 52
+075435 [S1]{Follower} receives PrevLogIndex is 44
+075440 [S1]{Follower}'s first index:39, last index:54
+075442 [S1]{Follower} contain and match
+075444 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075439 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2]"
+075449 [S2]{Leader}'s first index:49, last index:56
+075451 [S2]'s commit Index is 53
+075450 [S1]{Follower} receives PrevLogIndex is 53
+075455 [S1]{Follower}'s first index:39, last index:55
+075457 [S1]{Follower} contain and match
+075459 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075453 [S2]{Leader}'s first index:49, last index:56
+075463 [S2]'s commit Index is 54
+075461 [Snapshot][S1]{Leader}, old start is 39, length of log is 18, new start is 49
+075466 [Snapshot][S1]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]"
+075465 [S2]{Leader}'s first index:49, last index:56
+075470 [S2]'s commit Index is 55
+076598 [S1]{Follower} receives PrevLogIndex is 56
+076601 [S1]{Follower}'s first index:49, last index:56
+076604 [S1]{Follower} contain and match
+076607 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2]"
+076610 [S2]{Leader}'s first index:49, last index:56
+076612 [S2]'s commit Index is 56
+076654 [AE][S2]{Leader}: "[2 2 2 2 2 2 2 2 2]"
+076658 [S1]{Follower} receives PrevLogIndex is 56
+076660 [S1]{Follower}'s first index:49, last index:56
+076662 [S1]{Follower} contain and match
+076664 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+076658 [S0]{Follower} receives PrevLogIndex is 49
+076667 [S0]{Follower}'s first index:39, last index:43
+076669 [S0]{Follower} not contain
+076673 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2]"
+076666 [S2]{Leader}'s first index:49, last index:57
+076677 [S2]'s commit Index is 56
+076679 [S2]{Leader}'s first index:49, last index:57
+076681 [S2]'s commit Index is 57
+076683 [Snapshot][S0]{Follower} Discard Entire log
+076685 [Snapshot][S0]{Follower} log(Term) becomes: "[2]"
+078099 [S1]{Follower} receives PrevLogIndex is 57
+078102 [S1]{Follower}'s first index:49, last index:57
+078104 [S1]{Follower} contain and match
+078106 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+078099 [S0]{Follower} receives PrevLogIndex is 49
+078110 [S0]{Follower}'s first index:49, last index:49
+078112 [S0]{Follower} contain and match
+078113 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+078108 [S2]{Leader}'s first index:49, last index:57
+078117 [S2]'s commit Index is 57
+078118 [S2]{Leader}'s first index:49, last index:57
+078120 [S2]'s commit Index is 57
+079602 [S1]{Follower} receives PrevLogIndex is 57
+079606 [S1]{Follower}'s first index:49, last index:57
+079611 [S1]{Follower} contain and match
+079614 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+079602 [S0]{Follower} receives PrevLogIndex is 57
+079619 [S0]{Follower}'s first index:49, last index:57
+079621 [S0]{Follower} contain and match
+079624 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+079617 [S2]{Leader}'s first index:49, last index:57
+079628 [S2]'s commit Index is 57
+079630 [S2]{Leader}'s first index:49, last index:57
+079632 [S2]'s commit Index is 57
+081102 [S1]{Follower} receives PrevLogIndex is 57
+081105 [S1]{Follower}'s first index:49, last index:57
+081107 [S1]{Follower} contain and match
+081109 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+081102 [S0]{Follower} receives PrevLogIndex is 57
+081113 [S0]{Follower}'s first index:49, last index:57
+081115 [S0]{Follower} contain and match
+081118 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+081112 [S2]{Leader}'s first index:49, last index:57
+081121 [S2]'s commit Index is 57
+081123 [S2]{Leader}'s first index:49, last index:57
+081125 [S2]'s commit Index is 57
+082603 [S0]{Follower} receives PrevLogIndex is 57
+082606 [S0]{Follower}'s first index:49, last index:57
+082608 [S0]{Follower} contain and match
+082610 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+082603 [S1]{Follower} receives PrevLogIndex is 57
+082614 [S1]{Follower}'s first index:49, last index:57
+082615 [S1]{Follower} contain and match
+082617 [AE][S1]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+082612 [S2]{Leader}'s first index:49, last index:57
+082621 [S2]'s commit Index is 57
+082623 [S2]{Leader}'s first index:49, last index:57
+082624 [S2]'s commit Index is 57
+094057 [S1] becomes {Leader}
+094062 [S0]{Follower} receives PrevLogIndex is 57
+094064 [S0]{Follower}'s first index:49, last index:57
+094066 [S0]{Follower} contain and match
+094068 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+094070 [S1]{Leader}'s first index:49, last index:57
+094072 [S1]'s commit Index is 57
+094523 [AE][S1]{Leader}: "[2 2 2 2 2 2 2 2 2 3]"
+094529 [S0]{Follower} receives PrevLogIndex is 57
+094532 [S0]{Follower}'s first index:49, last index:57
+094538 [S0]{Follower} contain and match
+094541 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 3]"
+094544 [S1]{Leader}'s first index:49, last index:58
+094546 [S1]'s commit Index is 57
+094589 [S0]{Follower} receives PrevLogIndex is 58
+094593 [S0]{Follower}'s first index:49, last index:58
+094596 [S0]{Follower} contain and match
+094599 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 3]"
+094602 [S1]{Leader}'s first index:49, last index:58
+094604 [S1]'s commit Index is 58
+094729 [AE][S1]{Leader}: "[2 2 2 2 2 2 2 2 2 3 3]"
+094735 [S0]{Follower} receives PrevLogIndex is 58
+094737 [S0]{Follower}'s first index:49, last index:58
+094738 [S0]{Follower} contain and match
+094740 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 3 3]"
+094742 [S1]{Leader}'s first index:49, last index:59
+094744 [S1]'s commit Index is 58
+094746 [Snapshot][S1]{Leader}, old start is 49, length of log is 11, new start is 59
+094748 [Snapshot][S1]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 3 3]"
+096089 [S0]{Follower} receives PrevLogIndex is 59
+096091 [S0]{Follower}'s first index:49, last index:59
+096093 [S0]{Follower} contain and match
+096095 [AE][S0]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 3 3]"
+096097 [S1]{Leader}'s first index:59, last index:59
+096099 [S1]'s commit Index is 59
+096097 [Snapshot][S0]{Leader}, old start is 49, length of log is 11, new start is 59
+096102 [Snapshot][S0]{Leader} log(Term) becomes: "[2 2 2 2 2 2 2 2 2 3 3]"
+096140 [AE][S1]{Leader}: "[3 3]"
+096143 [S0]{Follower} receives PrevLogIndex is 59
+096145 [S0]{Follower}'s first index:59, last index:59
+096147 [S0]{Follower} contain and match
+096149 [AE][S0]{Follower} log(Term) becomes: "[3 3]"
+096144 [S2]{Follower} receives PrevLogIndex is 59
+096152 [S2]{Follower}'s first index:49, last index:57
+096155 [S2]{Follower} not contain
+096156 [AE][S2]{Follower} log(Term) becomes: "[2 2 2 2 2 2 2 2 2]"
+096151 [S1]{Leader}'s first index:59, last index:60
+096160 [S1]'s commit Index is 59
+096163 [S1]{Leader}'s first index:59, last index:60
+096164 [S1]'s commit Index is 60
+096166 [Snapshot][S2]{Follower} Discard Entire log
+096168 [Snapshot][S2]{Follower} log(Term) becomes: "[3]"
+097591 [S2]{Follower} receives PrevLogIndex is 59
+097596 [S2]{Follower}'s first index:59, last index:59
+097599 [S2]{Follower} contain and match
+097601 [AE][S2]{Follower} log(Term) becomes: "[3 3]"
+097591 [S0]{Follower} receives PrevLogIndex is 60
+097606 [S0]{Follower}'s first index:59, last index:60
+097608 [S0]{Follower} contain and match
+097611 [AE][S0]{Follower} log(Term) becomes: "[3 3]"
+097604 [S1]{Leader}'s first index:59, last index:60
+097615 [S1]'s commit Index is 60
+097617 [S1]{Leader}'s first index:59, last index:60
+097619 [S1]'s commit Index is 60
+099091 [S2]{Follower} receives PrevLogIndex is 60
+099094 [S2]{Follower}'s first index:59, last index:60
+099096 [S2]{Follower} contain and match
+099099 [AE][S2]{Follower} log(Term) becomes: "[3 3]"
+099091 [S0]{Follower} receives PrevLogIndex is 60
+099104 [S0]{Follower}'s first index:59, last index:60
+099106 [S0]{Follower} contain and match
+099109 [AE][S0]{Follower} log(Term) becomes: "[3 3]"
+099104 [S1]{Leader}'s first index:59, last index:60
+099114 [S1]'s commit Index is 60
+099117 [S1]{Leader}'s first index:59, last index:60
+099119 [S1]'s commit Index is 60
+100595 [S2]{Follower} receives PrevLogIndex is 60
+100601 [S2]{Follower}'s first index:59, last index:60
+100605 [S2]{Follower} contain and match
+100595 [S0]{Follower} receives PrevLogIndex is 60
+100610 [AE][S2]{Follower} log(Term) becomes: "[3 3]"
+100614 [S0]{Follower}'s first index:59, last index:60
+100625 [S0]{Follower} contain and match
+100634 [AE][S0]{Follower} log(Term) becomes: "[3 3]"
+100619 [S1]{Leader}'s first index:59, last index:60
+100639 [S1]'s commit Index is 60
+100641 [S1]{Leader}'s first index:59, last index:60
+100643 [S1]'s commit Index is 60
+102095 [S2]{Follower} receives PrevLogIndex is 60
+102098 [S2]{Follower}'s first index:59, last index:60
+102100 [S2]{Follower} contain and match
+102103 [AE][S2]{Follower} log(Term) becomes: "[3 3]"
+102095 [S0]{Follower} receives PrevLogIndex is 60
+102107 [S0]{Follower}'s first index:59, last index:60
+102110 [S0]{Follower} contain and match
+102112 [AE][S0]{Follower} log(Term) becomes: "[3 3]"
+102106 [S1]{Leader}'s first index:59, last index:60
+102117 [S1]'s commit Index is 60
+102119 [S1]{Leader}'s first index:59, last index:60
+102121 [S1]'s commit Index is 60
+103226 [AE][S1]{Leader}: "[3 3 3]"
+103230 [S0]{Follower} receives PrevLogIndex is 60
+103232 [S0]{Follower}'s first index:59, last index:60
+103234 [S0]{Follower} contain and match
+103236 [AE][S0]{Follower} log(Term) becomes: "[3 3 3]"
+103238 [S1]{Leader}'s first index:59, last index:61
+103240 [S1]'s commit Index is 60
+103596 [S0]{Follower} receives PrevLogIndex is 61
+103600 [S0]{Follower}'s first index:59, last index:61
+103602 [S0]{Follower} contain and match
+103605 [AE][S0]{Follower} log(Term) becomes: "[3 3 3]"
+103609 [S1]{Leader}'s first index:59, last index:61
+103611 [S1]'s commit Index is 61
+103631 [AE][S1]{Leader}: "[3 3 3 3]"
+103634 [AE][S1]{Leader}: "[3 3 3 3 3]"
+103636 [AE][S1]{Leader}: "[3 3 3 3 3 3]"
+103639 [AE][S1]{Leader}: "[3 3 3 3 3 3 3]"
+103642 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3]"
+103644 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3]"
+103647 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3]"
+103635 [S0]{Follower} receives PrevLogIndex is 61
+103649 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3]"
+103655 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3]"
+103652 [S0]{Follower}'s first index:59, last index:61
+103660 [S0]{Follower} contain and match
+103662 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3]"
+103658 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3]"
+103667 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+103670 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+103674 [S1]{Leader}'s first index:59, last index:73
+103680 [S1]'s commit Index is 61
+103665 [S0]{Follower} receives PrevLogIndex is 61
+103686 [S0]{Follower}'s first index:59, last index:62
+103691 [S0]{Follower} contain and match
+103695 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3]"
+103699 [S0]{Follower} receives PrevLogIndex is 61
+103702 [S0]{Follower}'s first index:59, last index:63
+103708 [S0]{Follower} contain and match
+103700 [S1]{Leader}'s first index:59, last index:73
+103716 [S1]'s commit Index is 62
+103714 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+103723 [S0]{Follower} receives PrevLogIndex is 61
+103726 [S0]{Follower}'s first index:59, last index:64
+103728 [S0]{Follower} contain and match
+103731 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3]"
+103724 [S1]{Leader}'s first index:59, last index:73
+103737 [S1]'s commit Index is 63
+103734 [S0]{Follower} receives PrevLogIndex is 61
+103743 [S0]{Follower}'s first index:59, last index:65
+103746 [S0]{Follower} contain and match
+103748 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3]"
+103740 [S1]{Leader}'s first index:59, last index:73
+103754 [S1]'s commit Index is 64
+103758 [S1]{Leader}'s first index:59, last index:73
+103760 [S1]'s commit Index is 65
+103752 [S0]{Follower} receives PrevLogIndex is 61
+103765 [S0]{Follower}'s first index:59, last index:66
+103768 [S0]{Follower} contain and match
+103771 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3]"
+103773 [S0]{Follower} receives PrevLogIndex is 61
+103776 [S0]{Follower}'s first index:59, last index:67
+103778 [S0]{Follower} contain and match
+103781 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+103774 [S1]{Leader}'s first index:59, last index:73
+103786 [S1]'s commit Index is 66
+103788 [S1]{Leader}'s first index:59, last index:73
+103790 [S1]'s commit Index is 67
+103784 [S0]{Follower} receives PrevLogIndex is 61
+103795 [S0]{Follower}'s first index:59, last index:68
+103797 [S0]{Follower} contain and match
+103802 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+103805 [S0]{Follower} receives PrevLogIndex is 61
+103807 [S0]{Follower}'s first index:59, last index:69
+103809 [S0]{Follower} contain and match
+103814 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3]"
+103806 [S1]{Leader}'s first index:59, last index:73
+103819 [S1]'s commit Index is 68
+103817 [S0]{Follower} receives PrevLogIndex is 61
+103824 [S0]{Follower}'s first index:59, last index:70
+103827 [S0]{Follower} contain and match
+103830 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3]"
+103821 [S1]{Leader}'s first index:59, last index:73
+103842 [S1]'s commit Index is 69
+103835 [S0]{Follower} receives PrevLogIndex is 61
+103853 [S0]{Follower}'s first index:59, last index:71
+103860 [S0]{Follower} contain and match
+103847 [Snapshot][S1]{Leader}, old start is 59, length of log is 15, new start is 69
+103867 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+103871 [Snapshot][S1]{Leader} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+103876 [S1]{Leader}'s first index:69, last index:73
+103879 [S1]'s commit Index is 70
+103882 [S1]{Leader}'s first index:69, last index:73
+103884 [S1]'s commit Index is 71
+103874 [S0]{Follower} receives PrevLogIndex is 61
+103889 [S0]{Follower}'s first index:59, last index:72
+103891 [S0]{Follower} contain and match
+103894 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+103897 [S1]{Leader}'s first index:69, last index:73
+103899 [S1]'s commit Index is 72
+105103 [S0]{Follower} receives PrevLogIndex is 73
+105109 [S0]{Follower}'s first index:59, last index:73
+105111 [S0]{Follower} contain and match
+105113 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+105116 [S1]{Leader}'s first index:69, last index:73
+105118 [S1]'s commit Index is 73
+105117 [Snapshot][S0]{Leader}, old start is 59, length of log is 15, new start is 69
+105123 [Snapshot][S0]{Leader} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+105283 [AE][S1]{Leader}: "[3 3 3 3 3 3]"
+105288 [S2]{Follower} receives PrevLogIndex is 69
+105290 [S2]{Follower}'s first index:59, last index:60
+105292 [S2]{Follower} not contain
+105295 [AE][S2]{Follower} log(Term) becomes: "[3 3]"
+105289 [S0]{Follower} receives PrevLogIndex is 73
+105299 [S0]{Follower}'s first index:69, last index:73
+105301 [S0]{Follower} contain and match
+105297 [S1]{Leader}'s first index:69, last index:74
+105308 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+105308 [S1]'s commit Index is 73
+105315 [S1]{Leader}'s first index:69, last index:74
+105317 [S1]'s commit Index is 73
+105316 [Snapshot][S2]{Follower} Discard Entire log
+105321 [Snapshot][S2]{Follower} log(Term) becomes: "[3]"
+106598 [S2]{Follower} receives PrevLogIndex is 69
+106601 [S2]{Follower}'s first index:69, last index:69
+106603 [S2]{Follower} contain and match
+106606 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+106599 [S0]{Follower} receives PrevLogIndex is 74
+106612 [S0]{Follower}'s first index:69, last index:74
+106614 [S0]{Follower} contain and match
+106616 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+106610 [S1]{Leader}'s first index:69, last index:74
+106620 [S1]'s commit Index is 74
+106622 [S1]{Leader}'s first index:69, last index:74
+106624 [S1]'s commit Index is 74
+108100 [S2]{Follower} receives PrevLogIndex is 74
+108104 [S2]{Follower}'s first index:69, last index:74
+108107 [S2]{Follower} contain and match
+108111 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+108100 [S0]{Follower} receives PrevLogIndex is 74
+108119 [S0]{Follower}'s first index:69, last index:74
+108123 [S0]{Follower} contain and match
+108126 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+108114 [S1]{Leader}'s first index:69, last index:74
+108132 [S1]'s commit Index is 74
+108135 [S1]{Leader}'s first index:69, last index:74
+108138 [S1]'s commit Index is 74
+109602 [S0]{Follower} receives PrevLogIndex is 74
+109607 [S0]{Follower}'s first index:69, last index:74
+109610 [S0]{Follower} contain and match
+109613 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+109602 [S2]{Follower} receives PrevLogIndex is 74
+109619 [S2]{Follower}'s first index:69, last index:74
+109622 [S2]{Follower} contain and match
+109625 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+109616 [S1]{Leader}'s first index:69, last index:74
+109630 [S1]'s commit Index is 74
+109633 [S1]{Leader}'s first index:69, last index:74
+109635 [S1]'s commit Index is 74
+111103 [S2]{Follower} receives PrevLogIndex is 74
+111108 [S2]{Follower}'s first index:69, last index:74
+111111 [S2]{Follower} contain and match
+111113 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+111103 [S0]{Follower} receives PrevLogIndex is 74
+111118 [S0]{Follower}'s first index:69, last index:74
+111120 [S0]{Follower} contain and match
+111122 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+111116 [S1]{Leader}'s first index:69, last index:74
+111127 [S1]'s commit Index is 74
+111129 [S1]{Leader}'s first index:69, last index:74
+111131 [S1]'s commit Index is 74
+111307 [AE][S1]{Leader}: "[3 3 3 3 3 3 3]"
+111315 [S0]{Follower} receives PrevLogIndex is 74
+111317 [S0]{Follower}'s first index:69, last index:74
+111318 [S0]{Follower} contain and match
+111320 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3]"
+111322 [S1]{Leader}'s first index:69, last index:75
+111324 [S1]'s commit Index is 74
+112610 [S0]{Follower} receives PrevLogIndex is 75
+112616 [S0]{Follower}'s first index:69, last index:75
+112618 [S0]{Follower} contain and match
+112622 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3]"
+112626 [S1]{Leader}'s first index:69, last index:75
+112629 [S1]'s commit Index is 75
+112722 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3]"
+112725 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3]"
+112728 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3]"
+112730 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3]"
+112732 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3]"
+112727 [S0]{Follower} receives PrevLogIndex is 75
+112736 [S0]{Follower}'s first index:69, last index:75
+112738 [S0]{Follower} contain and match
+112739 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3]"
+112734 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112744 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112746 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112748 [S1]{Leader}'s first index:69, last index:83
+112750 [S1]'s commit Index is 75
+112742 [S0]{Follower} receives PrevLogIndex is 75
+112753 [S0]{Follower}'s first index:69, last index:76
+112755 [S0]{Follower} contain and match
+112757 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3]"
+112752 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112761 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112759 [S0]{Follower} receives PrevLogIndex is 75
+112766 [S0]{Follower}'s first index:69, last index:77
+112768 [S0]{Follower} contain and match
+112770 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+112764 [S1]{Leader}'s first index:69, last index:85
+112774 [S1]'s commit Index is 76
+112776 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112778 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112772 [S0]{Follower} receives PrevLogIndex is 75
+112782 [S0]{Follower}'s first index:69, last index:78
+112784 [S0]{Follower} contain and match
+112786 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+112781 [S1]{Leader}'s first index:69, last index:87
+112790 [S1]'s commit Index is 77
+112788 [S0]{Follower} receives PrevLogIndex is 75
+112794 [S0]{Follower}'s first index:69, last index:79
+112796 [S0]{Follower} contain and match
+112798 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3]"
+112792 [S1]{Leader}'s first index:69, last index:87
+112802 [S1]'s commit Index is 78
+112801 [S0]{Follower} receives PrevLogIndex is 75
+112806 [S0]{Follower}'s first index:69, last index:80
+112807 [S0]{Follower} contain and match
+112809 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112804 [S1]{Leader}'s first index:69, last index:87
+112813 [S1]'s commit Index is 79
+112815 [Snapshot][S1]{Leader}, old start is 69, length of log is 19, new start is 79
+112817 [Snapshot][S1]{Leader} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112811 [S0]{Follower} receives PrevLogIndex is 75
+112822 [S0]{Follower}'s first index:69, last index:81
+112824 [S0]{Follower} contain and match
+112827 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112821 [S1]{Leader}'s first index:79, last index:87
+112831 [S1]'s commit Index is 80
+112829 [S0]{Follower} receives PrevLogIndex is 75
+112838 [S0]{Follower}'s first index:69, last index:82
+112840 [S0]{Follower} contain and match
+112845 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112836 [S1]{Leader}'s first index:79, last index:87
+112849 [S1]'s commit Index is 81
+112852 [S1]{Leader}'s first index:79, last index:87
+112854 [S1]'s commit Index is 82
+112848 [S0]{Follower} receives PrevLogIndex is 76
+112859 [S0]{Follower}'s first index:69, last index:83
+112861 [S0]{Follower} contain and match
+112865 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112868 [S0]{Follower} receives PrevLogIndex is 76
+112870 [S0]{Follower}'s first index:69, last index:84
+112872 [S0]{Follower} contain and match
+112875 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112868 [S1]{Leader}'s first index:79, last index:87
+112879 [S1]'s commit Index is 83
+112877 [S0]{Follower} receives PrevLogIndex is 77
+112883 [S0]{Follower}'s first index:69, last index:85
+112885 [S0]{Follower} contain and match
+112887 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112881 [S1]{Leader}'s first index:79, last index:87
+112891 [S1]'s commit Index is 84
+112889 [S0]{Follower} receives PrevLogIndex is 77
+112895 [S0]{Follower}'s first index:69, last index:86
+112897 [S0]{Follower} contain and match
+112900 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+112893 [S1]{Leader}'s first index:79, last index:87
+112906 [S1]'s commit Index is 85
+112911 [S1]{Leader}'s first index:79, last index:87
+112913 [S1]'s commit Index is 86
+114107 [S0]{Follower} receives PrevLogIndex is 87
+114112 [S0]{Follower}'s first index:69, last index:87
+114115 [S0]{Follower} contain and match
+114119 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+114124 [Snapshot][S0]{Leader}, old start is 69, length of log is 19, new start is 79
+114129 [Snapshot][S0]{Leader} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]"
+114125 [S1]{Leader}'s first index:79, last index:87
+114137 [S1]'s commit Index is 87
+114190 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3]"
+114196 [S2]{Follower} receives PrevLogIndex is 79
+114198 [S2]{Follower}'s first index:69, last index:74
+114200 [S2]{Follower} not contain
+114202 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3]"
+114196 [S0]{Follower} receives PrevLogIndex is 87
+114207 [S0]{Follower}'s first index:79, last index:87
+114209 [S0]{Follower} contain and match
+114211 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+114204 [S1]{Leader}'s first index:79, last index:88
+114216 [S1]'s commit Index is 87
+114218 [S1]{Leader}'s first index:79, last index:88
+114220 [S1]'s commit Index is 87
+114217 [Snapshot][S2]{Follower} Discard Entire log
+114226 [Snapshot][S2]{Follower} log(Term) becomes: "[3]"
+115608 [S0]{Follower} receives PrevLogIndex is 88
+115614 [S0]{Follower}'s first index:79, last index:88
+115620 [S0]{Follower} contain and match
+115608 [S2]{Follower} receives PrevLogIndex is 79
+115629 [S2]{Follower}'s first index:79, last index:79
+115633 [S2]{Follower} contain and match
+115625 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+115638 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+115643 [S1]{Leader}'s first index:79, last index:88
+115649 [S1]'s commit Index is 88
+115655 [S1]{Leader}'s first index:79, last index:88
+115659 [S1]'s commit Index is 88
+117109 [S2]{Follower} receives PrevLogIndex is 88
+117112 [S2]{Follower}'s first index:79, last index:88
+117114 [S2]{Follower} contain and match
+117117 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+117109 [S0]{Follower} receives PrevLogIndex is 88
+117121 [S0]{Follower}'s first index:79, last index:88
+117123 [S0]{Follower} contain and match
+117125 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+117120 [S1]{Leader}'s first index:79, last index:88
+117129 [S1]'s commit Index is 88
+117131 [S1]{Leader}'s first index:79, last index:88
+117134 [S1]'s commit Index is 88
+118611 [S2]{Follower} receives PrevLogIndex is 88
+118615 [S2]{Follower}'s first index:79, last index:88
+118617 [S2]{Follower} contain and match
+118620 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+118612 [S0]{Follower} receives PrevLogIndex is 88
+118625 [S0]{Follower}'s first index:79, last index:88
+118628 [S0]{Follower} contain and match
+118630 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+118623 [S1]{Leader}'s first index:79, last index:88
+118634 [S1]'s commit Index is 88
+118636 [S1]{Leader}'s first index:79, last index:88
+118639 [S1]'s commit Index is 88
+120112 [S2]{Follower} receives PrevLogIndex is 88
+120116 [S2]{Follower}'s first index:79, last index:88
+120119 [S2]{Follower} contain and match
+120123 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+120113 [S0]{Follower} receives PrevLogIndex is 88
+120130 [S0]{Follower}'s first index:79, last index:88
+120134 [S0]{Follower} contain and match
+120137 [AE][S0]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+120128 [S1]{Leader}'s first index:79, last index:88
+120144 [S1]'s commit Index is 88
+120147 [S1]{Leader}'s first index:79, last index:88
+120149 [S1]'s commit Index is 88
+130188 [S0] becomes {Leader}
+130196 [S2]{Follower} receives PrevLogIndex is 88
+130200 [S2]{Follower}'s first index:79, last index:88
+130203 [S2]{Follower} contain and match
+130206 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3]"
+130210 [S0]{Leader}'s first index:79, last index:88
+130213 [S0]'s commit Index is 88
+130478 [AE][S0]{Leader}: "[3 3 3 3 3 3 3 3 3 3 4]"
+130487 [S2]{Follower} receives PrevLogIndex is 88
+130490 [S2]{Follower}'s first index:79, last index:88
+130493 [S2]{Follower} contain and match
+130496 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 4]"
+130501 [S0]{Leader}'s first index:79, last index:89
+130504 [S0]'s commit Index is 88
+130506 [Snapshot][S0]{Leader}, old start is 79, length of log is 11, new start is 89
+130509 [Snapshot][S0]{Leader} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 4]"
+130607 [S2]{Follower} receives PrevLogIndex is 89
+130623 [S2]{Follower}'s first index:79, last index:89
+130633 [S2]{Follower} contain and match
+130638 [AE][S2]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 4]"
+130642 [Snapshot][S2]{Leader}, old start is 79, length of log is 11, new start is 89
+130645 [Snapshot][S2]{Leader} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 4]"
+130642 [S0]{Leader}'s first index:89, last index:89
+130651 [S0]'s commit Index is 89
+130685 [AE][S0]{Leader}: "[4 4]"
+130694 [S2]{Follower} receives PrevLogIndex is 89
+130697 [S2]{Follower}'s first index:89, last index:89
+130700 [S2]{Follower} contain and match
+130703 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+130707 [S0]{Leader}'s first index:89, last index:90
+130709 [S0]'s commit Index is 89
+132106 [S2]{Follower} receives PrevLogIndex is 90
+132110 [S2]{Follower}'s first index:89, last index:90
+132112 [S2]{Follower} contain and match
+132115 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+132119 [S0]{Leader}'s first index:89, last index:90
+132122 [S0]'s commit Index is 90
+132302 [AE][S1]{Leader}: "[3 3 3 3 3 3 3 3 3 3 3]"
+133608 [S1]{Follower} receives PrevLogIndex is 89
+133613 [S1]{Follower}'s first index:79, last index:89
+133615 [S1]{Follower} contain but Mismatch
+133618 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+133609 [S2]{Follower} receives PrevLogIndex is 90
+133623 [S2]{Follower}'s first index:89, last index:90
+133625 [S2]{Follower} contain and match
+133627 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+133621 [S0]{Leader}'s first index:89, last index:90
+133631 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+133633 [S0]'s commit Index is 90
+133636 [S0]{Leader}'s first index:89, last index:90
+133638 [S0]'s commit Index is 90
+135110 [S1]{Follower} receives PrevLogIndex is 89
+135116 [S1]{Follower}'s first index:79, last index:89
+135121 [S1]{Follower} contain but Mismatch
+135110 [S2]{Follower} receives PrevLogIndex is 90
+135124 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+135127 [S2]{Follower}'s first index:89, last index:90
+135133 [S2]{Follower} contain and match
+135135 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+135131 [S0]{Leader}'s first index:89, last index:90
+135140 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+135142 [S0]'s commit Index is 90
+135145 [S0]{Leader}'s first index:89, last index:90
+135149 [S0]'s commit Index is 90
+136610 [S2]{Follower} receives PrevLogIndex is 90
+136613 [S2]{Follower}'s first index:89, last index:90
+136615 [S2]{Follower} contain and match
+136618 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+136610 [S1]{Follower} receives PrevLogIndex is 89
+136622 [S1]{Follower}'s first index:79, last index:89
+136624 [S1]{Follower} contain but Mismatch
+136626 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+136621 [S0]{Leader}'s first index:89, last index:90
+136630 [S0]'s commit Index is 90
+136632 [S0]{Leader}'s first index:89, last index:90
+136634 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+136636 [S0]'s commit Index is 90
+138114 [S1]{Follower} receives PrevLogIndex is 89
+138119 [S1]{Follower}'s first index:79, last index:89
+138123 [S1]{Follower} contain but Mismatch
+138125 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+138114 [S2]{Follower} receives PrevLogIndex is 90
+138131 [S2]{Follower}'s first index:89, last index:90
+138133 [S2]{Follower} contain and match
+138136 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+138129 [S0]{Leader}'s first index:89, last index:90
+138141 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+138143 [S0]'s commit Index is 90
+138146 [S0]{Leader}'s first index:89, last index:90
+138148 [S0]'s commit Index is 90
+139614 [S1]{Follower} receives PrevLogIndex is 89
+139617 [S1]{Follower}'s first index:79, last index:89
+139619 [S1]{Follower} contain but Mismatch
+139621 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+139624 [S0]{Leader}'s first index:89, last index:90
+139626 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+139614 [S2]{Follower} receives PrevLogIndex is 90
+139628 [S0]'s commit Index is 90
+139630 [S2]{Follower}'s first index:89, last index:90
+139634 [S2]{Follower} contain and match
+139636 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+139638 [S0]{Leader}'s first index:89, last index:90
+139640 [S0]'s commit Index is 90
+141115 [S2]{Follower} receives PrevLogIndex is 90
+141117 [S2]{Follower}'s first index:89, last index:90
+141119 [S2]{Follower} contain and match
+141120 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+141115 [S1]{Follower} receives PrevLogIndex is 89
+141124 [S1]{Follower}'s first index:79, last index:89
+141125 [S1]{Follower} contain but Mismatch
+141127 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+141122 [S0]{Leader}'s first index:89, last index:90
+141130 [S0]'s commit Index is 90
+141132 [S0]{Leader}'s first index:89, last index:90
+141133 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+141135 [S0]'s commit Index is 90
+142617 [S1]{Follower} receives PrevLogIndex is 89
+142624 [S1]{Follower}'s first index:79, last index:89
+142628 [S1]{Follower} contain but Mismatch
+142618 [S2]{Follower} receives PrevLogIndex is 90
+142634 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+142637 [S2]{Follower}'s first index:89, last index:90
+142645 [S2]{Follower} contain and match
+142649 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+142644 [S0]{Leader}'s first index:89, last index:90
+142661 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+142664 [S0]'s commit Index is 90
+142668 [S0]{Leader}'s first index:89, last index:90
+142672 [S0]'s commit Index is 90
+144117 [S2]{Follower} receives PrevLogIndex is 90
+144120 [S2]{Follower}'s first index:89, last index:90
+144122 [S2]{Follower} contain and match
+144124 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+144117 [S1]{Follower} receives PrevLogIndex is 89
+144127 [S1]{Follower}'s first index:79, last index:89
+144129 [S1]{Follower} contain but Mismatch
+144131 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+144126 [S0]{Leader}'s first index:89, last index:90
+144135 [S0]'s commit Index is 90
+144138 [S0]{Leader}'s first index:89, last index:90
+144140 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+144142 [S0]'s commit Index is 90
+145621 [S2]{Follower} receives PrevLogIndex is 90
+145626 [S2]{Follower}'s first index:89, last index:90
+145629 [S2]{Follower} contain and match
+145632 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+145621 [S1]{Follower} receives PrevLogIndex is 89
+145636 [S1]{Follower}'s first index:79, last index:89
+145637 [S1]{Follower} contain but Mismatch
+145638 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+145634 [S0]{Leader}'s first index:89, last index:90
+145642 [S0]'s commit Index is 90
+145644 [S0]{Leader}'s first index:89, last index:90
+145645 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+145647 [S0]'s commit Index is 90
+147120 [S1]{Follower} receives PrevLogIndex is 89
+147125 [S1]{Follower}'s first index:79, last index:89
+147128 [S1]{Follower} contain but Mismatch
+147130 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+147120 [S2]{Follower} receives PrevLogIndex is 90
+147136 [S2]{Follower}'s first index:89, last index:90
+147139 [S2]{Follower} contain and match
+147142 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+147134 [S0]{Leader}'s first index:89, last index:90
+147147 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+147149 [S0]'s commit Index is 90
+147151 [S0]{Leader}'s first index:89, last index:90
+147153 [S0]'s commit Index is 90
+148620 [S1]{Follower} receives PrevLogIndex is 89
+148623 [S1]{Follower}'s first index:79, last index:89
+148624 [S1]{Follower} contain but Mismatch
+148626 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+148620 [S2]{Follower} receives PrevLogIndex is 90
+148629 [S2]{Follower}'s first index:89, last index:90
+148631 [S2]{Follower} contain and match
+148632 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+148628 [S0]{Leader}'s first index:89, last index:90
+148635 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+148637 [S0]'s commit Index is 90
+148638 [S0]{Leader}'s first index:89, last index:90
+148640 [S0]'s commit Index is 90
+150121 [S1]{Follower} receives PrevLogIndex is 89
+150125 [S1]{Follower}'s first index:79, last index:89
+150127 [S1]{Follower} contain but Mismatch
+150129 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+150121 [S2]{Follower} receives PrevLogIndex is 90
+150134 [S2]{Follower}'s first index:89, last index:90
+150135 [S2]{Follower} contain and match
+150137 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+150132 [S0]{Leader}'s first index:89, last index:90
+150140 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+150142 [S0]'s commit Index is 90
+150144 [S0]{Leader}'s first index:89, last index:90
+150145 [S0]'s commit Index is 90
+151623 [S1]{Follower} receives PrevLogIndex is 89
+151627 [S1]{Follower}'s first index:79, last index:89
+151630 [S1]{Follower} contain but Mismatch
+151632 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+151624 [S2]{Follower} receives PrevLogIndex is 90
+151639 [S2]{Follower}'s first index:89, last index:90
+151641 [S2]{Follower} contain and match
+151643 [AE][S2]{Follower} log(Term) becomes: "[4 4]"
+151637 [S0]{Leader}'s first index:89, last index:90
+151649 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+151652 [S0]'s commit Index is 90
+151654 [S0]{Leader}'s first index:89, last index:90
+151657 [S0]'s commit Index is 90
+152423 [AE][S0]{Leader}: "[4 4 4]"
+152427 [S1]{Follower} receives PrevLogIndex is 89
+152429 [S1]{Follower}'s first index:79, last index:89
+152431 [S1]{Follower} contain but Mismatch
+152433 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+152427 [S2]{Follower} receives PrevLogIndex is 90
+152437 [S2]{Follower}'s first index:89, last index:90
+152439 [S2]{Follower} contain and match
+152441 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+152435 [S0]{Leader}'s first index:89, last index:91
+152444 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+152446 [S0]'s commit Index is 90
+152448 [S0]{Leader}'s first index:89, last index:91
+152449 [S0]'s commit Index is 90
+153126 [S1]{Follower} receives PrevLogIndex is 89
+153133 [S1]{Follower}'s first index:79, last index:89
+153136 [S1]{Follower} contain but Mismatch
+153139 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+153126 [S2]{Follower} receives PrevLogIndex is 91
+153146 [S2]{Follower}'s first index:89, last index:91
+153148 [S2]{Follower} contain and match
+153152 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+153144 [S0]{Leader}'s first index:89, last index:91
+153157 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+153161 [S0]'s commit Index is 91
+153164 [S0]{Leader}'s first index:89, last index:91
+153167 [S0]'s commit Index is 91
+154627 [S2]{Follower} receives PrevLogIndex is 91
+154631 [S2]{Follower}'s first index:89, last index:91
+154633 [S2]{Follower} contain and match
+154636 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+154627 [S1]{Follower} receives PrevLogIndex is 89
+154641 [S1]{Follower}'s first index:79, last index:89
+154643 [S1]{Follower} contain but Mismatch
+154645 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+154639 [S0]{Leader}'s first index:89, last index:91
+154651 [S0]'s commit Index is 91
+154653 [S0]{Leader}'s first index:89, last index:91
+154655 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+154656 [S0]'s commit Index is 91
+156128 [S1]{Follower} receives PrevLogIndex is 89
+156130 [S1]{Follower}'s first index:79, last index:89
+156132 [S1]{Follower} contain but Mismatch
+156134 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+156137 [S0]{Leader}'s first index:89, last index:91
+156138 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+156128 [S2]{Follower} receives PrevLogIndex is 91
+156140 [S0]'s commit Index is 91
+156142 [S2]{Follower}'s first index:89, last index:91
+156148 [S2]{Follower} contain and match
+156151 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+156157 [S0]{Leader}'s first index:89, last index:91
+156160 [S0]'s commit Index is 91
+157629 [S1]{Follower} receives PrevLogIndex is 89
+157632 [S1]{Follower}'s first index:79, last index:89
+157635 [S1]{Follower} contain but Mismatch
+157637 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+157629 [S2]{Follower} receives PrevLogIndex is 91
+157642 [S2]{Follower}'s first index:89, last index:91
+157643 [S2]{Follower} contain and match
+157646 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+157640 [S0]{Leader}'s first index:89, last index:91
+157650 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+157652 [S0]'s commit Index is 91
+157654 [S0]{Leader}'s first index:89, last index:91
+157656 [S0]'s commit Index is 91
+159132 [S2]{Follower} receives PrevLogIndex is 91
+159137 [S2]{Follower}'s first index:89, last index:91
+159140 [S2]{Follower} contain and match
+159143 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+159132 [S1]{Follower} receives PrevLogIndex is 89
+159148 [S1]{Follower}'s first index:79, last index:89
+159151 [S1]{Follower} contain but Mismatch
+159154 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+159146 [S0]{Leader}'s first index:89, last index:91
+159159 [S0]'s commit Index is 91
+159162 [S0]{Leader}'s first index:89, last index:91
+159164 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+159166 [S0]'s commit Index is 91
+160631 [S2]{Follower} receives PrevLogIndex is 91
+160634 [S2]{Follower}'s first index:89, last index:91
+160636 [S2]{Follower} contain and match
+160638 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+160631 [S1]{Follower} receives PrevLogIndex is 89
+160642 [S1]{Follower}'s first index:79, last index:89
+160644 [S1]{Follower} contain but Mismatch
+160645 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+160641 [S0]{Leader}'s first index:89, last index:91
+160649 [S0]'s commit Index is 91
+160651 [S0]{Leader}'s first index:89, last index:91
+160652 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+160654 [S0]'s commit Index is 91
+162134 [S2]{Follower} receives PrevLogIndex is 91
+162139 [S2]{Follower}'s first index:89, last index:91
+162142 [S2]{Follower} contain and match
+162144 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+162134 [S1]{Follower} receives PrevLogIndex is 89
+162149 [S1]{Follower}'s first index:79, last index:89
+162151 [S1]{Follower} contain but Mismatch
+162153 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+162148 [S0]{Leader}'s first index:89, last index:91
+162157 [S0]'s commit Index is 91
+162160 [S0]{Leader}'s first index:89, last index:91
+162162 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+162164 [S0]'s commit Index is 91
+163634 [S1]{Follower} receives PrevLogIndex is 89
+163637 [S1]{Follower}'s first index:79, last index:89
+163640 [S1]{Follower} contain but Mismatch
+163644 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+163635 [S2]{Follower} receives PrevLogIndex is 91
+163652 [S2]{Follower}'s first index:89, last index:91
+163654 [S2]{Follower} contain and match
+163656 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+163649 [S0]{Leader}'s first index:89, last index:91
+163660 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+163661 [S0]'s commit Index is 91
+163664 [S0]{Leader}'s first index:89, last index:91
+163665 [S0]'s commit Index is 91
+165136 [S2]{Follower} receives PrevLogIndex is 91
+165139 [S2]{Follower}'s first index:89, last index:91
+165141 [S2]{Follower} contain and match
+165143 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+165136 [S1]{Follower} receives PrevLogIndex is 89
+165148 [S1]{Follower}'s first index:79, last index:89
+165150 [S1]{Follower} contain but Mismatch
+165152 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+165146 [S0]{Leader}'s first index:89, last index:91
+165156 [S0]'s commit Index is 91
+165158 [S0]{Leader}'s first index:89, last index:91
+165159 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+165161 [S0]'s commit Index is 91
+166637 [S1]{Follower} receives PrevLogIndex is 89
+166641 [S1]{Follower}'s first index:79, last index:89
+166644 [S1]{Follower} contain but Mismatch
+166646 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+166637 [S2]{Follower} receives PrevLogIndex is 91
+166650 [S2]{Follower}'s first index:89, last index:91
+166652 [S2]{Follower} contain and match
+166654 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+166648 [S0]{Leader}'s first index:89, last index:91
+166658 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+166661 [S0]'s commit Index is 91
+166663 [S0]{Leader}'s first index:89, last index:91
+166664 [S0]'s commit Index is 91
+168138 [S2]{Follower} receives PrevLogIndex is 91
+168143 [S2]{Follower}'s first index:89, last index:91
+168146 [S2]{Follower} contain and match
+168150 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+168138 [S1]{Follower} receives PrevLogIndex is 89
+168157 [S1]{Follower}'s first index:79, last index:89
+168160 [S1]{Follower} contain but Mismatch
+168163 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+168153 [S0]{Leader}'s first index:89, last index:91
+168169 [S0]'s commit Index is 91
+168171 [S0]{Leader}'s first index:89, last index:91
+168175 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+168177 [S0]'s commit Index is 91
+169638 [S2]{Follower} receives PrevLogIndex is 91
+169641 [S2]{Follower}'s first index:89, last index:91
+169643 [S2]{Follower} contain and match
+169645 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+169638 [S1]{Follower} receives PrevLogIndex is 89
+169648 [S1]{Follower}'s first index:79, last index:89
+169650 [S1]{Follower} contain but Mismatch
+169652 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+169647 [S0]{Leader}'s first index:89, last index:91
+169656 [S0]'s commit Index is 91
+169657 [S0]{Leader}'s first index:89, last index:91
+169659 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+169660 [S0]'s commit Index is 91
+171141 [S2]{Follower} receives PrevLogIndex is 91
+171147 [S2]{Follower}'s first index:89, last index:91
+171156 [S2]{Follower} contain and match
+171141 [S1]{Follower} receives PrevLogIndex is 89
+171175 [S1]{Follower}'s first index:79, last index:89
+171180 [S1]{Follower} contain but Mismatch
+171167 [AE][S2]{Follower} log(Term) becomes: "[4 4 4]"
+171186 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+171200 [S0]{Leader}'s first index:89, last index:91
+171207 [S0]'s commit Index is 91
+171213 [S0]{Leader}'s first index:89, last index:91
+171217 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+171222 [S0]'s commit Index is 91
+172551 [AE][S0]{Leader}: "[4 4 4 4]"
+172556 [S2]{Follower} receives PrevLogIndex is 91
+172559 [S2]{Follower}'s first index:89, last index:91
+172561 [S2]{Follower} contain and match
+172563 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+172556 [S1]{Follower} receives PrevLogIndex is 89
+172567 [S1]{Follower}'s first index:79, last index:89
+172569 [S1]{Follower} contain but Mismatch
+172571 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+172565 [S0]{Leader}'s first index:89, last index:92
+172575 [S0]'s commit Index is 91
+172577 [S0]{Leader}'s first index:89, last index:92
+172579 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+172581 [S0]'s commit Index is 92
+172641 [S1]{Follower} receives PrevLogIndex is 89
+172645 [S1]{Follower}'s first index:79, last index:89
+172648 [S1]{Follower} contain but Mismatch
+172651 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+172641 [S2]{Follower} receives PrevLogIndex is 92
+172655 [S2]{Follower}'s first index:89, last index:92
+172657 [S2]{Follower} contain and match
+172659 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+172654 [S0]{Leader}'s first index:89, last index:92
+172664 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+172667 [S0]'s commit Index is 92
+172669 [S0]{Leader}'s first index:89, last index:92
+172671 [S0]'s commit Index is 92
+174145 [S2]{Follower} receives PrevLogIndex is 92
+174157 [S2]{Follower}'s first index:89, last index:92
+174145 [S1]{Follower} receives PrevLogIndex is 89
+174163 [S2]{Follower} contain and match
+174168 [S1]{Follower}'s first index:79, last index:89
+174177 [S1]{Follower} contain but Mismatch
+174182 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+174174 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+174188 [S0]{Leader}'s first index:89, last index:92
+174195 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+174200 [S0]'s commit Index is 92
+174205 [S0]{Leader}'s first index:89, last index:92
+174209 [S0]'s commit Index is 92
+175644 [S1]{Follower} receives PrevLogIndex is 89
+175650 [S1]{Follower}'s first index:79, last index:89
+175653 [S1]{Follower} contain but Mismatch
+175656 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+175644 [S2]{Follower} receives PrevLogIndex is 92
+175662 [S2]{Follower}'s first index:89, last index:92
+175664 [S2]{Follower} contain and match
+175666 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+175661 [S0]{Leader}'s first index:89, last index:92
+175670 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+175672 [S0]'s commit Index is 92
+175674 [S0]{Leader}'s first index:89, last index:92
+175676 [S0]'s commit Index is 92
+177145 [S1]{Follower} receives PrevLogIndex is 89
+177148 [S1]{Follower}'s first index:79, last index:89
+177150 [S1]{Follower} contain but Mismatch
+177152 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+177145 [S2]{Follower} receives PrevLogIndex is 92
+177155 [S2]{Follower}'s first index:89, last index:92
+177157 [S2]{Follower} contain and match
+177159 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+177154 [S0]{Leader}'s first index:89, last index:92
+177163 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+177164 [S0]'s commit Index is 92
+177166 [S0]{Leader}'s first index:89, last index:92
+177168 [S0]'s commit Index is 92
+178648 [S1]{Follower} receives PrevLogIndex is 89
+178708 [S1]{Follower}'s first index:79, last index:89
+178648 [S2]{Follower} receives PrevLogIndex is 92
+178725 [S1]{Follower} contain but Mismatch
+178750 [S2]{Follower}'s first index:89, last index:92
+178764 [S2]{Follower} contain and match
+178768 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+178760 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+178774 [S0]{Leader}'s first index:89, last index:92
+178785 [S0]'s commit Index is 92
+178789 [S0]{Leader}'s first index:89, last index:92
+178793 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+178796 [S0]'s commit Index is 92
+180148 [S1]{Follower} receives PrevLogIndex is 89
+180152 [S1]{Follower}'s first index:79, last index:89
+180155 [S1]{Follower} contain but Mismatch
+180157 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+180148 [S2]{Follower} receives PrevLogIndex is 92
+180167 [S2]{Follower}'s first index:89, last index:92
+180176 [S2]{Follower} contain and match
+180184 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+180168 [S0]{Leader}'s first index:89, last index:92
+180196 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+180199 [S0]'s commit Index is 92
+180204 [S0]{Leader}'s first index:89, last index:92
+180208 [S0]'s commit Index is 92
+181649 [S1]{Follower} receives PrevLogIndex is 89
+181652 [S1]{Follower}'s first index:79, last index:89
+181654 [S1]{Follower} contain but Mismatch
+181656 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+181651 [S2]{Follower} receives PrevLogIndex is 92
+181660 [S2]{Follower}'s first index:89, last index:92
+181662 [S2]{Follower} contain and match
+181664 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+181658 [S0]{Leader}'s first index:89, last index:92
+181668 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+181670 [S0]'s commit Index is 92
+181672 [S0]{Leader}'s first index:89, last index:92
+181674 [S0]'s commit Index is 92
+183151 [S1]{Follower} receives PrevLogIndex is 89
+183185 [S1]{Follower}'s first index:79, last index:89
+183151 [S2]{Follower} receives PrevLogIndex is 92
+183197 [S1]{Follower} contain but Mismatch
+183218 [S2]{Follower}'s first index:89, last index:92
+183235 [S2]{Follower} contain and match
+183241 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+183227 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+183252 [S0]{Leader}'s first index:89, last index:92
+183259 [S0]'s commit Index is 92
+183261 [S0]{Leader}'s first index:89, last index:92
+183264 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+183266 [S0]'s commit Index is 92
+184654 [S2]{Follower} receives PrevLogIndex is 92
+184663 [S2]{Follower}'s first index:89, last index:92
+184667 [S2]{Follower} contain and match
+184654 [S1]{Follower} receives PrevLogIndex is 89
+184672 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+184679 [S1]{Follower}'s first index:79, last index:89
+184695 [S1]{Follower} contain but Mismatch
+184702 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+184692 [S0]{Leader}'s first index:89, last index:92
+184719 [S0]'s commit Index is 92
+184732 [S0]{Leader}'s first index:89, last index:92
+184744 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+184768 [S0]'s commit Index is 92
+186154 [S2]{Follower} receives PrevLogIndex is 92
+186163 [S2]{Follower}'s first index:89, last index:92
+186179 [S2]{Follower} contain and match
+186155 [S1]{Follower} receives PrevLogIndex is 89
+186183 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+186186 [S1]{Follower}'s first index:79, last index:89
+186192 [S1]{Follower} contain but Mismatch
+186196 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+186191 [S0]{Leader}'s first index:89, last index:92
+186202 [S0]'s commit Index is 92
+186206 [S0]{Leader}'s first index:89, last index:92
+186208 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+186210 [S0]'s commit Index is 92
+187658 [S1]{Follower} receives PrevLogIndex is 89
+187671 [S1]{Follower}'s first index:79, last index:89
+187658 [S2]{Follower} receives PrevLogIndex is 92
+187675 [S1]{Follower} contain but Mismatch
+187682 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+187679 [S2]{Follower}'s first index:89, last index:92
+187688 [S2]{Follower} contain and match
+187691 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+187687 [S0]{Leader}'s first index:89, last index:92
+187697 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+187700 [S0]'s commit Index is 92
+187704 [S0]{Leader}'s first index:89, last index:92
+187706 [S0]'s commit Index is 92
+189157 [S2]{Follower} receives PrevLogIndex is 92
+189160 [S2]{Follower}'s first index:89, last index:92
+189161 [S2]{Follower} contain and match
+189163 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+189157 [S1]{Follower} receives PrevLogIndex is 89
+189167 [S1]{Follower}'s first index:79, last index:89
+189168 [S1]{Follower} contain but Mismatch
+189170 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+189165 [S0]{Leader}'s first index:89, last index:92
+189175 [S0]'s commit Index is 92
+189177 [S0]{Leader}'s first index:89, last index:92
+189178 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+189180 [S0]'s commit Index is 92
+190659 [S1]{Follower} receives PrevLogIndex is 89
+190662 [S1]{Follower}'s first index:79, last index:89
+190665 [S1]{Follower} contain but Mismatch
+190667 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+190659 [S2]{Follower} receives PrevLogIndex is 92
+190671 [S2]{Follower}'s first index:89, last index:92
+190673 [S2]{Follower} contain and match
+190676 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+190670 [S0]{Leader}'s first index:89, last index:92
+190680 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+190682 [S0]'s commit Index is 92
+190684 [S0]{Leader}'s first index:89, last index:92
+190685 [S0]'s commit Index is 92
+192159 [S1]{Follower} receives PrevLogIndex is 89
+192163 [S1]{Follower}'s first index:79, last index:89
+192166 [S1]{Follower} contain but Mismatch
+192169 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+192160 [S2]{Follower} receives PrevLogIndex is 92
+192174 [S2]{Follower}'s first index:89, last index:92
+192176 [S2]{Follower} contain and match
+192179 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4]"
+192173 [S0]{Leader}'s first index:89, last index:92
+192183 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+192187 [S0]'s commit Index is 92
+192189 [S0]{Leader}'s first index:89, last index:92
+192191 [S0]'s commit Index is 92
+192691 [AE][S0]{Leader}: "[4 4 4 4 4]"
+192696 [S2]{Follower} receives PrevLogIndex is 92
+192698 [S2]{Follower}'s first index:89, last index:92
+192701 [S2]{Follower} contain and match
+192703 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+192696 [S1]{Follower} receives PrevLogIndex is 89
+192708 [S1]{Follower}'s first index:79, last index:89
+192710 [S1]{Follower} contain but Mismatch
+192711 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+192706 [S0]{Leader}'s first index:89, last index:93
+192715 [S0]'s commit Index is 92
+192717 [S0]{Leader}'s first index:89, last index:93
+192719 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+192722 [S0]'s commit Index is 93
+193661 [S2]{Follower} receives PrevLogIndex is 93
+193664 [S2]{Follower}'s first index:89, last index:93
+193666 [S2]{Follower} contain and match
+193669 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+193661 [S1]{Follower} receives PrevLogIndex is 89
+193674 [S1]{Follower}'s first index:79, last index:89
+193678 [S1]{Follower} contain but Mismatch
+193686 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+193672 [S0]{Leader}'s first index:89, last index:93
+193694 [S0]'s commit Index is 93
+193699 [S0]{Leader}'s first index:89, last index:93
+193701 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+193703 [S0]'s commit Index is 93
+195162 [S2]{Follower} receives PrevLogIndex is 93
+195167 [S2]{Follower}'s first index:89, last index:93
+195170 [S2]{Follower} contain and match
+195173 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+195162 [S1]{Follower} receives PrevLogIndex is 89
+195178 [S1]{Follower}'s first index:79, last index:89
+195180 [S1]{Follower} contain but Mismatch
+195182 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+195176 [S0]{Leader}'s first index:89, last index:93
+195186 [S0]'s commit Index is 93
+195189 [S0]{Leader}'s first index:89, last index:93
+195190 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+195192 [S0]'s commit Index is 93
+196663 [S1]{Follower} receives PrevLogIndex is 89
+196666 [S1]{Follower}'s first index:79, last index:89
+196668 [S1]{Follower} contain but Mismatch
+196670 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+196663 [S2]{Follower} receives PrevLogIndex is 93
+196674 [S2]{Follower}'s first index:89, last index:93
+196675 [S2]{Follower} contain and match
+196678 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+196672 [S0]{Leader}'s first index:89, last index:93
+196684 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+196686 [S0]'s commit Index is 93
+196688 [S0]{Leader}'s first index:89, last index:93
+196690 [S0]'s commit Index is 93
+198165 [S2]{Follower} receives PrevLogIndex is 93
+198170 [S2]{Follower}'s first index:89, last index:93
+198173 [S2]{Follower} contain and match
+198175 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+198165 [S1]{Follower} receives PrevLogIndex is 89
+198180 [S1]{Follower}'s first index:79, last index:89
+198183 [S1]{Follower} contain but Mismatch
+198186 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+198178 [S0]{Leader}'s first index:89, last index:93
+198191 [S0]'s commit Index is 93
+198193 [S0]{Leader}'s first index:89, last index:93
+198195 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+198197 [S0]'s commit Index is 93
+199668 [S2]{Follower} receives PrevLogIndex is 93
+199676 [S2]{Follower}'s first index:89, last index:93
+199680 [S2]{Follower} contain and match
+199668 [S1]{Follower} receives PrevLogIndex is 89
+199685 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+199688 [S1]{Follower}'s first index:79, last index:89
+199694 [S1]{Follower} contain but Mismatch
+199696 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+199692 [S0]{Leader}'s first index:89, last index:93
+199701 [S0]'s commit Index is 93
+199703 [S0]{Leader}'s first index:89, last index:93
+199705 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+199710 [S0]'s commit Index is 93
+201167 [S2]{Follower} receives PrevLogIndex is 93
+201170 [S2]{Follower}'s first index:89, last index:93
+201173 [S2]{Follower} contain and match
+201175 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+201167 [S1]{Follower} receives PrevLogIndex is 89
+201179 [S1]{Follower}'s first index:79, last index:89
+201181 [S1]{Follower} contain but Mismatch
+201183 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+201178 [S0]{Leader}'s first index:89, last index:93
+201188 [S0]'s commit Index is 93
+201191 [S0]{Leader}'s first index:89, last index:93
+201193 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+201195 [S0]'s commit Index is 93
+202669 [S2]{Follower} receives PrevLogIndex is 93
+202672 [S2]{Follower}'s first index:89, last index:93
+202674 [S2]{Follower} contain and match
+202676 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+202669 [S1]{Follower} receives PrevLogIndex is 89
+202679 [S1]{Follower}'s first index:79, last index:89
+202681 [S1]{Follower} contain but Mismatch
+202682 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+202678 [S0]{Leader}'s first index:89, last index:93
+202686 [S0]'s commit Index is 93
+202688 [S0]{Leader}'s first index:89, last index:93
+202689 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+202691 [S0]'s commit Index is 93
+204176 [S1]{Follower} receives PrevLogIndex is 89
+204183 [S1]{Follower}'s first index:79, last index:89
+204186 [S1]{Follower} contain but Mismatch
+204176 [S2]{Follower} receives PrevLogIndex is 93
+204189 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+204191 [S2]{Follower}'s first index:89, last index:93
+204196 [S2]{Follower} contain and match
+204198 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+204194 [S0]{Leader}'s first index:89, last index:93
+204203 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+204205 [S0]'s commit Index is 93
+204207 [S0]{Leader}'s first index:89, last index:93
+204209 [S0]'s commit Index is 93
+205672 [S1]{Follower} receives PrevLogIndex is 89
+205674 [S1]{Follower}'s first index:79, last index:89
+205676 [S1]{Follower} contain but Mismatch
+205678 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+205672 [S2]{Follower} receives PrevLogIndex is 93
+205682 [S2]{Follower}'s first index:89, last index:93
+205684 [S2]{Follower} contain and match
+205686 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+205681 [S0]{Leader}'s first index:89, last index:93
+205689 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+205691 [S0]'s commit Index is 93
+205692 [S0]{Leader}'s first index:89, last index:93
+205694 [S0]'s commit Index is 93
+207174 [S2]{Follower} receives PrevLogIndex is 93
+207181 [S2]{Follower}'s first index:89, last index:93
+207186 [S2]{Follower} contain and match
+207174 [S1]{Follower} receives PrevLogIndex is 89
+207191 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+207195 [S1]{Follower}'s first index:79, last index:89
+207208 [S1]{Follower} contain but Mismatch
+207212 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+207201 [S0]{Leader}'s first index:89, last index:93
+207220 [S0]'s commit Index is 93
+207225 [S0]{Leader}'s first index:89, last index:93
+207244 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+207255 [S0]'s commit Index is 93
+208675 [S1]{Follower} receives PrevLogIndex is 89
+208678 [S1]{Follower}'s first index:79, last index:89
+208681 [S1]{Follower} contain but Mismatch
+208683 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+208675 [S2]{Follower} receives PrevLogIndex is 93
+208688 [S2]{Follower}'s first index:89, last index:93
+208690 [S2]{Follower} contain and match
+208693 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+208687 [S0]{Leader}'s first index:89, last index:93
+208698 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+208700 [S0]'s commit Index is 93
+208703 [S0]{Leader}'s first index:89, last index:93
+208705 [S0]'s commit Index is 93
+210175 [S1]{Follower} receives PrevLogIndex is 89
+210178 [S1]{Follower}'s first index:79, last index:89
+210180 [S1]{Follower} contain but Mismatch
+210181 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+210175 [S2]{Follower} receives PrevLogIndex is 93
+210185 [S2]{Follower}'s first index:89, last index:93
+210187 [S2]{Follower} contain and match
+210189 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+210184 [S0]{Leader}'s first index:89, last index:93
+210194 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+210196 [S0]'s commit Index is 93
+210199 [S0]{Leader}'s first index:89, last index:93
+210200 [S0]'s commit Index is 93
+211675 [S1]{Follower} receives PrevLogIndex is 89
+211678 [S1]{Follower}'s first index:79, last index:89
+211680 [S1]{Follower} contain but Mismatch
+211682 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+211675 [S2]{Follower} receives PrevLogIndex is 93
+211688 [S2]{Follower}'s first index:89, last index:93
+211690 [S2]{Follower} contain and match
+211693 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4]"
+211685 [S0]{Leader}'s first index:89, last index:93
+211697 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+211699 [S0]'s commit Index is 93
+211701 [S0]{Leader}'s first index:89, last index:93
+211703 [S0]'s commit Index is 93
+212819 [AE][S0]{Leader}: "[4 4 4 4 4 4]"
+212824 [S2]{Follower} receives PrevLogIndex is 93
+212827 [S2]{Follower}'s first index:89, last index:93
+212828 [S2]{Follower} contain and match
+212831 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+212824 [S1]{Follower} receives PrevLogIndex is 89
+212835 [S1]{Follower}'s first index:79, last index:89
+212837 [S1]{Follower} contain but Mismatch
+212839 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+212833 [S0]{Leader}'s first index:89, last index:94
+212842 [S0]'s commit Index is 93
+212844 [S0]{Leader}'s first index:89, last index:94
+212846 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+212847 [S0]'s commit Index is 94
+213177 [S2]{Follower} receives PrevLogIndex is 94
+213183 [S2]{Follower}'s first index:89, last index:94
+213186 [S2]{Follower} contain and match
+213190 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+213177 [S1]{Follower} receives PrevLogIndex is 89
+213195 [S1]{Follower}'s first index:79, last index:89
+213198 [S1]{Follower} contain but Mismatch
+213201 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+213194 [S0]{Leader}'s first index:89, last index:94
+213209 [S0]'s commit Index is 94
+213214 [S0]{Leader}'s first index:89, last index:94
+213218 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+213221 [S0]'s commit Index is 94
+214680 [S2]{Follower} receives PrevLogIndex is 94
+214686 [S2]{Follower}'s first index:89, last index:94
+214689 [S2]{Follower} contain and match
+214692 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+214680 [S1]{Follower} receives PrevLogIndex is 89
+214702 [S1]{Follower}'s first index:79, last index:89
+214708 [S1]{Follower} contain but Mismatch
+214697 [S0]{Leader}'s first index:89, last index:94
+214710 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+214712 [S0]'s commit Index is 94
+214715 [S0]{Leader}'s first index:89, last index:94
+214717 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+214718 [S0]'s commit Index is 94
+216183 [S2]{Follower} receives PrevLogIndex is 94
+216191 [S2]{Follower}'s first index:89, last index:94
+216194 [S2]{Follower} contain and match
+216183 [S1]{Follower} receives PrevLogIndex is 89
+216197 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+216200 [S1]{Follower}'s first index:79, last index:89
+216204 [S1]{Follower} contain but Mismatch
+216206 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+216203 [S0]{Leader}'s first index:89, last index:94
+216210 [S0]'s commit Index is 94
+216212 [S0]{Leader}'s first index:89, last index:94
+216213 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+216215 [S0]'s commit Index is 94
+217681 [S2]{Follower} receives PrevLogIndex is 94
+217684 [S2]{Follower}'s first index:89, last index:94
+217686 [S2]{Follower} contain and match
+217687 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+217681 [S1]{Follower} receives PrevLogIndex is 89
+217691 [S1]{Follower}'s first index:79, last index:89
+217692 [S1]{Follower} contain but Mismatch
+217694 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+217689 [S0]{Leader}'s first index:89, last index:94
+217697 [S0]'s commit Index is 94
+217699 [S0]{Leader}'s first index:89, last index:94
+217701 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+217702 [S0]'s commit Index is 94
+219183 [S2]{Follower} receives PrevLogIndex is 94
+219186 [S2]{Follower}'s first index:89, last index:94
+219188 [S2]{Follower} contain and match
+219191 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+219183 [S1]{Follower} receives PrevLogIndex is 89
+219195 [S1]{Follower}'s first index:79, last index:89
+219197 [S1]{Follower} contain but Mismatch
+219198 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+219193 [S0]{Leader}'s first index:89, last index:94
+219202 [S0]'s commit Index is 94
+219204 [S0]{Leader}'s first index:89, last index:94
+219205 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+219206 [S0]'s commit Index is 94
+220684 [S2]{Follower} receives PrevLogIndex is 94
+220687 [S2]{Follower}'s first index:89, last index:94
+220689 [S2]{Follower} contain and match
+220690 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+220684 [S1]{Follower} receives PrevLogIndex is 89
+220695 [S1]{Follower}'s first index:79, last index:89
+220696 [S1]{Follower} contain but Mismatch
+220698 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+220693 [S0]{Leader}'s first index:89, last index:94
+220702 [S0]'s commit Index is 94
+220704 [S0]{Leader}'s first index:89, last index:94
+220706 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+220708 [S0]'s commit Index is 94
+222187 [S1]{Follower} receives PrevLogIndex is 89
+222193 [S1]{Follower}'s first index:79, last index:89
+222197 [S1]{Follower} contain but Mismatch
+222200 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+222187 [S2]{Follower} receives PrevLogIndex is 94
+222205 [S2]{Follower}'s first index:89, last index:94
+222208 [S2]{Follower} contain and match
+222210 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+222204 [S0]{Leader}'s first index:89, last index:94
+222215 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+222217 [S0]'s commit Index is 94
+222220 [S0]{Leader}'s first index:89, last index:94
+222222 [S0]'s commit Index is 94
+223689 [S2]{Follower} receives PrevLogIndex is 94
+223701 [S2]{Follower}'s first index:89, last index:94
+223689 [S1]{Follower} receives PrevLogIndex is 89
+223708 [S2]{Follower} contain and match
+223721 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+223715 [S1]{Follower}'s first index:79, last index:89
+223728 [S1]{Follower} contain but Mismatch
+223731 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+223726 [S0]{Leader}'s first index:89, last index:94
+223737 [S0]'s commit Index is 94
+223740 [S0]{Leader}'s first index:89, last index:94
+223743 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+223745 [S0]'s commit Index is 94
+225189 [S1]{Follower} receives PrevLogIndex is 89
+225192 [S1]{Follower}'s first index:79, last index:89
+225195 [S1]{Follower} contain but Mismatch
+225197 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+225189 [S2]{Follower} receives PrevLogIndex is 94
+225201 [S2]{Follower}'s first index:89, last index:94
+225204 [S2]{Follower} contain and match
+225206 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+225200 [S0]{Leader}'s first index:89, last index:94
+225211 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+225213 [S0]'s commit Index is 94
+225216 [S0]{Leader}'s first index:89, last index:94
+225218 [S0]'s commit Index is 94
+226689 [S2]{Follower} receives PrevLogIndex is 94
+226692 [S2]{Follower}'s first index:89, last index:94
+226694 [S2]{Follower} contain and match
+226697 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+226689 [S1]{Follower} receives PrevLogIndex is 89
+226700 [S1]{Follower}'s first index:79, last index:89
+226702 [S1]{Follower} contain but Mismatch
+226704 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+226699 [S0]{Leader}'s first index:89, last index:94
+226711 [S0]'s commit Index is 94
+226713 [S0]{Leader}'s first index:89, last index:94
+226715 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+226717 [S0]'s commit Index is 94
+228191 [S2]{Follower} receives PrevLogIndex is 94
+228194 [S2]{Follower}'s first index:89, last index:94
+228196 [S2]{Follower} contain and match
+228198 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+228191 [S1]{Follower} receives PrevLogIndex is 89
+228203 [S1]{Follower}'s first index:79, last index:89
+228205 [S1]{Follower} contain but Mismatch
+228207 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+228201 [S0]{Leader}'s first index:89, last index:94
+228212 [S0]'s commit Index is 94
+228214 [S0]{Leader}'s first index:89, last index:94
+228216 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+228218 [S0]'s commit Index is 94
+229692 [S2]{Follower} receives PrevLogIndex is 94
+229695 [S2]{Follower}'s first index:89, last index:94
+229697 [S2]{Follower} contain and match
+229699 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+229692 [S1]{Follower} receives PrevLogIndex is 89
+229703 [S1]{Follower}'s first index:79, last index:89
+229705 [S1]{Follower} contain but Mismatch
+229706 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+229701 [S0]{Leader}'s first index:89, last index:94
+229709 [S0]'s commit Index is 94
+229711 [S0]{Leader}'s first index:89, last index:94
+229712 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+229714 [S0]'s commit Index is 94
+231195 [S2]{Follower} receives PrevLogIndex is 94
+231198 [S2]{Follower}'s first index:89, last index:94
+231200 [S2]{Follower} contain and match
+231203 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+231195 [S1]{Follower} receives PrevLogIndex is 89
+231206 [S1]{Follower}'s first index:79, last index:89
+231208 [S1]{Follower} contain but Mismatch
+231210 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+231205 [S0]{Leader}'s first index:89, last index:94
+231213 [S0]'s commit Index is 94
+231215 [S0]{Leader}'s first index:89, last index:94
+231217 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+231218 [S0]'s commit Index is 94
+232695 [S2]{Follower} receives PrevLogIndex is 94
+232698 [S2]{Follower}'s first index:89, last index:94
+232700 [S2]{Follower} contain and match
+232702 [AE][S2]{Follower} log(Term) becomes: "[4 4 4 4 4 4]"
+232695 [S1]{Follower} receives PrevLogIndex is 89
+232706 [S1]{Follower}'s first index:79, last index:89
+232707 [S1]{Follower} contain but Mismatch
+232709 [AE][S1]{Follower} log(Term) becomes: "[3 3 3 3 3 3 3 3 3 3 3]"
+232704 [S0]{Leader}'s first index:89, last index:94
+232713 [S0]'s commit Index is 94
+232715 [S0]{Leader}'s first index:89, last index:94
+232717 [S0]{Leader-mismatch}: oldNextIndex:90, newNextInde(XIndex):79, prevLogTerm:4
+232718 [S0]'s commit Index is 94
+--- FAIL: TestSnapshotInstall2D (23.29s)
+    config.go:545: one(5463502032913047452) failed to reach agreement
+FAIL
+exit status 1
+FAIL	6.824/raft	23.297s

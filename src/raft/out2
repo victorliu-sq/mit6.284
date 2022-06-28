@@ -1,0 +1,4 @@
+Test (2D): install snapshots (disconnect) ...
+  ... Passed --  47.3  3 1455  470045  355
+PASS
+ok  	6.824/raft	47.335s
