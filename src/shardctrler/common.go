@@ -1,6 +1,7 @@
 package shardctrler
 
-//
+// *********************************************************************************************
+// Do not change
 // Shard controler: assigns shards to replication groups.
 //
 // RPC interface:
@@ -24,8 +25,8 @@ const NShards = 10
 // Please don't change this.
 type Config struct {
 	Num    int              // config number
-	Shards [NShards]int     // shard -> gid
-	Groups map[int][]string // gid -> servers[]
+	Shards [NShards]int     // shard -> gid, each shard belongs to a group, shards[sid] = gid
+	Groups map[int][]string // gid -> servers[], each group(gid) is a slice of servers, groups[gid] = []server
 }
 
 const (
@@ -35,7 +36,9 @@ const (
 type Err string
 
 type JoinArgs struct {
-	Servers map[int][]string // new GID -> servers mappings
+	Servers  map[int][]string // new GID -> servers mappings
+	ClientId int64
+	SeqId    int
 }
 
 type JoinReply struct {
@@ -44,7 +47,9 @@ type JoinReply struct {
 }
 
 type LeaveArgs struct {
-	GIDs []int
+	GIDs     []int
+	ClientId int64
+	SeqId    int
 }
 
 type LeaveReply struct {
@@ -53,8 +58,10 @@ type LeaveReply struct {
 }
 
 type MoveArgs struct {
-	Shard int
-	GID   int
+	Shard    int
+	GID      int
+	ClientId int64
+	SeqId    int
 }
 
 type MoveReply struct {
@@ -63,7 +70,9 @@ type MoveReply struct {
 }
 
 type QueryArgs struct {
-	Num int // desired config number
+	Num      int // desired config number
+	ClientId int64
+	SeqId    int
 }
 
 type QueryReply struct {

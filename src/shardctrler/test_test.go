@@ -58,6 +58,8 @@ func check_same_config(t *testing.T, c1 Config, c2 Config) {
 		t.Fatalf("Num wrong")
 	}
 	if c1.Shards != c2.Shards {
+		// DPrintf("c1.shards: %v", fmt.Sprint(c1.Shards))
+		// DPrintf("c2.shards: %v", fmt.Sprint(c2.Shards))
 		t.Fatalf("Shards wrong")
 	}
 	if len(c1.Groups) != len(c2.Groups) {
