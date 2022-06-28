@@ -101,7 +101,7 @@ func (rf *Raft) ProcessReply(peer int, args *AppendEntryArgs, reply *AppendEntry
 		return
 	}
 
-	Debug(dSnap, "[S%v]{Leader}'s first index:%v, last index:%v", rf.me, rf.GetFirstIndex(), rf.GetLastIndex())
+	// Debug(dSnap, "[S%v]{Leader}'s first index:%v, last index:%v", rf.me, rf.GetFirstIndex(), rf.GetLastIndex())
 	if reply.Success {
 		// contain and match
 		// Debug(dHB, "[S%v] gets AE reply from [S%v]: {contain AND match}", rf.me, peer)
@@ -118,7 +118,7 @@ func (rf *Raft) ProcessReply(peer int, args *AppendEntryArgs, reply *AppendEntry
 		// (contain but mismatch)
 		oldNext := args.PrevLogIndex + 1
 		newNext := reply.XIndex
-		Debug(dHB, "[S%v]{Leader-mismatch}: oldNextIndex:%v, newNextInde(XIndex):%v, prevLogTerm:%v", rf.me, oldNext, newNext, args.PrevLogTerm)
+		// Debug(dHB, "[S%v]{Leader-mismatch}: oldNextIndex:%v, newNextInde(XIndex):%v, prevLogTerm:%v", rf.me, oldNext, newNext, args.PrevLogTerm)
 		if newNext < oldNext {
 			rf.SetNextIndex(peer, newNext)
 		}
@@ -191,20 +191,20 @@ func (rf *Raft) AppendEntry(args *AppendEntryArgs, reply *AppendEntryReply) {
 		}
 	}
 
-	Debug(dSnap, "[S%v]{Follower} receives PrevLogIndex is %v", rf.me, args.PrevLogIndex)
-	Debug(dSnap, "[S%v]{Follower}'s first index:%v, last index:%v", rf.me, rf.GetFirstIndex(), rf.GetLastIndex())
+	// Debug(dSnap, "[S%v]{Follower} receives PrevLogIndex is %v", rf.me, args.PrevLogIndex)
+	// Debug(dSnap, "[S%v]{Follower}'s first index:%v, last index:%v", rf.me, rf.GetFirstIndex(), rf.GetLastIndex())
 	// 2.Rely false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm
 	if !rf.ContainAndMatch(args.PrevLogIndex, args.PrevLogTerm) {
 		reply.Success = false
 		if args.PrevLogIndex > rf.GetLastIndex() || args.PrevLogIndex < rf.GetFirstIndex() {
-			Debug(dSnap, "[S%v]{Follower} not contain", rf.me)
+			// Debug(dSnap, "[S%v]{Follower} not contain", rf.me)
 			// not contain --> return length of logs
 			// lag logEntries due to crash or snapshot
 			reply.XIndex = rf.GetLastIndex() + 1
 			reply.XValid = false
 		} else {
 			// contain but mismatch --> conflict
-			Debug(dSnap, "[S%v]{Follower} contain but Mismatch", rf.me)
+			// Debug(dSnap, "[S%v]{Follower} contain but Mismatch", rf.me)
 			// 3. if an existing entry conflicts with a new one, delete the existing entry and all that follow it
 			// Debug(dSnap, "[S%v]'s first index:%v, last index:%v", rf.me, rf.GetFirstIndex(), rf.GetLastIndex())
 			// Debug(dSnap, "[S%v]'s PrevLogIndex is %v", rf.me, args.PrevLogIndex)
@@ -214,7 +214,7 @@ func (rf *Raft) AppendEntry(args *AppendEntryArgs, reply *AppendEntryReply) {
 		}
 	} else {
 		// 4. Append any new entries not already in the log
-		Debug(dSnap, "[S%v]{Follower} contain and match", rf.me)
+		// Debug(dSnap, "[S%v]{Follower} contain and match", rf.me)
 		rf.AppendNewEntries(args.PrevLogIndex, args.Entries)
 		rf.persist()
 		// 5. Advance Commit Index for Follower
@@ -259,15 +259,14 @@ func (rf *Raft) AdvanceCommitIndexFollower(LeaderCommit int) {
 func (rf *Raft) applier() {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
-
-	rf.commitIndex = max(rf.commitIndex, rf.logStart)
-	rf.lastApplied = max(rf.lastApplied, rf.logStart)
 	// we do not apply first log entry, namely {Command:<nil>, Term:0}
 
 	for !rf.killed() {
 		// if rf.lastApplied < rf.logStart {
 		// 	rf.lastApplied = rf.logStart
 		// }
+		rf.commitIndex = max(rf.commitIndex, rf.logStart)
+		rf.lastApplied = max(rf.lastApplied, rf.logStart)
 
 		if rf.lastApplied+1 <= rf.commitIndex &&
 			rf.lastApplied+1 <= rf.GetLastIndex() {
