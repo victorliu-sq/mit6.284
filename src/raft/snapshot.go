@@ -12,7 +12,7 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 	// if index <= rf.logStart || index >= rf.logStart+len(rf.logs) {
 	// 	return
 	// }
-	if index <= rf.logStart {
+	if index <= rf.logStartIndex {
 		return
 	}
 	// Debug(dSnap, "[S%v] Snapshots state to index %v", rf.me, index)
@@ -20,8 +20,8 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 	// numTrimmed := (index - 1) - rf.GetFirstIndex() + 1
 	numTrimmed := index - rf.GetFirstIndex()
 	// delete log entries from start to index - 1, rf.start = index
-	Debug(dSnap, "[Snapshot][S%v]{Leader}, old start is %v, length of log is %v, new start is %v", rf.me, rf.logStart, len(rf.logs), rf.logStart+numTrimmed)
-	Debug(dLog, "[Snapshot][S%d]{Leader} log(Term) becomes: %q", rf.me, rf.GetTermArray())
+	// Debug(dSnap, "[Snapshot][S%v]{Leader}, old start is %v, length of log is %v, new start is %v", rf.me, rf.logStart, len(rf.logs), rf.logStart+numTrimmed)
+	// Debug(dLog, "[Snapshot][S%d]{Leader} log(Term) becomes: %q", rf.me, rf.GetTermArray())
 	rf.CutStart(numTrimmed)
 	rf.persistStateAndSnapshot(snapshot)
 }
@@ -29,7 +29,8 @@ func (rf *Raft) Snapshot(index int, snapshot []byte) {
 func (rf *Raft) CutStart(numTrimmed int) {
 	// cut nums up to index
 	rf.logs = append([]LogEntry(nil), rf.logs[numTrimmed:]...)
-	rf.logStart += numTrimmed
+	rf.logStartIndex += numTrimmed
+	rf.logStartTerm = rf.GetLogEntry(rf.logStartIndex).Term
 }
 
 // *****************************************************************************************
@@ -54,6 +55,8 @@ func (rf *Raft) InstallSnapshotSender(peer int, args *InstallSnapshotArgs, reply
 	// update nextIndex and matchIndex
 	rf.SetNextIndex(peer, args.StartLogIndex+1)
 	rf.SetMatchIndex(peer, args.StartLogIndex)
+
+	rf.AdvanceCommitIndexLeader()
 }
 
 // *****************************************************************************************
@@ -81,7 +84,7 @@ func (rf *Raft) InstallSnapshot(args *InstallSnapshotArgs, reply *InstallSnapsho
 	if rf.IsLogExist(args.StartLogIndex, args.StartLogTerm) {
 		// 6. if existing log entry has same index and term as snapshot's last included entry,
 		// retain log entry following it and reply
-		numTrimmed := args.StartLogIndex - rf.logStart
+		numTrimmed := args.StartLogIndex - rf.logStartIndex
 		rf.CutStart(numTrimmed)
 		Debug(dSnap, "[Snapshot][S%v]{Follower} CutStart", rf.me)
 	} else {
@@ -125,7 +128,7 @@ func (rf *Raft) InstallSnapshot(args *InstallSnapshotArgs, reply *InstallSnapsho
 }
 
 func (rf *Raft) IsLogExist(startLogIndex int, startLogTerm int) bool {
-	if rf.logStart <= startLogIndex && startLogIndex <= rf.logStart+len(rf.logs)-1 && rf.GetLogEntry(startLogIndex).Term == startLogTerm {
+	if rf.logStartIndex <= startLogIndex && startLogIndex <= rf.logStartIndex+len(rf.logs)-1 && rf.GetLogEntry(startLogIndex).Term == startLogTerm {
 		return true
 	} else {
 		return false
@@ -134,7 +137,8 @@ func (rf *Raft) IsLogExist(startLogIndex int, startLogTerm int) bool {
 
 func (rf *Raft) DiscardEntireLog(startLogIndex int, startLogTerm int) {
 	rf.logs = append([]LogEntry(nil), LogEntry{Command: nil, Term: startLogTerm, Index: startLogIndex})
-	rf.logStart = startLogIndex
+	rf.logStartIndex = startLogIndex
+	rf.logStartTerm = startLogTerm
 }
 
 // *****************************************************************************************

@@ -230,7 +230,7 @@ func (rf *Raft) AppendNewEntries(prevLogIndex int, Entries []LogEntry) {
 	// find first logsEntry in Entries that (1) out of range (2) conflicts with Term of rf.logs[same idx]
 	for idx, logsEntry := range Entries {
 		if prevLogIndex+1+idx > rf.GetLastIndex() || rf.GetLogEntry(prevLogIndex+1+idx).Term != logsEntry.Term {
-			rf.logs = append(rf.logs[0:prevLogIndex+1+idx-rf.logStart], Entries[idx:]...)
+			rf.logs = append(rf.logs[0:prevLogIndex+1+idx-rf.logStartIndex], Entries[idx:]...)
 			break
 		}
 	}
@@ -265,8 +265,8 @@ func (rf *Raft) applier() {
 		// if rf.lastApplied < rf.logStart {
 		// 	rf.lastApplied = rf.logStart
 		// }
-		rf.commitIndex = max(rf.commitIndex, rf.logStart)
-		rf.lastApplied = max(rf.lastApplied, rf.logStart)
+		rf.commitIndex = max(rf.commitIndex, rf.logStartIndex)
+		rf.lastApplied = max(rf.lastApplied, rf.logStartIndex)
 
 		if rf.lastApplied+1 <= rf.commitIndex &&
 			rf.lastApplied+1 <= rf.GetLastIndex() {
@@ -321,8 +321,8 @@ type ApplyMsg struct {
 func (rf *Raft) newAEArgs(peer int) AppendEntryArgs {
 	next := rf.nextIndex[peer]
 
-	if next < rf.logStart+1 {
-		next = rf.logStart + 1
+	if next < rf.logStartIndex+1 {
+		next = rf.logStartIndex + 1
 	} else if next > rf.GetLastIndex()+1 {
 		next = rf.GetLastIndex() + 1
 	}

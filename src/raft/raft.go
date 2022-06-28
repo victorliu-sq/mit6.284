@@ -25,7 +25,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.votedFor = -1
 	rf.logs = make([]LogEntry, 1)
 
-	rf.logStart = 0
+	rf.logStartIndex = 0
+	rf.logStartTerm = 0
 
 	// Volatile States
 	rf.commitIndex = 0
@@ -76,7 +77,8 @@ type Raft struct {
 	votedFor    int
 	logs        []LogEntry
 
-	logStart int
+	logStartIndex int
+	logStartTerm  int
 
 	// Volatile State
 	commitIndex int

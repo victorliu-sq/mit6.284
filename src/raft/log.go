@@ -8,18 +8,18 @@ type LogEntry struct {
 }
 
 func (rf *Raft) GetFirstIndex() int {
-	return rf.logStart
+	return rf.logStartIndex
 }
 
 func (rf *Raft) GetLastIndex() int {
-	return rf.logStart + len(rf.logs) - 1
+	return rf.logStartIndex + len(rf.logs) - 1
 }
 
 func (rf *Raft) newLogEntry(cmd interface{}) LogEntry {
 	return LogEntry{
 		Term:    rf.currentTerm,
 		Command: cmd,
-		Index:   rf.logStart + len(rf.logs),
+		Index:   rf.logStartIndex + len(rf.logs),
 	}
 }
 
@@ -46,16 +46,16 @@ func (rf *Raft) AppendLogEntry(logsEntry LogEntry) {
 }
 
 func (rf *Raft) GetLogEntry(idx int) LogEntry {
-	return rf.logs[idx-rf.logStart]
+	return rf.logs[idx-rf.logStartIndex]
 }
 
 func (rf *Raft) GetSubarrayEnd(idx int) []LogEntry {
-	return rf.logs[idx-rf.logStart:]
+	return rf.logs[idx-rf.logStartIndex:]
 }
 
 func (rf *Raft) GetXIndex(prevLogIndex int, XTerm int) int {
 	XIndex := prevLogIndex
-	for XIndex-1 >= rf.logStart && rf.GetLogEntry(XIndex-1).Term == XTerm {
+	for XIndex-1 >= rf.logStartIndex && rf.GetLogEntry(XIndex-1).Term == XTerm {
 		XIndex--
 	}
 	return XIndex

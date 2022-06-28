@@ -13,7 +13,8 @@ func (rf *Raft) persist() {
 	e.Encode(rf.currentTerm)
 	e.Encode(rf.votedFor)
 	e.Encode(rf.logs)
-	e.Encode(rf.logStart)
+	e.Encode(rf.logStartIndex)
+	e.Encode(rf.logStartTerm)
 	data := w.Bytes()
 	rf.persister.SaveRaftState(data)
 }
@@ -24,7 +25,8 @@ func (rf *Raft) persistStateAndSnapshot(snapshot []byte) {
 	e.Encode(rf.currentTerm)
 	e.Encode(rf.votedFor)
 	e.Encode(rf.logs)
-	e.Encode(rf.logStart)
+	e.Encode(rf.logStartIndex)
+	e.Encode(rf.logStartTerm)
 	state := w.Bytes()
 	rf.persister.SaveStateAndSnapshot(state, snapshot)
 }
@@ -39,14 +41,16 @@ func (rf *Raft) readPersist(data []byte) {
 	var currentTerm int
 	var voteFor int
 	var logs []LogEntry
-	var logStart int
-	if d.Decode(&currentTerm) != nil || d.Decode(&voteFor) != nil || d.Decode(&logs) != nil || d.Decode(&logStart) != nil {
+	var logStartIndex int
+	var logStartTerm int
+	if d.Decode(&currentTerm) != nil || d.Decode(&voteFor) != nil || d.Decode(&logs) != nil || d.Decode(&logStartIndex) != nil || d.Decode(&logStartTerm) != nil {
 		Debug(dError, "{Error} During reading Persis")
 	} else {
 		rf.currentTerm = currentTerm
 		rf.votedFor = voteFor
 		rf.logs = logs
-		rf.logStart = logStart
+		rf.logStartIndex = logStartIndex
+		rf.logStartTerm = logStartTerm
 		Debug(dLog, "[S%d] log(Term) becomes: %q", rf.me, rf.GetTermArray())
 	}
 }

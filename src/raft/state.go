@@ -23,7 +23,7 @@ func (rf *Raft) ConvertToLeader() {
 	for i, _ := range rf.peers {
 		rf.nextIndex[i] = rf.GetLastIndex() + 1
 		// Debug(dLog, "[S%d] nextIndex becomes %d", i, rf.nextIndex[i])
-		rf.matchIndex[i] = rf.logStart
+		rf.matchIndex[i] = rf.logStartIndex
 	}
 }
 
