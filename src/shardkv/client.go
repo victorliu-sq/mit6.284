@@ -8,11 +8,14 @@ package shardkv
 // talks to the group that holds the key's shard.
 //
 
-import "6.824/labrpc"
-import "crypto/rand"
-import "math/big"
-import "6.824/shardctrler"
-import "time"
+import (
+	"crypto/rand"
+	"math/big"
+	"time"
+
+	"6.824/labrpc"
+	"6.824/shardctrler"
+)
 
 //
 // which shard is a key in?
@@ -40,6 +43,9 @@ type Clerk struct {
 	config   shardctrler.Config
 	make_end func(string) *labrpc.ClientEnd
 	// You will have to modify this struct.
+	cId      int64
+	leaderId int
+	seqId    int
 }
 
 //
@@ -56,6 +62,9 @@ func MakeClerk(ctrlers []*labrpc.ClientEnd, make_end func(string) *labrpc.Client
 	ck.sm = shardctrler.MakeClerk(ctrlers)
 	ck.make_end = make_end
 	// You'll have to add code here.
+	ck.leaderId = 0
+	ck.cId = nrand()
+	ck.seqId = 0
 	return ck
 }
 
@@ -68,6 +77,7 @@ func MakeClerk(ctrlers []*labrpc.ClientEnd, make_end func(string) *labrpc.Client
 func (ck *Clerk) Get(key string) string {
 	args := GetArgs{}
 	args.Key = key
+	args.CId = ck.cId
 
 	for {
 		shard := key2shard(key)
@@ -79,6 +89,7 @@ func (ck *Clerk) Get(key string) string {
 				var reply GetReply
 				ok := srv.Call("ShardKV.Get", &args, &reply)
 				if ok && (reply.Err == OK || reply.Err == ErrNoKey) {
+					ck.leaderId = si
 					return reply.Value
 				}
 				if ok && (reply.Err == ErrWrongGroup) {
@@ -100,11 +111,13 @@ func (ck *Clerk) Get(key string) string {
 // You will have to modify this function.
 //
 func (ck *Clerk) PutAppend(key string, value string, op string) {
+	ck.seqId++
 	args := PutAppendArgs{}
+	args.SeqId = ck.seqId
 	args.Key = key
 	args.Value = value
+	args.CId = ck.cId
 	args.Op = op
-
 
 	for {
 		shard := key2shard(key)
@@ -115,9 +128,11 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 				var reply PutAppendReply
 				ok := srv.Call("ShardKV.PutAppend", &args, &reply)
 				if ok && reply.Err == OK {
+					ck.leaderId = si
 					return
 				}
 				if ok && reply.Err == ErrWrongGroup {
+					// DPrintf("ErrWrongGroup")
 					break
 				}
 				// ... not ok, or ErrWrongLeader
@@ -130,8 +145,8 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 }
 
 func (ck *Clerk) Put(key string, value string) {
-	ck.PutAppend(key, value, "Put")
+	ck.PutAppend(key, value, PUT)
 }
 func (ck *Clerk) Append(key string, value string) {
-	ck.PutAppend(key, value, "Append")
+	ck.PutAppend(key, value, APPEND)
 }
