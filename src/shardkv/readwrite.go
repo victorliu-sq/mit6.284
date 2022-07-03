@@ -7,19 +7,18 @@ import (
 
 func (kv *ShardKV) Get(args *GetArgs, reply *GetReply) {
 	// Your code here.
-
 	reply.Err = ErrWrongLeader
-	DPrintf("[KV%v] tries to stub one {Get} Op", kv.me)
+	// DPrintf("[KV%v] tries to stub one {Get} Op", kv.me)
 	if !kv.matchShard(args.Key) {
 		reply.Err = ErrWrongGroup
-		DPrintf("[KV%v] fails to stub one {Get} Op", kv.me)
+		// DPrintf("[KV%v] fails to stub one {Get} Op", kv.me)
 		return
 	}
 	op := kv.newGetOp(*args)
 	// index, term
 	// set incorrect leader at first
 	index, _, isLeader := kv.rf.Start(op)
-	DPrintf("[KV%v] stubs one {GET} Op", kv.me)
+	// DPrintf("[KV%v] stubs one {GET} Op", kv.me)
 	if !isLeader {
 		return
 	}
@@ -30,7 +29,8 @@ func (kv *ShardKV) Get(args *GetArgs, reply *GetReply) {
 		reply.Value = kv.state[op.Key]
 		kv.mu.Unlock()
 		reply.Err = OK
-	} else if newOp.OpType == ErrWrongGroup {
+	}
+	if newOp.OpType == ErrWrongGroup {
 		reply.Err = ErrWrongGroup
 		reply.Value = ""
 	}
@@ -39,15 +39,15 @@ func (kv *ShardKV) Get(args *GetArgs, reply *GetReply) {
 func (kv *ShardKV) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	// Your code here.
 	reply.Err = ErrWrongLeader
-	DPrintf("[KV%v] tries to stub one {Put} Op", kv.me)
+	// DPrintf("[KV%v] tries to stub one {Put} Op", kv.me)
 	if !kv.matchShard(args.Key) {
 		reply.Err = ErrWrongGroup
-		DPrintf("[KV%v] fails to stub one {Put} Op", kv.me)
+		// DPrintf("[KV%v] fails to stub one {Put} Op", kv.me)
 		return
 	}
 	op := kv.newPutAppendOp(*args)
 	index, _, isLeader := kv.rf.Start(op)
-	DPrintf("[KV%v] stubs one {Put} Op", kv.me)
+	// DPrintf("[KV%v] stubs one {Put} Op", kv.me)
 	if !isLeader {
 		return
 	}
@@ -55,7 +55,8 @@ func (kv *ShardKV) PutAppend(args *PutAppendArgs, reply *PutAppendReply) {
 	newOp := kv.waitOp(opChan)
 	if isOpEqual(op, newOp) {
 		reply.Err = OK
-	} else if newOp.OpType == ErrWrongGroup {
+	}
+	if newOp.OpType == ErrWrongGroup {
 		reply.Err = ErrWrongGroup
 	}
 }

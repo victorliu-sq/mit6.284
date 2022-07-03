@@ -4,10 +4,15 @@ labgob warning: Decoding into a non-default variable/field Err may not work
 Test: join then leave ...
   ... Passed
 Test: snapshots, join, and leave ...
---- FAIL: TestSnapshot (1.88s)
-    test_test.go:19: Get(2): expected:
-        wLfoH_OyfovHoWx9yRZj
+--- FAIL: TestSnapshot (1.76s)
+    test_test.go:19: Get(5): expected:
+        L0itTJI-sp_uXUzfuEgQhyL2OccMR3Upsg6Won6V
         received:
 Test: servers miss configuration changes...
+--- FAIL: TestMissChange (1.85s)
+    test_test.go:19: Get(3): expected:
+        Yzva5B9NtjnaG-GHrUSX
+        received:
+Test: concurrent puts and configuration changes...
 signal: interrupt
-FAIL	6.824/shardkv	10.151s
+FAIL	6.824/shardkv	14.856s
