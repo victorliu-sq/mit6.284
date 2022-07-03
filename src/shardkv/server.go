@@ -132,6 +132,11 @@ func (kv *ShardKV) ProcessPullConfigReply(newConfig shardctrler.Config) {
 	kv.shards, kv.config = make(map[int]bool), newConfig
 
 	group2shards := shardctrler.GetGroup2Shards(&newConfig)
+	DPrintf("{New Config} from [KV%v] {Group%v}", kv.me, kv.gid)
+	for group, shards := range group2shards {
+		DPrintf("Group: %v, Shards:%v", group, shards)
+	}
+
 	kv.comeInShardsConfigNum = oldConfig.Num
 	for _, shard := range group2shards[kv.gid] {
 		if _, ok := comeOutShards[shard]; ok || oldConfig.Num == 0 {
@@ -256,7 +261,7 @@ func (kv *ShardKV) ProcessPullShardReply(reply MigrateReply) {
 		}
 		kv.shards[shard] = true
 		// DPrintf("[Group%v] successfully updates State and MaxSeqId", kv.gid)
-		DPrintf("[KV%v] {Pull Shards} shards : %v", kv.me, kv.GetShardArray())
+		DPrintf("[KV%v] {Pull Shards} shards : %v (new Shard is %v)", kv.me, kv.GetShardArray(), shard)
 	}
 	delete(kv.comeInShards, shard)
 }
@@ -344,10 +349,10 @@ func (kv *ShardKV) applier() {
 func (kv *ShardKV) ProcessOpReply(op *Op) {
 	kv.mu.Lock()
 	defer kv.mu.Unlock()
-	DPrintf("KV%v {%v} key:%v has arrived", kv.me, op.OpType, op.Key)
+	DPrintf("[KV%v] {%v} key:%v val: %v has arrived based on val:%v", kv.me, op.OpType, op.Key, op.Value, kv.state[op.Key])
 	maxSeqId, found := kv.maxSeqIds[op.CId]
-	if !kv.matchShardUnlock(op.Key) {
-		DPrintf("KV%v {%v} not match shard", kv.me, op.OpType)
+	if !kv.matchShardUnlock(op.Key) || len(kv.comeInShards) > 0 {
+		DPrintf("[KV%v] {%v} not match shard", kv.me, op.OpType)
 		op.OpType = ErrWrongGroup
 		return
 	}
@@ -359,12 +364,14 @@ func (kv *ShardKV) ProcessOpReply(op *Op) {
 			kv.state[op.Key] = op.Value
 		case APPEND:
 			kv.state[op.Key] += op.Value
+		case GET:
+			op.Value = kv.state[op.Key]
 		}
-		DPrintf("[KV%v] {%v} has key-vaule : %v- %v", kv.me, op.OpType, op.Key, kv.state[op.Key])
+		DPrintf("[KV%v] {%v} now has key-vaule : %v- %v", kv.me, op.OpType, op.Key, kv.state[op.Key])
 		// update max seqId at last!!
 		kv.maxSeqIds[op.CId] = op.SeqId
 	} else {
-		DPrintf("KV%v {%v} duplicated", kv.me, op.OpType)
+		// DPrintf("[KV%v] {%v} duplicated", kv.me, op.OpType)
 	}
 }
 

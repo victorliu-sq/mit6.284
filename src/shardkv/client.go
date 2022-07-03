@@ -89,7 +89,6 @@ func (ck *Clerk) Get(key string) string {
 				var reply GetReply
 				ok := srv.Call("ShardKV.Get", &args, &reply)
 				if ok && (reply.Err == OK || reply.Err == ErrNoKey) {
-					ck.leaderId = si
 					return reply.Value
 				}
 				if ok && (reply.Err == ErrWrongGroup) {
