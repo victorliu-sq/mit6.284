@@ -46,6 +46,7 @@ func StartServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persister,
 	labgob.Register(Op{})
 	labgob.Register(shardctrler.Config{})
 	labgob.Register(MigrateReply{})
+	labgob.Register(GarbageReply{})
 
 	kv := new(ShardKV)
 	kv.me = me
@@ -74,16 +75,20 @@ func StartServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persister,
 	kv.config.Num = 0
 	kv.mck = shardctrler.MakeClerk(kv.ctrlers)
 	kv.shards = make(map[int]bool)
-	kv.comeInShards = make(map[int]bool)
+	kv.comeInShards = make(map[int]int)
 	kv.comeInShardsConfigNum = 0
 	// kv.comeOutShards2state = make(map[int]map[string]string)
 	kv.comeOutShards2state = make(map[int]map[int]map[string]string)
+
+	kv.garbageShards = make(map[int]int)
+	kv.garbageShardsConfigNum = 0
 
 	DPrintf("[KV%v] restores", kv.me)
 	kv.DecodeSnapshot(kv.persister.ReadSnapshot())
 	go kv.applier()
 	go kv.DaemonTryPullConfig()
 	go kv.DaemonTryPullShard()
+	go kv.DaemonTryGarbageCollection()
 	return kv
 }
 
@@ -125,34 +130,27 @@ func (kv *ShardKV) ProcessPullConfigReply(newConfig shardctrler.Config) {
 	}
 	oldConfig := kv.config
 	comeOutShards := kv.shards
-	// newShards := make(map[int]bool)
-	// comeInShards := make(map[int]bool)
-	// comeOutShards2state := make(map[int]map[string]string)
-	// comeOutShards2state := make(map[int]map[int]map[string]string)
 	kv.shards, kv.config = make(map[int]bool), newConfig
 
 	group2shards := shardctrler.GetGroup2Shards(&newConfig)
-	DPrintf("{New Config} from [KV%v] {Group%v}", kv.me, kv.gid)
-	for group, shards := range group2shards {
-		DPrintf("Group: %v, Shards:%v", group, shards)
-	}
+	// DPrintf("{New Config} from [KV%v] {Group%v}", kv.me, kv.gid)
+	// for group, shards := range group2shards {
+	// DPrintf("Group: %v, Shards:%v", group, shards)
+	// }
 
-	kv.comeInShardsConfigNum = oldConfig.Num
+	// kv.comeInShardsConfigNum = oldConfig.Num
 	for _, shard := range group2shards[kv.gid] {
 		if _, ok := comeOutShards[shard]; ok || oldConfig.Num == 0 {
 			// if first config new shard already in kv
 			//  -> stay in kv and not comeOut
-			// newShards[shard] = true
 			kv.shards[shard] = true
 			delete(comeOutShards, shard)
 		} else {
 			// if new shard not in kv yet
-			kv.comeInShards[shard] = true
-			// comeInShards[shard] = true
+			kv.comeInShards[shard] = oldConfig.Num
 		}
 	}
 
-	// comeOutShards2state[oldConfig.Num] = make(map[int]map[string]string)
 	kv.comeOutShards2state[oldConfig.Num] = make(map[int]map[string]string)
 	for comeOutShard, _ := range comeOutShards {
 		kv.comeOutShards2state[oldConfig.Num][comeOutShard] = make(map[string]string)
@@ -160,23 +158,16 @@ func (kv *ShardKV) ProcessPullConfigReply(newConfig shardctrler.Config) {
 		for k, v := range kv.state {
 			shard := key2shard(k)
 			if shard == comeOutShard {
-				kv.comeOutShards2state[oldConfig.Num][comeOutShard][k] = v
+				// kv.comeOutShards2state[oldConfig.Num][comeOutShard][k] = v
 				outState[k] = v
 				delete(kv.state, k)
+				// DPrintf("[KV%v] deletes state whose key is %v", kv.me, k)
 			}
 		}
-		// comeOutShards2state[oldConfig.Num] = make(map[int]map[string]string)
 		kv.comeOutShards2state[oldConfig.Num][comeOutShard] = outState
 	}
 
-	// kv.config = newConfig
-	// kv.shards = newShards
-	// kv.comeInShards = comeInShards
-	// kv.comeOutShards2state = comeOutShards2state
-	// DPrintf("[KV%v] {Pull Config} come Out shards : %v", kv.me, comeOutShards2state)
-	// kv.comeOutShards = comeOutShards
-	DPrintf("[KV%v] {Pull Config} shards : %v", kv.me, kv.GetShardArray())
-	// DPrintf("[KV%v] Pull Config successfully!", kv.me)
+	// DPrintf("[KV%v] {Pull Config} shards : %v", kv.me, kv.GetShardArray())
 }
 
 // **********************************************************************************************************
@@ -198,48 +189,48 @@ func (kv *ShardKV) TryPullShard() {
 		kv.mu.Unlock()
 		return
 	}
-	DPrintf("[KV%v] starts to pull shards, config num is %v", kv.me, kv.config.Num)
+	// DPrintf("[KV%v] starts to pull shards, config num is %v", kv.me, kv.config.Num)
 	oldConfig := kv.mck.Query(kv.config.Num - 1)
 	shard2group := oldConfig.Shards
 	group2servers := oldConfig.Groups
 
 	var wg sync.WaitGroup
-	for comeInShard, _ := range kv.comeInShards {
+	for comeInShard, comeInShardsConfigNum := range kv.comeInShards {
 		wg.Add(1)
-		go func(shard int) {
-			DPrintf("[KV%v] starts to pull {Shard%v}", kv.me, shard)
+		go func(shard int, configNum int) {
+			// DPrintf("[KV%v] starts to pull {Shard%v}", kv.me, shard)
 			gid := shard2group[shard]
 			servers := group2servers[gid]
-			args := kv.newMigrateArgs(shard, kv.comeInShardsConfigNum)
-			reply := kv.newMigrateReply(shard, kv.comeInShardsConfigNum)
+			args := kv.newMigrateArgs(shard, configNum)
+			reply := kv.newMigrateReply(shard, configNum)
 			for _, server := range servers {
 				srcServer := kv.make_end(server)
 				ok := srcServer.Call("ShardKV.ShardMigration", &args, &reply)
-				DPrintf("[KV%v] tries to pull {Shard%v} from [Group%v]", kv.me, shard, gid)
+				// DPrintf("[KV%v] tries to pull {Shard%v} from [Group%v]", kv.me, shard, gid)
 				// DPrintf("ok:%v, reply.Err:%v", ok, reply.Err)
 				if ok && reply.Err == OK {
 					kv.rf.Start(reply)
-					DPrintf("[KV%v] stubs one migrate reply for {Shard%v}", kv.me, args.Shard)
+					// DPrintf("[KV%v] stubs one migrate reply for {Shard%v}", kv.me, args.Shard)
 					break
 				} else if ok && reply.Err == ErrWrongGroup {
-					DPrintf("[KV%v]{Wrong Group} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
+					// DPrintf("[KV%v]{Wrong Group} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
 					break
 				} else {
 					if !ok {
-						DPrintf("[KV%v]{Fail to Send} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
+						// DPrintf("[KV%v]{Fail to Send} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
 					} else {
-						DPrintf("[KV%v]{Wrong Leader} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
+						// DPrintf("[KV%v]{Wrong Leader} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
 					}
 				}
 			}
 			wg.Done()
-		}(comeInShard)
+		}(comeInShard, comeInShardsConfigNum)
 	}
-	DPrintf("[KV%v] waits for migrate replies to finish", kv.me)
+	// DPrintf("[KV%v] waits for migrate replies to finish", kv.me)
 	// we need to unlock here
 	kv.mu.Unlock()
 	wg.Wait()
-	DPrintf("[KV%v] has tried to stub all migrate replies", kv.me)
+	// DPrintf("[KV%v] has tried to stub all migrate replies", kv.me)
 }
 
 func (kv *ShardKV) ProcessPullShardReply(reply MigrateReply) {
@@ -263,8 +254,12 @@ func (kv *ShardKV) ProcessPullShardReply(reply MigrateReply) {
 		}
 		kv.shards[shard] = true
 		// DPrintf("[Group%v] successfully updates State and MaxSeqId", kv.gid)
-		DPrintf("[KV%v] {Pull Shards} shards : %v (new Shard is %v)", kv.me, kv.GetShardArray(), shard)
+		// DPrintf("[KV%v] {Pull Shards} shards : %v (new Shard is %v)", kv.me, kv.GetShardArray(), shard)
 	}
+	// kv.garbageShardsConfigNum = reply.ConfigNum
+	// comeInShardsConfigNum := kv.comeInShards[shard]
+	kv.garbageShards[shard] = reply.ConfigNum
+	// DPrintf("new garbage configNum is %v", reply.ConfigNum)
 	delete(kv.comeInShards, shard)
 }
 
@@ -329,10 +324,16 @@ func (kv *ShardKV) applier() {
 		}
 		if newConfig, ok := applyMsg.Command.(shardctrler.Config); ok {
 			kv.ProcessPullConfigReply(newConfig)
+			// DPrintf("[KV%v] Snapshots when Pull Config", kv.me)
 			kv.TrySnapshot(applyMsg.CommandIndex)
 		} else if migrateReply, ok := applyMsg.Command.(MigrateReply); ok {
 			// DPrintf("Process got it")
 			kv.ProcessPullShardReply(migrateReply)
+			// DPrintf("[KV%v] Snapshots when Pull Shard", kv.me)
+			kv.TrySnapshot(applyMsg.CommandIndex)
+		} else if garbageReply, ok := applyMsg.Command.(GarbageReply); ok {
+			kv.ProcessGarbageCollectionReply(garbageReply)
+			// DPrintf("[KV%v] Snapshots when Garbage Collect", kv.me)
 			kv.TrySnapshot(applyMsg.CommandIndex)
 		} else if applyMsg.CommandValid {
 			// Command msg
@@ -341,6 +342,7 @@ func (kv *ShardKV) applier() {
 			kv.ProcessOpReply(&op)
 			index := applyMsg.CommandIndex
 			opChan := kv.putIfAbsent(index)
+			// DPrintf("[KV%v] Snapshots when Put/Append/Get", kv.me)
 			kv.TrySnapshot(applyMsg.CommandIndex)
 			// Try to snapshot
 			kv.sendOp(opChan, op)
@@ -351,11 +353,11 @@ func (kv *ShardKV) applier() {
 func (kv *ShardKV) ProcessOpReply(op *Op) {
 	kv.mu.Lock()
 	defer kv.mu.Unlock()
-	DPrintf("[KV%v] {%v} key:%v val: %v has arrived based on val:%v", kv.me, op.OpType, op.Key, op.Value, kv.state[op.Key])
+	// DPrintf("[KV%v] {%v} key:%v val: %v has arrived based on val:%v", kv.me, op.OpType, op.Key, op.Value, kv.state[op.Key])
 	maxSeqId, found := kv.maxSeqIds[op.CId]
 	_, isInComeInShards := kv.comeInShards[key2shard(op.Key)]
 	if !kv.matchShardUnlock(op.Key) || isInComeInShards {
-		DPrintf("[KV%v] {%v} not match shard", kv.me, op.OpType)
+		// DPrintf("[KV%v] {%v} not match shard", kv.me, op.OpType)
 		op.OpType = ErrWrongGroup
 		return
 	}
@@ -370,12 +372,127 @@ func (kv *ShardKV) ProcessOpReply(op *Op) {
 		case GET:
 			op.Value = kv.state[op.Key]
 		}
-		DPrintf("[KV%v] {%v} now has key-vaule : %v- %v", kv.me, op.OpType, op.Key, kv.state[op.Key])
+		// DPrintf("[KV%v] {%v} now has key-vaule : %v- %v", kv.me, op.OpType, op.Key, kv.state[op.Key])
 		// update max seqId at last!!
 		kv.maxSeqIds[op.CId] = op.SeqId
 	} else {
 		// DPrintf("[KV%v] {%v} duplicated", kv.me, op.OpType)
 	}
+}
+
+// **********************************************************************************************************
+// Garbage Collection
+func (kv *ShardKV) DaemonTryGarbageCollection() {
+	for !kv.killed() {
+		kv.TryGarbageCollection()
+		time.Sleep(TimePullShard)
+	}
+}
+
+func (kv *ShardKV) TryGarbageCollection() {
+	// return if (1) if not leader (2) last TryPullConfig has not finished yet
+	if !kv.rf.IsLeaderLock() {
+		return
+	}
+	kv.mu.Lock()
+	if len(kv.garbageShards) == 0 {
+		kv.mu.Unlock()
+		return
+	}
+	// DPrintf("[KV%v] starts to delete garbage shards, config num is %v", kv.me, kv.config.Num)
+
+	var wg sync.WaitGroup
+	for garbageShard, garbageShardsConfigNum := range kv.garbageShards {
+		wg.Add(1)
+		oldConfig := kv.mck.Query(garbageShardsConfigNum)
+		go func(shard int, config shardctrler.Config) {
+			shard2group := config.Shards
+			group2servers := config.Groups
+			// DPrintf("[KV%v] starts to dekete garbage shard {Shard%v}", kv.me, shard)
+			gid := shard2group[shard]
+			servers := group2servers[gid]
+			args := kv.newGarbageArgs(shard, config.Num)
+			reply := kv.newGarbageReply(shard, config.Num)
+			for _, server := range servers {
+				srcServer := kv.make_end(server)
+				ok := srcServer.Call("ShardKV.GarbageCollection", &args, &reply)
+				// DPrintf("[KV%v] tries to delete garbage shard {Shard%v} from [Group%v]", kv.me, shard, gid)
+				// DPrintf("ok:%v, reply.Err:%v", ok, reply.Err)
+				if ok && reply.Err == OK {
+					kv.mu.Lock()
+					delete(kv.garbageShards, shard)
+					kv.mu.Unlock()
+					// DPrintf("[KV%v] stubs one garbage reply for {Shard%v}", kv.me, args.Shard)
+					break
+				} else if ok && reply.Err == ErrWrongGroup {
+					// DPrintf("[KV%v]{Wrong Group} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
+					break
+				}
+			}
+			wg.Done()
+		}(garbageShard, oldConfig)
+	}
+	// DPrintf("[KV%v] waits for migrate replies to finish", kv.me)
+	// we need to unlock here
+	kv.mu.Unlock()
+	wg.Wait()
+	// DPrintf("[KV%v] has tried to stub all migrate replies", kv.me)
+}
+
+func (kv *ShardKV) ProcessGarbageCollectionReply(reply GarbageReply) {
+	kv.mu.Lock()
+	defer kv.mu.Unlock()
+	// reply.Err = ErrWrongLeader
+	// if reply.ConfigNum != kv.config.Num-1 {
+	// 	return
+	// }
+	// delete comeOutShards
+	if _, ok := kv.comeOutShards2state[reply.ConfigNum]; ok {
+		delete(kv.comeOutShards2state[reply.ConfigNum], reply.Shard)
+		DPrintf("[KV%v] delete comeOutShard %v", kv.me, reply.Shard)
+		if len(kv.comeOutShards2state[reply.ConfigNum]) == 0 {
+			delete(kv.comeOutShards2state, reply.ConfigNum)
+			DPrintf("[KV%v] all comeOutShards of configNum %v have been deleted", kv.me, reply.ConfigNum)
+		}
+	} else {
+		DPrintf("[KV%v]{GC} given configNum: %v || kv configNum: %v", kv.me, reply.ConfigNum, kv.config.Num)
+	}
+	total := 0
+	for configNum, _ := range kv.comeOutShards2state {
+		total += len(kv.comeOutShards2state[configNum])
+	}
+	DPrintf("[KV%v] remaining comeOutShards : %v", kv.me, total)
+}
+
+// **********************************************************************************************************
+// Garbage Collection RPC
+func (kv *ShardKV) GarbageCollection(args *GarbageArgs, reply *GarbageReply) {
+	if !kv.rf.IsLeaderLock() {
+		// DPrintf("Wrong Leader")
+		return
+	}
+	// DPrintf("new garbage configNum is %v", args.ConfigNum)
+	kv.mu.Lock()
+	// defer kv.mu.Unlock()
+	reply.Err = ErrWrongGroup
+	if _, ok := kv.comeOutShards2state[args.ConfigNum]; !ok {
+		// DPrintf("Wrong ConfigNum, args ConfigNum:%v, kvMaxConfigNum:%v", args.ConfigNum, kv.config.Num)
+		kv.mu.Unlock()
+		return
+	}
+	if _, ok := kv.comeOutShards2state[args.ConfigNum][args.Shard]; !ok {
+		kv.mu.Unlock()
+		return
+	}
+	// reply.ConfigNum = args.ConfigNum
+	// reply.Shard = args.Shard
+	kv.mu.Unlock()
+
+	reply.ConfigNum = args.ConfigNum
+	reply.Shard = args.Shard
+	reply.Err = OK
+	kv.rf.Start(*reply)
+	// DPrintf("Pull shard successfully!")
 }
 
 // ************************************************************************
@@ -399,14 +516,16 @@ type ShardKV struct {
 
 	dead int32 // set by Kill()
 
-	config       shardctrler.Config
-	shards       map[int]bool
-	comeInShards map[int]bool
+	config        shardctrler.Config
+	shards        map[int]bool
+	comeInShards  map[int]int
+	garbageShards map[int]int
 	// comeOutShards       map[int]bool
 	// comeOutShards2state map[int]map[string]string
 
-	comeInShardsConfigNum int
-	comeOutShards2state   map[int]map[int]map[string]string
+	comeInShardsConfigNum  int
+	garbageShardsConfigNum int
+	comeOutShards2state    map[int]map[int]map[string]string
 
 	mck *shardctrler.Clerk
 }
@@ -416,6 +535,8 @@ const TimeOutDuration = time.Duration(1000) * time.Millisecond
 const TimePullConfig = time.Duration(50) * time.Millisecond
 
 const TimePullShard = time.Duration(25) * time.Millisecond
+
+const TimeGarbageCollection = time.Duration(100) * time.Millisecond
 
 type MigrateArgs struct {
 	Shard     int
@@ -474,4 +595,31 @@ func (kv *ShardKV) GetShardArray() string {
 		shards = append(shards, shard)
 	}
 	return fmt.Sprint(shards)
+}
+
+type GarbageArgs struct {
+	Shard     int
+	ConfigNum int
+}
+
+type GarbageReply struct {
+	Err
+	// for Process Reply
+	Shard     int
+	ConfigNum int
+}
+
+func (kv *ShardKV) newGarbageArgs(shard int, configNum int) GarbageArgs {
+	args := GarbageArgs{}
+	args.Shard = shard
+	args.ConfigNum = configNum
+	return args
+}
+
+func (kv *ShardKV) newGarbageReply(shard int, configNum int) GarbageReply {
+	reply := GarbageReply{}
+	reply.Err = ErrWrongLeader
+	reply.Shard = shard
+	reply.ConfigNum = configNum
+	return reply
 }
