@@ -17,6 +17,8 @@ import (
 	"6.824/shardctrler"
 )
 
+const RetryInterval = time.Duration(30) * time.Millisecond
+
 //
 // which shard is a key in?
 // please use this function,
@@ -84,11 +86,26 @@ func (ck *Clerk) Get(key string) string {
 		gid := ck.config.Shards[shard]
 		if servers, ok := ck.config.Groups[gid]; ok {
 			// try each server for the shard.
+			// si := ck.leaderId
+			// for {
+			// 	srv := ck.make_end(servers[si])
+			// 	var reply GetReply
+			// 	ok := srv.Call("ShardKV.Get", &args, &reply)
+			// 	if ok && (reply.Err == OK || reply.Err == ErrNoKey) {
+			// 		ck.leaderId = si
+			// 		return reply.Value
+			// 	}
+			// 	if ok && (reply.Err == ErrWrongGroup) {
+			// 		break
+			// 	}
+			// 	si = (si + 1) % len(servers)
+			// }
 			for si := 0; si < len(servers); si++ {
 				srv := ck.make_end(servers[si])
 				var reply GetReply
 				ok := srv.Call("ShardKV.Get", &args, &reply)
 				if ok && (reply.Err == OK || reply.Err == ErrNoKey) {
+					ck.leaderId = si
 					return reply.Value
 				}
 				if ok && (reply.Err == ErrWrongGroup) {
@@ -97,7 +114,7 @@ func (ck *Clerk) Get(key string) string {
 				// ... not ok, or ErrWrongLeader
 			}
 		}
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(RetryInterval)
 		// ask controler for the latest configuration.
 		ck.config = ck.sm.Query(-1)
 	}
@@ -122,6 +139,20 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 		shard := key2shard(key)
 		gid := ck.config.Shards[shard]
 		if servers, ok := ck.config.Groups[gid]; ok {
+			// si := ck.leaderId
+			// for {
+			// 	srv := ck.make_end(servers[si])
+			// 	var reply PutAppendReply
+			// 	ok := srv.Call("ShardKV.PutAppend", &args, &reply)
+			// 	if ok && (reply.Err == OK) {
+			// 		ck.leaderId = si
+			// 		return
+			// 	}
+			// 	if ok && (reply.Err == ErrWrongGroup) {
+			// 		break
+			// 	}
+			// 	si = (si + 1) % len(servers)
+			// }
 			for si := 0; si < len(servers); si++ {
 				srv := ck.make_end(servers[si])
 				var reply PutAppendReply
@@ -137,7 +168,7 @@ func (ck *Clerk) PutAppend(key string, value string, op string) {
 				// ... not ok, or ErrWrongLeader
 			}
 		}
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(RetryInterval)
 		// ask controler for the latest configuration.
 		ck.config = ck.sm.Query(-1)
 	}

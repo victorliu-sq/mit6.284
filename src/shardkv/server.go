@@ -152,18 +152,20 @@ func (kv *ShardKV) ProcessPullConfigReply(newConfig shardctrler.Config) {
 		}
 	}
 
+	// comeOutShards2state[oldConfig.Num] = make(map[int]map[string]string)
 	kv.comeOutShards2state[oldConfig.Num] = make(map[int]map[string]string)
 	for comeOutShard, _ := range comeOutShards {
-		// kv.comeOutShards2state[oldConfig.Num][comeOutShard] = make(map[string]string)
+		kv.comeOutShards2state[oldConfig.Num][comeOutShard] = make(map[string]string)
 		outState := make(map[string]string)
 		for k, v := range kv.state {
 			shard := key2shard(k)
 			if shard == comeOutShard {
-				// kv.comeOutShards2state[oldConfig.Num][comeOutShard][k] = v
+				kv.comeOutShards2state[oldConfig.Num][comeOutShard][k] = v
 				outState[k] = v
 				delete(kv.state, k)
 			}
 		}
+		// comeOutShards2state[oldConfig.Num] = make(map[int]map[string]string)
 		kv.comeOutShards2state[oldConfig.Num][comeOutShard] = outState
 	}
 
@@ -351,7 +353,8 @@ func (kv *ShardKV) ProcessOpReply(op *Op) {
 	defer kv.mu.Unlock()
 	DPrintf("[KV%v] {%v} key:%v val: %v has arrived based on val:%v", kv.me, op.OpType, op.Key, op.Value, kv.state[op.Key])
 	maxSeqId, found := kv.maxSeqIds[op.CId]
-	if !kv.matchShardUnlock(op.Key) || len(kv.comeInShards) > 0 {
+	_, isInComeInShards := kv.comeInShards[key2shard(op.Key)]
+	if !kv.matchShardUnlock(op.Key) || isInComeInShards {
 		DPrintf("[KV%v] {%v} not match shard", kv.me, op.OpType)
 		op.OpType = ErrWrongGroup
 		return
@@ -412,7 +415,7 @@ const TimeOutDuration = time.Duration(1000) * time.Millisecond
 
 const TimePullConfig = time.Duration(50) * time.Millisecond
 
-const TimePullShard = time.Duration(80) * time.Millisecond
+const TimePullShard = time.Duration(25) * time.Millisecond
 
 type MigrateArgs struct {
 	Shard     int
