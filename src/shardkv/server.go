@@ -75,7 +75,7 @@ func StartServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persister,
 	kv.config.Num = 0
 	kv.mck = shardctrler.MakeClerk(kv.ctrlers)
 	kv.shards = make(map[int]bool)
-	kv.comeInShards = make(map[int]int)
+	kv.comeInShards = make(map[int]bool)
 	kv.comeInShardsConfigNum = 0
 	// kv.comeOutShards2state = make(map[int]map[string]string)
 	kv.comeOutShards2state = make(map[int]map[int]map[string]string)
@@ -138,7 +138,7 @@ func (kv *ShardKV) ProcessPullConfigReply(newConfig shardctrler.Config) {
 	// DPrintf("Group: %v, Shards:%v", group, shards)
 	// }
 
-	// kv.comeInShardsConfigNum = oldConfig.Num
+	kv.comeInShardsConfigNum = oldConfig.Num
 	for _, shard := range group2shards[kv.gid] {
 		if _, ok := comeOutShards[shard]; ok || oldConfig.Num == 0 {
 			// if first config new shard already in kv
@@ -147,7 +147,7 @@ func (kv *ShardKV) ProcessPullConfigReply(newConfig shardctrler.Config) {
 			delete(comeOutShards, shard)
 		} else {
 			// if new shard not in kv yet
-			kv.comeInShards[shard] = oldConfig.Num
+			kv.comeInShards[shard] = true
 		}
 	}
 
@@ -195,14 +195,14 @@ func (kv *ShardKV) TryPullShard() {
 	group2servers := oldConfig.Groups
 
 	var wg sync.WaitGroup
-	for comeInShard, comeInShardsConfigNum := range kv.comeInShards {
+	for comeInShard, _ := range kv.comeInShards {
 		wg.Add(1)
-		go func(shard int, configNum int) {
+		go func(shard int) {
 			// DPrintf("[KV%v] starts to pull {Shard%v}", kv.me, shard)
 			gid := shard2group[shard]
 			servers := group2servers[gid]
-			args := kv.newMigrateArgs(shard, configNum)
-			reply := kv.newMigrateReply(shard, configNum)
+			args := kv.newMigrateArgs(shard, kv.comeInShardsConfigNum)
+			reply := kv.newMigrateReply(shard, kv.comeInShardsConfigNum)
 			for _, server := range servers {
 				srcServer := kv.make_end(server)
 				ok := srcServer.Call("ShardKV.ShardMigration", &args, &reply)
@@ -215,16 +215,10 @@ func (kv *ShardKV) TryPullShard() {
 				} else if ok && reply.Err == ErrWrongGroup {
 					// DPrintf("[KV%v]{Wrong Group} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
 					break
-				} else {
-					if !ok {
-						// DPrintf("[KV%v]{Fail to Send} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
-					} else {
-						// DPrintf("[KV%v]{Wrong Leader} fails to stub one migrate reply for {Shard%v}", kv.me, args.Shard)
-					}
 				}
 			}
 			wg.Done()
-		}(comeInShard, comeInShardsConfigNum)
+		}(comeInShard)
 	}
 	// DPrintf("[KV%v] waits for migrate replies to finish", kv.me)
 	// we need to unlock here
@@ -518,7 +512,7 @@ type ShardKV struct {
 
 	config        shardctrler.Config
 	shards        map[int]bool
-	comeInShards  map[int]int
+	comeInShards  map[int]bool
 	garbageShards map[int]int
 	// comeOutShards       map[int]bool
 	// comeOutShards2state map[int]map[string]string

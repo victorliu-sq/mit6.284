@@ -146,15 +146,23 @@ set isLeader = false and return
 
 ## sender
 
-### 1. broadcast(AE)
+### 1. broadcast(Log Replication)
 
-log replication (optimized)
-
-
+(1) 
 
 
 
 ## receiver
 
-1.
+1.Reply false if term < currentTerm **success = false, conflict == false**
+
+2.Reply false if log doesn't contain an entry at prevLogIndex whose term matches prevLogTerm **if !(contain && match), success = false, do not reply yet, discuss conflict**
+
+3.**if not contain, conflict = false, return.**if an existring entry conflicts with a new one(same index but diffferent terms)**if contain but mismatch, conflict = true**, delete the existing entry and all that follow it **return(Not append any entries)**
+
+4.**if contain and match,  success = true, conflict = false** any new entries not already in the log
+
+5.If leaderCommit > commitIndex, set commitIndex = min(leaderCommit, index of last new entry)
+
+
 

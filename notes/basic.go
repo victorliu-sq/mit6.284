@@ -1,43 +1,36 @@
 package main
 
-import (
-	"sync"
-)
+import "fmt"
+
+var firstIdx int
+var arr []int
 
 func main() {
-	var m sync.Mutex
-	p := []int{}
-	finished := 0
+	arr = make([]int, 1)
+	firstIdx = 0
+	arr = append(arr, 1)
+	arr = append(arr, 2)
+	printArr(arr)
 
-	cv := sync.NewCond(&m)
+	// get subarray from idx to end
+	arr2 := toEnd(1)
+	printArr(arr2)
 
-	for i := 0; i < 10; i++ {
-		// push i into pipe
-		go func(n int) {
-			m.Lock()
-			p = append(p, n)
-			if len(p) >= 1 {
-				// cv.Broadcast()
-				cv.Signal()
-			}
-			m.Unlock()
-		}(i)
-	}
+	// copy array: make a new arr with same length
+	arr3 := make([]int, len(arr2))
+	copy(arr3, arr2)
+	printArr(arr3)
+}
 
-	for i := 0; i < 10; i++ {
-		// lock, block and unlock
-		m.Lock()
-		for len(p) == 0 && finished == 0 {
-			cv.Wait()
-		}
-		m.Unlock()
+func printArr(arr []int) {
+	format := fmt.Sprint(arr)
+	fmt.Printf("%q\n", format)
+}
 
-		// check if stopped or not empty
-		m.Lock()
-		if len(p) >= 1 {
-			println(p[0])
-			p = p[1:]
-		}
-		m.Unlock()
-	}
+func cutEnd(idx int) {
+	arr = arr[0 : idx-firstIdx]
+}
+
+func toEnd(idx int) []int {
+	return arr[idx:]
 }

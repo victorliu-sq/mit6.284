@@ -114,6 +114,13 @@ func (rf *Raft) IsLeader() bool {
 	return rf.state == Leader
 }
 
+func (rf *Raft) IsLeaderLock() bool {
+	rf.mu.Lock()
+	isLeader := rf.state == Leader
+	rf.mu.Unlock()
+	return isLeader
+}
+
 func (rf *Raft) GetCurState() RaftState {
 	return rf.state
 }

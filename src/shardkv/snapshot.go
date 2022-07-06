@@ -43,6 +43,8 @@ func (kv *ShardKV) EncodeSnapshot() []byte {
 	e.Encode(kv.comeInShards)
 	// DPrintf("size of kv.comeInShards is %v", len(w.Bytes())-len(bytes))
 	// bytes = w.Bytes()
+	e.Encode(kv.comeInShardsConfigNum)
+
 	e.Encode(kv.comeOutShards2state)
 	// DPrintf("size of kv.comeOutShards2state is %v", len(w.Bytes())-len(bytes))
 	// bytes = w.Bytes()
@@ -65,12 +67,13 @@ func (kv *ShardKV) DecodeSnapshot(data []byte) {
 	var maxSeqIds map[int64]int
 	var config shardctrler.Config
 	var shards map[int]bool
-	var comeInShards map[int]int
+	var comeInShards map[int]bool
+	var comeInShardsConfigNum int
 	var comeOutShards2state map[int]map[int]map[string]string
 	var garbageShards map[int]int
 	if d.Decode(&state) != nil || d.Decode(&maxSeqIds) != nil || d.Decode(&config) != nil ||
-		d.Decode(&shards) != nil || d.Decode(&comeInShards) != nil || d.Decode(&comeOutShards2state) != nil ||
-		d.Decode(&garbageShards) != nil {
+		d.Decode(&shards) != nil || d.Decode(&comeInShards) != nil || d.Decode(&comeInShardsConfigNum) != nil ||
+		d.Decode(&comeOutShards2state) != nil || d.Decode(&garbageShards) != nil {
 		return
 	} else {
 		kv.mu.Lock()
@@ -80,6 +83,7 @@ func (kv *ShardKV) DecodeSnapshot(data []byte) {
 		kv.config = config
 		kv.shards = shards
 		kv.comeInShards = comeInShards
+		kv.comeInShardsConfigNum = comeInShardsConfigNum
 		kv.comeOutShards2state = comeOutShards2state
 		kv.garbageShards = garbageShards
 	}

@@ -13,9 +13,9 @@ const OpTime = 50 * time.Millisecond
 type Clerk struct {
 	servers []*labrpc.ClientEnd
 	// You will have to modify this struct.
-	clientId   int64
-	leaderId   int
-	sequenceId int
+	cId      int64
+	leaderId int
+	seqId    int
 }
 
 func nrand() int64 {
@@ -30,9 +30,9 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck.servers = servers
 	// You'll have to add code here.
 	ck.leaderId = 0
-	ck.clientId = nrand()
-	ck.sequenceId = 0
-	// DPrintf("[ck %d] Hello!", ck.clientId)
+	ck.cId = nrand()
+	ck.seqId = 0
+	// DPrintf("[ck %d] Hello!", ck.cId)
 	return ck
 }
 
@@ -40,7 +40,7 @@ func (ck *Clerk) Get(key string) string {
 	// You will have to modify this function.
 	args := ck.newGetArgs(key)
 	reply := ck.newGetReply()
-	// DPrintf("[ck %d] Request [GET]", ck.clientId)
+	// DPrintf("[ck %d] Request [GET]", ck.cId)
 	for {
 		ok := ck.servers[ck.leaderId].Call("KVServer.Get", &args, &reply)
 		if reply.Err == Retry {
@@ -56,17 +56,17 @@ func (ck *Clerk) Get(key string) string {
 
 func (ck *Clerk) PutAppend(key string, value string, op string) {
 	// You will have to modify this function.
-	ck.sequenceId++
-	args := ck.newPutAppendArgs(key, value, op, ck.sequenceId)
+	ck.seqId++
+	args := ck.newPutAppendArgs(key, value, op, ck.seqId)
 	reply := ck.newPutAppendReply()
-	// DPrintf("[ck %d] Request [%v]", ck.clientId, op)
+	// DPrintf("[ck %d] Request [%v]", ck.cId, op)
 	for {
 		ok := ck.servers[ck.leaderId].Call("KVServer.PutAppend", &args, &reply)
 		if reply.Err == Retry {
 			// not leader or not send successfully
 			ck.leaderId = (ck.leaderId + 1) % len(ck.servers)
 			// time out --> retry
-			// DPrintf("[ck %d] tries to send Request again", ck.clientId)
+			// DPrintf("[ck %d] tries to send Request again", ck.cId)
 			time.Sleep(OpTime)
 		} else if ok && reply.Err == OK {
 			return
@@ -105,9 +105,9 @@ type PutAppendArgs struct {
 	// You'll have to add definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
-	ClientId   int64
-	LeaderId   int
-	SequenceId int
+	CId      int64
+	LeaderId int
+	SeqId    int
 }
 
 type PutAppendReply struct {
@@ -117,8 +117,8 @@ type PutAppendReply struct {
 type GetArgs struct {
 	Key string
 	// You'll have to add definitions here.
-	SequenceId int
-	ClientID   int64
+	SeqId int
+	CId   int64
 }
 
 type GetReply struct {
@@ -129,7 +129,7 @@ type GetReply struct {
 func (ck *Clerk) newGetArgs(key string) GetArgs {
 	args := GetArgs{}
 	args.Key = key
-	args.ClientID = ck.clientId
+	args.CId = ck.cId
 	return args
 }
 
@@ -139,12 +139,12 @@ func (ck *Clerk) newGetReply() GetReply {
 	return reply
 }
 
-func (ck *Clerk) newPutAppendArgs(key string, value string, op string, sequenceId int) PutAppendArgs {
+func (ck *Clerk) newPutAppendArgs(key string, value string, op string, seqId int) PutAppendArgs {
 	args := PutAppendArgs{}
 	args.Key = key
 	args.Value = value
-	args.ClientId = ck.clientId
-	args.SequenceId = sequenceId
+	args.CId = ck.cId
+	args.SeqId = seqId
 	args.Op = op
 	return args
 }

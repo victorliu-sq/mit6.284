@@ -1,9 +1,5 @@
 package shardctrler
 
-//
-// Shardctrler clerk.
-//
-
 import (
 	"crypto/rand"
 	"math/big"
@@ -11,6 +7,12 @@ import (
 
 	"6.824/labrpc"
 )
+
+//
+// Shardctrler clerk.
+//
+
+const RetryInterval = time.Duration(30) * time.Millisecond
 
 type Clerk struct {
 	servers []*labrpc.ClientEnd
@@ -52,7 +54,7 @@ func (ck *Clerk) Query(num int) Config {
 				return reply.Config
 			}
 		}
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(RetryInterval)
 	}
 }
 
@@ -74,7 +76,7 @@ func (ck *Clerk) Join(servers map[int][]string) {
 				return
 			}
 		}
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(RetryInterval)
 	}
 }
 
@@ -97,7 +99,7 @@ func (ck *Clerk) Leave(gids []int) {
 				return
 			}
 		}
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(RetryInterval)
 	}
 }
 
@@ -120,6 +122,6 @@ func (ck *Clerk) Move(shard int, gid int) {
 				return
 			}
 		}
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(RetryInterval)
 	}
 }

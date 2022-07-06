@@ -12,36 +12,6 @@ import (
 
 const TimeOutDuration = time.Duration(600) * time.Millisecond
 
-type KVServer struct {
-	mu      sync.Mutex
-	me      int
-	rf      *raft.Raft
-	applyCh chan raft.ApplyMsg
-	dead    int32 // set by Kill()
-
-	maxraftstate int // snapshot if log grows this big
-
-	// Your definitions here.
-	state     map[string]string // key-value
-	maxSeqIds map[int64]int     // cid - maxSeqId --> duplicate or not
-	OpChans   map[int]chan Op   // logIndex - OpChan
-	persister *raft.Persister
-}
-
-//
-// servers[] contains the ports of the set of
-// servers that will cooperate via Raft to
-// form the fault-tolerant key/value service.
-// me is the index of the current server in servers[].
-// the k/v server should store snapshots through the underlying Raft
-// implementation, which should call persister.SaveStateAndSnapshot() to
-// atomically save the Raft state along with the snapshot.
-// the k/v server should snapshot when Raft's saved state exceeds maxraftstate bytes,
-// in order to allow Raft to garbage-collect its log. if maxraftstate is -1,
-// you don't need to snapshot.
-// StartKVServer() must return quickly, so it should start goroutines
-// for any long-running work.
-//
 func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persister, maxraftstate int) *KVServer {
 	// call labgob.Register on structures you want
 	// Go's RPC library to marshall/unmarshall.
@@ -60,8 +30,6 @@ func StartKVServer(servers []*labrpc.ClientEnd, me int, persister *raft.Persiste
 	kv.state = make(map[string]string)
 	kv.OpChans = make(map[int]chan Op)
 	kv.maxSeqIds = make(map[int64]int)
-
-	// DPrintf("max raft state is %v", maxraftstate)
 	kv.maxraftstate = maxraftstate
 	kv.persister = persister
 
@@ -88,23 +56,6 @@ func (kv *KVServer) applier() {
 			kv.DecodeSnapshot(applyMsg.Snapshot)
 		}
 	}
-}
-
-func (kv *KVServer) waitOp(opChan chan Op) Op {
-	select {
-	case op := <-opChan:
-		return op
-	case <-time.After(TimeOutDuration):
-		return Op{}
-	}
-}
-
-func (kv *KVServer) sendOp(opChan chan Op, op Op) {
-	select {
-	case <-opChan:
-	default:
-	}
-	opChan <- op
 }
 
 func (kv *KVServer) Get(args *GetArgs, reply *GetReply) {
@@ -157,8 +108,8 @@ func (kv *KVServer) ProcessRaftReply(op Op) {
 	// (2) if PUT / APPEND --> update kv.state
 	kv.mu.Lock()
 	defer kv.mu.Unlock()
-	maxSeqId, found := kv.maxSeqIds[op.ClientId]
-	if !found || op.SequenceId > maxSeqId {
+	maxSeqId, found := kv.maxSeqIds[op.CId]
+	if !found || op.SeqId > maxSeqId {
 		// not duplicate
 		switch op.OpType {
 		case PUT:
@@ -167,7 +118,7 @@ func (kv *KVServer) ProcessRaftReply(op Op) {
 			kv.state[op.Key] += op.Value
 		}
 		// update max seqId at last!!
-		kv.maxSeqIds[op.ClientId] = op.SequenceId
+		kv.maxSeqIds[op.CId] = op.SeqId
 	}
 }
 
@@ -182,29 +133,62 @@ func (kv *KVServer) putIfAbsent(index int) chan Op {
 }
 
 func isOpEqual(op1 Op, op2 Op) bool {
-	return op1.OpType == op2.OpType && op1.SequenceId == op2.SequenceId && op1.ClientId == op2.ClientId
+	return op1.OpType == op2.OpType && op1.SeqId == op2.SeqId && op1.CId == op2.CId
+}
+
+func (kv *KVServer) waitOp(opChan chan Op) Op {
+	select {
+	case op := <-opChan:
+		return op
+	case <-time.After(TimeOutDuration):
+		return Op{}
+	}
+}
+
+func (kv *KVServer) sendOp(opChan chan Op, op Op) {
+	select {
+	case <-opChan:
+	default:
+	}
+	opChan <- op
 }
 
 // ******************************************************************************
 // struct
 
+type KVServer struct {
+	mu      sync.Mutex
+	me      int
+	rf      *raft.Raft
+	applyCh chan raft.ApplyMsg
+	dead    int32 // set by Kill()
+
+	maxraftstate int // snapshot if log grows this big
+
+	// Your definitions here.
+	state     map[string]string // key-value
+	maxSeqIds map[int64]int     // cid - maxSeqId --> duplicate or not
+	OpChans   map[int]chan Op   // logIndex - OpChan
+	persister *raft.Persister
+}
+
 type Op struct {
 	// Your definitions here.
 	// Field names must start with capital letters,
 	// otherwise RPC will break.
-	OpType     OpType
-	Key        string
-	Value      string
-	SequenceId int
-	ClientId   int64
+	OpType OpType
+	Key    string
+	Value  string
+	SeqId  int
+	CId    int64
 }
 
 func (kv *KVServer) newGetOp(args GetArgs) Op {
 	GetOp := Op{}
 	GetOp.OpType = GET
 	GetOp.Key = args.Key
-	GetOp.ClientId = args.ClientID
-	GetOp.SequenceId = args.SequenceId
+	GetOp.CId = args.CId
+	GetOp.SeqId = args.SeqId
 	return GetOp
 }
 
@@ -213,8 +197,8 @@ func (kv *KVServer) newPutAppendOp(args PutAppendArgs) Op {
 	PutAppendOp.OpType = OpType(args.Op)
 	PutAppendOp.Key = args.Key
 	PutAppendOp.Value = args.Value
-	PutAppendOp.ClientId = args.ClientId
-	PutAppendOp.SequenceId = args.SequenceId
+	PutAppendOp.CId = args.CId
+	PutAppendOp.SeqId = args.SeqId
 	return PutAppendOp
 }
 

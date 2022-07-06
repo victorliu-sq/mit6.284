@@ -70,11 +70,22 @@ func (sc *ShardCtrler) Query(args *QueryArgs, reply *QueryReply) {
 	// Your code here.
 	// DPrintf("{Query}[SC%v] with Num %v", sc.me, args.Num)
 	reply.WrongLeader = true
+
 	op := newOp(*args, QUERY, args.ClientId, args.SeqId)
 	index, _, isLeader := sc.rf.Start(op)
 	if !isLeader {
 		return
 	}
+
+	sc.mu.Lock()
+	if args.Num >= 0 && args.Num < len(sc.configs) {
+		reply.WrongLeader = false
+		reply.Config = sc.configs[args.Num]
+		sc.mu.Unlock()
+		return
+	}
+	sc.mu.Unlock()
+
 	opChan := sc.putIfAbsent(index)
 	newOp := sc.waitOp(opChan)
 
@@ -196,8 +207,7 @@ func Balance_Join(lastConfig *Config, gid int, servers []string) {
 	avg_shards := NShards / len(lastConfig.Groups)
 	for i := 0; i < avg_shards; i++ {
 		maxGid := GetMaxGid(group2shards)
-		shard := group2shards[maxGid][0]
-		lastConfig.Shards[shard] = gid
+		lastConfig.Shards[group2shards[maxGid][0]] = gid
 		group2shards[maxGid] = group2shards[maxGid][1:]
 	}
 }
